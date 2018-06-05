@@ -14,9 +14,9 @@ AUGUSTUSOPTS="--augustus_species entomophthora_muscae_berkeley"
 # OR PROVIDE --optimize_augustus IN THIS SPACE
 TRANSCRIPTS=Entomophthora_muscae.transcriptome.fasta
 PROTEINS=informant_proteins.aa
-TEMPLATE=zygo_genomes_template.sbt # TEMPLATE FOR INITIAL ASSIGNMENT IN tbl2asn
+TEMPLATE=/bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/annotate/e_muscae_template.sbt # TEMPLATE FOR INITIAL ASSIGNMENT IN tbl2asn
 EXTRA="--ploidy 1 --repeatmodeler_lib Entomophthora_muscae_UCB.500k-families.fa --maker_gff maker/Entomophthora_muscae_UCB.sorted.all.gff"
 # --maker_gff maker/Entomophthora_muscae_UCB.sorted.all.gff"
 # --genemark_gtf genemark.gtf"
 EMAIL=jason.stajich@gmail.com
-EXTRAANNOT="--eggnog Entomophthora_muscae_UCB.emapper.annotations --fix fixed_file.txt"
+EXTRAANNOT="--eggnog Entomophthora_muscae_UCB.emapper.annotations"

@@ -64,5 +64,4 @@ CMD="funannotate predict -i $SORTED -s \"$SPECIES\" -o $ODIR --isolate \"$ISOLAT
  --AUGUSTUS_CONFIG_PATH $AUGUSTUS_CONFIG_PATH --transcript_evidence $TRANSCRIPTS --protein_evidence $PROTEINS --cpus $CPUS $EXTRA"
 echo $CMD
 
-funannotate predict -i $SORTED -s "$SPECIES" -o $ODIR --isolate "$ISOLATE"  --name $PREFIX --busco_db $BUSCO $AUGUSTUSOPTS --genemark_mod $GENEMARK \
-  --AUGUSTUS_CONFIG_PATH $AUGUSTUS_CONFIG_PATH --transcript_evidence $TRANSCRIPTS --protein_evidence $PROTEINS --cpus $CPUS $EXTRA
+funannotate predict -i $SORTED -s "$SPECIES" -o $ODIR --isolate "$ISOLATE"  --name $PREFIX --busco_db $BUSCO $AUGUSTUSOPTS --genemark_mod $GENEMARK --AUGUSTUS_CONFIG_PATH $AUGUSTUS_CONFIG_PATH --transcript_evidence $TRANSCRIPTS --protein_evidence $PROTEINS --cpus $CPUS $EXTRA
