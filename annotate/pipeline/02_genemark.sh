@@ -16,8 +16,8 @@ if [ ! -f config.txt ]; then
 fi
 
 source config.txt
-if [ ! $SORTED ]; then
- echo "NEED TO EDIT CONFIG FILE TO SPECIFY THE INPUT GENOME AS VARIABLE: SORTED=GENOMEFILEFFASTA"
+if [ ! $MASKED ]; then
+ echo "NEED TO EDIT CONFIG FILE TO SPECIFY THE INPUT GENOME AS VARIABLE: MASKED=GENOMEFILEFFASTA"
  exit
 fi
 
@@ -28,7 +28,7 @@ fi
 if [ ! -d $TMPDIR ]; then
  mkdir -p $TMPDIR
  pushd $TMPDIR
- bp_seqretsplit.pl ../$SORTED
+ bp_seqretsplit.pl ../$MASKED
  popd
 fi
 
@@ -39,7 +39,9 @@ if [ ! -f $cmdfile ]; then
   scaf=$(basename $file .fa)
   GTF="$TMPDIR/$scaf.gtf"
   if [ ! -f $GTF ]; then
-    echo "gmhmme3 -s $scaf -f gtf -m $GENEMARK -o $GTF $file"
+    reformat_fasta.pl --up --soft_mask --native --in $file --out $TMPDIR/$scaf.masked
+    unlink $file
+    echo "gmhmme3 -s $scaf -f gtf -m $GENEMARK -o $GTF $TMPDIR/$scaf.masked"
   fi 
  done > $cmdfile
 fi

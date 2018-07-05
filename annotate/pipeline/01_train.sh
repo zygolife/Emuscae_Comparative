@@ -9,7 +9,7 @@ module unload salmon
 module load salmon/0.8.2
 module unload busco
 module load busco/2.0
-export AUGUSTUS_CONFIG_PATH=/bigdata/stajichlab/shared/pkg/augustus/3.2.2/config
+export AUGUSTUS_CONFIG_PATH=/bigdata/stajichlab/shared/pkg/augustus/3.3/config
 export PASAHOME=`dirname $(which Launch_PASA_pipeline.pl)`
 
 CPUS=$SLURM_CPUS_ON_NODE
@@ -33,6 +33,6 @@ if [ ! $ODIR ]; then
      ODIR=$(basename `pwd`)."funannot"
 fi
 
-funannotate train -i train/Entomophthora_muscae_UCB.long.fasta --trinity Entomophthora_muscae.transcriptome.fasta  --species "Entomopthora muscae" --isolate Berkeley --cpus $CPUS \
+funannotate train -i Entomophthora_muscae_UCB.v2.masked.fasta --trinity Entomophthora_muscae.transcriptome.fasta  --species "Entomopthora muscae" --isolate Berkeley --cpus $CPUS \
     -o funannot --max_intronlen 2000 \
     --left RNAseq/ERR1022665_1.fastq.gz --right RNAseq/ERR1022665_2.fastq.gz

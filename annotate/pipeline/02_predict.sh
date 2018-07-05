@@ -6,20 +6,19 @@
 #SBATCH --time=3-00:15:00   
 #SBATCH --output=annot_02.%A.log
 #SBATCH --job-name="Funnannotate"
-module unload miniconda2
+module unload perl
+module unload perl
+module load perl/5.24.0
 module load python/2.7.14
-module load diamond
 module load funannotate/git-live
+module load diamond
 module load lp_solve
 module load genemarkHMM
-module unload salmon
-module load salmon/0.8.2
-module unload busco
-module load busco/2.0
-module load EVM
+module load EVM/1.1.1-live
 module unload augustus
 module unload augustus
 module load augustus/3.3
+module load minimap2
 
 export AUGUSTUS_CONFIG_PATH=/bigdata/stajichlab/shared/pkg/augustus/3.3/config
 CPUS=$SLURM_CPUS_ON_NODE
@@ -36,8 +35,8 @@ fi
 which python
 which augustus
 source config.txt
-if [ ! $SORTED ]; then 
- echo "NEED TO EDIT CONFIG FILE TO SPECIFY THE INPUT GENOME AS VARIABLE: SORTED=GENOMEFILEFFASTA"
+if [ ! $MASKED ]; then 
+ echo "NEED TO EDIT CONFIG FILE TO SPECIFY THE INPUT GENOME AS VARIABLE: MASKED=GENOMEFILEFFASTA"
  exit
 fi
 
@@ -60,8 +59,9 @@ fi
 if [ ! $ODIR ]; then
  ODIR=$(basename `pwd`)."funannot"
 fi
-CMD="funannotate predict -i $SORTED -s \"$SPECIES\" -o $ODIR --isolate \"$ISOLATE\"  --name $PREFIX --busco_db $BUSCO --genemark_mod $GENEMARK $AUGUSTUSOPTS \
+
+# condition genemark?
+CMD="funannotate predict -i $MASKED -s \"$SPECIES\" -o $ODIR --isolate \"$ISOLATE\"  --name $PREFIX --busco_db $BUSCO $AUGUSTUSOPTS \
  --AUGUSTUS_CONFIG_PATH $AUGUSTUS_CONFIG_PATH --transcript_evidence $TRANSCRIPTS --protein_evidence $PROTEINS --cpus $CPUS $EXTRA"
 echo $CMD
-
-funannotate predict -i $SORTED -s "$SPECIES" -o $ODIR --isolate "$ISOLATE"  --name $PREFIX --busco_db $BUSCO $AUGUSTUSOPTS --genemark_mod $GENEMARK --AUGUSTUS_CONFIG_PATH $AUGUSTUS_CONFIG_PATH --transcript_evidence $TRANSCRIPTS --protein_evidence $PROTEINS --cpus $CPUS $EXTRA
+eval $CMD
