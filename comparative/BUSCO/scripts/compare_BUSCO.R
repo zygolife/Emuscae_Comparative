@@ -136,7 +136,7 @@ busco_status3 <- bind_rows(busco_euk,
 list2=busco_status3$Buscos
 names(list2)=busco_status3$Taxon
 
-upset(fromList(list2), order.by = "freq", keep.order = TRUE,
+upset(fromList(list2), order.by = "freq", keep.order=T, sets=names(list2),
       nsets = 11,  text.scale=1.5, point.size = 3.5, line.size = 2,
       mainbar.y.label = "BUSCO marker recovery in Entos", sets.x.label = "Species Found"
 )
