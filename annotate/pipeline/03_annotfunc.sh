@@ -5,6 +5,10 @@
 #SBATCH --output=annot.funannot_03.%A.log
 #SBATCH --time=6-0:00:00
 #SBATCH -p batch -J annotfunc
+module unload miniconda2
+module unload miniconda3
+module load perl/5.24.0
+module load python/2.7.14
 module load funannotate/git-live
 module load phobius
 CPUS=$SLURM_CPUS_ON_NODE

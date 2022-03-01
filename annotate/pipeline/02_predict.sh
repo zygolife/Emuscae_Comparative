@@ -8,8 +8,8 @@
 #SBATCH --job-name="Funnannotate"
 module unload perl
 module unload perl
-module load perl/5.24.0
-module load python/2.7.14
+module unload miniconda2
+module load python/2.7.12
 module load funannotate/git-live
 module load diamond
 module load lp_solve

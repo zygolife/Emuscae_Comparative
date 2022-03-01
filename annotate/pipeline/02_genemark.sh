@@ -39,8 +39,10 @@ if [ ! -f $cmdfile ]; then
   scaf=$(basename $file .fa)
   GTF="$TMPDIR/$scaf.gtf"
   if [ ! -f $GTF ]; then
-    reformat_fasta.pl --up --soft_mask --native --in $file --out $TMPDIR/$scaf.masked
-    unlink $file
+    #reformat_fasta.pl --up --soft_mask --native --in $file --out $TMPDIR/$scaf.masked
+    probuild --reformat_fasta --mask_soft 2000 --up --allow_x --letters_per_line 60 --in $file --out $TMPDIR/$scaf.masked
+    #unlink $file
+    perl -i -p -e "s/^>(\S+)/>$scaf/" $TMPDIR/$scaf.masked
     echo "gmhmme3 -s $scaf -f gtf -m $GENEMARK -o $GTF $TMPDIR/$scaf.masked"
   fi 
  done > $cmdfile

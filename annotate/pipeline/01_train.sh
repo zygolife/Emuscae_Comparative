@@ -1,17 +1,19 @@
 #!/bin/bash
 #SBATCH --nodes 1 --ntasks 16 --mem 64G -p intel --out train.%A.log -J trainFun
-
+module unload perl
+module load perl/5.22.0
+module load python/2.7.12
 module load funannotate/git-live
-module load augustus/3.2.2
+module load augustus/3.3
 module load lp_solve
 module load genemarkHMM
-module unload salmon
-module load salmon/0.8.2
+module load salmon
 module unload busco
 module load busco/2.0
+module load trinity-rnaseq
 export AUGUSTUS_CONFIG_PATH=/bigdata/stajichlab/shared/pkg/augustus/3.3/config
 export PASAHOME=`dirname $(which Launch_PASA_pipeline.pl)`
-
+export TRINITYHOME
 CPUS=$SLURM_CPUS_ON_NODE
 
 if [ ! $CPUS ]; then
