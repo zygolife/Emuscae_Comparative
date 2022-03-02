@@ -24,7 +24,7 @@ genomesize = 0
 faiparse = csv.reader(args.fai, delimiter="\t")
 for ctg in faiparse:
     chromsizes[ctg[0]] = ctg[1]
-    genomesize = int(ctg[2]) # last writer wins FAI file 3rd column is accumulated genome size
+    genomesize += int(ctg[1])
 bedparse = csv.reader(args.bed,delimiter="\t")
 RIPwindows = {}
 RIP_length = 0
