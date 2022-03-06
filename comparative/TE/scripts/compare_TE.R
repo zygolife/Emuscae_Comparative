@@ -41,12 +41,12 @@ TEcounts <- KnownTbl %>% group_by(genomename,superfamily) %>% summarise( total_T
 TEcounts
 p<-ggplot(TEcounts,aes(x=species,y=percent,fill=superfamily)) + geom_bar(position="dodge",stat="identity") + scale_fill_brewer(palette = "Set1") + scale_colour_brewer(palette = "Set1") +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-ggsave("TE_species.pdf",p,width=10)
+ggsave("TE_species.pdf",p,width=10,height=12)
 TEcounts2 <- KnownTbl %>% group_by(genomename,superfamily,subfamily) %>% summarise( total_TE_len = sum(flen) ) %>% left_join(genome_sizes,by="genomename") %>% 
   mutate(percent = 100 * (total_TE_len / length)) %>% select(genomename,superfamily,subfamily,percent) %>% rename(species=genomename) %>% mutate_at("superfamily", str_replace, "RC", "Helitron")
 TEcounts2
 
 p<-ggplot(TEcounts2 %>% filter(superfamily=="DNA"),aes(x=species,y=percent,fill=subfamily)) + geom_bar(position="dodge",stat="identity") + 
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-ggsave("TE_subfamily_species.pdf",p,width=10)
+ggsave("TE_subfamily_species.pdf",p,width=10,height=12)
 #write_csv(tbl,"RM_scores.csv.bz2")
