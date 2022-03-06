@@ -54,4 +54,8 @@ p<-ggplot(TEcounts2 %>% filter(superfamily=="LTR"),aes(x=species,y=percent,fill=
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ggsave("TE_LTR_species.pdf",p,width=10,height=12)
 
+p<-ggplot(TEcounts2 %>% filter(superfamily=="LINE"),aes(x=species,y=percent,fill=subfamily)) + geom_bar(position="dodge",stat="identity") + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+ggsave("TE_LINE_species.pdf",p,width=10,height=12)
+
 #write_csv(tbl,"RM_scores.csv.bz2")
