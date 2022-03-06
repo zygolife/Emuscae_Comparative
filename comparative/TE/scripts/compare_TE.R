@@ -37,18 +37,23 @@ helitron <- tbl %>% filter(superfamily %in% c("RC"))
 KnownTbl <- tbl %>% filter( !superfamily  %in% c("Unknown","Simple_repeat","Satellite","rRNA","Satellite","Low_complexity") ) %>% mutate(flen=abs(qend-qstart)+1)
 unique(KnownTbl$superfamily)
 TEcounts <- KnownTbl %>% group_by(genomename,superfamily) %>% summarise( total_TE_len = sum(flen) ) %>% left_join(genome_sizes,by="genomename") %>% 
-  mutate(percent = 100 * (total_TE_len / length)) %>% select(genomename,superfamily,total_TE_len,length,percent) %>% rename(species=genomename,genomelength=length) %>% mutate_at("superfamily", str_replace, "RC", "Helitron")
+  mutate(percent = 100 * (total_TE_len / length)) %>% select(genomename,superfamily,total_TE_len,length,percent) %>% rename(species=genomename,genomelength=length) %>% 
+  mutate_at("superfamily", str_replace, "RC", "Helitron")
 TEcounts
 write_csv(TEcounts,"TE_family_counts.csv")
 p<-ggplot(TEcounts,aes(x=species,y=percent,fill=superfamily)) + geom_bar(position="dodge",stat="identity") + scale_fill_brewer(palette = "Set1") + scale_colour_brewer(palette = "Set1") +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ggsave("TE_species.pdf",p,width=10,height=12)
-TEcounts2 <- KnownTbl %>% group_by(genomename,superfamily,subfamily) %>% summarise( total_TE_len = sum(flen) ) %>% left_join(genome_sizes,by="genomename") %>% 
-  mutate(percent = 100 * (total_TE_len / length)) %>% select(genomename,superfamily,subfamily,total_TE_len,length,percent) %>% rename(species=genomename,genomelen=length)
+
+# need to fix so if subfamily is "NA" it should get the "superfamily" value - 
+# collapse hAT-XXX to hAT here too if you can
+TEcounts2 <- KnownTbl %>% mutate(subfamily=replace_na(subfamily,"")) %>% mutate(subfamily=ifelse(subfamily=="",superfamily,subfamily)) %>% group_by(genomename,superfamily,subfamily) %>% 
+  summarise( total_TE_len = sum(flen) ) %>% left_join(genome_sizes,by="genomename") %>% 
+  mutate(percent = 100 * (total_TE_len / length)) %>% select(genomename,superfamily,subfamily,total_TE_len,length,percent) %>% rename(species=genomename,genomelen=length) 
 TEcounts2
 
 write_csv(TEcounts2,"TE_subfamily_counts.csv")
-p<-ggplot(TEcounts2 %>% filter(superfamily=="DNA"),aes(x=species,y=percent,fill=subfamily)) + geom_bar(position="dodge",stat="identity") + 
+p<-ggplot(TEcounts2 %>% filter(superfamily=="DNA",percent<0.001),aes(x=species,y=percent,fill=subfamily)) + geom_bar(position="dodge",stat="identity") + 
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ggsave("TE_DNA_species.pdf",p,width=10,height=12)
 
