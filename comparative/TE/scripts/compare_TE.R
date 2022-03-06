@@ -34,7 +34,13 @@ Unknown <- tbl %>% filter(superfamily == "Unknown")
 SimpleRepeat <- tbl %>% filter(superfamily =="Simple_repeat")
 rRNA <- tbl %>% filter(superfamily %in% c("rRNA"))
 helitron <- tbl %>% filter(superfamily %in% c("RC"))
+
 KnownTbl <- tbl %>% filter( !superfamily  %in% c("Unknown","Simple_repeat","Satellite","rRNA","Satellite","Low_complexity") ) %>% mutate(flen=abs(qend-qstart)+1)
+DNAElem <- KnownTbl %>% filter(superfamily %in% c("DNA"))
+
+DNAElem %>% mutate(subfamily=gsub("hAT-\\S+","hAT",subfamily,perl=TRUE)) %>% group_by(genomename,subfamily) %>% summarise( total_TE_len = sum(flen) ) %>% left_join(genome_sizes,by="genomename") %>% mutate(percent = 100 * (total_TE_len / length)) 
+
+
 unique(KnownTbl$superfamily)
 TEcounts <- KnownTbl %>% group_by(genomename,superfamily) %>% summarise( total_TE_len = sum(flen) ) %>% left_join(genome_sizes,by="genomename") %>% 
   mutate(percent = 100 * (total_TE_len / length)) %>% select(genomename,superfamily,total_TE_len,length,percent) %>% rename(species=genomename,genomelength=length) %>% 
@@ -47,7 +53,8 @@ ggsave("TE_species.pdf",p,width=10,height=12)
 
 # need to fix so if subfamily is "NA" it should get the "superfamily" value - 
 # collapse hAT-XXX to hAT here too if you can
-TEcounts2 <- KnownTbl %>% mutate(subfamily=replace_na(subfamily,"")) %>% mutate(subfamily=ifelse(subfamily=="",superfamily,subfamily)) %>% group_by(genomename,superfamily,subfamily) %>% 
+TEcounts2 <- KnownTbl %>% mutate(subfamily=replace_na(subfamily,"")) %>% mutate(subfamily=ifelse(subfamily=="",superfamily,subfamily)) %>% 
+  mutate(subfamily=gsub("hAT-\\S+","hAT",subfamily,perl=TRUE)) %>% group_by(genomename,subfamily) %>% 
   summarise( total_TE_len = sum(flen) ) %>% left_join(genome_sizes,by="genomename") %>% 
   mutate(percent = 100 * (total_TE_len / length)) %>% select(genomename,superfamily,subfamily,total_TE_len,length,percent) %>% rename(species=genomename,genomelen=length) 
 TEcounts2
