@@ -20,6 +20,8 @@ genomenames = gsub("indexes/","",indexes)
 genomenames = gsub("(.Nanopore10X|.v\\d+|.scaffolds)\\S+$","",genomenames,perl=TRUE) 
 
 genomenames <- tibble::rowid_to_column(data.frame(genomenames),"source")
+
+#CTH is not getting pulled in here
 genome_sizes <- indexes %>% map_dfr(read_tsv, .id="source",col_names = c("Scaffold","length","offset","linebases","linewidth"), col_types=c("ciii")) %>%
     group_by(source) %>% summarize(totallen = sum(length)) %>% type_convert(col_types="ii")
 
@@ -57,14 +59,15 @@ TEcounts2 <- KnownTbl %>% mutate(subfamily=replace_na(subfamily,"")) %>%
   summarise(total_TE_len = sum(flen) ) %>% left_join(genome_sizes,by="genomename") %>% 
   mutate(percent = total_TE_len / length) %>% select(genomename,superfamily,subfamily,total_TE_len,length,percent) %>% rename(species=genomename,genomelen=length)
 TEcounts2
+#write_csv(TEcounts2,"TE_subfamily_counts.csv")
 
 TEcounts3 <- TEcounts2 %>%
   mutate(species=str_replace(species, "Entomophaga_maimaiga_var_ARSEF_7190", "EMA"),
          species=str_replace(species, "Entomophthora_muscae_UCB", "EMU"),
          species=str_replace(species, "Massospora_cicadina_MCPNR19", "MCI"),
          species=str_replace(species, "Zoophthora_radicans_ATCC_208865", "ZRA"),
-         species=factor(species, levels=c("EMU", "EMA", "MCI", "ZRA"))) 
-
+         species=str_replace(species, "Conidiobolus_thromboides_FSU_785.Conth1", "CTH"),
+         species=factor(species, levels=c("EMU", "EMA", "MCI", "ZRA", "CTH"))) 
 
 theme = theme_bw()+theme(text = element_text(size=15), axis.title.x = element_text(size=20), axis.text.x = element_text(size=15), axis.text.y = element_text(size=15), title = element_text(size=20), legend.title = element_text(size=20), legend.text = element_text(size=15), strip.background = element_rect(color="black", fill="white", size=1.5, linetype="solid"))
 
@@ -73,7 +76,6 @@ p<-ggplot(TEcounts3,aes(x=species,y=percent,fill=superfamily)) + theme + geom_ba
 p
 #ggsave("TE_species.pdf",p,width=10,height=12)
 
-#write_csv(TEcounts2,"TE_subfamily_counts.csv")
 p<-ggplot(TEcounts3 %>% filter(superfamily=="DNA",percent>0.001),aes(x=species,y=percent,fill=subfamily))+ theme+ geom_bar(position="dodge",stat="identity") + scale_fill_viridis_d() + scale_y_continuous(labels=percent)+
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))+
   ylab("Percent")+ xlab("")+facet_wrap(~superfamily)
@@ -140,7 +142,18 @@ MCI_class_DNA = MCI_class %>%
   separate(Class, into=c("Type"), extra="drop", remove=F) %>%
   filter(Type=="DNA" & Count>0)
 
-DNA_comb=bind_rows(EMU_class_DNA, EMA_class_DNA, MCI_class_DNA, ZRA_class_DNA) %>%
+CTH_class <- read.csv("data/Conidiobolus_thromboides_FSU_785.Conth1.v1.divsum.tbl", sep="")
+CTH_subclass <- read_table("data/Conidiobolus_thromboides_FSU_785.Conth1.v1.divsum", skip = 4, comment = "--")
+
+CTH_class_DNA = CTH_class %>%
+  pivot_longer(cols=-Div, names_to="Class", values_to="Count") %>%
+  group_by(Class) %>%
+  dplyr::mutate(Diff = Count-lag(Count, default = 0, order_by = -Div),
+                Genome="CTH") %>%
+  separate(Class, into=c("Type"), extra="drop", remove=F) %>%
+  filter(Type=="DNA" & Count>0)
+
+DNA_comb=bind_rows(EMU_class_DNA, EMA_class_DNA, MCI_class_DNA, ZRA_class_DNA, CTH_class_DNA) %>%
   arrange(Type, Class) %>%
   group_by(Class, Genome) %>%
   mutate(sm=sum(Count)) %>%
