@@ -16,24 +16,32 @@ tefiles = gsub("data/","",infiles)
 tefiles = gsub("(.Nanopore10X|.v\\d+)\\S+$","",tefiles,perl=TRUE)
 tefiles <- tibble::rowid_to_column(data.frame(tefiles),"source")
 indexes = list.files(path=index_dir,pattern = "fai$", recursive = TRUE,full.names=TRUE)
+repland = list.files(path=data_dir,pattern = "divsum.tbl$", recursive = TRUE,full.names=TRUE)
 genomenames = gsub("indexes/","",indexes)
 genomenames = gsub("(.Nanopore10X|.v\\d+|.scaffolds)\\S+$","",genomenames,perl=TRUE) 
 
 genomenames <- tibble::rowid_to_column(data.frame(genomenames),"source")
 
-#CTH is not getting pulled in here
 genome_sizes <- indexes %>% map_dfr(read_tsv, .id="source",col_names = c("Scaffold","length","offset","linebases","linewidth"), col_types=c("ciii")) %>%
     group_by(source) %>% summarize(totallen = sum(length)) %>% type_convert(col_types="ii")
 
-
 genome_sizes <- genome_sizes %>% left_join(genomenames,by="source") %>% select(genomenames,totallen) %>% rename(genomename=genomenames,length=totallen) 
+
+tefiles2=tefiles %>%
+  mutate(species=tefiles,
+         species=str_replace(species, "Entomophaga_maimaiga_var_ARSEF_7190", "EMA"),
+         species=str_replace(species, "Entomophthora_muscae_UCB", "EMU"),
+         species=str_replace(species, "Massospora_cicadina_MCPNR19", "MCI"),
+         species=str_replace(species, "Zoophthora_radicans_ATCC_208865", "ZRA"),
+         species=str_replace(species, "Conidiobolus_thromboides_FSU_785.Conth1", "CTH"),
+         species=factor(species, levels=c("EMU", "EMA", "MCI", "ZRA", "CTH")))
 
 tbl <- infiles %>% map_dfr(read_table,.id = "source",skip=3,comment="#",col_names=c("Score","div","del","ins","query",
                                                                                   "qstart","qend","qleft","strand","match_name",
                                                                                   "family", "hstart", "hend", "hleft", "ID", 'Overlaps_another'
                                                                                   ),na = ".") %>% separate(family, c("superfamily","subfamily"),sep="/",
                                                                                                            extra = "drop", fill = "right") %>% 
-    type_convert(col_types="iidddciiccccccicic") %>% left_join(tefiles,by="source") %>% select(-source) %>% rename(genomename=tefiles)
+    type_convert(col_types="iidddciiccccccicic") %>% left_join(tefiles2,by="source") %>% select(-source, ) %>% rename(genomename=tefiles)
 
 Unknown <- tbl %>% filter(superfamily == "Unknown")
 SimpleRepeat <- tbl %>% filter(superfamily =="Simple_repeat")
@@ -98,68 +106,24 @@ p
 #write_csv(tbl,"RM_scores.csv.bz2")
 
 ####Landcape analyses####
-EMU_class <- read.csv("data/Entomophthora_muscae_UCB.Nanopore10X_v2.divsum.tbl", sep="")
-EMU_subclass <- read_table("data/Entomophthora_muscae_UCB.Nanopore10X_v2.divsum", skip = 4, comment = "--")
-
-EMU_class_DNA = EMU_class %>%
-  pivot_longer(cols=-Div, names_to="Class", values_to="Count") %>%
-  group_by(Class) %>%
-  dplyr::mutate(Diff = Count-lag(Count, default = 0, order_by = -Div),
-                Genome="EMU") %>%
+class_tbl <- repland %>% map_dfr(read.csv, .id = "source",sep="") %>% mutate(source=as.integer(source)) %>% left_join(tefiles2,by="source") %>% select(-source, -tefiles) %>%
+  mutate_all(~replace(., is.na(.), 0)) %>%
+  pivot_longer(cols=-c(Div, species), names_to="Class", values_to="Count") %>%
+  group_by(Class, species) %>%
+  dplyr::mutate(Diff = Count-lag(Count, default = 0, order_by = -Div)) %>%
   separate(Class, into=c("Type"), extra="drop", remove=F) %>%
-  filter(Type=="DNA" & Count>0)
+  rename("Genome"=species)
 
-EMA_class <- read.csv("data/Entomophaga_maimaiga_var_ARSEF_7190.v1.divsum.tbl", sep="")
-EMA_subclass <- read_table("data/Entomophaga_maimaiga_var_ARSEF_7190.v1.divsum", skip = 4, comment = "--")
+thresh=0.01
 
-EMA_class_DNA = EMA_class %>%
-  pivot_longer(cols=-Div, names_to="Class", values_to="Count") %>%
-  group_by(Class) %>%
-  dplyr::mutate(Diff = Count-lag(Count, default = 0, order_by = -Div),
-                Genome="EMA") %>%
-  separate(Class, into=c("Type"), extra="drop", remove=F) %>%
-  filter(Type=="DNA" & Count>0)
-
-ZRA_class <- read.csv("data/Zoophthora_radicans_ATCC_208865.v1.divsum.tbl", sep="")
-ZRA_subclass <- read_table("data/Zoophthora_radicans_ATCC_208865.v1.divsum", skip = 4, comment = "--")
-
-ZRA_class_DNA = ZRA_class %>%
-  pivot_longer(cols=-Div, names_to="Class", values_to="Count") %>%
-  group_by(Class) %>%
-  dplyr::mutate(Diff = Count-lag(Count, default = 0, order_by = -Div),
-                Genome="ZRA") %>%
-  separate(Class, into=c("Type"), extra="drop", remove=F) %>%
-  filter(Type=="DNA" & Count>0)
-
-MCI_class <- read.csv("data/Massospora_cicadina_MCPNR19.v3.divsum.tbl", sep="")
-MCI_subclass <- read_table("data/Entomophaga_maimaiga_var_ARSEF_7190.v1.divsum", skip = 4, comment = "--")
-
-MCI_class_DNA = MCI_class %>%
-  pivot_longer(cols=-Div, names_to="Class", values_to="Count") %>%
-  group_by(Class) %>%
-  dplyr::mutate(Diff = Count-lag(Count, default = 0, order_by = -Div),
-                Genome="MCI") %>%
-  separate(Class, into=c("Type"), extra="drop", remove=F) %>%
-  filter(Type=="DNA" & Count>0)
-
-CTH_class <- read.csv("data/Conidiobolus_thromboides_FSU_785.Conth1.v1.divsum.tbl", sep="")
-CTH_subclass <- read_table("data/Conidiobolus_thromboides_FSU_785.Conth1.v1.divsum", skip = 4, comment = "--")
-
-CTH_class_DNA = CTH_class %>%
-  pivot_longer(cols=-Div, names_to="Class", values_to="Count") %>%
-  group_by(Class) %>%
-  dplyr::mutate(Diff = Count-lag(Count, default = 0, order_by = -Div),
-                Genome="CTH") %>%
-  separate(Class, into=c("Type"), extra="drop", remove=F) %>%
-  filter(Type=="DNA" & Count>0)
-
-DNA_comb=bind_rows(EMU_class_DNA, EMA_class_DNA, MCI_class_DNA, ZRA_class_DNA, CTH_class_DNA) %>%
+DNA_comb=class_tbl %>%
+  filter(Type=="DNA" & Count>0) %>%
   arrange(Type, Class) %>%
   group_by(Class, Genome) %>%
   mutate(sm=sum(Count)) %>%
   ungroup() %>%
   mutate(tot=sum(Count), per=sm/tot) %>%
-  mutate(Class=ifelse(per<0.01, "Other", Class))
+  mutate(Class=ifelse(per<thresh, "Other", Class))
 
 plt1=ggplot(DNA_comb, aes(x=Div, y=Count, color=Class))+geom_point(size=1)+geom_line(size=1)+theme+scale_color_viridis_d()+facet_wrap(~Genome)+theme(axis.text.x=element_text(angle=90, size=15))+xlab("Div")
 
