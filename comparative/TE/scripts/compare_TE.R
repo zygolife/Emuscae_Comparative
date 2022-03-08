@@ -50,18 +50,6 @@ TEcounts <- KnownTbl %>% group_by(genomename,superfamily) %>% summarise( total_T
 
 TEcounts
 
-#write_csv(TEcounts,"TE_family_counts.csv")
-
-theme = theme_bw()+theme(text = element_text(size=15), axis.title.x = element_text(size=20), axis.text.x = element_text(size=15), axis.text.y = element_text(size=15), title = element_text(size=20), legend.title = element_text(size=20), legend.text = element_text(size=15), strip.background = element_rect(color="black", fill="white", size=1.5, linetype="solid"))
-
-p<-ggplot(TEcounts3,aes(x=species,y=percent,fill=superfamily)) + theme + geom_bar(position="dodge",stat="identity") + scale_fill_viridis_d() + scale_y_continuous(labels=percent)+ ylab("Percent")+ xlab("")+
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-p
-
-#ggsave("TE_species.pdf",p,width=10,height=12)
-
-# need to fix so if subfamily is "NA" it should get the "superfamily" value - 
-# collapse hAT-XXX to hAT here too if you can 
 TEcounts2 <- KnownTbl %>% mutate(subfamily=replace_na(subfamily,"")) %>%
   separate(subfamily, into=c("subfamily", "type"), sep="-") %>%
   mutate(subfamily=ifelse(subfamily=="", superfamily, subfamily)) %>%
@@ -76,6 +64,14 @@ TEcounts3 <- TEcounts2 %>%
          species=str_replace(species, "Massospora_cicadina_MCPNR19", "MCI"),
          species=str_replace(species, "Zoophthora_radicans_ATCC_208865", "ZRA"),
          species=factor(species, levels=c("EMU", "EMA", "MCI", "ZRA"))) 
+
+
+theme = theme_bw()+theme(text = element_text(size=15), axis.title.x = element_text(size=20), axis.text.x = element_text(size=15), axis.text.y = element_text(size=15), title = element_text(size=20), legend.title = element_text(size=20), legend.text = element_text(size=15), strip.background = element_rect(color="black", fill="white", size=1.5, linetype="solid"))
+
+p<-ggplot(TEcounts3,aes(x=species,y=percent,fill=superfamily)) + theme + geom_bar(position="dodge",stat="identity") + scale_fill_viridis_d() + scale_y_continuous(labels=percent)+ ylab("Percent")+ xlab("")+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+p
+#ggsave("TE_species.pdf",p,width=10,height=12)
 
 #write_csv(TEcounts2,"TE_subfamily_counts.csv")
 p<-ggplot(TEcounts3 %>% filter(superfamily=="DNA",percent>0.001),aes(x=species,y=percent,fill=subfamily))+ theme+ geom_bar(position="dodge",stat="identity") + scale_fill_viridis_d() + scale_y_continuous(labels=percent)+
