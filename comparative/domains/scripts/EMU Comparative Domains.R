@@ -23,7 +23,7 @@ chosen=c("Entomophthora_muscae_UCB.v3", "Entomophaga_maimaiga_ARSEF_7190.v1", "S
 mer.files=data.frame(names=str_replace(list.files("MEROPS/"), ".blasttab", "")) %>%
   filter(names %in% chosen) %>%
   mutate(loc=paste("MEROPS/", names, ".blasttab", sep="")) %>%
-  mutate(source=as.character(1:length(loc)), Genome=as.factor(c("CCO", "CTH", "EMA", "EMU", "PFA", "SCA", "ZRA")))
+  mutate(source=as.character(1:length(loc)), Genome=as.factor(c("CCO", "CTH", "EMA", "EMU", "PFO", "SCA", "ZRA")))
 
 merops.raw=mer.files$loc %>% map_dfr(read.delim, .id="source", header=F) %>%
   left_join(mer.files %>% select(source, Genome)) %>%
@@ -250,7 +250,7 @@ grid.arrange(mer4, mer3, layout_matrix=layout2, widths=c(0.4, 0.6))
 cazy.files=data.frame(names=str_replace(list.files("CAZY/"), ".tsv", "")) %>%
   filter(names %in% chosen) %>%
   mutate(loc=paste("CAZY/", names, ".tsv", sep="")) %>%
-  mutate(source=as.character(1:length(loc)), Genome=as.factor(c("CCO", "CTH", "EMA", "EMU", "PFA", "SCA", "ZRA")))
+  mutate(source=as.character(1:length(loc)), Genome=as.factor(c("CCO", "CTH", "EMA", "EMU", "PFO", "SCA", "ZRA")))
 
 cazy.raw=cazy.files$loc %>% map_dfr(read.delim, .id="source", header=F) %>%
   left_join(cazy.files %>% select(source, Genome)) %>%
@@ -424,7 +424,7 @@ sigp2 = sigp %>%
 pfam.files=data.frame(names=str_replace(list.files("Pfam/"), ".domtbl.gz", "")) %>%
   filter(names %in% chosen) %>%
   mutate(loc=paste("Pfam/", names, ".domtbl.gz", sep="")) %>%
-  mutate(source=as.character(1:length(loc)), Genome=as.factor(c("CCO", "CTH", "EMA", "EMU", "PFA", "SCA", "ZRA")))
+  mutate(source=as.character(1:length(loc)), Genome=as.factor(c("CCO", "CTH", "EMA", "EMU", "PFO", "SCA", "ZRA")))
 
 pfam.raw=pfam.files$loc %>% map_dfr(read_table2, .id="source", comment="#", col_names=F) %>%
   left_join(pfam.files %>% select(source, Genome)) %>%
@@ -448,7 +448,6 @@ sigp.pfam=pfam %>%
          `Not Secreted`=replace_na(`Not Secreted`, 0)) %>%
   group_by(Pfam) %>%
   mutate(Secretion=ifelse(Prediction_n==2, "Both", Predictions)) %>%
-  #select(-n, -Prediction) %>%
   rename("Domain"="Pfam")
 
 sigp.pfam2 = sigp.pfam %>%
@@ -472,7 +471,7 @@ pfam.counts.dom=pfam %>%
   mutate(n_Genomes=n_distinct(Genome), Genomes=toString(unique(Genome))) %>%
   mutate(Method="Domains")
 
-p.fams.combined=bind_rows(pfam.counts.acc, pfam.counts.dom) %>%
+pfams.combined=bind_rows(pfam.counts.acc, pfam.counts.dom) %>%
   select(Genome, Pfam, Count, Method) %>%
   pivot_wider(names_from="Method", values_from="Count")
 
@@ -648,6 +647,93 @@ pfam4=ggplotGrob(pfam.plt4)
 layout2 <- rbind(c(1,2))
 
 grid.arrange(pfam4, pfam3, layout_matrix=layout2, widths=c(0.5, 0.5))
+
+#Transcriptomic Pfam upset
+chosen.t=c(chosen, "Entomophthora_muscae_UCB_Trinity")
+pfam.t.files=data.frame(names=str_replace(list.files("Pfam/"), ".domtbl.gz", "")) %>%
+  filter(names %in% chosen.t) %>%
+  mutate(loc=paste("Pfam/", names, ".domtbl.gz", sep="")) %>%
+  mutate(source=as.character(1:length(loc)), Genome=as.factor(c("CCO", "CTH", "EMA", "EMU-T", "EMU", "PFO", "SCA", "ZRA")))
+
+pfam.t.raw=pfam.t.files$loc %>% map_dfr(read_table2, .id="source", comment="#", col_names=F) %>%
+  left_join(pfam.t.files %>% select(source, Genome)) %>%
+  select(-source)
+
+pfam.t=pfam.t.raw %>%
+  select(X4, X1, Genome) %>%
+  rename(Name=`X1`, Pfam=`X4`) %>%
+  separate(Name, into=c("Strain", "Accession"), sep="\\|")
+
+sigp.t.pfam=pfam.t %>%
+  left_join(sigp2) %>%
+  mutate(Prediction=replace_na(Prediction, "Not Secreted")) %>%
+  group_by(Pfam, Prediction) %>%
+  summarize(Accessions_n=length(unique(Accession)), Accessions=toString(unique(Accession))) %>%
+  group_by(Pfam) %>%
+  mutate(Prediction_n=n_distinct(Prediction), Predictions=toString(unique(Prediction), sep="\n")) %>%
+  pivot_wider(names_from="Prediction", values_from=c("Accessions_n", "Accessions")) %>%
+  rename(Secreted="Accessions_n_Secreted", `Not Secreted`="Accessions_n_Not Secreted") %>%
+  mutate(Secreted=replace_na(Secreted, 0),
+         `Not Secreted`=replace_na(`Not Secreted`, 0)) %>%
+  group_by(Pfam) %>%
+  mutate(Secretion=ifelse(Prediction_n==2, "Both", Predictions)) %>%
+  rename("Domain"="Pfam")
+
+sigp.t.pfam2 = sigp.t.pfam %>%
+  select(Domain, Secretion)
+
+pfam.t.counts.acc=pfam.t %>%
+  group_by(Genome, Pfam) %>%
+  summarize(Count=n_distinct(Accession)) %>%
+  group_by(Genome) %>%
+  mutate(n=sum(Count)) %>%
+  group_by(Pfam) %>%
+  mutate(n_Genomes=n_distinct(Genome), Genomes=toString(unique(Genome))) %>%
+  mutate(Method="Accessions")
+
+pfam.t.counts.dom=pfam.t %>%
+  group_by(Genome, Pfam) %>%
+  summarize(Count=length(Accession)) %>%
+  group_by(Genome) %>%
+  mutate(n=sum(Count)) %>%
+  group_by(Pfam) %>%
+  mutate(n_Genomes=n_distinct(Genome), Genomes=toString(unique(Genome))) %>%
+  mutate(Method="Domains")
+
+pfams.t.combined=bind_rows(pfam.t.counts.acc, pfam.t.counts.dom) %>%
+  select(Genome, Pfam, Count, Method) %>%
+  pivot_wider(names_from="Method", values_from="Count")
+
+pfam.t.genome=pfam.t %>%
+  group_by(Accession, Genome) %>%
+  mutate(n=n_distinct(Pfam))
+
+pfam.t.composition=pfam.t.counts.acc %>%
+  group_by(Genome) %>%
+  summarize(n=sum(n_Genomes), pfams=list(unique(Pfam)))
+
+pfam.t.unique=pfam.t.counts.acc %>%
+  filter(n_Genomes==1) %>%
+  group_by(Genome) %>%
+  summarize(n=n_distinct(Pfam), pfam=list(unique(Pfam)))
+
+pfam.t.dat=pfam.t.counts.acc %>%
+  filter(n_Genomes>1) %>%
+  select(-n_Genomes) 
+
+pfam.t.phylo=levels(as.factor(pfam.t.dat$Genome))[c(1, 2, 6, 7, 3, 8, 4, 5)]
+
+upset.t.dat=pfam.t.composition$pfams
+names(upset.t.dat)=pfam.t.composition$Genome
+
+pfam.t.uplt=upset(fromList(upset.t.dat), sets=pfam.t.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE,
+                  queries = list(list(query = intersects, 
+                                      params = list("EMU-T", "SCA", "PFO"), color = "orange", active = T),
+                                 list(query = intersects, 
+                                      params = list("SCA", "PFO"), color = "blue", active = T)))
+
+pfam.t.uplt
+grid.text("Pfam UpSet Plot",x = 0.65, y=0.95, gp=gpar(fontsize=20))
 
 #Circadian rhythm survey
 circ.pfams=data.frame(Pfam_acc=c("PF00001", "PF09421", "PF00320", "PF08447", "PF13426","PF00989","PF01036","PF10192","PF00875","PF03441","PF00360", "PF01590"), Pfam=c("7tm_1", "FRQ", "GATA", "PAS_3", "PAS_9", "PAS", "Bac_rhodopsin","GpcrRhopsn4","DNA_photolyase","FAD_binding_7", "PHY", "GAF"))
