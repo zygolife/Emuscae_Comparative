@@ -649,3 +649,79 @@ layout2 <- rbind(c(1,2))
 
 grid.arrange(pfam4, pfam3, layout_matrix=layout2, widths=c(0.5, 0.5))
 
+#Circadian rhythm survey
+circ.pfams=data.frame(Pfam_acc=c("PF00001", "PF09421", "PF00320", "PF08447", "PF13426","PF00989","PF01036","PF10192","PF00875","PF03441","PF00360", "PF01590"), Pfam=c("7tm_1", "FRQ", "GATA", "PAS_3", "PAS_9", "PAS", "Bac_rhodopsin","GpcrRhopsn4","DNA_photolyase","FAD_binding_7", "PHY", "GAF"))
+
+circ.pfam.dat=pfam %>%
+  filter(Pfam %in% circ.pfams$Pfam) %>%
+  group_by(Pfam, Genome) %>%
+  summarize(n=length(Accession), Accessions=toString(Accession)) %>%
+  full_join(circ.pfams)
+
+circ.pfam.dat2 = circ.pfam.dat %>%
+  select(-Accessions) %>%
+  pivot_wider(id_cols=c("Pfam", "Pfam_acc"), values_from=n, names_from=Genome) %>%
+  select(-"NA") %>%
+  pivot_longer(cols=c(CCO:ZRA), names_to="Genome", values_to="n") %>%
+  mutate(n=replace_na(n, 0)) %>%
+  mutate(Genome=as.factor(Genome)) %>%
+  mutate(Genome=factor(Genome, levels=levels(Genome)[c(1, 2, 4, 5, 6, 3)]))
+
+circ.pfam.dat3.1=pfam %>%
+  filter(Pfam %in% circ.pfams$Pfam) %>%
+  group_by(Pfam, Genome, Accession) %>%
+  summarize(n=length(Strain)) %>%
+  ungroup() %>%
+  full_join(circ.pfams) %>%
+  pivot_wider(id_cols=c("Genome", "Accession"), names_from="Pfam", values_from="n") %>%
+  drop_na(Genome) %>%
+  mutate(across(where(is.numeric), ~replace_na(.x, 0))) %>%
+  select(-FRQ, -PAS_3, -PAS_9, -`7tm_1`, -GATA)
+
+circ.pfam.dat3.2=pfam %>%
+  filter(Pfam %in% circ.pfams$Pfam) %>%
+  group_by(Pfam, Genome, Accession) %>%
+  summarize(n=length(Strain)) %>%
+  ungroup() %>%
+  full_join(circ.pfams) %>%
+  pivot_wider(id_cols=c("Genome", "Accession"), names_from="Pfam", values_from="n") %>%
+  drop_na(Genome) %>%
+  mutate(across(where(is.numeric), ~replace_na(.x, 0))) %>%
+  mutate(FRQ_2=ifelse(FRQ>0, 1, 0),
+         WC1=ifelse(GATA==1 & PAS_3==1 & PAS_9==1, 1, 0),
+         WC2=ifelse(GATA==1 & PAS_3==1 & PAS_9==0, 1, 0),
+         `7tm_1_2`=ifelse(`7tm_1`==1, 1, 0)) %>%
+  select(Genome, Accession, FRQ_2:`7tm_1_2`) %>%
+  rename("7tm_1"=`7tm_1_2`, "FRQ"=FRQ_2)
+
+circ.pfam.dat.summary = circ.pfam.dat3.2 %>%
+  pivot_longer(cols=FRQ:`7tm_1`, names_to="Candidates", values_to="Count") %>%
+  filter(Count>0) %>%
+  group_by(Genome, Candidates) %>%
+  summarize(n=sum(Count), Accessions=toString(Accession))
+
+circ.pfam.dat4.1 = circ.pfam.dat3.1 %>%
+  pivot_longer(cols=`DNA_photolyase`:PHY, names_to="Candidates", values_to="Count") %>%
+  group_by(Genome, Candidates) %>%
+  summarize(n=sum(Count)) %>%
+  mutate(Genome=as.factor(Genome)) %>%
+  mutate(Genome=factor(Genome, levels=levels(Genome)[c(1, 2, 5, 6, 7, 3, 4)])) %>%
+  mutate(Method="Single Domain")
+
+circ.pfam.dat4.2 = circ.pfam.dat3.2 %>%
+  pivot_longer(cols=FRQ:`7tm_1`, names_to="Candidates", values_to="Count") %>%
+  group_by(Genome, Candidates) %>%
+  summarize(n=sum(Count)) %>%
+  mutate(Genome=as.factor(Genome)) %>%
+  mutate(Genome=factor(Genome, levels=levels(Genome)[c(1, 2, 5, 6, 7, 3, 4)])) %>%
+  mutate(Method="Curated")
+
+circ.pfam.dat4=bind_rows(circ.pfam.dat4.1, circ.pfam.dat4.2)
+
+circ.pfam.dat5 = circ.pfam.dat4 %>%
+  group_by(Candidates, Method) %>%
+  mutate(cand_max=max(n), scaled_n=scale(n), minmax_n=(n-min(n))/(max(n)-min(n)), mean_n=(n-mean(n))/sd(n))
+
+circ.plt=ggplot(circ.pfam.dat5, aes(x=Candidates, y=Genome, fill=scaled_n))+geom_tile(color="white", size=2)+scale_fill_viridis_c(option="D")+theme+labs(fill="Count")+ggtitle("Circadian rhythm candidates")+theme(plot.title = element_text(hjust = 0.5), axis.text.x=element_text(angle=90, vjust=0.5, hjust=1))+geom_text(aes(label=ifelse(n==cand_max & n>0, n, NA)), size=8)+labs(fill="Z-score")+facet_grid(~Method, scales="free_x", space="free")+theme(axis.title.x=element_blank())
+
+circ.plt
