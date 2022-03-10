@@ -6,6 +6,7 @@ library(UpSetR)
 library(ggforestplot)
 library(plotly)
 library(viridis)
+library(ComplexUpset)
 
 ####MEROPS analysis####
 mer.key <- read.delim("../../Comparative_pipeline/lib/merops_lib.families.tab", header=FALSE)
@@ -608,7 +609,7 @@ pfam.plt3=ggplot(Emus.pfam.missing, aes(y=reorder(Domain, rev(cluster)), x=Genom
 
 pfam.plt3
 
-Emus.pfam.unique=pfam.counts %>%
+Emus.pfam.unique=pfam.counts.acc %>%
   filter(Pfam %in% unlist(pfam.unique[pfam.unique$Genome=="EMU",]$pfam))  %>%
   rename("Domain"="Pfam") %>%
   left_join(sigp.pfam2)
@@ -735,7 +736,7 @@ pfam.t.uplt=upset(fromList(upset.t.dat), sets=pfam.t.phylo, mb.ratio = c(0.55, 0
 pfam.t.uplt
 grid.text("Pfam UpSet Plot\nTranscriptomes",x = 0.65, y=0.95, gp=gpar(fontsize=20))
 
-#Circadian rhythm survey
+#####Circadian rhythm survey####
 circ.pfams=data.frame(Pfam_acc=c("PF00001", "PF09421", "PF00320", "PF08447", "PF13426","PF00989","PF01036","PF10192","PF00875","PF03441","PF00360", "PF01590"), Pfam=c("7tm_1", "FRQ", "GATA", "PAS_3", "PAS_9", "PAS", "Bac_rhodopsin","GpcrRhopsn4","DNA_photolyase","FAD_binding_7", "PHY", "GAF"))
 
 circ.pfam.dat=pfam %>%
@@ -811,3 +812,66 @@ circ.pfam.dat5 = circ.pfam.dat4 %>%
 circ.plt=ggplot(circ.pfam.dat5, aes(x=Candidates, y=Genome, fill=scaled_n))+geom_tile(color="white", size=2)+scale_fill_viridis_c(option="D")+theme+labs(fill="Count")+ggtitle("Circadian rhythm candidates")+theme(plot.title = element_text(hjust = 0.5), axis.text.x=element_text(angle=90, vjust=0.5, hjust=1))+geom_text(aes(label=ifelse(n==cand_max & n>0, n, NA)), size=8)+labs(fill="Z-score")+facet_grid(~Method, scales="free_x", space="free")+theme(axis.title.x=element_blank())
 
 circ.plt
+
+####Combined plots####
+up.pfam.counts=pfam.counts.acc %>%
+  select(Genome, Pfam) %>%
+  distinct %>%
+  mutate(count=1) %>%
+  pivot_wider(names_from=Genome, values_from=count) %>%
+  rename(Domain=Pfam) %>%
+  mutate(Method="Pfam")
+
+up.cazy.counts=cazy.counts %>%
+  select(Genome, CAZY) %>%
+  distinct %>%
+  mutate(count=1) %>%
+  pivot_wider(names_from=Genome, values_from=count) %>%
+  rename(Domain=CAZY) %>%
+  mutate(Method="CAZY")
+
+up.merops.counts=merops.counts %>%
+  select(Genome, MERNUM) %>%
+  distinct %>%
+  mutate(count=1) %>%
+  pivot_wider(names_from=Genome, values_from=count) %>%
+  rename(Domain=MERNUM) %>%
+  mutate(Method="MEROPS")
+
+comb.counts=bind_rows(up.pfam.counts, up.cazy.counts, up.merops.counts)
+
+upset(
+  comb.counts,
+  pfam.phylo,
+  base_annotations=list(
+    'Intersection size'=intersection_size(
+      counts=F,
+      mapping=aes(fill=Method)
+    )+scale_fill_viridis_d(option="H")+
+      theme(text=element_text(size=20), legend.position = c(0.7, 0.7))
+  ),
+  set_sizes=(
+    upset_set_size()
+  ),
+  min_size=10,
+  width_ratio=0.1,
+  sort_sets=F
+)+
+  theme(text=element_text(size=20))+xlab("Intersections")
+
+unique.comb=bind_rows((Emus.pfam.unique %>% mutate(Method="Pfam")),
+                      (Emus.merops.unique %>% mutate(Method="MEROPS")),
+                      (Emus.cazy.unique %>% rename(Domain=CAZY) %>% mutate(Method="CAZY")))
+
+comb.unique.plt=ggplot(unique.comb, aes(x=Domain, y=Count, fill=Method))+geom_col()+scale_fill_viridis_d(option="H")+
+  theme+theme(axis.text.y = element_text(size=10))+xlab("")+scale_x_discrete()+coord_flip()+ggtitle("Unique to EMU")+theme(plot.title = element_text(hjust = 0.5), legend.position="none")+labs(fill="Peptidase\ntype")+facet_grid(Method~., scales = "free", space="free")
+
+comb.unique.plt
+
+missing.comb=bind_rows((Emus.merops.missing %>% mutate(Method="MEROPS")),
+                       (Emus.cazy.missing %>% mutate(Method="CAZY")))
+
+missing.comb.plt=ggplot(missing.comb, aes(y=Domain, x=Genome, color=Direction, size=as.factor(sig_n)))+geom_point(alpha=0.8)+
+  theme+theme(axis.text.x = element_text(size=15, angle = 90, vjust=0.5, hjust=0.95))+theme(axis.text.y=element_text(size=8))+theme(legend.position="right")+xlab("Genome")+scale_color_manual(values=c("#127852", "#8B8588", "#FF0000"))+labs(size="Significant\nDifferences")+geom_stripes(inherit.aes=F, aes(y=Domain), odd ="#33333333", even = "#00000000")+scale_x_discrete(limits = rev(pfam.phylo))+ylab("Domain")+theme(axis.title=element_blank())+ggtitle("Missing from EMU")+theme(plot.title = element_text(hjust = 0.5))+guides(color = guide_legend(override.aes = list(size=3), order=1))+labs(color="Direction vs.\nmedian")+facet_grid(Method~., scales="free", space="free")
+
+missing.comb.plt
