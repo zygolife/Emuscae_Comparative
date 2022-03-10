@@ -1,0 +1,257 @@
+library(tidyverse)
+library(fmsb)
+library(grid)
+library(gridExtra)
+library(UpSetR)
+library(ggforestplot)
+library(plotly)
+library(viridis)
+
+####MEROPS analysis####
+mer.key <- read.delim("../../Comparative_pipeline/lib/merops_lib.families.tab", header=FALSE)
+
+mer.key2 = mer.key %>%
+  rename(`MERNUM`="V1", `Family`="V2", `Accession`="V3") %>%
+  mutate(Type=str_sub(Family, 1, 1), Category=str_sub(Family, 2), Subfamily=str_extract_all(Category, "[aA-zZ]+", )) %>%
+  mutate(Subfamily=modify_if(Subfamily, ~ length(.) == 0, 
+                             ~ "None"), Strict_family=ifelse(Subfamily=="None",
+                                                             Category, str_sub(Category, 1, -2L))) %>%
+  mutate(Strict_family=str_c(Type, Strict_family))
+
+chosen=c("Entomophthora_muscae_UCB.v3", "Entomophaga_maimaiga_ARSEF_7190.v1", "Strongwellsea_castrans_DrSc_Trinity", "Zoophthora_radicans_ATCC_208865", "Pandora_formicae_Trinity", "Conidiobolus_thromboides__ARSEF_4968", "Conidiobolus_coronatus_NRRL_28638.Conco1.v1")
+
+mer.files=data.frame(names=str_replace(list.files("MEROPS/"), ".blasttab", "")) %>%
+  filter(names %in% chosen) %>%
+  mutate(loc=paste("MEROPS/", names, ".blasttab", sep="")) %>%
+  mutate(source=as.character(1:length(loc)), Genome=as.factor(c("CCO", "CTH", "EMA", "EMU", "PFA", "SCA", "ZRA")))
+
+merops.raw=mer.files$loc %>% map_dfr(read.delim, .id="source", header=F) %>%
+  left_join(mer.files %>% select(source, Genome)) %>%
+  select(-source)
+
+merops=merops.raw %>%
+  select(V1, V2, Genome) %>%
+  rename(Name=`V1`, MERNUM=`V2`) %>%
+  separate(Name, into=c("Strain", "Accession"), sep="\\|")
+
+merops.counts=merops %>%
+  mutate(Genome=recode(Genome,"Entomophthora_muscae_UCB.v3"="EMU",
+                       "Entomophaga_maimaiga_ARSEF_7190.v1"="EMA",
+                       "Strongwellsea_castrans_DrSc_Trinity"="SCA",
+                       "Pandora_formicae_Trinity"="PFO",
+                       "Zoophthora_radicans_ATCC_208865"="ZRA",
+                       "Conidiobolus_thromboides__ARSEF_4968"="CTH",
+                       "Conidiobolus_coronatus_NRRL_28638.Conco1.v1"="CCO")) %>%
+  group_by(Genome, MERNUM) %>%
+  summarize(Count=n_distinct(Accession)) %>%
+  group_by(Genome) %>%
+  mutate(n=sum(Count)) %>%
+  group_by(MERNUM) %>%
+  mutate(n_Genomes=length(unique(Genome)), Genomes=toString(unique(Genome))) %>%
+  left_join(mer.key2)
+
+merops.composition=merops.counts %>%
+  group_by(Genome) %>%
+  summarize(n=sum(n_Genomes), MEROPSs=list(unique(MERNUM)), Families=list(unique(Family)))
+
+merops.unique=merops.counts %>%
+  filter(n_Genomes==1) %>%
+  group_by(Genome) %>%
+  summarize(n=n_distinct(MERNUM), MEROPS=list(unique(MERNUM)), Families=list(unique(Family)))
+
+merops.family=merops.counts %>%
+  group_by()
+
+merops.dat=merops.counts %>%
+  filter(n_Genomes>1) %>%
+  select(-n_Genomes)
+
+mer.phylo=levels(as.factor(merops.dat$Genome))[c(1, 2, 5, 6, 7, 3, 4)]
+
+upset.dat=merops.composition$MEROPSs
+names(upset.dat)=merops.composition$Genome
+
+mer.uplt=upset(fromList(upset.dat), sets=mer.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE)
+
+mer.uplt
+
+grid.text("MEROPS UpSet Plot", x = 0.65, y=0.95, gp=gpar(fontsize=20))
+
+#MEROPS enrichment
+#Enrichment function
+enrich = function(dat, var='DOMAIN', group="Genome", thresh=0.01){
+  out=data.frame()
+  vars=unique(dat[[var]])
+  len=length(vars)
+  for(i in 1:len){
+    sub=vars[i]
+    #print(sub)
+    tmp=dat[dat[[var]]==sub,]
+    Ct=tmp$Count
+    num=tmp$n
+    names(Ct)=tmp[[group]]
+    test=broom::tidy(pairwise.fisher.test(Ct, num, p.adjust.method="bonferroni"))
+    if(dim(test)[1]>0){
+      test2=data.frame(test) %>%
+        filter(p.value<thresh) %>%
+        mutate(Domain=sub)}else(test2=NA)
+    out=rbind(out, test2)
+  }
+  return(out)
+}
+
+merops.res=enrich(merops.dat, var="MERNUM", group="Genome")
+
+merops.res2 = merops.res %>%
+  group_by(group1, group2) %>%
+  summarize(Domains=toString(Domain)) %>%
+  pivot_wider(id_cols=group1, names_from=group2, values_from=Domains)
+
+merops.res3=merops.res2[match(rev(mer.phylo), merops.res2$group1),]
+
+res4=merops.res3[,match(c("group1", intersect(rev(mer.phylo), colnames(merops.res3))), colnames(merops.res3)),]
+
+merops.res.stat=data.frame(Genome=c(merops.res$group1, merops.res$group2), Domain=c(merops.res$Domain, merops.res$Domain)) %>%
+  group_by(Genome, Domain) %>%
+  summarize(sig_n=length(Domain))
+
+merops.meta=merops.dat %>%
+  select(MERNUM, Genome, Count) %>%
+  rename(Domain="MERNUM") %>%
+  group_by(Domain) %>%
+  mutate(avg=median(Count), Fold=ifelse((Count+avg)>0, Count/avg, 0),
+         Direction=ifelse(Fold>1 | Fold==Inf, "Up", ifelse(Fold==1 | Fold==0, ifelse(Count<avg, "Down", "Equal"), "Down"))) %>%
+  mutate(Fold=ifelse(Direction=="Down", 1/Fold, Fold))
+
+merops.res.stat.meta=left_join(merops.res.stat, merops.meta)
+
+merops.res.stat.meta$Genome=as.factor(merops.res.stat.meta$Genome)
+
+#MEROPS clustering
+merops.dist=merops.res.stat.meta %>%
+  select(Domain, Genome, sig_n) %>%
+  pivot_wider(id_cols="Domain", values_from=sig_n, names_from=Genome) %>% 
+  mutate(
+    across(where(is.numeric), ~replace_na(.x, 0))
+  )
+
+merops.dist2=as.matrix(merops.dist[2:length(merops.dist)])
+names(merops.dist2)=merops.dist$Domain
+
+merops.hclust=hclust(d = dist(merops.dist2))
+
+merops.hclust2 <- data.frame(Domain=names(merops.dist2),
+                             cluster=cutree(merops.hclust, length(merops.dist$Domain)))
+
+merops.clust=left_join(merops.res.stat.meta, merops.hclust2)
+
+merops.clust$Genome=as.factor(merops.clust$Genome)
+merops.clust$Genome=factor(merops.clust$Genome, levels=levels(merops.clust$Genome)[match(mer.phylo, levels(merops.clust$Genome))])
+
+merops.list = unique(subset(merops.res.stat.meta, merops.res.stat.meta$Genome=="EMU")$Domain)
+
+Emus.merops.stat=merops.clust %>%
+  filter(Domain %in% merops.list) %>%
+  filter(Genome=="EMU") %>%
+  ungroup() %>%
+  select(Domain, Direction) %>%
+  distinct() %>%
+  rename("Emus.status"="Direction") %>%
+  mutate(Emus.status=as.factor(Emus.status))
+
+Emus.merops.clust=merops.clust %>%
+  left_join(Emus.merops.stat) %>%
+  mutate(Emus.status=as.character(Emus.status)) %>%
+  mutate(Emus.status=replace_na(Emus.status, "Missing")) %>%
+  filter(Emus.status!="Equal" & Emus.status!="Missing") %>%
+  rename(`MERNUM`="Domain") %>%
+  left_join(mer.key2) %>%
+  rename(`Domain`="MERNUM") %>% 
+  mutate(Direction=as.factor(Direction)) %>%
+  mutate(Direction=factor(Direction, levels=levels(Direction)[c(3, 2, 1)]))
+
+#MEROPS visualization
+theme = theme_bw()+theme(text = element_text(size=15), axis.title.x = element_text(size=20), axis.text.x = element_text(size=15), axis.text.y = element_text(size=15), title = element_text(size=20), legend.title = element_text(size=20), legend.text = element_text(size=15), strip.background = element_rect(color="black", fill="white", size=1.5, linetype="solid"))
+
+mer.dwn=ggplot(subset(Emus.merops.clust, Emus.status=="Down"), aes(y=reorder(Domain, cluster), x=Genome, color=Direction, size=as.factor(sig_n)))+geom_point(alpha=0.8)+
+  theme+geom_stripes(inherit.aes=F, aes(y=reorder(Domain, cluster)), odd = "#33333333", even = "#00000000")+theme(axis.text.x = element_text(angle = 90, vjust=0.5, hjust=0.95))+
+  theme(axis.text.y=element_text(size=15), axis.text.x=element_text(size=15))+theme(legend.position="right")+ylab("MERNUM")+facet_grid(~Type, scales="free_x", space="free_x")+scale_color_manual(values=c("#127852", "#FF0000"))+
+  labs(color="Direction\nvs. median", size="Significant\nDifferences")+coord_flip()+guides(color = guide_legend(override.aes = list(size=3), order=1))
+
+mer.dwn
+
+mer.up=ggplot(subset(Emus.merops.clust, Emus.status=="Up"), aes(y=reorder(Domain, cluster), x=Genome, color=Direction, size=sig_n))+geom_point(alpha=0.8)+
+  theme+geom_stripes(inherit.aes=F, aes(y=reorder(Domain, cluster)), odd = "#33333333", even = "#00000000")+theme(axis.text.x = element_text(angle = 90, vjust=0.5, hjust=0.95))+
+  theme(axis.text.y=element_text(size=15), axis.text.x=element_text(size=10))+theme(legend.position="right")+ylab("MERNUM")+facet_grid(~Type, scales="free_x", space="free_x")+scale_color_manual(values=c("#127852", "#8B8588", "#FF0000"))+labs(color="Direction\nvs. median", size="Significant\nDifferences")+coord_flip()+guides(color = guide_legend(override.aes = list(size=3), order=1))
+
+mer.up
+
+mer.dwn2=ggplot(subset(Emus.merops.clust, Emus.status=="Down" & Genome=="EMU"), aes(x=Count, y=reorder(Domain, cluster), fill=Fold))+geom_col()+
+  theme+geom_stripes(odd = "#33333333", even = "#00000000")+
+  theme(axis.text.y=element_text(size=15), axis.text.x=element_blank(), axis.title.x=element_blank(), axis.ticks.x = element_blank())+theme(legend.position="right")+xlab("Count for EMU only")+facet_grid(~Type, scales="free_x", space="free_x")+coord_flip()+labs(fill="Fold vs.\nmedian")+scale_fill_viridis_c()+ggtitle("MEROPS Down in EMU compared to median")+theme(plot.title = element_text(hjust = 0.5))
+
+mer.dwn2
+
+mer.up2=ggplot(subset(Emus.merops.clust, Emus.status=="Up" & Genome=="EMU"), aes(x=Count, y=reorder(Domain, cluster), fill=Fold))+geom_col()+
+  theme+geom_stripes(odd = "#33333333", even = "#00000000")+
+  theme(axis.text.y=element_text(size=10), axis.text.x=element_blank(), axis.title.x=element_blank(), axis.ticks.x = element_blank())+theme(legend.position="right")+xlab("Count for EMU only")+facet_grid(~Type, scales="free_x", space="free_x")+coord_flip()+labs(fill="Fold vs.\nmedian")+scale_fill_viridis_c()+ggtitle("MEROPS Up in EMU compared to median")+theme(plot.title = element_text(hjust = 0.5))
+
+mer.up2
+
+Emus.merops.missing=merops.clust %>%
+  left_join(Emus.merops.stat) %>%
+  mutate(Emus.status=as.character(Emus.status)) %>%
+  mutate(Emus.status=replace_na(Emus.status, "Missing from EMU")) %>%
+  filter(Emus.status=="Missing from EMU") %>%
+  rename("MERNUM"="Domain") %>%
+  left_join(mer.key2) %>%
+  rename("Domain"="MERNUM") %>%
+  mutate(Direction=as.factor(Direction)) %>%
+  mutate(Direction=factor(Direction, levels=levels(Direction)[c(2, 3, 1)]))
+
+mer.plt3=ggplot(Emus.merops.missing, aes(y=reorder(Domain, rev(cluster)), x=Genome, color=Direction, size=sig_n))+geom_point(alpha=0.8)+
+  theme+theme(axis.text.x = element_text(size=15, angle = 90, vjust=0.5, hjust=0.95))+theme(axis.text.y=element_text(size=15))+theme(legend.position="right")+xlab("")+facet_grid(rows="Type", scales="free", space="free")+scale_color_manual(values=c("#127852", "#8B8588", "#FF0000"))+labs(size="Significant\nDifferences")+geom_stripes(inherit.aes=F, aes(y=reorder(Domain, rev(cluster))), odd ="#33333333", even = "#00000000")+scale_x_discrete(limits = rev(mer.phylo))+ylab("MERNUM")+ggtitle("Missing from EMU")+theme(plot.title = element_text(hjust = 0.5))+guides(color = guide_legend(override.aes = list(size=3), order=1))+labs(color="Direction vs.\nmedian")
+
+mer.plt3
+
+Emus.merops.unique=merops.counts %>%
+  filter(MERNUM %in% unlist(merops.unique[merops.unique$Genome=="EMU",]$MEROPS))  %>%
+  left_join(mer.key2) %>%
+  rename("Domain"="MERNUM")
+
+mer.plt4=ggplot(Emus.merops.unique, aes(x=Domain, y=Count, fill=Type))+geom_col()+scale_fill_viridis_d()+
+  theme+theme(axis.text.x = element_text(angle = 90, vjust=0.5))+xlab("MERNUM")+scale_x_discrete(limits = rev(Emus.merops.unique$Domain))+coord_flip()+ggtitle("Unique to EMU")+theme(plot.title = element_text(hjust = 0.5), legend.position="bottom")+labs(fill="Peptidase\ntype")
+
+mer.plt4
+
+mer.dwn.1=ggplotGrob(mer.dwn)
+mer.dwn.2=ggplotGrob(mer.dwn2)
+
+maxWidth <- unit.pmax(mer.dwn.1$widths, mer.dwn.2$widths)
+
+mer.dwn.1$widths= maxWidth
+mer.dwn.2$widths= maxWidth
+
+layout1 <- rbind(c(2),
+                 c(1))
+
+grid.arrange(mer.dwn.1, mer.dwn.2, layout_matrix=layout1, heights=c(0.4, 0.6))
+
+mer.up.1=ggplotGrob(mer.up)
+mer.up.2=ggplotGrob(mer.up2)
+
+maxWidth <- unit.pmax(mer.up.1$widths, mer.up.2$widths)
+
+mer.up.1$widths= maxWidth
+mer.up.2$widths= maxWidth
+
+grid.arrange(mer.up.1, mer.up.2, layout_matrix=layout1, heights=c(0.4, 0.6))
+
+mer3=ggplotGrob(mer.plt3)
+mer4=ggplotGrob(mer.plt4)
+
+layout2 <- rbind(c(1,2))
+
+grid.arrange(mer4, mer3, layout_matrix=layout2, widths=c(0.4, 0.6))
+
+
