@@ -409,6 +409,243 @@ cazy.4=ggplotGrob(cazy.plt4)
 
 grid.arrange(cazy.4, cazy.3, layout_matrix=layout2, widths=c(0.4, 0.6))
 
+####Pfam analysis####
+sigp <- read.table("~/Documents/GitHub/E_muscae_berkeley/comparative/domains/CAZY/Entomophthora_muscae_UCB.v3.run_dbcan/signalp.out", quote="\"", comment.char="")
 
+#Combining noTm/TM results
+sigp2 = sigp %>%
+  select(V1, V12) %>%
+  rename(`Name`="V1", `Method`="V12") %>%
+  separate(Name, into=c("Strain", "Accession"), sep="\\|") %>%
+  select(-Strain, -Method) %>%
+  mutate(Prediction="Secreted") %>%
+  distinct()
 
+pfam.files=data.frame(names=str_replace(list.files("Pfam/"), ".domtbl.gz", "")) %>%
+  filter(names %in% chosen) %>%
+  mutate(loc=paste("Pfam/", names, ".domtbl.gz", sep="")) %>%
+  mutate(source=as.character(1:length(loc)), Genome=as.factor(c("CCO", "CTH", "EMA", "EMU", "PFA", "SCA", "ZRA")))
+
+pfam.raw=pfam.files$loc %>% map_dfr(read_table2, .id="source", comment="#", col_names=F) %>%
+  left_join(pfam.files %>% select(source, Genome)) %>%
+  select(-source)
+
+pfam=pfam.raw %>%
+  select(X4, X1, Genome) %>%
+  rename(Name=`X1`, Pfam=`X4`) %>%
+  separate(Name, into=c("Strain", "Accession"), sep="\\|")
+
+sigp.pfam=pfam %>%
+  left_join(sigp2) %>%
+  mutate(Prediction=replace_na(Prediction, "Not Secreted")) %>%
+  group_by(Pfam, Prediction) %>%
+  summarize(Accessions_n=length(unique(Accession)), Accessions=toString(unique(Accession))) %>%
+  group_by(Pfam) %>%
+  mutate(Prediction_n=n_distinct(Prediction), Predictions=toString(unique(Prediction), sep="\n")) %>%
+  pivot_wider(names_from="Prediction", values_from=c("Accessions_n", "Accessions")) %>%
+  rename(Secreted="Accessions_n_Secreted", `Not Secreted`="Accessions_n_Not Secreted") %>%
+  mutate(Secreted=replace_na(Secreted, 0),
+         `Not Secreted`=replace_na(`Not Secreted`, 0)) %>%
+  group_by(Pfam) %>%
+  mutate(Secretion=ifelse(Prediction_n==2, "Both", Predictions)) %>%
+  #select(-n, -Prediction) %>%
+  rename("Domain"="Pfam")
+
+sigp.pfam2 = sigp.pfam %>%
+  select(Domain, Secretion)
+
+pfam.counts.acc=pfam %>%
+  group_by(Genome, Pfam) %>%
+  summarize(Count=n_distinct(Accession)) %>%
+  group_by(Genome) %>%
+  mutate(n=sum(Count)) %>%
+  group_by(Pfam) %>%
+  mutate(n_Genomes=n_distinct(Genome), Genomes=toString(unique(Genome))) %>%
+  mutate(Method="Accessions")
+
+pfam.counts.dom=pfam %>%
+  group_by(Genome, Pfam) %>%
+  summarize(Count=length(Accession)) %>%
+  group_by(Genome) %>%
+  mutate(n=sum(Count)) %>%
+  group_by(Pfam) %>%
+  mutate(n_Genomes=n_distinct(Genome), Genomes=toString(unique(Genome))) %>%
+  mutate(Method="Domains")
+
+p.fams.combined=bind_rows(pfam.counts.acc, pfam.counts.dom) %>%
+  select(Genome, Pfam, Count, Method) %>%
+  pivot_wider(names_from="Method", values_from="Count")
+
+pfam.genome=pfam %>%
+  group_by(Accession, Genome) %>%
+  mutate(n=n_distinct(Pfam))
+
+pfam.composition=pfam.counts.acc %>%
+  group_by(Genome) %>%
+  summarize(n=sum(n_Genomes), pfams=list(unique(Pfam)))
+
+pfam.unique=pfam.counts.acc %>%
+  filter(n_Genomes==1) %>%
+  group_by(Genome) %>%
+  summarize(n=n_distinct(Pfam), pfam=list(unique(Pfam)))
+
+pfam.dat=pfam.counts.acc %>%
+  filter(n_Genomes>1) %>%
+  select(-n_Genomes) 
+
+pfam.phylo=levels(as.factor(pfam.dat$Genome))[c(1, 2, 5, 6, 7, 3, 4)]
+
+upset.dat=pfam.composition$pfams
+names(upset.dat)=pfam.composition$Genome
+
+pfam.uplt=upset(fromList(upset.dat), sets=pfam.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE)
+
+pfam.uplt
+grid.text("Pfam UpSet Plot",x = 0.65, y=0.95, gp=gpar(fontsize=20))
+
+#Pfam enrichment
+pfam.res=enrich(pfam.dat, var="Pfam", group="Genome")
+
+pfam.res2 = pfam.res %>%
+  group_by(group1, group2) %>%
+  summarize(Domains=toString(Domain)) %>%
+  pivot_wider(id_cols=group1, names_from=group2, values_from=Domains)
+
+pfam.res3=pfam.res2[match(rev(pfam.phylo), pfam.res2$group1),] %>%
+  drop_na(group1)
+
+pfam.res4=pfam.res3[,match(c("group1", intersect(rev(pfam.phylo), colnames(pfam.res3))), colnames(pfam.res3)),]
+
+pfam.res.stat=data.frame(Genome=c(pfam.res$group1, pfam.res$group2), Domain=c(pfam.res$Domain, pfam.res$Domain)) %>%
+  group_by(Genome, Domain) %>%
+  summarize(sig_n=length(Domain))
+
+pfam.meta=pfam.dat %>%
+  select(Pfam, Genome, Count) %>%
+  rename(Domain="Pfam") %>%
+  group_by(Domain) %>%
+  mutate(avg=median(Count), Fold=ifelse((Count+avg)>0, Count/avg, 0),
+         Direction=ifelse(Fold>1 | Fold==Inf, "Up", ifelse(Fold==1 | Fold==0, ifelse(Count<avg, "Down", "Equal"), "Down"))) %>%
+  mutate(Fold=ifelse(Direction=="Down", 1/Fold, Fold))
+
+pfam.res.stat.meta=inner_join(pfam.res.stat, pfam.meta)
+
+pfam.res.stat.meta$Genome=as.factor(pfam.res.stat.meta$Genome)
+
+#Pfam clustering
+pfam.dist=pfam.res.stat.meta %>%
+  select(Domain, Genome, sig_n) %>%
+  pivot_wider(id_cols="Domain", values_from=sig_n, names_from=Genome) %>% mutate(
+    across(where(is.numeric), ~replace_na(.x, 0))
+  )
+
+pfam.dist2=as.matrix(pfam.dist[2:length(pfam.dist)])
+names(pfam.dist2)=pfam.dist$Domain
+
+pfam.hclust=hclust(d = dist(pfam.dist2))
+
+pfam.hclust2 <- data.frame(Domain=names(pfam.dist2),
+                           cluster=cutree(pfam.hclust, length(pfam.dist$Domain)))
+
+pfam.clust=left_join(pfam.res.stat.meta, pfam.hclust2)
+
+pfam.clust$Genome=as.factor(pfam.clust$Genome)
+pfam.clust$Genome=factor(pfam.clust$Genome, levels=levels(pfam.clust$Genome)[match(pfam.phylo, levels(pfam.clust$Genome))])
+
+pfam.list = unique(subset(pfam.res.stat.meta, pfam.res.stat.meta$Genome=="EMU")$Domain)
+
+Emus.pfam.stat=pfam.clust %>%
+  filter(Domain %in% pfam.list) %>%
+  filter(Genome=="EMU") %>%
+  ungroup() %>%
+  select(Domain, Direction) %>%
+  distinct() %>%
+  rename("Emus.status"="Direction")
+
+Emus.pfam.clust=pfam.clust %>%
+  left_join(Emus.pfam.stat) %>%
+  mutate(Emus.status=replace_na(Emus.status, "Missing")) %>%
+  filter(Emus.status!="Equal" & Emus.status!="Missing") %>%
+  mutate(Direction=as.factor(Direction)) %>%
+  mutate(Direction=factor(Direction, levels=levels(Direction)[c(3, 2, 1)])) %>%
+  left_join(sigp.pfam2)
+
+#Pfam visualization
+pfam.dwn=ggplot(subset(Emus.pfam.clust, Emus.status=="Down"), aes(y=reorder(Domain, cluster), x=Genome, color=Direction, size=sig_n))+geom_point(alpha=0.8)+
+  theme+geom_stripes(inherit.aes=F, aes(y=reorder(Domain, cluster)), odd = "#33333333", even = "#00000000")+theme(axis.text.x = element_text(angle = 90, vjust=0.5, hjust=0.95))+
+  theme(axis.text.y=element_text(size=15), axis.text.x=element_text(size=15))+theme(legend.position="right")+ylab("Pfam")+facet_grid(~Secretion, scales="free_x", space="free_x")+scale_color_manual(values=c("#127852", "#8B8588", "#FF0000"))+labs(color="Direction\nvs. median", size="Significant\nDifferences")+coord_flip()+guides(color = guide_legend(override.aes = list(size=3), order=1))
+
+pfam.dwn
+
+pfam.up=ggplot(subset(Emus.pfam.clust, Emus.status=="Up"), aes(y=reorder(Domain, cluster), x=Genome, color=Direction, size=sig_n))+geom_point(alpha=0.8)+
+  theme+geom_stripes(inherit.aes=F, aes(y=reorder(Domain, cluster)), odd = "#33333333", even = "#00000000")+theme(axis.text.x = element_text(angle = 90, vjust=0.5, hjust=0.95))+
+  theme(axis.text.y=element_text(size=15), axis.text.x=element_text(size=8))+theme(legend.position="right")+ylab("Pfam")+facet_grid(~Secretion, scales="free_x", space="free_x")+scale_color_manual(values=c("#127852", "#8B8588", "#FF0000"))+labs(color="Direction\nvs. median", size="Significant\nDifferences")+coord_flip()+guides(color = guide_legend(override.aes = list(size=3), order=1))
+
+pfam.up
+
+pfam.dwn2=ggplot(subset(Emus.pfam.clust, Emus.status=="Down" & Genome=="EMU"), aes(x=Count, y=reorder(Domain, cluster), fill=Fold))+geom_col()+
+  theme+geom_stripes(odd = "#33333333", even = "#00000000")+
+  theme(axis.text.y=element_text(size=15), axis.text.x=element_blank(), axis.title.x=element_blank(), axis.ticks.x = element_blank())+theme(legend.position="right")+xlab("Count for EMU only")+facet_grid(~Secretion, scales="free_x", space="free_x")+coord_flip()+labs(fill="Fold vs.\nmedian")+scale_fill_viridis_c()+ggtitle("Pfam Down in EMU compared to median")+theme(plot.title = element_text(hjust = 0.5))
+
+pfam.dwn2
+
+pfam.up2=ggplot(subset(Emus.pfam.clust, Emus.status=="Up" & Genome=="EMU"), aes(x=Count, y=reorder(Domain, cluster), fill=Fold))+geom_col()+
+  theme+geom_stripes(odd = "#33333333", even = "#00000000")+
+  theme(axis.text.y=element_text(size=10), axis.text.x=element_blank(), axis.title.x=element_blank(), axis.ticks.x = element_blank())+theme(legend.position="right")+xlab("Count for EMU only")+facet_grid(~Secretion, scales="free_x", space="free_x")+coord_flip()+labs(fill="Fold vs.\nmedian")+scale_fill_viridis_c()+ggtitle("Pfam Up in EMU compared to median")+theme(plot.title = element_text(hjust = 0.5))
+
+pfam.up2
+
+Emus.pfam.missing=pfam.clust %>%
+  left_join(Emus.pfam.stat) %>%
+  mutate(Emus.status=as.character(Emus.status)) %>%
+  mutate(Emus.status=replace_na(Emus.status, "Missing from EMU")) %>%
+  filter(Emus.status=="Missing from EMU") %>%
+  mutate(Direction=as.factor(Direction)) %>%
+  mutate(Direction=factor(Direction, levels=levels(Direction)[c(3, 2, 1)])) %>%
+  left_join(sigp.pfam2)
+
+pfam.plt3=ggplot(Emus.pfam.missing, aes(y=reorder(Domain, rev(cluster)), x=Genome, color=Direction, size=as.factor(sig_n)))+geom_point(alpha=0.8)+
+  theme+theme(axis.text.x = element_text(size=15, angle = 90, vjust=0.5, hjust=0.95))+theme(axis.text.y=element_text(size=9))+theme(legend.position="right")+xlab("Genome")+scale_color_manual(values=c("#127852", "#8B8588", "#FF0000"))+labs(size="Significant\nDifferences")+geom_stripes(inherit.aes=F, aes(y=reorder(Domain, rev(cluster))), odd ="#33333333", even = "#00000000")+scale_x_discrete(limits = rev(pfam.phylo))+ylab("Pfam")+ggtitle("Missing from EMU")+theme(plot.title = element_text(hjust = 0.5))+guides(color = guide_legend(override.aes = list(size=3), order=1))+labs(color="Direction vs.\nmedian")
+
+pfam.plt3
+
+Emus.pfam.unique=pfam.counts %>%
+  filter(Pfam %in% unlist(pfam.unique[pfam.unique$Genome=="EMU",]$pfam))  %>%
+  rename("Domain"="Pfam") %>%
+  left_join(sigp.pfam2)
+
+pfam.plt4=ggplot(Emus.pfam.unique, aes(x=Domain, y=Count, fill=Secretion))+geom_col()+scale_fill_viridis_d()+
+  theme+theme(axis.text.x = element_text(angle = 90, vjust=0.5))+xlab("Pfam")+scale_x_discrete(limits = rev(Emus.pfam.unique$Domain))+coord_flip()+ggtitle("Unique to EMU")+theme(plot.title = element_text(hjust = 0.5), legend.position="bottom")+labs(fill="Prediction")
+
+pfam.plt4
+
+pfam.dwn.1=ggplotGrob(pfam.dwn)
+pfam.dwn.2=ggplotGrob(pfam.dwn2)
+
+maxWidth <- unit.pmax(pfam.dwn.1$widths, pfam.dwn.2$widths)
+
+pfam.dwn.1$widths= maxWidth
+pfam.dwn.2$widths= maxWidth
+
+layout1 <- rbind(c(2),
+                 c(1))
+
+grid.arrange(pfam.dwn.1, pfam.dwn.2, layout_matrix=layout1, heights=c(0.4, 0.6))
+
+pfam.up.1=ggplotGrob(pfam.up)
+pfam.up.2=ggplotGrob(pfam.up2)
+
+maxWidth <- unit.pmax(pfam.up.1$widths, pfam.up.2$widths)
+
+pfam.up.1$widths= maxWidth
+pfam.up.2$widths= maxWidth
+
+grid.arrange(pfam.up.1, pfam.up.2, layout_matrix=layout1, heights=c(0.4, 0.6))
+
+pfam3=ggplotGrob(pfam.plt3)
+pfam4=ggplotGrob(pfam.plt4)
+
+layout2 <- rbind(c(1,2))
+
+grid.arrange(pfam4, pfam3, layout_matrix=layout2, widths=c(0.5, 0.5))
 
