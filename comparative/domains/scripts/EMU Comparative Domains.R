@@ -61,10 +61,10 @@ merops.dat=merops.counts %>%
 
 mer.phylo=levels(as.factor(merops.dat$Genome))[c(1, 2, 5, 6, 7, 3, 4)]
 
-upset.dat=merops.composition$MEROPSs
-names(upset.dat)=merops.composition$Genome
+mer.upset.dat=merops.composition$MEROPSs
+names(mer.upset.dat)=merops.composition$Genome
 
-mer.uplt=upset(fromList(upset.dat), sets=mer.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE)
+mer.uplt=upset(fromList(mer.upset.dat), sets=mer.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE)
 
 mer.uplt
 
@@ -285,10 +285,10 @@ cazy.dat=cazy.counts %>%
 
 cazy.phylo=levels(as.factor(cazy.dat$Genome))[c(1, 2, 5, 6, 7, 3, 4)]
 
-upset.dat=cazy.composition$CAZYs
-names(upset.dat)=cazy.composition$Genome
+cazy.upset.dat=cazy.composition$CAZYs
+names(cazy.upset.dat)=cazy.composition$Genome
 
-cazy.uplt=upset(fromList(upset.dat), sets=cazy.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE)
+cazy.uplt=upset(fromList(cazy.upset.dat), sets=cazy.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE)
 
 cazy.uplt
 grid.text("CAZY UpSet Plot",x = 0.65, y=0.95, gp=gpar(fontsize=20))
@@ -494,10 +494,10 @@ pfam.dat=pfam.counts.acc %>%
 
 pfam.phylo=levels(as.factor(pfam.dat$Genome))[c(1, 2, 5, 6, 7, 3, 4)]
 
-upset.dat=pfam.composition$pfams
-names(upset.dat)=pfam.composition$Genome
+pfam.upset.dat=pfam.composition$pfams
+names(pfam.upset.dat)=pfam.composition$Genome
 
-pfam.uplt=upset(fromList(upset.dat), sets=pfam.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE)
+pfam.uplt=upset(fromList(pfam.upset.dat), sets=pfam.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE)
 
 pfam.uplt
 grid.text("Pfam UpSet Plot",x = 0.65, y=0.95, gp=gpar(fontsize=20))
