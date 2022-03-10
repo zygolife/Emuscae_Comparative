@@ -648,7 +648,7 @@ layout2 <- rbind(c(1,2))
 
 grid.arrange(pfam4, pfam3, layout_matrix=layout2, widths=c(0.5, 0.5))
 
-#Transcriptomic Pfam upset
+#Transcriptomic Pfam UpSet Plot
 chosen.t=c(chosen, "Entomophthora_muscae_UCB_Trinity")
 pfam.t.files=data.frame(names=str_replace(list.files("Pfam/"), ".domtbl.gz", "")) %>%
   filter(names %in% chosen.t) %>%
@@ -733,7 +733,7 @@ pfam.t.uplt=upset(fromList(upset.t.dat), sets=pfam.t.phylo, mb.ratio = c(0.55, 0
                                       params = list("SCA", "PFO"), color = "blue", active = T)))
 
 pfam.t.uplt
-grid.text("Pfam UpSet Plot",x = 0.65, y=0.95, gp=gpar(fontsize=20))
+grid.text("Pfam UpSet Plot\nTranscriptomes",x = 0.65, y=0.95, gp=gpar(fontsize=20))
 
 #Circadian rhythm survey
 circ.pfams=data.frame(Pfam_acc=c("PF00001", "PF09421", "PF00320", "PF08447", "PF13426","PF00989","PF01036","PF10192","PF00875","PF03441","PF00360", "PF01590"), Pfam=c("7tm_1", "FRQ", "GATA", "PAS_3", "PAS_9", "PAS", "Bac_rhodopsin","GpcrRhopsn4","DNA_photolyase","FAD_binding_7", "PHY", "GAF"))
