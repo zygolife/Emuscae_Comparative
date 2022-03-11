@@ -813,6 +813,46 @@ circ.plt=ggplot(circ.pfam.dat5, aes(x=Candidates, y=Genome, fill=scaled_n))+geom
 
 circ.plt
 
+DNAmet.pfam.dat=pfam %>%
+  filter(Pfam=="DNA_methylase") %>%
+  group_by(Pfam, Genome) %>%
+  summarize(n=length(Accession), Accessions=toString(Accession)) %>%
+  full_join(circ.pfams)
+
+DNAmet.pfam.dat2 = DNAmet.pfam.dat %>%
+  select(-Accessions) %>%
+  pivot_wider(id_cols=c("Pfam", "Pfam_acc"), values_from=n, names_from=Genome) %>%
+  select(-"NA") %>%
+  pivot_longer(cols=c(CCO:ZRA), names_to="Genome", values_to="n") %>%
+  mutate(n=replace_na(n, 0)) %>%
+  mutate(Genome=as.factor(Genome)) %>%
+  mutate(Genome=factor(Genome, levels=levels(Genome)[c(1, 2, 4, 5, 6, 3)]))
+
+####RID Survey####
+DNAmet.pfam.dat3=pfam %>%
+  filter(Pfam=="DNA_methylase") %>%
+  group_by(Pfam, Genome, Accession) %>%
+  summarize(n=length(Strain)) %>%
+  ungroup() %>%
+  pivot_wider(id_cols=c("Genome", "Accession"), names_from="Pfam", values_from="n") %>%
+  mutate(across(where(is.numeric), ~replace_na(.x, 0))) %>%
+  filter(DNA_methylase>1) %>%
+  mutate(Accession=str_replace(Accession, "DFQ33_007568-T1", "Conth1_364116"))
+
+Orthos= read_delim("~/Documents/GitHub/E_muscae_berkeley/comparative/OrthoFinder/OrthoFinder_Results.Nov24/Orthogroups/Orthogroups.tsv", 
+                          delim = "\t", escape_double = FALSE, 
+                          trim_ws = TRUE)
+
+Orthos2 = Orthos %>%
+  pivot_longer(cols=-Orthogroup,names_to="Genome", values_to="Accessions") %>%
+  drop_na(Accessions) %>%
+  rowwise() %>%
+  mutate(DNAmet_match=ifelse(grepl(paste(DNAmet.pfam.dat3$Accession, collapse="|"), Accessions), "Yes", "No")) %>%
+  group_by(Orthogroup) %>%
+  mutate(Matches=toString(DNAmet_match), DNAmet_Ortho=ifelse(grepl("Yes", Matches), "Yes", "Drop")) %>%
+  select(-Matches) %>%
+  filter(DNAmet_Ortho=="Yes")
+
 ####Combined plots####
 up.pfam.counts=pfam.counts.acc %>%
   select(Genome, Pfam) %>%
