@@ -2,11 +2,11 @@ library(tidyverse)
 library(fmsb)
 library(grid)
 library(gridExtra)
+library(ComplexUpset)
 library(UpSetR)
 library(ggforestplot)
 library(plotly)
 library(viridis)
-library(ComplexUpset)
 
 ####MEROPS analysis####
 mer.key <- read.delim("../../Comparative_pipeline/lib/merops_lib.families.tab", header=FALSE)
@@ -65,7 +65,7 @@ mer.phylo=levels(as.factor(merops.dat$Genome))[c(1, 2, 5, 6, 7, 3, 4)]
 mer.upset.dat=merops.composition$MEROPSs
 names(mer.upset.dat)=merops.composition$Genome
 
-mer.uplt=upset(fromList(mer.upset.dat), sets=mer.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE)
+mer.uplt=UpSetR::upset(fromList(mer.upset.dat), sets=mer.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE)
 
 mer.uplt
 
@@ -289,7 +289,7 @@ cazy.phylo=levels(as.factor(cazy.dat$Genome))[c(1, 2, 5, 6, 7, 3, 4)]
 cazy.upset.dat=cazy.composition$CAZYs
 names(cazy.upset.dat)=cazy.composition$Genome
 
-cazy.uplt=upset(fromList(cazy.upset.dat), sets=cazy.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE)
+cazy.uplt=UpSetR::upset(fromList(cazy.upset.dat), sets=cazy.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE)
 
 cazy.uplt
 grid.text("CAZY UpSet Plot",x = 0.65, y=0.95, gp=gpar(fontsize=20))
@@ -498,7 +498,7 @@ pfam.phylo=levels(as.factor(pfam.dat$Genome))[c(1, 2, 5, 6, 7, 3, 4)]
 pfam.upset.dat=pfam.composition$pfams
 names(pfam.upset.dat)=pfam.composition$Genome
 
-pfam.uplt=upset(fromList(pfam.upset.dat), sets=pfam.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE)
+pfam.uplt=UpSetR::upset(fromList(pfam.upset.dat), sets=pfam.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE)
 
 pfam.uplt
 grid.text("Pfam UpSet Plot",x = 0.65, y=0.95, gp=gpar(fontsize=20))
@@ -727,7 +727,7 @@ pfam.t.phylo=levels(as.factor(pfam.t.dat$Genome))[c(1, 2, 6, 7, 3, 8, 4, 5)]
 upset.t.dat=pfam.t.composition$pfams
 names(upset.t.dat)=pfam.t.composition$Genome
 
-pfam.t.uplt=upset(fromList(upset.t.dat), sets=pfam.t.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE,
+pfam.t.uplt=UpSetR::upset(fromList(upset.t.dat), sets=pfam.t.phylo, mb.ratio = c(0.55, 0.45), order.by = "freq", keep.order = TRUE,
                   queries = list(list(query = intersects, 
                                       params = list("EMU-T", "SCA", "PFO"), color = "orange", active = T),
                                  list(query = intersects, 
@@ -880,7 +880,7 @@ up.merops.counts=merops.counts %>%
 
 comb.counts=bind_rows(up.pfam.counts, up.cazy.counts, up.merops.counts)
 
-upset(
+ComplexUpset::upset(
   comb.counts,
   pfam.phylo,
   base_annotations=list(
