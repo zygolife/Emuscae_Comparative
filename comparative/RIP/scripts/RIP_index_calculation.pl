@@ -38,7 +38,7 @@ RIP index types
 Running options:	   'r|report:s'    => \$rformat,
 
  -t or --type    RIP index type   ('product','substrate','composite' or CRI)
- -w or --window  Window Size       integer value, default is 500 bp
+ -w or --window  Window Size       integer value, default is 1000 bp
  -s or --step    Window step size  integer value < windowsize, default 100
  -m or --minlen  min RIP feat len  Minimum length of a RIP region to be reported, 
                                    can't be less than 'step' long
@@ -115,11 +115,11 @@ use constant DOUBLET_LENGTH => 2;
 # variables to be set by cmdline options
 my ($index_type) = qw(CRI);  # one of 'product','substrate', 'CRI' or 'composite'
 
-my ($window,$step) = (500,10);
+my ($window,$step) = (1000,500);
 my $minlen         = $step;
 my $sformat = 'fasta';  # sequence format
 my $rformat = 'RIPgff'; # RIP report format
-my %cutoffs = (composite => sub { (shift @_) >1 },
+my %cutoffs = (composite => sub { (shift @_) > 0 },
 	       product   => sub { (shift @_) > 1.1},
 	       substrate => sub { (shift @_) < 0.9 } );
 #GFF fields

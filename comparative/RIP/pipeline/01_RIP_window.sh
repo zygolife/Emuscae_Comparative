@@ -23,8 +23,8 @@ fi
 runRIP() {
   IN=$1
   OUTF=$OUTTMP/${IN}.bed
-  if [ ! -s $OUTF ]; then
-    samtools faidx $INFILE $IN | perl $SCRIPT -r RIPbed -o $OUTF -
+  if [ ! -f $OUTF ]; then
+    samtools faidx $INFILE $IN | perl $SCRIPT -r bed -o $OUTF -
   fi
 }
 export -f runRIP
@@ -49,7 +49,5 @@ do
   OUTTMP=$OUTDIR/$BASE.d
   export OUTTMP
   mkdir -p $OUTTMP
-  OUTFILE=$OUTDIR/$BASE.RIP.bed
-
-#  parallel -j $CPUS runRIP ::: $(cut -f1 $INDEX)
+  awk '$2 > 5000' $INDEX | cut -f1 | parallel -j $CPUS runRIP
 done
