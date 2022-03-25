@@ -1,1 +1,0 @@
-../Entomophthora_muscae.gmes.mod
