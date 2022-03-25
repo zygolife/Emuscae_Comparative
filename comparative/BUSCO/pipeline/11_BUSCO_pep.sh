@@ -32,7 +32,7 @@ SAMPLEFILE=pep_samples.csv
 IFS=,
 cat $SAMPLEFILE | sed -n ${N}p | while read FILE
 do
-	BASE=$(basename $FILE .fasta | perl -p -e 's/\.proteins\.fa//' )
+	BASE=$(basename $FILE .fasta | perl -p -e 's/\.proteins\.fa|\.aa//' )
 	GENOMEFILE=$(realpath $GENOMEFOLDER/$FILE)
 	
 	if [ -d "$OUTFOLDER/${BASE}" ];  then

@@ -32,11 +32,11 @@ SAMPLEFILE=pep_samples.csv
 IFS=,
 cat $SAMPLEFILE | sed -n ${N}p | while read FILE
 do
-	BASE=$(basename $FILE .fasta)
+	BASE=$(basename $FILE .fasta | perl -p -e 's/\.proteins\.fa|\.aa//')
 	GENOMEFILE=$(realpath $GENOMEFOLDER/$FILE)
 	
 	if [ -d "$OUTFOLDER/${BASE}" ];  then
-	    echo "Already have run $NAME in folder busco - do you need to delete it to rerun?"
+	    echo "Already have run $BASE in folder $OUTFOLDER - do you need to delete it to rerun?"
 	    exit
 	else
 	    module load busco/5.3.0
