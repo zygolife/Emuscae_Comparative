@@ -15,8 +15,6 @@ teloresults <- infiles %>% map_dfr(read_tsv, .id="source",col_names = c("Scaffol
 telo_motif1="TAA[C]+"
 telo_motif2="[G]+TTA"
 
-GTGTTTTGTTCCCCCTTGATCCACTCTTTCTCTATGTTGCAAGCTTTGGCGCCATCAACCTTGGAGGGGTTAGTTACAAGAGGAGGTTTTGTGGGGACAT
-
 teloresults2 <- teloresults %>%
   select(-source) %>%
   mutate(Sequence=toupper(Sequence)) %>%
