@@ -145,7 +145,7 @@ DNA_comb=class_tbl %>%
   group_by(Genome, Class)
   
 
-plt1=ggplot(DNA_comb, aes(x=Div, y=genome_percent, color=Class))+geom_point(size=3)+geom_line(size=2)+theme+scale_color_viridis_d()+facet_wrap(~Genome)+theme(axis.text.x=element_text(angle=90, size=20), axis.text.y=element_text(size=20), axis.title.y=element_text(size=25), axis.title.x=element_text(size=25), strip.text=element_text(size=22), legend.text=element_text(size=22))+xlab("Div")+ylab("Percent of Genome")+theme(legend.position=c(0.83, 0.25), legend.title=element_text(size=22, face="bold"), plot.title = element_text(size=25, face="bold", hjust = 0.5))+ggtitle("Landscapes of DNA Repeat Elements")+scale_y_continuous(labels=percent)
+plt1=ggplot(DNA_comb, aes(x=Div, y=genome_percent, color=Class))+geom_point(size=3)+geom_line(size=2)+theme+scale_color_viridis_d()+facet_wrap(~Genome)+theme(axis.text.x=element_text(angle=90, size=20), axis.text.y=element_text(size=20), axis.title.y=element_text(size=25), axis.title.x=element_text(size=25), strip.text=element_text(size=22), legend.text=element_text(size=22))+xlab("Kimura divergence")+ylab("Percent of Genome")+theme(legend.position=c(0.83, 0.25), legend.title=element_text(size=22, face="bold"), plot.title = element_text(size=25, face="bold", hjust = 0.5))+ggtitle("Landscapes of DNA Repeat Elements")+scale_y_continuous(labels=percent)
 
 plt1
 
