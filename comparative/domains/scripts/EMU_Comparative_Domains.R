@@ -8,6 +8,8 @@ library(ggforestplot)
 library(plotly)
 library(viridis)
 
+pdf("plots/MEROPS_plots.pdf")
+
 ####MEROPS analysis####
 mer.key <- read.delim("../../Comparative_pipeline/lib/merops_lib.families.tab", header=FALSE)
 
@@ -247,6 +249,8 @@ layout2 <- rbind(c(1,2))
 
 grid.arrange(mer4, mer3, layout_matrix=layout2, widths=c(0.4, 0.6))
 
+
+pdf("plots/CAZY_plots.pdf")
 ####CAZY analysis####
 cazy.files=data.frame(names=str_replace(list.files("CAZY/"), ".tsv", "")) %>%
   filter(names %in% chosen) %>%
@@ -405,13 +409,14 @@ cazy.2$widths= maxWidth
 
 grid.arrange(cazy.1, cazy.2, layout_matrix=layout1, heights=c(0.4, 0.6))
 
-ecazy.3=ggplotGrob(cazy.plt3)
+cazy.3=ggplotGrob(cazy.plt3)
 cazy.4=ggplotGrob(cazy.plt4)
 
 grid.arrange(cazy.4, cazy.3, layout_matrix=layout2, widths=c(0.4, 0.6))
 
+pdf("plots/Pfam_plots.pdf")
 ####Pfam analysis####
-sigp <- read.table("~/Documents/GitHub/E_muscae_berkeley/comparative/domains/CAZY/Entomophthora_muscae_UCB.v3.run_dbcan/signalp.out", quote="\"", comment.char="")
+sigp <- read.table("CAZY/Entomophthora_muscae_UCB.v3.run_dbcan/signalp.out", quote="\"", comment.char="")
 
 #Combining noTm/TM results
 sigp2 = sigp %>%
@@ -736,6 +741,8 @@ pfam.t.uplt=UpSetR::upset(fromList(upset.t.dat), sets=pfam.t.phylo, mb.ratio = c
 pfam.t.uplt
 grid.text("Pfam UpSet Plot\nTranscriptomes",x = 0.65, y=0.95, gp=gpar(fontsize=20))
 
+pdf("plots/Circadian_plots.pdf")
+
 #####Circadian rhythm survey####
 circ.pfams=data.frame(Pfam_acc=c("PF00001", "PF09421", "PF00320", "PF08447", "PF13426","PF00989","PF01036","PF10192","PF00875","PF03441","PF00360", "PF01590"), Pfam=c("7tm_1", "FRQ", "GATA", "PAS_3", "PAS_9", "PAS", "Bac_rhodopsin","GpcrRhopsn4","DNA_photolyase","FAD_binding_7", "PHY", "GAF"))
 
@@ -828,6 +835,7 @@ DNAmet.pfam.dat2 = DNAmet.pfam.dat %>%
   mutate(Genome=as.factor(Genome)) %>%
   mutate(Genome=factor(Genome, levels=levels(Genome)[c(1, 2, 4, 5, 6, 3)]))
 
+pdf("plots/RID_plots.pdf")
 ####RID Survey####
 DNAmet.pfam.dat3=pfam %>%
   filter(Pfam=="DNA_methylase") %>%
@@ -839,7 +847,7 @@ DNAmet.pfam.dat3=pfam %>%
   filter(DNA_methylase>1) %>%
   mutate(Accession=str_replace(Accession, "DFQ33_007568-T1", "Conth1_364116"))
 
-Orthos= read_delim("~/Documents/GitHub/E_muscae_berkeley/comparative/OrthoFinder/OrthoFinder_Results.Nov24/Orthogroups/Orthogroups.tsv", 
+Orthos= read_delim("../OrthoFinder/OrthoFinder_Results.Nov24/Orthogroups/Orthogroups.tsv", 
                           delim = "\t", escape_double = FALSE, 
                           trim_ws = TRUE)
 
@@ -853,6 +861,7 @@ Orthos2 = Orthos %>%
   select(-Matches) %>%
   filter(DNAmet_Ortho=="Yes")
 
+pdf("plots/Combined_plots.pdf")
 ####Combined plots####
 up.pfam.counts=pfam.counts.acc %>%
   select(Genome, Pfam) %>%
