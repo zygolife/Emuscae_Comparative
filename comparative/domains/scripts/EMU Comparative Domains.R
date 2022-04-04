@@ -405,7 +405,7 @@ cazy.2$widths= maxWidth
 
 grid.arrange(cazy.1, cazy.2, layout_matrix=layout1, heights=c(0.4, 0.6))
 
-cazy.3=ggplotGrob(cazy.plt3)
+ecazy.3=ggplotGrob(cazy.plt3)
 cazy.4=ggplotGrob(cazy.plt4)
 
 grid.arrange(cazy.4, cazy.3, layout_matrix=layout2, widths=c(0.4, 0.6))
@@ -809,7 +809,7 @@ circ.pfam.dat5 = circ.pfam.dat4 %>%
   group_by(Candidates, Method) %>%
   mutate(cand_max=max(n), scaled_n=scale(n), minmax_n=(n-min(n))/(max(n)-min(n)), mean_n=(n-mean(n))/sd(n))
 
-circ.plt=ggplot(circ.pfam.dat5, aes(x=Candidates, y=Genome, fill=scaled_n))+geom_tile(color="white", size=2)+scale_fill_viridis_c(option="D")+theme+labs(fill="Count")+ggtitle("Circadian rhythm candidates")+theme(plot.title = element_text(hjust = 0.5), axis.text.x=element_text(angle=90, vjust=0.5, hjust=1))+geom_text(aes(label=ifelse(n==cand_max & n>0, n, NA)), size=8)+labs(fill="Z-score")+facet_grid(~Method, scales="free_x", space="free")+theme(axis.title.x=element_blank())
+circ.plt=ggplot(circ.pfam.dat5, aes(x=Candidates, y=Genome, fill=scaled_n))+geom_tile(color="white", size=2)+scale_fill_viridis_c(option="D")+theme+labs(fill="Count")+ggtitle("Circadian rhythm candidates")+theme(plot.title = element_text(hjust = 0.5), axis.text.x=element_text(angle=90, vjust=0.5, hjust=1))+geom_text(aes(label=n), fontface="bold", color="white", size=8)+labs(fill="Z-score")+facet_grid(~Method, scales="free_x", space="free")+theme(axis.title.x=element_blank())
 
 circ.plt
 
