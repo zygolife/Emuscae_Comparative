@@ -5,7 +5,6 @@ library(gridExtra)
 library(ComplexUpset)
 library(UpSetR)
 library(ggforestplot)
-library(plotly)
 library(viridis)
 
 pdf("plots/MEROPS_plots.pdf")
