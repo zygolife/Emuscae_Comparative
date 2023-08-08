@@ -166,7 +166,7 @@ Emus.merops.clust=merops.clust %>%
   mutate(Direction=factor(Direction, levels=levels(Direction)[c(3, 2, 1)]))
 
 #MEROPS visualization
-theme = theme_bw()+theme(text = element_text(size=15), axis.title.x = element_text(size=20), axis.text.x = element_text(size=15), axis.text.y = element_text(size=15), title = element_text(size=20), legend.title = element_text(size=20), legend.text = element_text(size=15), strip.background = element_rect(color="black", fill="white", size=1.5, linetype="solid"))
+theme = theme_bw()+theme(text = element_text(size=15), axis.title.x = element_text(size=20), axis.text.x = element_text(size=15), axis.text.y = element_text(size=15), title = element_text(size=20), legend.title = element_text(size=20), legend.text = element_text(size=15), strip.background = element_rect(color="black", fill="white", linewidth=1.5, linetype="solid"))
 
 mer.dwn=ggplot(subset(Emus.merops.clust, Emus.status=="Down"), aes(y=reorder(Domain, cluster), x=Genome, color=Direction, size=as.factor(sig_n)))+geom_point(alpha=0.8)+
   theme+geom_stripes(inherit.aes=F, aes(y=reorder(Domain, cluster)), odd = "#33333333", even = "#00000000")+theme(axis.text.x = element_text(angle = 90, vjust=0.5, hjust=0.95))+
@@ -249,8 +249,8 @@ layout2 <- rbind(c(1,2))
 
 grid.arrange(mer4, mer3, layout_matrix=layout2, widths=c(0.4, 0.6))
 
-
 pdf("plots/CAZY_plots.pdf")
+
 ####CAZY analysis####
 cazy.files=data.frame(names=str_replace(list.files("CAZY/"), ".tsv", "")) %>%
   filter(names %in% chosen) %>%
@@ -820,11 +820,91 @@ circ.plt=ggplot(circ.pfam.dat5, aes(x=Candidates, y=Genome, fill=scaled_n))+geom
 
 circ.plt
 
+#### RNAi Pathway Anaylsis####
+pdf("plots/RNAi_plots.pdf")
+RNAi.pfams=data.frame(Pfam_acc=c("PF05183", "PF03368", "PF02170", "PF02171", "PF00636", "PF00270"), Pfam=c("RdRP", "Dicer_dimer", "PAZ", "Piwi", "Ribonuclease_3", "DEAD"))
+
+RNAi.pfam.dat=pfam %>%
+  filter(Pfam %in% RNAi.pfams$Pfam) %>%
+  group_by(Pfam, Genome) %>%
+  summarize(n=length(Accession), Accessions=toString(Accession)) %>%
+  full_join(RNAi.pfams)
+
+RNAi.pfam.dat2 = RNAi.pfam.dat %>%
+  select(-Accessions) %>%
+  pivot_wider(id_cols=c("Pfam", "Pfam_acc"), values_from=n, names_from=Genome) %>%
+  pivot_longer(cols=c(CCO:ZRA), names_to="Genome", values_to="n") %>%
+  mutate(n=replace_na(n, 0)) %>%
+  mutate(Genome=as.factor(Genome)) %>%
+  mutate(Genome=factor(Genome, levels=levels(Genome)[c(1, 2, 4, 5, 6, 3)]))
+
+RNAi.pfam.dat3.1=pfam %>%
+  filter(Pfam %in% RNAi.pfams$Pfam) %>%
+  group_by(Pfam, Genome, Accession) %>%
+  summarize(n=length(Strain)) %>%
+  ungroup() %>%
+  full_join(RNAi.pfams) %>%
+  pivot_wider(id_cols=c("Genome", "Accession"), names_from="Pfam", values_from="n") %>%
+  drop_na(Genome) %>%
+  mutate(across(where(is.numeric), ~replace_na(.x, 0)))
+
+RNAi.pfam.dat3.2=pfam %>%
+  filter(Pfam %in% RNAi.pfams$Pfam) %>%
+  group_by(Pfam, Genome, Accession) %>%
+  summarize(n=length(Strain)) %>%
+  ungroup() %>%
+  full_join(RNAi.pfams) %>%
+  pivot_wider(id_cols=c("Genome", "Accession"), names_from="Pfam", values_from="n") %>%
+  drop_na(Genome) %>%
+  mutate(across(where(is.numeric), ~replace_na(.x, 0))) %>%
+  mutate(RDRP=ifelse(RdRP>0, 1, 0),
+         Dicer=ifelse(Dicer_dimer>0, 1, 0),
+         Ago=ifelse(PAZ>0 & Piwi>0, 1, 0),
+         Dicer_Alt=ifelse(Ribonuclease_3>0 & (DEAD>0 | PAZ>0), 1, 0)) %>%
+  select(Genome, Accession, RDRP:Dicer_Alt)
+
+RNAi.pfam.dat.summary = RNAi.pfam.dat3.2 %>%
+  pivot_longer(cols=RDRP:Dicer_Alt, names_to="Candidates", values_to="Count") %>%
+  filter(Count>0) %>%
+  group_by(Genome, Candidates) %>%
+  summarize(n=sum(Count), Accessions=toString(Accession))
+
+RNAi.pfam.dat4.1 = RNAi.pfam.dat3.1 %>%
+  pivot_longer(cols=DEAD:Ribonuclease_3, names_to="Candidates", values_to="Count") %>%
+  group_by(Genome, Candidates) %>%
+  summarize(n=sum(Count)) %>%
+  mutate(Genome=as.factor(Genome)) %>%
+  mutate(Genome=factor(Genome, levels=levels(Genome)[c(1, 2, 5, 6, 7, 3, 4)])) %>%
+  mutate(Method="Single Domain")
+
+RNAi.pfam.dat4.2 = RNAi.pfam.dat3.2 %>%
+  pivot_longer(cols=RDRP:Dicer_Alt, names_to="Candidates", values_to="Count") %>%
+  group_by(Genome, Candidates) %>%
+  summarize(n=sum(Count)) %>%
+  mutate(Genome=as.factor(Genome)) %>%
+  mutate(Genome=factor(Genome, levels=levels(Genome)[c(1, 2, 5, 6, 7, 3, 4)])) %>%
+  mutate(Method="Curated")
+
+RNAi.pfam.dat4=bind_rows(RNAi.pfam.dat4.1, RNAi.pfam.dat4.2)
+
+RNAi.pfam.dat5 = RNAi.pfam.dat4 %>%
+  group_by(Candidates, Method) %>%
+  mutate(cand_max=max(n), scaled_n=scale(n), minmax_n=(n-min(n))/(max(n)-min(n)), mean_n=(n-mean(n))/sd(n))
+
+RNAi.plt=ggplot(RNAi.pfam.dat5, aes(x=Candidates, y=Genome, fill=scaled_n))+geom_tile(color="white", size=2)+scale_fill_viridis_c(option="D")+theme+labs(fill="Count")+ggtitle("RNAi pathway candidates")+theme(plot.title = element_text(hjust = 0.5), axis.text.x=element_text(angle=90, vjust=0.5, hjust=1))+geom_text(aes(label=n), fontface="bold", color="white", size=8)+labs(fill="Z-score")+facet_grid(~Method, scales="free_x", space="free")+theme(axis.title.x=element_blank())
+
+RNAi.plt
+
+#ggsave(file="plots/EMU RNAi pathway candidates.svg", plot=RNAi.plt, width=10, height=8)
+
+pdf("plots/RID_plots.pdf")
+
+####RID Survey####
 DNAmet.pfam.dat=pfam %>%
   filter(Pfam=="DNA_methylase") %>%
   group_by(Pfam, Genome) %>%
   summarize(n=length(Accession), Accessions=toString(Accession)) %>%
-  full_join(circ.pfams)
+  full_join(circ.pfam.dat)
 
 DNAmet.pfam.dat2 = DNAmet.pfam.dat %>%
   select(-Accessions) %>%
@@ -835,8 +915,6 @@ DNAmet.pfam.dat2 = DNAmet.pfam.dat %>%
   mutate(Genome=as.factor(Genome)) %>%
   mutate(Genome=factor(Genome, levels=levels(Genome)[c(1, 2, 4, 5, 6, 3)]))
 
-pdf("plots/RID_plots.pdf")
-####RID Survey####
 DNAmet.pfam.dat3=pfam %>%
   filter(Pfam=="DNA_methylase") %>%
   group_by(Pfam, Genome, Accession) %>%
