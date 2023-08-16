@@ -986,6 +986,30 @@ ComplexUpset::upset(
 )+
   theme(text=element_text(size=20))+xlab("Intersections")
 
+comb.counts.EMU.missing=comb.counts[is.na(comb.counts$EMU),] %>%
+  mutate(Total=rowSums(across(CCO:ZRA), na.rm=T))
+
+#write.csv(comb.counts.EMU.missing, "UpSet Table Missing EMU.csv", row.names=F)
+
+ComplexUpset::upset(
+  comb.counts.EMU.missing,
+  pfam.phylo,
+  base_annotations=list(
+    'Intersection size'=intersection_size(
+      counts=T,
+      mapping=aes(fill=Method)
+    )+scale_fill_viridis_d(option="H")+
+      theme(text=element_text(size=20), legend.position = c(0.7, 0.7))
+  ),
+  set_sizes=(
+    upset_set_size()
+  ),
+  min_size=10,
+  width_ratio=0.1,
+  sort_sets=F
+)+
+  theme(text=element_text(size=20))+xlab("Intersections")
+
 unique.comb=bind_rows((Emus.pfam.unique %>% mutate(Method="Pfam")),
                       (Emus.merops.unique %>% mutate(Method="MEROPS")),
                       (Emus.cazy.unique %>% rename(Domain=CAZY) %>% mutate(Method="CAZY")))
