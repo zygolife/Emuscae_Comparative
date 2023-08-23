@@ -610,9 +610,17 @@ Emus.pfam.missing=pfam.clust %>%
   left_join(sigp.pfam2)
 
 pfam.plt3=ggplot(Emus.pfam.missing, aes(y=reorder(Domain, rev(cluster)), x=Genome, color=Direction, size=as.factor(sig_n)))+geom_point(alpha=0.8)+
-  theme+theme(axis.text.x = element_text(size=15, angle = 90, vjust=0.5, hjust=0.95))+theme(axis.text.y=element_text(size=9))+theme(legend.position="right")+xlab("Genome")+scale_color_manual(values=c("#127852", "#8B8588", "#FF0000"))+labs(size="Significant\nDifferences")+geom_stripes(inherit.aes=F, aes(y=reorder(Domain, rev(cluster))), odd ="#33333333", even = "#00000000")+scale_x_discrete(limits = rev(pfam.phylo))+ylab("Pfam")+ggtitle("Missing from EMU")+theme(plot.title = element_text(hjust = 0.5))+guides(color = guide_legend(override.aes = list(size=3), order=1))+labs(color="Direction vs.\nmedian")
+  theme+theme(axis.text.x = element_text(size=15, angle = 90, vjust=0.5, hjust=0.95))+theme(axis.text.y=element_text(size=9))+
+  theme(legend.position="right")+xlab("Genome")+
+  scale_color_manual(values=c("#127852", "#8B8588", "#FF0000"))+
+  labs(size="Significant\nDifferences")+
+  geom_stripes(inherit.aes=F, aes(y=reorder(Domain, rev(cluster))), odd ="#33333333", even = "#00000000")+
+  scale_x_discrete(limits = rev(pfam.phylo))+ylab("Pfam")+
+  ggtitle("Missing from EMU, enriched in others")+theme(plot.title = element_text(hjust = 0.5))+guides(color = guide_legend(override.aes = list(size=3), order=1))+labs(color="Direction vs.\nmedian")
 
 pfam.plt3
+
+#ggsave(file="plots/Missing PFAM.svg", plot=pfam.plt3, width=9, height=10)
 
 Emus.pfam.unique=pfam.counts.acc %>%
   filter(Pfam %in% unlist(pfam.unique[pfam.unique$Genome=="EMU",]$pfam))  %>%
@@ -1023,6 +1031,11 @@ missing.comb=bind_rows((Emus.merops.missing %>% mutate(Method="MEROPS")),
                        (Emus.cazy.missing %>% mutate(Method="CAZY")))
 
 missing.comb.plt=ggplot(missing.comb, aes(y=Domain, x=Genome, color=Direction, size=as.factor(sig_n)))+geom_point(alpha=0.8)+
-  theme+theme(axis.text.x = element_text(size=15, angle = 90, vjust=0.5, hjust=0.95))+theme(axis.text.y=element_text(size=8))+theme(legend.position="right")+xlab("Genome")+scale_color_manual(values=c("#127852", "#8B8588", "#FF0000"))+labs(size="Significant\nDifferences")+geom_stripes(inherit.aes=F, aes(y=Domain), odd ="#33333333", even = "#00000000")+scale_x_discrete(limits = rev(pfam.phylo))+ylab("Domain")+theme(axis.title=element_blank())+ggtitle("Missing from EMU")+theme(plot.title = element_text(hjust = 0.5))+guides(color = guide_legend(override.aes = list(size=3), order=1))+labs(color="Direction vs.\nmedian")+facet_grid(Method~., scales="free", space="free")
+  theme+theme(axis.text.x = element_text(size=15, angle = 90, vjust=0.5, hjust=0.95))+theme(axis.text.y=element_text(size=8))+theme(legend.position="right")+xlab("Genome")+scale_color_manual(values=c("#127852", "#8B8588", "#FF0000"))+
+  labs(size="Significant\nDifferences")+geom_stripes(inherit.aes=F, aes(y=Domain), odd ="#33333333", even = "#00000000")+
+  scale_x_discrete(limits = rev(pfam.phylo))+ylab("Domain")+
+  theme(axis.title=element_blank())+ggtitle("Missing from EMU, enriched in others")+theme(plot.title = element_text(hjust = 0.5))+guides(color = guide_legend(override.aes = list(size=3), order=1))+labs(color="Direction vs.\nmedian")+facet_grid(Method~., scales="free", space="free")
 
 missing.comb.plt
+
+#ggsave(file="plots/Missing MEROPS CAZY.svg", plot=missing.comb.plt, width=10, height=8)
