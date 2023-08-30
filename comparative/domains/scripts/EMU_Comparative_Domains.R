@@ -390,7 +390,7 @@ Emus.cazy.unique=cazy.counts %>%
 
 cazy.plt3=ggplot(Emus.cazy.missing, aes(y=reorder(Domain, rev(cluster)), x=Genome, color=Direction, size=as.factor(sig_n)))+geom_point(alpha=0.8)+
   theme+theme(axis.text.x = element_text(angle = 90, vjust=0.5))+
-  theme(axis.text.x=element_text(size=20), axis.text.y=element_text(size=10))+theme(legend.position="right")+xlab("Genome")+scale_color_manual(values=c("#127852", "#8B8588", "#FF0000"))+labs(size="Significant\nDifferences")+geom_stripes(inherit.aes=F, aes(y=reorder(Domain, rev(cluster))), odd = "#33333333", even = "#00000000")+scale_y_discrete(limits = rev(unique(Emus.cazy.missing$Domain)))+scale_x_discrete(limits = rev(cazy.phylo))+ylab("CAZY")+ggtitle("Missing from EMU")+theme(plot.title = element_text(hjust = 0.5))+guides(colour = guide_legend(override.aes = list(size=3), order=1))
+  theme(axis.text.x=element_text(size=20), axis.text.y=element_text(size=10))+theme(legend.position="right")+xlab("Genome")+scale_color_manual(values=c("#127852", "#FF0000"))+labs(size="Significant\nDifferences")+geom_stripes(inherit.aes=F, aes(y=reorder(Domain, rev(cluster))), odd = "#33333333", even = "#00000000")+scale_y_discrete(limits = rev(unique(Emus.cazy.missing$Domain)))+scale_x_discrete(limits = rev(cazy.phylo))+ylab("CAZY")+ggtitle("Missing from EMU")+theme(plot.title = element_text(hjust = 0.5))+guides(colour = guide_legend(override.aes = list(size=3), order=1))
 
 cazy.plt3
 
@@ -596,7 +596,12 @@ pfam.dwn2
 
 pfam.up2=ggplot(subset(Emus.pfam.clust, Emus.status=="Up" & Genome=="EMU"), aes(x=Count, y=reorder(Domain, cluster), fill=Fold))+geom_col()+
   theme+geom_stripes(odd = "#33333333", even = "#00000000")+
-  theme(axis.text.y=element_text(size=10), axis.text.x=element_blank(), axis.title.x=element_blank(), axis.ticks.x = element_blank())+theme(legend.position="right")+xlab("Count for EMU only")+facet_grid(~Secretion, scales="free_x", space="free_x")+coord_flip()+labs(fill="Fold vs.\nmedian")+scale_fill_viridis_c()+ggtitle("Pfam Up in EMU compared to median")+theme(plot.title = element_text(hjust = 0.5))
+  theme(axis.text.y=element_text(size=10), axis.text.x=element_blank(), axis.title.x=element_blank(), axis.ticks.x = element_blank())+
+  theme(legend.position="right")+xlab("Count for EMU only")+
+  facet_grid(~Secretion, scales="free_x", space="free_x")+
+  coord_flip()+labs(fill="Fold vs.\nmedian")+scale_fill_viridis_c()+
+  ggtitle("Pfam Up in EMU compared to median")+
+  theme(plot.title = element_text(hjust = 0.5))
 
 pfam.up2
 
