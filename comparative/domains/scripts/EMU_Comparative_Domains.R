@@ -774,7 +774,10 @@ pfam.t.uplt=UpSetR::upset(fromList(upset.t.dat), sets=pfam.t.phylo, mb.ratio = c
                                       params = list("SCA", "PFO"), color = "blue", active = T)))
 
 pfam.t.uplt
+
 grid.text("Pfam UpSet Plot\nTranscriptomes",x = 0.65, y=0.95, gp=gpar(fontsize=20))
+
+#ggsave(file="plots/Transcriptome UpSet Pfam.svg", width=10, height=8)
 
 pdf("plots/Circadian_plots.pdf")
 
