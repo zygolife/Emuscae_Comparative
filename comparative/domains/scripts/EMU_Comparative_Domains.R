@@ -7,6 +7,7 @@ library(ComplexUpset)
 library(UpSetR)
 library(ggforestplot)
 library(viridis)
+library(colorblindr)
 
 pdf("plots/MEROPS_plots.pdf")
 
@@ -1005,6 +1006,8 @@ up.merops.counts=merops.counts %>%
 
 comb.counts=bind_rows(up.pfam.counts, up.cazy.counts, up.merops.counts)
 
+#Original stacked
+
 ComplexUpset::upset(
   comb.counts,
   pfam.phylo,
@@ -1023,6 +1026,62 @@ ComplexUpset::upset(
   sort_sets=F
 )+
   theme(text=element_text(size=20))+xlab("Intersections")
+
+#Faceted Update
+
+ComplexUpset::upset(
+  comb.counts,
+  pfam.phylo,
+  base_annotations=list(
+    'Intersection size'=intersection_size(
+      counts=F,
+      mapping=aes(fill=Method)
+    )+facet_grid(row="Method", scale="free_y")+scale_fill_viridis_d(option="H")+
+      theme(text=element_text(size=20), legend.position = "none")
+  ),
+  set_sizes=(
+    upset_set_size()
+  ),
+  min_size=10,
+  width_ratio=0.1,
+  sort_sets=F
+)+
+  theme(text=element_text(size=20))+xlab("Intersections")
+
+#Separated Stack Update
+
+ComplexUpset::upset(
+  comb.counts,
+  pfam.phylo,
+  base_annotations=list(
+    'Intersection size'=intersection_size(
+      counts=F,
+      mapping=aes())+
+      theme(text=element_text(size=20), legend.position="none")
+    ,
+    'Composition'=(
+      ggplot(mapping=aes(fill=Method))
+      + geom_bar(stat='count', position='fill')
+      + scale_y_continuous(labels=scales::percent_format())+
+      theme(text=element_text(size=20), legend.position=c(0.8, 1.7))+ylab("Composition")+
+      scale_fill_viridis_d(option="H")
+    )
+  ),
+  set_sizes=(
+    upset_set_size()
+  ),
+  min_size=10,
+  width_ratio=0.1,
+  sort_sets=F
+)+
+  theme(text=element_text(size=20))+xlab("Intersections")
+
+comb.intersections=comb.counts %>%
+  pivot_longer(cols=CCO:ZRA, names_to="Genome", values_to="count") %>%
+  select(-count) %>%
+  ungroup() %>%
+  group_by(Domain) %>%
+  reframe(Genomes=toString(sort(unique(Genome))))
 
 comb.counts.EMU.missing=comb.counts[is.na(comb.counts$EMU),] %>%
   mutate(Total=rowSums(across(CCO:ZRA), na.rm=T))
