@@ -122,6 +122,16 @@ merops.res.stat.meta=left_join(merops.res.stat, merops.meta)
 
 merops.res.stat.meta$Genome=as.factor(merops.res.stat.meta$Genome)
 
+merops.res.stat.meta2=merops.res.stat.meta %>% left_join(mer.key2)
+
+Metallo.enrichment=merops.res.stat.meta2[merops.res.stat.meta2$Genome=="EMU" & merops.res.stat.meta2$Family=="M16A",]$Domain
+
+merops.res.stat.meta.metallo=merops.res.stat.meta2 %>%
+  filter(Domain %in% Metallo.enrichment) %>%
+  filter(Genome %in% c("PFO", "CTH", "SCA", "ZRA", "EMA", "EMU")) %>%
+  group_by(Genome) %>%
+  summarize(mn=mean(Count), md=median(Count))
+
 #MEROPS clustering
 merops.dist=merops.res.stat.meta %>%
   select(Domain, Genome, sig_n) %>%
@@ -390,7 +400,7 @@ Emus.cazy.unique=cazy.counts %>%
 
 cazy.plt3=ggplot(Emus.cazy.missing, aes(y=reorder(Domain, rev(cluster)), x=Genome, color=Direction, size=as.factor(sig_n)))+geom_point(alpha=0.8)+
   theme+theme(axis.text.x = element_text(angle = 90, vjust=0.5))+
-  theme(axis.text.x=element_text(size=20), axis.text.y=element_text(size=10))+theme(legend.position="right")+xlab("Genome")+scale_color_manual(values=c("#127852", "#8B8588", "#FF0000"))+labs(size="Significant\nDifferences")+geom_stripes(inherit.aes=F, aes(y=reorder(Domain, rev(cluster))), odd = "#33333333", even = "#00000000")+scale_y_discrete(limits = rev(unique(Emus.cazy.missing$Domain)))+scale_x_discrete(limits = rev(cazy.phylo))+ylab("CAZY")+ggtitle("Missing from EMU")+theme(plot.title = element_text(hjust = 0.5))+guides(colour = guide_legend(override.aes = list(size=3), order=1))
+  theme(axis.text.x=element_text(size=20), axis.text.y=element_text(size=10))+theme(legend.position="right")+xlab("Genome")+scale_color_manual(values=c("#127852", "#FF0000"))+labs(size="Significant\nDifferences")+geom_stripes(inherit.aes=F, aes(y=reorder(Domain, rev(cluster))), odd = "#33333333", even = "#00000000")+scale_y_discrete(limits = rev(unique(Emus.cazy.missing$Domain)))+scale_x_discrete(limits = rev(cazy.phylo))+ylab("CAZY")+ggtitle("Missing from EMU")+theme(plot.title = element_text(hjust = 0.5))+guides(colour = guide_legend(override.aes = list(size=3), order=1))
 
 cazy.plt3
 
@@ -588,15 +598,26 @@ pfam.up=ggplot(subset(Emus.pfam.clust, Emus.status=="Up"), aes(y=reorder(Domain,
 
 pfam.up
 
-pfam.dwn2=ggplot(subset(Emus.pfam.clust, Emus.status=="Down" & Genome=="EMU"), aes(x=Count, y=reorder(Domain, cluster), fill=Fold))+geom_col()+
+pfam.dwn2=ggplot(subset(Emus.pfam.clust, Emus.status=="Down" & Genome=="EMU"), aes(x=Count, y=reorder(Domain, cluster), fill=log10(Fold)))+geom_col()+
   theme+geom_stripes(odd = "#33333333", even = "#00000000")+
-  theme(axis.text.y=element_text(size=15), axis.text.x=element_blank(), axis.title.x=element_blank(), axis.ticks.x = element_blank())+theme(legend.position="right")+xlab("Count for EMU only")+facet_grid(~Secretion, scales="free_x", space="free_x")+coord_flip()+labs(fill="Fold vs.\nmedian")+scale_fill_viridis_c()+ggtitle("Pfam Down in EMU compared to median")+theme(plot.title = element_text(hjust = 0.5))
+  theme(axis.text.y=element_text(size=15), axis.text.x=element_blank(), axis.title.x=element_blank(), axis.ticks.x = element_blank())+theme(legend.position="right")+
+  xlab("Count for EMU only")+
+  facet_grid(~Secretion, scales="free_x", space="free_x")+
+  coord_flip()+labs(fill="Fold vs.\nmedian\n(log10)")+
+  scale_fill_viridis_c()+ggtitle("Pfam Down in EMU compared to median")+
+  theme(plot.title = element_text(hjust = 0.5))
 
 pfam.dwn2
 
-pfam.up2=ggplot(subset(Emus.pfam.clust, Emus.status=="Up" & Genome=="EMU"), aes(x=Count, y=reorder(Domain, cluster), fill=Fold))+geom_col()+
+pfam.up2=ggplot(subset(Emus.pfam.clust, Emus.status=="Up" & Genome=="EMU"), aes(x=Count, y=reorder(Domain, cluster), fill=log10(Fold)))+geom_col()+
   theme+geom_stripes(odd = "#33333333", even = "#00000000")+
-  theme(axis.text.y=element_text(size=10), axis.text.x=element_blank(), axis.title.x=element_blank(), axis.ticks.x = element_blank())+theme(legend.position="right")+xlab("Count for EMU only")+facet_grid(~Secretion, scales="free_x", space="free_x")+coord_flip()+labs(fill="Fold vs.\nmedian")+scale_fill_viridis_c()+ggtitle("Pfam Up in EMU compared to median")+theme(plot.title = element_text(hjust = 0.5))
+  theme(axis.text.y=element_text(size=10), axis.text.x=element_blank(), axis.title.x=element_blank(), axis.ticks.x = element_blank())+
+  theme(legend.position="right")+xlab("Count for EMU only")+
+  facet_grid(~Secretion, scales="free_x", space="free_x")+
+  coord_flip()+labs(fill="Fold vs.\nmedian\n(log10)")+
+  scale_fill_viridis_c()+
+  ggtitle("Pfam Up in EMU compared to median")+
+  theme(plot.title = element_text(hjust = 0.5))
 
 pfam.up2
 
@@ -643,7 +664,10 @@ pfam.dwn.2$widths= maxWidth
 layout1 <- rbind(c(2),
                  c(1))
 
-grid.arrange(pfam.dwn.1, pfam.dwn.2, layout_matrix=layout1, heights=c(0.4, 0.6))
+pfam.dwn.plt=grid.arrange(pfam.dwn.1, pfam.dwn.2, layout_matrix=layout1, heights=c(0.4, 0.6))
+plot(pfam.dwn.plt)
+
+#ggsave(file="plots/EMU Pfam Down.svg", plot=pfam.dwn.plt, width=10, height=8)
 
 pfam.up.1=ggplotGrob(pfam.up)
 pfam.up.2=ggplotGrob(pfam.up2)
@@ -653,7 +677,10 @@ maxWidth <- unit.pmax(pfam.up.1$widths, pfam.up.2$widths)
 pfam.up.1$widths= maxWidth
 pfam.up.2$widths= maxWidth
 
-grid.arrange(pfam.up.1, pfam.up.2, layout_matrix=layout1, heights=c(0.4, 0.6))
+pfam.up.plt=grid.arrange(pfam.up.1, pfam.up.2, layout_matrix=layout1, heights=c(0.4, 0.6))
+plot(pfam.up.plt)
+
+#ggsave(file="plots/EMU Pfam Up.svg", plot=pfam.up.plt, width=12, height=8)
 
 pfam3=ggplotGrob(pfam.plt3)
 pfam4=ggplotGrob(pfam.plt4)
@@ -747,7 +774,10 @@ pfam.t.uplt=UpSetR::upset(fromList(upset.t.dat), sets=pfam.t.phylo, mb.ratio = c
                                       params = list("SCA", "PFO"), color = "blue", active = T)))
 
 pfam.t.uplt
+
 grid.text("Pfam UpSet Plot\nTranscriptomes",x = 0.65, y=0.95, gp=gpar(fontsize=20))
+
+#ggsave(file="plots/Transcriptome UpSet Pfam.svg", width=10, height=8)
 
 pdf("plots/Circadian_plots.pdf")
 
@@ -1007,7 +1037,7 @@ ComplexUpset::upset(
       counts=T,
       mapping=aes(fill=Method)
     )+scale_fill_viridis_d(option="H")+
-      theme(text=element_text(size=20), legend.position = c(0.7, 0.7))
+      theme(text=element_text(size=20),legend.position = c(0.7, 0.7))
   ),
   set_sizes=(
     upset_set_size()
