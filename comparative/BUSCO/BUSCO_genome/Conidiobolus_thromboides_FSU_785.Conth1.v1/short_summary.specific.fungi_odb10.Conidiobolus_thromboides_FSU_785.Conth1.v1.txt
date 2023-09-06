@@ -1,19 +1,35 @@
-# BUSCO version is: 5.2.2 
+# BUSCO version is: 5.4.4 
 # The lineage dataset is: fungi_odb10 (Creation date: 2020-09-10, number of genomes: 549, number of BUSCOs: 758)
 # Summarized benchmarking in BUSCO notation for file /bigdata/stajichlab/shared/projects/ZyGoLife/datasets/genomes/DNA/Conidiobolus_thromboides_FSU_785.Conth1.v1.fasta
-# BUSCO was run in mode: genome
-# Gene predictor used: metaeuk
+# BUSCO was run in mode: euk_genome_aug
+# Gene predictor used: augustus
 
 	***** Results: *****
 
-	C:71.9%[S:71.4%,D:0.5%],F:8.2%,M:19.9%,n:758	   
-	545	Complete BUSCOs (C)			   
-	541	Complete and single-copy BUSCOs (S)	   
-	4	Complete and duplicated BUSCOs (D)	   
-	62	Fragmented BUSCOs (F)			   
-	151	Missing BUSCOs (M)			   
+	C:75.2%[S:75.1%,D:0.1%],F:2.9%,M:21.9%,n:758	   
+	570	Complete BUSCOs (C)			   
+	569	Complete and single-copy BUSCOs (S)	   
+	1	Complete and duplicated BUSCOs (D)	   
+	22	Fragmented BUSCOs (F)			   
+	166	Missing BUSCOs (M)			   
 	758	Total BUSCO groups searched		   
+
+Assembly Statistics:
+	799	Number of scaffolds
+	873	Number of contigs
+	24635576	Total length
+	0.118%	Percent gaps
+	90 KB	Scaffold N50
+	76 KB	Contigs N50
+
 
 Dependencies and versions:
 	hmmsearch: 3.1
-	metaeuk: 5.34c21f2
+	bbtools: 39.01
+	makeblastdb: 2.13.0+
+	tblastn: 2.13.0+
+	augustus: 3.4.0
+	gff2gbSmallDNA.pl: None
+	new_species.pl: None
+	etraining: None
+	busco: 5.4.4
