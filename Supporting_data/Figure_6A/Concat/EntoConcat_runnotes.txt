@@ -1,0 +1,20 @@
+Raw sequences are in single-locus folders: EntoITS_raw_010922.fasta & EntoLSU_raw_011622.fasta  
+Final alignments are in: EntoConcat_aln_corrends_011622(.fasta/.nexus)
+Final ML tree (PDF): EntoConcat_ML_tree_011622.pdf
+Final BI tree (PDF): EntoConcat_BI_tree_011622.pdf
+
+RAxML:
+./raxmlHPC -f a -d -x 7593 -#1000 -m GTRGAMMA -s EntoConcat_aln_corrends_011622.fasta -n EntoConcat_011622.out -p 85930 -q EntoConcat_partitions.txt
+Alignment has 400 distinct alignment patterns
+Proportion of gaps and completely undetermined characters in this alignment: 19.50%
+Final ML Optimization Likelihood: -5801.243898
+
+MrBayes:
+lset nst=mixed rates=gamma ngammacat=5
+mcmcp ngen=1000000 diagnfreq=1000 samplefreq=500 printfreq=10000 burninfrac=0.25 nchains=4
+Final line of run:
+1000000 -- (-5863.317) (-5867.519) (-5869.095) [-5871.626] * (-5862.306) (-5873.794) (-5871.929) [-5861.454] -- 0:00:00
+Average standard deviation of split frequencies: 0.006536
+Likelihood of best state for "cold" chain of run 1 was -5853.48
+Likelihood of best state for "cold" chain of run 2 was -5854.21
+Read a total of 4002 trees in 2 files (sampling 3002 of them)

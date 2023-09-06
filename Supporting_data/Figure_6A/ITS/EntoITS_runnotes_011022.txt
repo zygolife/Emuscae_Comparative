@@ -1,0 +1,25 @@
+Raw sequences are in: EntoITS_raw_010922.fasta  
+Final alignments are in: EntoITS_aln_masked_corrends_011022(.fasta/.nexus)
+Final ML tree (PDF): EntoITS_ML_tree_011022.pdf
+Final BI tree (PDF): EntoITS_BI_tree_011022.pdf
+
+Alignment notes:
+Overall GUIDANCE score: 0.955393
+Masking cutoff 0.5: 1.6% of residues masked
+Best model: GTR+G
+
+RAxML:
+./raxmlHPC -f a -d -x 84920 -#1000 -m GTRGAMMA -s EntoITS_aln_masked_corrends_011022.fasta -n EntoITS_011022.out -p 10082
+Alignment has 315 distinct alignment patterns
+Proportion of gaps and completely undetermined characters in this alignment: 16.19%
+Final ML Optimization Likelihood: -4181.083818
+
+MrBayes:
+lset nst=mixed rates=gamma ngammacat=5
+mcmcp ngen=1000000 diagnfreq=1000 samplefreq=500 printfreq=10000 burninfrac=0.25 nchains=4
+Final line of run:
+1000000 -- (-4203.552) (-4208.407) (-4202.147) [-4200.779] * (-4208.897) (-4193.673) (-4202.628) [-4193.698] -- 0:00:00
+Average standard deviation of split frequencies: 0.008816
+Likelihood of best state for "cold" chain of run 1 was -4185.27
+Likelihood of best state for "cold" chain of run 2 was -4186.08
+Read a total of 4002 trees in 2 files (sampling 3002 of them)
