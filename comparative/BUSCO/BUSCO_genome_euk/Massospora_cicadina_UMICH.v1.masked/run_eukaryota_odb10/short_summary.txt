@@ -1,19 +1,35 @@
-# BUSCO version is: 5.2.2 
+# BUSCO version is: 5.4.4 
 # The lineage dataset is: eukaryota_odb10 (Creation date: 2020-09-10, number of genomes: 70, number of BUSCOs: 255)
-# Summarized benchmarking in BUSCO notation for file /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/Entomophthora_muscae_UCB/genomes/Massospora_cicadina_UMICH.v1.masked.fasta
-# BUSCO was run in mode: genome
-# Gene predictor used: metaeuk
+# Summarized benchmarking in BUSCO notation for file /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/Entomophthora_muscae_UCB/genomes/Massospora_cicadina_UMICH.v1.masked.fasta
+# BUSCO was run in mode: euk_genome_aug
+# Gene predictor used: augustus
 
 	***** Results: *****
 
-	C:42.0%[S:42.0%,D:0.0%],F:22.0%,M:36.0%,n:255	   
-	107	Complete BUSCOs (C)			   
-	107	Complete and single-copy BUSCOs (S)	   
+	C:41.6%[S:41.6%,D:0.0%],F:13.7%,M:44.7%,n:255	   
+	106	Complete BUSCOs (C)			   
+	106	Complete and single-copy BUSCOs (S)	   
 	0	Complete and duplicated BUSCOs (D)	   
-	56	Fragmented BUSCOs (F)			   
-	92	Missing BUSCOs (M)			   
+	35	Fragmented BUSCOs (F)			   
+	114	Missing BUSCOs (M)			   
 	255	Total BUSCO groups searched		   
+
+Assembly Statistics:
+	272193	Number of scaffolds
+	373021	Number of contigs
+	766562605	Total length
+	0.165%	Percent gaps
+	3 KB	Scaffold N50
+	2 KB	Contigs N50
+
 
 Dependencies and versions:
 	hmmsearch: 3.1
-	metaeuk: 5.34c21f2
+	bbtools: 39.01
+	makeblastdb: 2.13.0+
+	tblastn: 2.13.0+
+	augustus: 3.4.0
+	gff2gbSmallDNA.pl: None
+	new_species.pl: None
+	etraining: None
+	busco: 5.4.4

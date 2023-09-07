@@ -1,19 +1,35 @@
-# BUSCO version is: 5.2.2 
+# BUSCO version is: 5.4.4 
 # The lineage dataset is: eukaryota_odb10 (Creation date: 2020-09-10, number of genomes: 70, number of BUSCOs: 255)
 # Summarized benchmarking in BUSCO notation for file /bigdata/stajichlab/shared/projects/ZyGoLife/datasets/genomes/DNA/Conidiobolus_coronatus_NRRL_28638.Conco1.v1.fasta
-# BUSCO was run in mode: genome
-# Gene predictor used: metaeuk
+# BUSCO was run in mode: euk_genome_aug
+# Gene predictor used: augustus
 
 	***** Results: *****
 
-	C:80.4%[S:79.6%,D:0.8%],F:5.9%,M:13.7%,n:255	   
-	205	Complete BUSCOs (C)			   
-	203	Complete and single-copy BUSCOs (S)	   
-	2	Complete and duplicated BUSCOs (D)	   
-	15	Fragmented BUSCOs (F)			   
-	35	Missing BUSCOs (M)			   
+	C:74.9%[S:74.5%,D:0.4%],F:8.2%,M:16.9%,n:255	   
+	191	Complete BUSCOs (C)			   
+	190	Complete and single-copy BUSCOs (S)	   
+	1	Complete and duplicated BUSCOs (D)	   
+	21	Fragmented BUSCOs (F)			   
+	43	Missing BUSCOs (M)			   
 	255	Total BUSCO groups searched		   
+
+Assembly Statistics:
+	1050	Number of scaffolds
+	8113	Number of contigs
+	39903661	Total length
+	20.532%	Percent gaps
+	102 KB	Scaffold N50
+	5 KB	Contigs N50
+
 
 Dependencies and versions:
 	hmmsearch: 3.1
-	metaeuk: 5.34c21f2
+	bbtools: 39.01
+	makeblastdb: 2.13.0+
+	tblastn: 2.13.0+
+	augustus: 3.4.0
+	gff2gbSmallDNA.pl: None
+	new_species.pl: None
+	etraining: None
+	busco: 5.4.4

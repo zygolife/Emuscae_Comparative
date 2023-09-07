@@ -1,6 +1,6 @@
 #!/bin/bash -l
-#SBATCH --nodes 1 --ntasks 24 --mem 32G -p short --out logs/busco_pep_euk.%a.log -J buscoEUK
-
+#SBATCH --nodes 1 -c 24 -n 1 --mem 32G -p short --out logs/busco_pep_euk.%a.log -J buscoEUK
+module load busco
 # for augustus training
 #export AUGUSTUS_CONFIG_PATH=/bigdata/stajichlab/shared/pkg/augustus/3.3/config
 # set to a local dir to avoid permission issues and pollution in global
@@ -39,7 +39,6 @@ do
 	    echo "Already have run $BASE in folder $OUTFOLDER - do you need to delete it to rerun?"
 	    exit
 	else
-	    module load busco/5.3.0
 	    busco -m protein -l $LINEAGE -c $CPU -o ${BASE} --out_path ${OUTFOLDER} --offline --in $GENOMEFILE --download_path $BUSCO_LINEAGES --tar
 	fi
 done

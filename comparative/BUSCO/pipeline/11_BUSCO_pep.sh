@@ -1,6 +1,6 @@
 #!/bin/bash -l
-#SBATCH --nodes 1 --ntasks 24 --mem 32G -p short --out logs/busco_pep.%a.log -J busco
-
+#SBATCH --nodes 1 -n 1 -c 24 --mem 32G -p short --out logs/busco_pep.%a.log -J busco
+module load busco
 # for augustus training
 #export AUGUSTUS_CONFIG_PATH=/bigdata/stajichlab/shared/pkg/augustus/3.3/config
 # set to a local dir to avoid permission issues and pollution in global
@@ -32,14 +32,13 @@ SAMPLEFILE=pep_samples.csv
 IFS=,
 cat $SAMPLEFILE | sed -n ${N}p | while read FILE
 do
-	BASE=$(basename $FILE .fasta | perl -p -e 's/\.proteins\.fa|\.aa//' )
+	BASE=$(basename $FILE | perl -p -e 's/\.proteins\.fa|\.aa\.fasta//' )
 	GENOMEFILE=$(realpath $GENOMEFOLDER/$FILE)
 	
 	if [ -d "$OUTFOLDER/${BASE}" ];  then
 	    echo "Already have run $BASE in folder $OUTFOLDER - do you need to delete it to rerun?"
 	    exit
 	else
-	    module load busco/5.3.0
 	    busco -m protein -l $LINEAGE -c $CPU -o ${BASE} --out_path ${OUTFOLDER} --offline --in $GENOMEFILE --download_path $BUSCO_LINEAGES --tar
 	fi
 done
