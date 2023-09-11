@@ -241,7 +241,9 @@ mer.dwn.2$widths= maxWidth
 layout1 <- rbind(c(2),
                  c(1))
 
-grid.arrange(mer.dwn.1, mer.dwn.2, layout_matrix=layout1, heights=c(0.4, 0.6))
+mer.down.plt=grid.arrange(mer.dwn.1, mer.dwn.2, layout_matrix=layout1, heights=c(0.4, 0.6))
+
+#ggsave(file="plots/MEROPS Down.svg", plot=mer.down.plt, width=11, height=10)
 
 mer.up.1=ggplotGrob(mer.up)
 mer.up.2=ggplotGrob(mer.up2)
@@ -251,7 +253,9 @@ maxWidth <- unit.pmax(mer.up.1$widths, mer.up.2$widths)
 mer.up.1$widths= maxWidth
 mer.up.2$widths= maxWidth
 
-grid.arrange(mer.up.1, mer.up.2, layout_matrix=layout1, heights=c(0.4, 0.6))
+mer.up.plt=grid.arrange(mer.up.1, mer.up.2, layout_matrix=layout1, heights=c(0.4, 0.6))
+
+#ggsave(file="plots/MEROPS Up.svg", plot=mer.up.plt, width=11, height=10)
 
 mer3=ggplotGrob(mer.plt3)
 mer4=ggplotGrob(mer.plt4)
