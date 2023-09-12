@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!-- Document definition -->
+<!-- http://zlab.bu.edu/~phaverty/SupplementalData/CisML/cisml.dtd -->
+<!DOCTYPE cis-element-search[
+<!ELEMENT cis-element-search (program-name, parameters, (pattern | multi-pattern-scan)*)>
+<!ELEMENT program-name (#PCDATA)>
+<!ELEMENT parameters (
+  pattern-file, 
+  sequence-file, 
+  background-seq-file?,
+  pattern-pvalue-cutoff?,
+  sequence-pvalue-cutoff?,
+  site-pvalue-cutoff?,
+  sequence-filtering,
+  ANY*
+ )>
+<!ELEMENT command-line (#PCDATA)>
+<!ELEMENT pattern-file (#PCDATA)>
+<!ELEMENT sequence-file (#PCDATA)>
+<!ELEMENT background-seq-file (#PCDATA)>
+<!ELEMENT pattern-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-pvalue-cutoff (#PCDATA)>
+<!ELEMENT site-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-filtering EMPTY>
+<!ELEMENT multi-pattern-scan (pattern+, ANY*)>
+<!ELEMENT pattern (scanned-sequence+, ANY*)>
+<!ELEMENT scanned-sequence (matched-element*, ANY*)>
+<!ELEMENT matched-element (sequence)>
+<!ELEMENT sequence (#PCDATA)>
+<!ATTLIST cis-element-search
+xmlns:xsi CDATA #IMPLIED
+xmlns:mem CDATA #IMPLIED
+xsi:schemaLocation CDATA #IMPLIED
+>
+<!ATTLIST sequence-filtering
+on-off CDATA #REQUIRED
+type CDATA #IMPLIED
+>
+<!ATTLIST multi-pattern-scan
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+>
+<!ATTLIST pattern
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+pvalue CDATA #IMPLIED
+score CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST scanned-sequence
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+length CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST matched-element
+start CDATA #REQUIRED
+stop CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+clusterid CDATA #IMPLIED
+>
+
+]>
+<cis-element-search
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://zlab.bu.edu/schema/cisml cisml.xsd"
+  xmlns="http://zlab.bu.edu/schema/cisml"
+  xmlns:mem="http://noble.gs.washington.edu/meme"
+>
+<program-name>fimo</program-name>
+<parameters>
+<pattern-file>/bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Zoopthora_radicans/antismash_local/meme/gene_4443/+04_-01/meme.html</pattern-file>
+<sequence-file>/bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Zoopthora_radicans/antismash_local/scaffold_186_promoter_sequences.fasta</sequence-file>
+<site-pvalue-cutoff>6e-05</site-pvalue-cutoff>
+<sequence-filtering on-off="off"/>
+</parameters>
+<pattern accession="1" name="1">
+<scanned-sequence accession="gene_4427" name="gene_4427">
+</scanned-sequence>
+<scanned-sequence accession="gene_4428" name="gene_4428">
+</scanned-sequence>
+<scanned-sequence accession="gene_4429" name="gene_4429">
+</scanned-sequence>
+<scanned-sequence accession="gene_4430" name="gene_4430">
+</scanned-sequence>
+<scanned-sequence accession="gene_4431" name="gene_4431">
+<matched-element start="900" stop="889" score="9.16429" pvalue="5.48e-05">
+<sequence>TTCATATGACCC</sequence>
+<mem:qvalue>0.716</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_4432" name="gene_4432">
+</scanned-sequence>
+<scanned-sequence accession="gene_4434" name="gene_4434">
+</scanned-sequence>
+<scanned-sequence accession="gene_4435" name="gene_4435">
+</scanned-sequence>
+<scanned-sequence accession="gene_4437" name="gene_4437">
+</scanned-sequence>
+<scanned-sequence accession="gene_4438" name="gene_4438">
+</scanned-sequence>
+<scanned-sequence accession="gene_4440" name="gene_4440">
+</scanned-sequence>
+<scanned-sequence accession="gene_4441" name="gene_4441">
+</scanned-sequence>
+<scanned-sequence accession="gene_4442" name="gene_4442">
+</scanned-sequence>
+<scanned-sequence accession="gene_4443" name="gene_4443">
+<matched-element start="197" stop="186" score="21.3286" pvalue="2.56e-08">
+<sequence>CCCGGGTGACCC</sequence>
+<mem:qvalue>0.00134</mem:qvalue>
+</matched-element>
+<matched-element start="148" stop="159" score="17.8143" pvalue="1.19e-06">
+<sequence>CTCGGATGACGC</sequence>
+<mem:qvalue>0.0207</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_4444" name="gene_4444">
+</scanned-sequence>
+<scanned-sequence accession="gene_4445" name="gene_4445">
+</scanned-sequence>
+<scanned-sequence accession="gene_4446" name="gene_4446">
+</scanned-sequence>
+<scanned-sequence accession="gene_4447" name="gene_4447">
+<matched-element start="154" stop="143" score="18.1" pvalue="9.61e-07">
+<sequence>CCCATGTGCCCC</sequence>
+<mem:qvalue>0.0207</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_4448" name="gene_4448">
+</scanned-sequence>
+<scanned-sequence accession="gene_4449" name="gene_4449">
+</scanned-sequence>
+<scanned-sequence accession="gene_4450" name="gene_4450">
+</scanned-sequence>
+<scanned-sequence accession="gene_4451+gene_4452" name="gene_4451+gene_4452">
+</scanned-sequence>
+<scanned-sequence accession="gene_4453" name="gene_4453">
+</scanned-sequence>
+<scanned-sequence accession="gene_4454" name="gene_4454">
+</scanned-sequence>
+<scanned-sequence accession="gene_4455" name="gene_4455">
+</scanned-sequence>
+<scanned-sequence accession="gene_4456" name="gene_4456">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+</cis-element-search>

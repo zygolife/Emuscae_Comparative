@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!-- Document definition -->
+<!-- http://zlab.bu.edu/~phaverty/SupplementalData/CisML/cisml.dtd -->
+<!DOCTYPE cis-element-search[
+<!ELEMENT cis-element-search (program-name, parameters, (pattern | multi-pattern-scan)*)>
+<!ELEMENT program-name (#PCDATA)>
+<!ELEMENT parameters (
+  pattern-file, 
+  sequence-file, 
+  background-seq-file?,
+  pattern-pvalue-cutoff?,
+  sequence-pvalue-cutoff?,
+  site-pvalue-cutoff?,
+  sequence-filtering,
+  ANY*
+ )>
+<!ELEMENT command-line (#PCDATA)>
+<!ELEMENT pattern-file (#PCDATA)>
+<!ELEMENT sequence-file (#PCDATA)>
+<!ELEMENT background-seq-file (#PCDATA)>
+<!ELEMENT pattern-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-pvalue-cutoff (#PCDATA)>
+<!ELEMENT site-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-filtering EMPTY>
+<!ELEMENT multi-pattern-scan (pattern+, ANY*)>
+<!ELEMENT pattern (scanned-sequence+, ANY*)>
+<!ELEMENT scanned-sequence (matched-element*, ANY*)>
+<!ELEMENT matched-element (sequence)>
+<!ELEMENT sequence (#PCDATA)>
+<!ATTLIST cis-element-search
+xmlns:xsi CDATA #IMPLIED
+xmlns:mem CDATA #IMPLIED
+xsi:schemaLocation CDATA #IMPLIED
+>
+<!ATTLIST sequence-filtering
+on-off CDATA #REQUIRED
+type CDATA #IMPLIED
+>
+<!ATTLIST multi-pattern-scan
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+>
+<!ATTLIST pattern
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+pvalue CDATA #IMPLIED
+score CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST scanned-sequence
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+length CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST matched-element
+start CDATA #REQUIRED
+stop CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+clusterid CDATA #IMPLIED
+>
+
+]>
+<cis-element-search
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://zlab.bu.edu/schema/cisml cisml.xsd"
+  xmlns="http://zlab.bu.edu/schema/cisml"
+  xmlns:mem="http://noble.gs.washington.edu/meme"
+>
+<program-name>fimo</program-name>
+<parameters>
+<pattern-file>/bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Zoopthora_radicans/antismash_local/meme/gene_1865/+04_-00/meme.html</pattern-file>
+<sequence-file>/bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Zoopthora_radicans/antismash_local/scaffold_20_promoter_sequences.fasta</sequence-file>
+<site-pvalue-cutoff>6e-05</site-pvalue-cutoff>
+<sequence-filtering on-off="off"/>
+</parameters>
+<pattern accession="1" name="1">
+<scanned-sequence accession="gene_1856" name="gene_1856">
+</scanned-sequence>
+<scanned-sequence accession="gene_1857" name="gene_1857">
+</scanned-sequence>
+<scanned-sequence accession="gene_1858" name="gene_1858">
+</scanned-sequence>
+<scanned-sequence accession="gene_1859" name="gene_1859">
+</scanned-sequence>
+<scanned-sequence accession="gene_1861" name="gene_1861">
+</scanned-sequence>
+<scanned-sequence accession="gene_1862" name="gene_1862">
+<matched-element start="374" stop="363" score="13.7798" pvalue="1.32e-05">
+<sequence>GATAAGGGATAG</sequence>
+<mem:qvalue>0.172</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_1863" name="gene_1863">
+</scanned-sequence>
+<scanned-sequence accession="gene_1864" name="gene_1864">
+</scanned-sequence>
+<scanned-sequence accession="gene_1865" name="gene_1865">
+<matched-element start="142" stop="131" score="13.5413" pvalue="1.5e-05">
+<sequence>TATCTCGGATAG</sequence>
+<mem:qvalue>0.172</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_1866" name="gene_1866">
+<matched-element start="724" stop="713" score="13.0917" pvalue="1.9e-05">
+<sequence>GCTCTGGAACGG</sequence>
+<mem:qvalue>0.189</mem:qvalue>
+</matched-element>
+<matched-element start="676" stop="665" score="12.945" pvalue="2.06e-05">
+<sequence>GAGATGGGAGAG</sequence>
+<mem:qvalue>0.189</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_1867" name="gene_1867">
+<matched-element start="225" stop="236" score="18.5963" pvalue="1.97e-07">
+<sequence>GATCTGGGATAG</sequence>
+<mem:qvalue>0.0132</mem:qvalue>
+</matched-element>
+<matched-element start="19" stop="30" score="18.5596" pvalue="2.89e-07">
+<sequence>GATCTGGTAGGG</sequence>
+<mem:qvalue>0.0132</mem:qvalue>
+</matched-element>
+<matched-element start="542" stop="531" score="17.2752" pvalue="6.36e-07">
+<sequence>GATCAGGGAGGG</sequence>
+<mem:qvalue>0.0194</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_1868" name="gene_1868">
+</scanned-sequence>
+<scanned-sequence accession="gene_1869" name="gene_1869">
+<matched-element start="749" stop="760" score="15.5688" pvalue="3.77e-06">
+<sequence>GCTCTGGTCGAG</sequence>
+<mem:qvalue>0.0863</mem:qvalue>
+</matched-element>
+<matched-element start="892" stop="881" score="15.1927" pvalue="5.32e-06">
+<sequence>GATCAGGTCTGG</sequence>
+<mem:qvalue>0.0976</mem:qvalue>
+</matched-element>
+<matched-element start="328" stop="317" score="13.9541" pvalue="1.15e-05">
+<sequence>TATCCGGTATAG</sequence>
+<mem:qvalue>0.172</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_1870" name="gene_1870">
+</scanned-sequence>
+<scanned-sequence accession="gene_1871" name="gene_1871">
+</scanned-sequence>
+<scanned-sequence accession="gene_1872" name="gene_1872">
+</scanned-sequence>
+<scanned-sequence accession="gene_1873" name="gene_1873">
+</scanned-sequence>
+<scanned-sequence accession="gene_1874" name="gene_1874">
+</scanned-sequence>
+<scanned-sequence accession="gene_1875" name="gene_1875">
+</scanned-sequence>
+<scanned-sequence accession="gene_1876" name="gene_1876">
+</scanned-sequence>
+<scanned-sequence accession="gene_1877" name="gene_1877">
+</scanned-sequence>
+<scanned-sequence accession="gene_1878" name="gene_1878">
+</scanned-sequence>
+<scanned-sequence accession="gene_1879" name="gene_1879">
+</scanned-sequence>
+<scanned-sequence accession="gene_1880" name="gene_1880">
+</scanned-sequence>
+<scanned-sequence accession="gene_1881" name="gene_1881">
+</scanned-sequence>
+<scanned-sequence accession="gene_1882" name="gene_1882">
+</scanned-sequence>
+<scanned-sequence accession="gene_1883" name="gene_1883">
+</scanned-sequence>
+<scanned-sequence accession="gene_1884+gene_1885" name="gene_1884+gene_1885">
+</scanned-sequence>
+<scanned-sequence accession="gene_1886" name="gene_1886">
+</scanned-sequence>
+<scanned-sequence accession="gene_1888" name="gene_1888">
+</scanned-sequence>
+<scanned-sequence accession="gene_1889" name="gene_1889">
+</scanned-sequence>
+<scanned-sequence accession="gene_1890" name="gene_1890">
+</scanned-sequence>
+<scanned-sequence accession="gene_1891" name="gene_1891">
+</scanned-sequence>
+<scanned-sequence accession="gene_1892" name="gene_1892">
+</scanned-sequence>
+<scanned-sequence accession="gene_1893" name="gene_1893">
+</scanned-sequence>
+<scanned-sequence accession="gene_1894" name="gene_1894">
+</scanned-sequence>
+<scanned-sequence accession="gene_1895" name="gene_1895">
+</scanned-sequence>
+<scanned-sequence accession="gene_1897" name="gene_1897">
+</scanned-sequence>
+<scanned-sequence accession="gene_1898" name="gene_1898">
+</scanned-sequence>
+<scanned-sequence accession="gene_1899" name="gene_1899">
+</scanned-sequence>
+<scanned-sequence accession="gene_1900" name="gene_1900">
+</scanned-sequence>
+<scanned-sequence accession="gene_1901" name="gene_1901">
+</scanned-sequence>
+<scanned-sequence accession="gene_1902" name="gene_1902">
+</scanned-sequence>
+<scanned-sequence accession="gene_1903" name="gene_1903">
+</scanned-sequence>
+<scanned-sequence accession="gene_1904" name="gene_1904">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+</cis-element-search>
