@@ -16,10 +16,10 @@ The analysis include
 
 The [Supporting_data](/Supporting_data) folder contains archives of transcriptome assemblies and [data used to build multi-strain phylogeny](/Supporting_data/Figure_6A).
 
-==Citation==
-
+Citation
+===
 Jason E Stajich, Brian Lovett, Emily Lee, Angie M. Macias, Ann E Hajek, Benjamin L de Bivort, Matt T. Kasson, Henrik H. De Fine Licht, Carolyn Elya. Signatures of transposon-mediated genome inflation, host specialization, and photoentrainment in Entomophthora muscae and allied entomophthoralean fungi. _Submitted_.
 
 
-Curated by Jason Stajich - jason.stajich[AT]ucr.edu
+Curated by Jason Stajich - jason.stajich[AT]ucr.edu @hyphaltip
 
