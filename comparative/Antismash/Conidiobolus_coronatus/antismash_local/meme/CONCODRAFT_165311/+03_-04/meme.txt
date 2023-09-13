@@ -1,0 +1,244 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 4.11.2 (Release date: Thu May 05 14:58:55 2016 -0700)
+
+For further information on how to interpret these results or to get
+a copy of the MEME software please access http://meme-suite.org .
+
+This file may be used as input to the MAST algorithm for searching
+sequence databases for matches to groups of motifs.  MAST is available
+for interactive use and downloading at http://meme-suite.org .
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to discover
+motifs in biopolymers", Proceedings of the Second International
+Conference on Intelligent Systems for Molecular Biology, pp. 28-36,
+AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+DATAFILE= /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Conidiobolus_coronatus/antismash_local/meme/CONCODRAFT_165311/+03_-04/promoters.fasta
+ALPHABET= ACGT
+Sequence name            Weight Length  Sequence name            Weight Length  
+-------------            ------ ------  -------------            ------ ------  
+CONCODRAFT_14398         1.0000   1051  CONCODRAFT_67076         1.0000   1051  
+CONCODRAFT_t12           1.0000    284  CONCODRAFT_14399+CONCODR 1.0000   1517  
+CONCODRAFT_165311__ANCHO 1.0000   1051  CONCODRAFT_1865          1.0000   1032  
+CONCODRAFT_1866          1.0000    792  CONCODRAFT_t11+CONCODRAF 1.0000   1935  
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Conidiobolus_coronatus/antismash_local/meme/CONCODRAFT_165311/+03_-04/promoters.fasta -oc /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Conidiobolus_coronatus/antismash_local/meme/CONCODRAFT_165311/+03_-04 -dna -nostatus -mod anr -nmotifs 1 -minw 6 -maxw 12 -revcomp -evt 1.0e+005 
+
+model:  mod=           anr    nmotifs=         1    evt=        100000
+object function=  E-value of product of p-values
+width:  minw=            6    maxw=           12
+width:  wg=             11    ws=              1    endgaps=       yes
+nsites: minsites=        2    maxsites=       40    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+global: substring=     yes    branching=      no    wbranch=        no
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+data:   n=            8713    N=               8    shuffle=        -1
+strands: + -
+sample: seed=            0    ctfrac=         -1    maxwords=       -1
+Letter frequencies in dataset:
+A 0.381 C 0.119 G 0.119 T 0.381 
+Background letter frequencies (from dataset with add-one prior applied):
+A 0.381 C 0.119 G 0.119 T 0.381 
+********************************************************************************
+
+
+********************************************************************************
+MOTIF  1 MEME	width =  12  sites =  17  llr = 185  E-value = 5.1e-001
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif 1 Description
+--------------------------------------------------------------------------------
+Simplified        A  31:366:94:::
+pos.-specific     C  :11::41::1:1
+probability       G  73164:1159a5
+matrix            T  :581:18:1::4
+
+         bits    3.1           * 
+                 2.8           * 
+                 2.5          ** 
+                 2.1          ** 
+Relative         1.8 *        ** 
+Entropy          1.5 *        ** 
+(15.7 bits)      1.2 *  **  * ***
+                 0.9 * *** ******
+                 0.6 * **********
+                 0.3 ************
+                 0.0 ------------
+
+Multilevel           GTTGAATAGGGG
+consensus            AG AGC  A  T
+sequence                         
+                                 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value                Site  
+-------------            ------  ----- ---------            ------------
+CONCODRAFT_14399+CONCODR     +   1166  1.52e-08 ATCAAATGAG GTTGACTAGGGG CTTCCAAGTT
+CONCODRAFT_14399+CONCODR     -   1268  9.41e-07 TTAAATACTA GTTGGATGGGGT CAATTAAAAG
+CONCODRAFT_67076             -    839  1.09e-06 AATTTTTATG GGTGGATAAGGC TTTTATATCT
+CONCODRAFT_1866              -    330  1.28e-06 TTGAACTAGA GCTGACTAAGGT ACATTAATAT
+CONCODRAFT_14398             +   1040  1.28e-06 AGTTGTTGCC GTTGACGAAGGG           
+CONCODRAFT_165311__ANCHO     -    505  1.38e-06 TTAAGTATAT ATTGGATAGGGT TATATTTAGT
+CONCODRAFT_t11+CONCODRAF     -   1292  2.96e-06 TATGATATAT GCTAGCTATGGG ATGTAGTTTA
+CONCODRAFT_14399+CONCODR     -   1359  2.96e-06 AGATGGTTGA AGGAGATAGGGG AGAGATATAG
+CONCODRAFT_1866              -    521  3.41e-06 AAATTATTAT GTTAAATAGGGT TAATTTATAG
+CONCODRAFT_t11+CONCODRAF     +    798  3.90e-06 TATTATATAA GTTGAATAGCGT TAAACTAGGC
+CONCODRAFT_t11+CONCODRAF     +     84  5.97e-06 AATTTAACTA GTTGATTAAGGG TTGAATTTTA
+CONCODRAFT_t11+CONCODRAF     +    770  6.69e-06 GATATAAACT AGGGGCTAGCGT CCTTGTTATT
+CONCODRAFT_1865              -    361  7.36e-06 TTAACGATTT GATAAACAGGGG AAAAAGCCAG
+CONCODRAFT_14398             -     94  7.36e-06 ATATATATAC AACGGATAGGGG ACTTTGCTTT
+CONCODRAFT_t11+CONCODRAF     -    226  9.20e-06 GAAAAGAAAA AGTGAATAAGGT TTTAGGAAGG
+CONCODRAFT_14398             -    776  1.06e-05 TAAATTCAAA GTTTACTAAGGG TAATATAATT
+CONCODRAFT_67076             +    994  1.23e-05 AATACCCGAT GGTAAACATGGG AACCAAGTTT
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+CONCODRAFT_14399+CONCODR            3e-06  1165_[+1]_90_[-1]_79_[-1]_147
+CONCODRAFT_67076                  1.2e-05  838_[-1]_143_[+1]_46
+CONCODRAFT_1866                   1.3e-06  329_[-1]_179_[-1]_260
+CONCODRAFT_14398                  7.4e-06  93_[-1]_670_[-1]_252_[+1]
+CONCODRAFT_165311__ANCHO          1.4e-06  504_[-1]_535
+CONCODRAFT_t11+CONCODRAF          9.2e-06  83_[+1]_130_[-1]_532_[+1]_16_[+1]_
+                                           482_[-1]_632
+CONCODRAFT_1865                   7.4e-06  360_[-1]_660
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF 1 width=12 seqs=17
+CONCODRAFT_14399+CONCODR ( 1166) GTTGACTAGGGG  1 
+CONCODRAFT_14399+CONCODR ( 1268) GTTGGATGGGGT  1 
+CONCODRAFT_67076         (  839) GGTGGATAAGGC  1 
+CONCODRAFT_1866          (  330) GCTGACTAAGGT  1 
+CONCODRAFT_14398         ( 1040) GTTGACGAAGGG  1 
+CONCODRAFT_165311__ANCHO (  505) ATTGGATAGGGT  1 
+CONCODRAFT_t11+CONCODRAF ( 1292) GCTAGCTATGGG  1 
+CONCODRAFT_14399+CONCODR ( 1359) AGGAGATAGGGG  1 
+CONCODRAFT_1866          (  521) GTTAAATAGGGT  1 
+CONCODRAFT_t11+CONCODRAF (  798) GTTGAATAGCGT  1 
+CONCODRAFT_t11+CONCODRAF (   84) GTTGATTAAGGG  1 
+CONCODRAFT_t11+CONCODRAF (  770) AGGGGCTAGCGT  1 
+CONCODRAFT_1865          (  361) GATAAACAGGGG  1 
+CONCODRAFT_14398         (   94) AACGGATAGGGG  1 
+CONCODRAFT_t11+CONCODRAF (  226) AGTGAATAAGGT  1 
+CONCODRAFT_14398         (  776) GTTTACTAAGGG  1 
+CONCODRAFT_67076         (  994) GGTAAACATGGG  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 12 n= 8625 bayes= 10.3507 E= 5.1e-001 
+   -37  -1073    257  -1073 
+  -169     -2    130     30 
+ -1073   -102     -2    111 
+   -37  -1073    244   -269 
+    63  -1073    179  -1073 
+    63    157  -1073   -269 
+ -1073     -2   -102    111 
+   130  -1073   -102  -1073 
+   -11  -1073    215   -169 
+ -1073     -2    289  -1073 
+ -1073  -1073    307  -1073 
+ -1073   -102    215     11 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 12 nsites= 17 E= 5.1e-001 
+ 0.294118  0.000000  0.705882  0.000000 
+ 0.117647  0.117647  0.294118  0.470588 
+ 0.000000  0.058824  0.117647  0.823529 
+ 0.294118  0.000000  0.647059  0.058824 
+ 0.588235  0.000000  0.411765  0.000000 
+ 0.588235  0.352941  0.000000  0.058824 
+ 0.000000  0.117647  0.058824  0.823529 
+ 0.941176  0.000000  0.058824  0.000000 
+ 0.352941  0.000000  0.529412  0.117647 
+ 0.000000  0.117647  0.882353  0.000000 
+ 0.000000  0.000000  1.000000  0.000000 
+ 0.000000  0.058824  0.529412  0.411765 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 regular expression
+--------------------------------------------------------------------------------
+[GA][TG]T[GA][AG][AC]TA[GA]GG[GT]
+--------------------------------------------------------------------------------
+
+
+
+
+Time 13.35 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+SUMMARY OF MOTIFS
+********************************************************************************
+
+--------------------------------------------------------------------------------
+	Combined block diagrams: non-overlapping sites with p-value < 0.0001
+--------------------------------------------------------------------------------
+SEQUENCE NAME            COMBINED P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+CONCODRAFT_14398                 2.67e-03  93_[-1(7.36e-06)]_670_\
+    [-1(1.06e-05)]_252_[+1(1.28e-06)]
+CONCODRAFT_67076                 2.27e-03  838_[-1(1.09e-06)]_143_\
+    [+1(1.23e-05)]_46
+CONCODRAFT_t12                   6.73e-02  284
+CONCODRAFT_14399+CONCODR         4.57e-05  1165_[+1(1.52e-08)]_90_\
+    [-1(9.41e-07)]_79_[-1(2.96e-06)]_147
+CONCODRAFT_165311__ANCHO         2.86e-03  504_[-1(1.38e-06)]_535
+CONCODRAFT_1865                  1.49e-02  360_[-1(7.36e-06)]_660
+CONCODRAFT_1866                  2.00e-03  329_[-1(1.28e-06)]_179_\
+    [-1(3.41e-06)]_260
+CONCODRAFT_t11+CONCODRAF         1.13e-02  83_[+1(5.97e-06)]_130_\
+    [-1(9.20e-06)]_532_[+1(6.69e-06)]_16_[+1(3.90e-06)]_482_[-1(2.96e-06)]_632
+--------------------------------------------------------------------------------
+
+********************************************************************************
+
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: i31
+
+********************************************************************************

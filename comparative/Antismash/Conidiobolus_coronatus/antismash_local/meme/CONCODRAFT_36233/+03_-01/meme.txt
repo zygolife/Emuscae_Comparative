@@ -1,0 +1,211 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 4.11.2 (Release date: Thu May 05 14:58:55 2016 -0700)
+
+For further information on how to interpret these results or to get
+a copy of the MEME software please access http://meme-suite.org .
+
+This file may be used as input to the MAST algorithm for searching
+sequence databases for matches to groups of motifs.  MAST is available
+for interactive use and downloading at http://meme-suite.org .
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to discover
+motifs in biopolymers", Proceedings of the Second International
+Conference on Intelligent Systems for Molecular Biology, pp. 28-36,
+AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+DATAFILE= /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Conidiobolus_coronatus/antismash_local/meme/CONCODRAFT_36233/+03_-01/promoters.fasta
+ALPHABET= ACGT
+Sequence name            Weight Length  Sequence name            Weight Length  
+-------------            ------ ------  -------------            ------ ------  
+CONCODRAFT_4081          1.0000   1051  CONCODRAFT_36233__ANCHOR 1.0000   1051  
+CONCODRAFT_4086          1.0000   1051  CONCODRAFT_t139+CONCODRA 1.0000    852  
+CONCODRAFT_77510         1.0000   1051  
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Conidiobolus_coronatus/antismash_local/meme/CONCODRAFT_36233/+03_-01/promoters.fasta -oc /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Conidiobolus_coronatus/antismash_local/meme/CONCODRAFT_36233/+03_-01 -dna -nostatus -mod anr -nmotifs 1 -minw 6 -maxw 12 -revcomp -evt 1.0e+005 
+
+model:  mod=           anr    nmotifs=         1    evt=        100000
+object function=  E-value of product of p-values
+width:  minw=            6    maxw=           12
+width:  wg=             11    ws=              1    endgaps=       yes
+nsites: minsites=        2    maxsites=       25    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+global: substring=     yes    branching=      no    wbranch=        no
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+data:   n=            5056    N=               5    shuffle=        -1
+strands: + -
+sample: seed=            0    ctfrac=         -1    maxwords=       -1
+Letter frequencies in dataset:
+A 0.372 C 0.128 G 0.128 T 0.372 
+Background letter frequencies (from dataset with add-one prior applied):
+A 0.372 C 0.128 G 0.128 T 0.372 
+********************************************************************************
+
+
+********************************************************************************
+MOTIF  1 MEME	width =  11  sites =   7  llr = 89  E-value = 4.4e+002
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif 1 Description
+--------------------------------------------------------------------------------
+Simplified        A  :6:::41:1::
+pos.-specific     C  a34a::336aa
+probability       G  ::4::163:::
+matrix            T  :11:a4:43::
+
+         bits    3.0 *  *     **
+                 2.7 *  *     **
+                 2.4 *  *     **
+                 2.1 *  *     **
+Relative         1.8 *  *     **
+Entropy          1.5 *  ** *  **
+(18.3 bits)      1.2 * *** *  **
+                 0.9 * *** *****
+                 0.6 ***** *****
+                 0.3 ***********
+                 0.0 -----------
+
+Multilevel           CACCTAGTCCC
+consensus             CG  TCCT  
+sequence                    G   
+                                
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value               Site  
+-------------            ------  ----- ---------            -----------
+CONCODRAFT_4086              -     13  1.56e-07 TAAGAACGAC CAGCTACCCCC TCTCTATGGC
+CONCODRAFT_36233__ANCHOR     +    243  2.52e-07 TGAAATCTAA CTGCTTGCCCC ATAGATTCAT
+CONCODRAFT_36233__ANCHOR     -    708  2.94e-07 CTCACTCAAG CCGCTTGGTCC AAGTTCTTAT
+CONCODRAFT_77510             -    191  1.05e-06 ATTTAATAGG CACCTAAGCCC AAATTTATCA
+CONCODRAFT_36233__ANCHOR     -    181  1.39e-06 TGATCTCACT CATCTTGTCCC TTCTTACGAT
+CONCODRAFT_36233__ANCHOR     -     92  1.47e-06 CCTATAAGTT CCCCTACTTCC ACTCAGGACT
+CONCODRAFT_36233__ANCHOR     -    111  2.09e-06 CCTATTTCCC CACCTGGTACC TATAAGTTCC
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+CONCODRAFT_4086                   1.6e-07  12_[-1]_1028
+CONCODRAFT_36233__ANCHOR          1.4e-06  91_[-1]_8_[-1]_59_[-1]_51_[+1]_
+                                           454_[-1]_333
+CONCODRAFT_77510                  1.1e-06  190_[-1]_850
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF 1 width=11 seqs=7
+CONCODRAFT_4086          (   13) CAGCTACCCCC  1 
+CONCODRAFT_36233__ANCHOR (  243) CTGCTTGCCCC  1 
+CONCODRAFT_36233__ANCHOR (  708) CCGCTTGGTCC  1 
+CONCODRAFT_77510         (  191) CACCTAAGCCC  1 
+CONCODRAFT_36233__ANCHOR (  181) CATCTTGTCCC  1 
+CONCODRAFT_36233__ANCHOR (   92) CCCCTACTTCC  1 
+CONCODRAFT_36233__ANCHOR (  111) CACCTGGTACC  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 11 n= 5006 bayes= 10.7036 E= 4.4e+002 
+  -945    296   -945   -945 
+    62    116   -945   -138 
+  -945    174    174   -138 
+  -945    296   -945   -945 
+  -945   -945   -945    143 
+    20   -945     16     20 
+  -138    116    216   -945 
+  -945    116    116     20 
+  -138    216   -945    -38 
+  -945    296   -945   -945 
+  -945    296   -945   -945 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 11 nsites= 7 E= 4.4e+002 
+ 0.000000  1.000000  0.000000  0.000000 
+ 0.571429  0.285714  0.000000  0.142857 
+ 0.000000  0.428571  0.428571  0.142857 
+ 0.000000  1.000000  0.000000  0.000000 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.428571  0.000000  0.142857  0.428571 
+ 0.142857  0.285714  0.571429  0.000000 
+ 0.000000  0.285714  0.285714  0.428571 
+ 0.142857  0.571429  0.000000  0.285714 
+ 0.000000  1.000000  0.000000  0.000000 
+ 0.000000  1.000000  0.000000  0.000000 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 regular expression
+--------------------------------------------------------------------------------
+C[AC][CG]CT[AT][GC][TCG][CT]CC
+--------------------------------------------------------------------------------
+
+
+
+
+Time  5.11 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+SUMMARY OF MOTIFS
+********************************************************************************
+
+--------------------------------------------------------------------------------
+	Combined block diagrams: non-overlapping sites with p-value < 0.0001
+--------------------------------------------------------------------------------
+SEQUENCE NAME            COMBINED P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+CONCODRAFT_4081                  6.88e-01  1051
+CONCODRAFT_36233__ANCHOR         5.24e-04  91_[-1(1.47e-06)]_8_[-1(2.09e-06)]_\
+    59_[-1(1.39e-06)]_51_[+1(2.52e-07)]_168_[-1(1.65e-05)]_275_[-1(2.94e-07)]_\
+    333
+CONCODRAFT_4086                  3.25e-04  12_[-1(1.56e-07)]_1028
+CONCODRAFT_t139+CONCODRA         4.99e-01  852
+CONCODRAFT_77510                 2.19e-03  190_[-1(1.05e-06)]_850
+--------------------------------------------------------------------------------
+
+********************************************************************************
+
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: i31
+
+********************************************************************************

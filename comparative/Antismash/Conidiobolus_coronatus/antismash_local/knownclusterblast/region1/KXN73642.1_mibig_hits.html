@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>SSTG_01181</td>
+              <td>peptidase_S8</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000597/1">BGC0000597</a></td>
+              <td>RiPP:Proteusin</td>
+              <td>39.0</td>
+              <td>79.0</td>
+              <td>136.0</td>
+              <td>7.5e-32</td>
+          </tr>
+    
+          <tr>
+              <td>WP_043260784.1</td>
+              <td>S8_family_serine_peptidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000597/1">BGC0000597</a></td>
+              <td>RiPP:Proteusin</td>
+              <td>39.0</td>
+              <td>79.0</td>
+              <td>136.0</td>
+              <td>7.5e-32</td>
+          </tr>
+    
+          <tr>
+              <td>AAN85481.1</td>
+              <td>subtilisin-like_secreted_protease</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001101/1">BGC0001101</a></td>
+              <td>NRP + Polyketide:Modular type I + Polyketide:Trans-AT type I</td>
+              <td>38.0</td>
+              <td>80.3</td>
+              <td>133.0</td>
+              <td>4.9e-31</td>
+          </tr>
+    
+          <tr>
+              <td>NP_626689.1</td>
+              <td>peptidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000595/1">BGC0000595</a></td>
+              <td>RiPP</td>
+              <td>37.0</td>
+              <td>80.9</td>
+              <td>128.0</td>
+              <td>2.1e-29</td>
+          </tr>
+    
+          <tr>
+              <td>WP_020636805.1</td>
+              <td>S8_family_serine_peptidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0002011/1">BGC0002011</a></td>
+              <td>Polyketide</td>
+              <td>38.0</td>
+              <td>79.6</td>
+              <td>128.0</td>
+              <td>2.7e-29</td>
+          </tr>
+    
+          <tr>
+              <td>WP_003976359.1</td>
+              <td>S8_family_serine_peptidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000596/1">BGC0000596</a></td>
+              <td>RiPP</td>
+              <td>38.0</td>
+              <td>78.4</td>
+              <td>127.0</td>
+              <td>3.5e-29</td>
+          </tr>
+    
+          <tr>
+              <td>AGU42433.1</td>
+              <td>Orf25</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000842/1">BGC0000842</a></td>
+              <td>Other:Non-NRP beta-lactam</td>
+              <td>39.0</td>
+              <td>78.7</td>
+              <td>119.0</td>
+              <td>9.5e-27</td>
+          </tr>
+    
+          <tr>
+              <td>ABS44970.1</td>
+              <td>P293B</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000622/1">BGC0000622</a></td>
+              <td>RiPP</td>
+              <td>33.0</td>
+              <td>72.4</td>
+              <td>97.0</td>
+              <td>5.1e-20</td>
+          </tr>
+    
+          <tr>
+              <td>AFK79993.1</td>
+              <td>N-terminal_cyanobactin_protease</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001167/1">BGC0001167</a></td>
+              <td>RiPP</td>
+              <td>33.0</td>
+              <td>69.3</td>
+              <td>78.0</td>
+              <td>2.4e-14</td>
+          </tr>
+    
+          <tr>
+              <td>CAO82081.1</td>
+              <td>subtilisin-like_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000473/1">BGC0000473</a></td>
+              <td>RiPP:Cyanobactin</td>
+              <td>29.0</td>
+              <td>69.6</td>
+              <td>72.0</td>
+              <td>1e-12</td>
+          </tr>
+    
+          <tr>
+              <td>CAO82089.1</td>
+              <td>thiazoline_oxidase/subtilisin-like_protease</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000473/1">BGC0000473</a></td>
+              <td>RiPP:Cyanobactin</td>
+              <td>36.0</td>
+              <td>34.5</td>
+              <td>53.0</td>
+              <td>6.4e-07</td>
+          </tr>
+    
+          <tr>
+              <td>CAP64342.1</td>
+              <td>thiazoline_oxidase/subtilisin-like_protease</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000474/1">BGC0000474</a></td>
+              <td>RiPP:Cyanobactin</td>
+              <td>36.0</td>
+              <td>34.5</td>
+              <td>53.0</td>
+              <td>6.4e-07</td>
+          </tr>
+    
+          <tr>
+              <td>AGL93172.1</td>
+              <td>subtilisin-like_protease</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000560/1">BGC0000560</a></td>
+              <td>RiPP:Lanthipeptide</td>
+              <td>28.0</td>
+              <td>69.3</td>
+              <td>52.0</td>
+              <td>1.4e-06</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

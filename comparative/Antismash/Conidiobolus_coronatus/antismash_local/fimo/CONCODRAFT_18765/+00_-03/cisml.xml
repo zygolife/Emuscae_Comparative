@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!-- Document definition -->
+<!-- http://zlab.bu.edu/~phaverty/SupplementalData/CisML/cisml.dtd -->
+<!DOCTYPE cis-element-search[
+<!ELEMENT cis-element-search (program-name, parameters, (pattern | multi-pattern-scan)*)>
+<!ELEMENT program-name (#PCDATA)>
+<!ELEMENT parameters (
+  pattern-file, 
+  sequence-file, 
+  background-seq-file?,
+  pattern-pvalue-cutoff?,
+  sequence-pvalue-cutoff?,
+  site-pvalue-cutoff?,
+  sequence-filtering,
+  ANY*
+ )>
+<!ELEMENT command-line (#PCDATA)>
+<!ELEMENT pattern-file (#PCDATA)>
+<!ELEMENT sequence-file (#PCDATA)>
+<!ELEMENT background-seq-file (#PCDATA)>
+<!ELEMENT pattern-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-pvalue-cutoff (#PCDATA)>
+<!ELEMENT site-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-filtering EMPTY>
+<!ELEMENT multi-pattern-scan (pattern+, ANY*)>
+<!ELEMENT pattern (scanned-sequence+, ANY*)>
+<!ELEMENT scanned-sequence (matched-element*, ANY*)>
+<!ELEMENT matched-element (sequence)>
+<!ELEMENT sequence (#PCDATA)>
+<!ATTLIST cis-element-search
+xmlns:xsi CDATA #IMPLIED
+xmlns:mem CDATA #IMPLIED
+xsi:schemaLocation CDATA #IMPLIED
+>
+<!ATTLIST sequence-filtering
+on-off CDATA #REQUIRED
+type CDATA #IMPLIED
+>
+<!ATTLIST multi-pattern-scan
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+>
+<!ATTLIST pattern
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+pvalue CDATA #IMPLIED
+score CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST scanned-sequence
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+length CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST matched-element
+start CDATA #REQUIRED
+stop CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+clusterid CDATA #IMPLIED
+>
+
+]>
+<cis-element-search
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://zlab.bu.edu/schema/cisml cisml.xsd"
+  xmlns="http://zlab.bu.edu/schema/cisml"
+  xmlns:mem="http://noble.gs.washington.edu/meme"
+>
+<program-name>fimo</program-name>
+<parameters>
+<pattern-file>/bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Conidiobolus_coronatus/antismash_local/meme/CONCODRAFT_18765/+00_-03/meme.html</pattern-file>
+<sequence-file>/bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Conidiobolus_coronatus/antismash_local/KQ964559_promoter_sequences.fasta</sequence-file>
+<site-pvalue-cutoff>6e-05</site-pvalue-cutoff>
+<sequence-filtering on-off="off"/>
+</parameters>
+<pattern accession="1" name="1">
+<scanned-sequence accession="CONCODRAFT_59934" name="CONCODRAFT_59934">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_59935" name="CONCODRAFT_59935">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_18758" name="CONCODRAFT_18758">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_8831+CONCODRAFT_166210" name="CONCODRAFT_8831+CONCODRAFT_166210">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_t429" name="CONCODRAFT_t429">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_79622" name="CONCODRAFT_79622">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_166211" name="CONCODRAFT_166211">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_t432" name="CONCODRAFT_t432">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_8835" name="CONCODRAFT_8835">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_41412" name="CONCODRAFT_41412">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_41379" name="CONCODRAFT_41379">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_t430" name="CONCODRAFT_t430">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_8838" name="CONCODRAFT_8838">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_18764" name="CONCODRAFT_18764">
+<matched-element start="915" stop="922" score="15.2071" pvalue="1.8e-05">
+<sequence>GGCAGGTG</sequence>
+<mem:qvalue>0.319</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_18765" name="CONCODRAFT_18765">
+<matched-element start="342" stop="349" score="15.4786" pvalue="8.13e-06">
+<sequence>GGCAGGCG</sequence>
+<mem:qvalue>0.287</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_t431" name="CONCODRAFT_t431">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_71965" name="CONCODRAFT_71965">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_71966" name="CONCODRAFT_71966">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_41389" name="CONCODRAFT_41389">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_8846" name="CONCODRAFT_8846">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_41406" name="CONCODRAFT_41406">
+</scanned-sequence>
+<scanned-sequence accession="CONCODRAFT_8849" name="CONCODRAFT_8849">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+</cis-element-search>
