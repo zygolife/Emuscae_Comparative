@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!-- Document definition -->
+<!-- http://zlab.bu.edu/~phaverty/SupplementalData/CisML/cisml.dtd -->
+<!DOCTYPE cis-element-search[
+<!ELEMENT cis-element-search (program-name, parameters, (pattern | multi-pattern-scan)*)>
+<!ELEMENT program-name (#PCDATA)>
+<!ELEMENT parameters (
+  pattern-file, 
+  sequence-file, 
+  background-seq-file?,
+  pattern-pvalue-cutoff?,
+  sequence-pvalue-cutoff?,
+  site-pvalue-cutoff?,
+  sequence-filtering,
+  ANY*
+ )>
+<!ELEMENT command-line (#PCDATA)>
+<!ELEMENT pattern-file (#PCDATA)>
+<!ELEMENT sequence-file (#PCDATA)>
+<!ELEMENT background-seq-file (#PCDATA)>
+<!ELEMENT pattern-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-pvalue-cutoff (#PCDATA)>
+<!ELEMENT site-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-filtering EMPTY>
+<!ELEMENT multi-pattern-scan (pattern+, ANY*)>
+<!ELEMENT pattern (scanned-sequence+, ANY*)>
+<!ELEMENT scanned-sequence (matched-element*, ANY*)>
+<!ELEMENT matched-element (sequence)>
+<!ELEMENT sequence (#PCDATA)>
+<!ATTLIST cis-element-search
+xmlns:xsi CDATA #IMPLIED
+xmlns:mem CDATA #IMPLIED
+xsi:schemaLocation CDATA #IMPLIED
+>
+<!ATTLIST sequence-filtering
+on-off CDATA #REQUIRED
+type CDATA #IMPLIED
+>
+<!ATTLIST multi-pattern-scan
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+>
+<!ATTLIST pattern
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+pvalue CDATA #IMPLIED
+score CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST scanned-sequence
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+length CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST matched-element
+start CDATA #REQUIRED
+stop CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+clusterid CDATA #IMPLIED
+>
+
+]>
+<cis-element-search
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://zlab.bu.edu/schema/cisml cisml.xsd"
+  xmlns="http://zlab.bu.edu/schema/cisml"
+  xmlns:mem="http://noble.gs.washington.edu/meme"
+>
+<program-name>fimo</program-name>
+<parameters>
+<pattern-file>/bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Conidiobolus_thromboides/antismash_local/meme/gene_3572/+00_-06/meme.html</pattern-file>
+<sequence-file>/bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Conidiobolus_thromboides/antismash_local/scaffold_81_promoter_sequences.fasta</sequence-file>
+<site-pvalue-cutoff>6e-05</site-pvalue-cutoff>
+<sequence-filtering on-off="off"/>
+</parameters>
+<pattern accession="1" name="1">
+<scanned-sequence accession="gene_3538" name="gene_3538">
+</scanned-sequence>
+<scanned-sequence accession="gene_3539+gene_3540" name="gene_3539+gene_3540">
+</scanned-sequence>
+<scanned-sequence accession="gene_3541" name="gene_3541">
+</scanned-sequence>
+<scanned-sequence accession="gene_3542" name="gene_3542">
+</scanned-sequence>
+<scanned-sequence accession="gene_3543" name="gene_3543">
+</scanned-sequence>
+<scanned-sequence accession="gene_3544" name="gene_3544">
+</scanned-sequence>
+<scanned-sequence accession="gene_3546+gene_3547" name="gene_3546+gene_3547">
+</scanned-sequence>
+<scanned-sequence accession="gene_3548+gene_3549" name="gene_3548+gene_3549">
+</scanned-sequence>
+<scanned-sequence accession="gene_3552" name="gene_3552">
+</scanned-sequence>
+<scanned-sequence accession="gene_3553+gene_3554" name="gene_3553+gene_3554">
+</scanned-sequence>
+<scanned-sequence accession="gene_3555" name="gene_3555">
+</scanned-sequence>
+<scanned-sequence accession="gene_3556" name="gene_3556">
+</scanned-sequence>
+<scanned-sequence accession="gene_3557" name="gene_3557">
+</scanned-sequence>
+<scanned-sequence accession="gene_3558" name="gene_3558">
+</scanned-sequence>
+<scanned-sequence accession="gene_3559" name="gene_3559">
+</scanned-sequence>
+<scanned-sequence accession="gene_3560" name="gene_3560">
+</scanned-sequence>
+<scanned-sequence accession="gene_3561" name="gene_3561">
+</scanned-sequence>
+<scanned-sequence accession="gene_3562" name="gene_3562">
+<matched-element start="277" stop="288" score="12.7522" pvalue="2.52e-05">
+<sequence>CCGCCCCAGCTG</sequence>
+<mem:qvalue>0.326</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3563+gene_3564" name="gene_3563+gene_3564">
+</scanned-sequence>
+<scanned-sequence accession="gene_3565" name="gene_3565">
+</scanned-sequence>
+<scanned-sequence accession="gene_3566" name="gene_3566">
+<matched-element start="1012" stop="1023" score="15.0354" pvalue="1.29e-06">
+<sequence>CCGCCCCAGTTC</sequence>
+<mem:qvalue>0.0665</mem:qvalue>
+</matched-element>
+<matched-element start="889" stop="878" score="12.9912" pvalue="1.9e-05">
+<sequence>GCCCCCAAATTC</sequence>
+<mem:qvalue>0.326</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3567" name="gene_3567">
+<matched-element start="508" stop="519" score="13.3628" pvalue="1.33e-05">
+<sequence>TCGCCCTAGTGC</sequence>
+<mem:qvalue>0.326</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3568" name="gene_3568">
+</scanned-sequence>
+<scanned-sequence accession="gene_3569" name="gene_3569">
+</scanned-sequence>
+<scanned-sequence accession="gene_3570" name="gene_3570">
+</scanned-sequence>
+<scanned-sequence accession="gene_3572" name="gene_3572">
+<matched-element start="164" stop="153" score="12.1327" pvalue="4.24e-05">
+<sequence>CCCCCGAAATGG</sequence>
+<mem:qvalue>0.438</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3573+gene_3574" name="gene_3573+gene_3574">
+</scanned-sequence>
+<scanned-sequence accession="gene_3575" name="gene_3575">
+</scanned-sequence>
+<scanned-sequence accession="gene_3576" name="gene_3576">
+</scanned-sequence>
+<scanned-sequence accession="gene_3577" name="gene_3577">
+</scanned-sequence>
+<scanned-sequence accession="gene_3579+gene_3580" name="gene_3579+gene_3580">
+</scanned-sequence>
+<scanned-sequence accession="gene_3581" name="gene_3581">
+</scanned-sequence>
+<scanned-sequence accession="gene_3583" name="gene_3583">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+</cis-element-search>
