@@ -1,0 +1,788 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:cis="http://zlab.bu.edu/schema/cisml" xmlns:fimo="http://noble.gs.washington.edu/schema/cisml" xmlns:mem="http://noble.gs.washington.edu/meme">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>FIMO Results</title>
+<style type="text/css">
+td.left {text-align: left;}
+td.right {text-align: right; padding-right: 1cm;}
+</style>
+</head>
+<body bgcolor="#D5F0FF">
+<a name="top_buttons"></a>
+<hr>
+<table summary="buttons" align="left" cellspacing="0">
+<tr>
+<td bgcolor="#00FFFF"><a href="#database_and_motifs"><b>Database and Motifs</b></a></td>
+<td bgcolor="#DDFFDD"><a href="#sec_i"><b>High-scoring Motif Occurences</b></a></td>
+<td bgcolor="#DDDDFF"><a href="#debugging_information"><b>Debugging Information</b></a></td>
+</tr>
+</table>
+<br/>
+<br/>
+<hr/>
+<center><big><b>FIMO - Motif search tool</b></big></center>
+<hr>
+<p>
+FIMO version 4.11.2, (Release date: Thu May 05 14:58:55 2016 -0700)
+</p>
+<p>
+For further information on how to interpret these results
+or to get a copy of the FIMO software please access
+<a href="http://meme.nbcr.net">http://meme.nbcr.net</a></p>
+<p>If you use FIMO in your research, please cite the following paper:<br>
+Charles E. Grant, Timothy L. Bailey, and William Stafford Noble,
+"FIMO: Scanning for occurrences of a given motif",
+<i>Bioinformatics</i>, <b>27</b>(7):1017-1018, 2011.
+<a href="http://bioinformatics.oxfordjournals.org/content/27/7/1017">[full text]</a></p>
+<hr>
+<center><big><b><a name="database_and_motifs">DATABASE AND MOTIFS</a></b></big></center>
+<hr>
+<div style="padding-left: 0.75in; line-height: 1em; font-family: monospace;">
+<p>
+  DATABASE /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Entomophaga_maimaiga_ARSEF_7190/antismash_local/Chr_13_promoter_sequences.fasta
+  <br />
+  Database contains 464 sequences, 475940 residues
+</p>
+<p>
+  MOTIFS /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Entomophaga_maimaiga_ARSEF_7190/antismash_local/meme/gene_8908/+03_-01/meme.html (DNA)
+  <table>
+    <thead>
+      <tr>
+        <th style="border-bottom: 1px dashed;">MOTIF</th>
+        <th style="border-bottom: 1px dashed; padding-left: 1em;">WIDTH</th>
+        <th style="border-bottom: 1px dashed; padding-left: 1em;text-align:left;" >
+         BEST POSSIBLE MATCH
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:right;">1</td>
+        <td style="text-align:right;padding-left: 1em;">12</td>
+        <td style="text-align:left;padding-left: 1em;">CACCCCCAAAAG</td>
+       </tr>
+    </tbody>
+  </table>
+</p>
+<p>
+Random model letter frequencies (from non-redundant database):
+<br/>
+
+A 0.275 C 0.225 G 0.225 T 0.275 </p>
+</div>
+<hr>
+<center><big><b><a name="sec_i">SECTION I: HIGH-SCORING MOTIF OCCURENCES</a></b></big></center>
+<hr>
+<ul>
+<li>
+There were 61 motif occurences with a p-value less than 6e-05.
+
+The full set of motif occurences can be seen in the
+tab-delimited plain text output file
+<a href="fimo.txt">fimo.txt</a>, 
+the GFF file 
+<a href="fimo.gff">fimo.gff</a> 
+which may be suitable for uploading to the 
+<a href="http://genome.ucsc.edu/cgi-bin/hgTables">UCSC Genome Table Browser</a>
+(assuming the FASTA input sequences included genomic coordinates in UCSC or Galaxy format),
+or the XML file 
+<a href="fimo.xml">fimo.xml</a>.
+</li>
+<li>
+The p-value of a motif occurrence is defined as the
+probability of a random sequence of the same length as the motif
+matching that position of the sequence with as good or better a score.
+</li>
+<li>
+The score for the match of a position in a sequence to a motif
+is computed by summing the appropriate entries from each column of
+the position-dependent scoring matrix that represents the motif.
+</li>
+<li>
+The q-value of a motif occurrence is defined as the
+false discovery rate if the occurrence is accepted as significant.
+</li>
+<li>The table is sorted by increasing p-value.</li>
+</ul>
+<table border="1">
+<thead>
+<tr>
+<th>Motif</th>
+<th>Sequence Name</th>
+<th>Strand</th>
+<th>Start</th>
+<th>End</th>
+<th>p-value</th>
+<th>q-value</th>
+<th>Matched Sequence</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8907</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">465</td>
+      <td style="text-align:left;">476</td>
+      <td style="text-align:left;">4.55e-07</td>
+      <td style="text-align:left;">0.294</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCCTCCAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8907</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">849</td>
+      <td style="text-align:left;">860</td>
+      <td style="text-align:left;">7.33e-07</td>
+      <td style="text-align:left;">0.294</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCCTCAAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8910</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">501</td>
+      <td style="text-align:left;">512</td>
+      <td style="text-align:left;">1.34e-06</td>
+      <td style="text-align:left;">0.294</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CGCCGCCAAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8991</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">312</td>
+      <td style="text-align:left;">323</td>
+      <td style="text-align:left;">1.56e-06</td>
+      <td style="text-align:left;">0.294</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCACCAAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8638</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">470</td>
+      <td style="text-align:left;">481</td>
+      <td style="text-align:left;">1.56e-06</td>
+      <td style="text-align:left;">0.294</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCACCCAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8988</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">585</td>
+      <td style="text-align:left;">596</td>
+      <td style="text-align:left;">1.95e-06</td>
+      <td style="text-align:left;">0.299</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CGCCTTCAAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8712</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1004</td>
+      <td style="text-align:left;">1015</td>
+      <td style="text-align:left;">2.51e-06</td>
+      <td style="text-align:left;">0.299</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CGCCATCCAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8907</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">821</td>
+      <td style="text-align:left;">832</td>
+      <td style="text-align:left;">2.54e-06</td>
+      <td style="text-align:left;">0.299</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CGCCCACCAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8907</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">570</td>
+      <td style="text-align:left;">581</td>
+      <td style="text-align:left;">3.4e-06</td>
+      <td style="text-align:left;">0.324</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCATCAAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8907</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">202</td>
+      <td style="text-align:left;">213</td>
+      <td style="text-align:left;">3.76e-06</td>
+      <td style="text-align:left;">0.324</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TGCCCTCCAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8930</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">766</td>
+      <td style="text-align:left;">777</td>
+      <td style="text-align:left;">4.65e-06</td>
+      <td style="text-align:left;">0.324</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TGCCTCCCAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8908</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">695</td>
+      <td style="text-align:left;">706</td>
+      <td style="text-align:left;">4.8e-06</td>
+      <td style="text-align:left;">0.324</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CGCCCCAAAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8907</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">896</td>
+      <td style="text-align:left;">907</td>
+      <td style="text-align:left;">5.61e-06</td>
+      <td style="text-align:left;">0.324</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCTGCCAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_9016</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">31</td>
+      <td style="text-align:left;">42</td>
+      <td style="text-align:left;">6.2e-06</td>
+      <td style="text-align:left;">0.324</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCCCAAAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8945</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">675</td>
+      <td style="text-align:left;">686</td>
+      <td style="text-align:left;">6.2e-06</td>
+      <td style="text-align:left;">0.324</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCCCAAAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8730</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">859</td>
+      <td style="text-align:left;">870</td>
+      <td style="text-align:left;">6.2e-06</td>
+      <td style="text-align:left;">0.324</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCCCAAAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8713</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">421</td>
+      <td style="text-align:left;">432</td>
+      <td style="text-align:left;">6.2e-06</td>
+      <td style="text-align:left;">0.324</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCCCAAAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8975</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">853</td>
+      <td style="text-align:left;">864</td>
+      <td style="text-align:left;">6.2e-06</td>
+      <td style="text-align:left;">0.324</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCCCAAAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8919</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">617</td>
+      <td style="text-align:left;">628</td>
+      <td style="text-align:left;">6.67e-06</td>
+      <td style="text-align:left;">0.33</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCTACCAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_9020</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">115</td>
+      <td style="text-align:left;">126</td>
+      <td style="text-align:left;">7.26e-06</td>
+      <td style="text-align:left;">0.338</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TACCTCCAAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8696</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">579</td>
+      <td style="text-align:left;">590</td>
+      <td style="text-align:left;">7.54e-06</td>
+      <td style="text-align:left;">0.338</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TACCGCCCAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8992</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">681</td>
+      <td style="text-align:left;">692</td>
+      <td style="text-align:left;">8.93e-06</td>
+      <td style="text-align:left;">0.362</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCTCCCTAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8907</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">974</td>
+      <td style="text-align:left;">985</td>
+      <td style="text-align:left;">8.93e-06</td>
+      <td style="text-align:left;">0.362</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CGGCTCCAAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8909</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">134</td>
+      <td style="text-align:left;">145</td>
+      <td style="text-align:left;">9.23e-06</td>
+      <td style="text-align:left;">0.362</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TACCACCCAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8565</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">175</td>
+      <td style="text-align:left;">186</td>
+      <td style="text-align:left;">1.12e-05</td>
+      <td style="text-align:left;">0.399</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCGCCCATGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8907</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">909</td>
+      <td style="text-align:left;">920</td>
+      <td style="text-align:left;">1.12e-05</td>
+      <td style="text-align:left;">0.399</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CGCCGCCCTAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8758</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">380</td>
+      <td style="text-align:left;">391</td>
+      <td style="text-align:left;">1.17e-05</td>
+      <td style="text-align:left;">0.399</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TGCCGTCCAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8789</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">735</td>
+      <td style="text-align:left;">746</td>
+      <td style="text-align:left;">1.19e-05</td>
+      <td style="text-align:left;">0.399</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCCTAAAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8911</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">871</td>
+      <td style="text-align:left;">882</td>
+      <td style="text-align:left;">1.26e-05</td>
+      <td style="text-align:left;">0.41</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCTCCAATAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_9039</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">576</td>
+      <td style="text-align:left;">587</td>
+      <td style="text-align:left;">1.54e-05</td>
+      <td style="text-align:left;">0.469</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CGGCTTCAAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8709</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">1001</td>
+      <td style="text-align:left;">1012</td>
+      <td style="text-align:left;">1.55e-05</td>
+      <td style="text-align:left;">0.469</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CGGCGTCCAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8601</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">977</td>
+      <td style="text-align:left;">988</td>
+      <td style="text-align:left;">1.59e-05</td>
+      <td style="text-align:left;">0.469</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TGCCCACCAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8843</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">50</td>
+      <td style="text-align:left;">61</td>
+      <td style="text-align:left;">1.76e-05</td>
+      <td style="text-align:left;">0.503</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CGGCGTCCAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8688</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">169</td>
+      <td style="text-align:left;">180</td>
+      <td style="text-align:left;">1.82e-05</td>
+      <td style="text-align:left;">0.503</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCACAAAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8861</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">314</td>
+      <td style="text-align:left;">325</td>
+      <td style="text-align:left;">1.88e-05</td>
+      <td style="text-align:left;">0.506</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CAGCTTCAAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8803</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">812</td>
+      <td style="text-align:left;">823</td>
+      <td style="text-align:left;">2.01e-05</td>
+      <td style="text-align:left;">0.52</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TACCCACAAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8823</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">511</td>
+      <td style="text-align:left;">522</td>
+      <td style="text-align:left;">2.05e-05</td>
+      <td style="text-align:left;">0.52</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TGGCCCCAAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8939</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">718</td>
+      <td style="text-align:left;">729</td>
+      <td style="text-align:left;">2.11e-05</td>
+      <td style="text-align:left;">0.52</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCATACAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8674</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">189</td>
+      <td style="text-align:left;">200</td>
+      <td style="text-align:left;">2.28e-05</td>
+      <td style="text-align:left;">0.52</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TGCCCCACAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8673</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">189</td>
+      <td style="text-align:left;">200</td>
+      <td style="text-align:left;">2.28e-05</td>
+      <td style="text-align:left;">0.52</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TGCCCCACAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8675</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">851</td>
+      <td style="text-align:left;">862</td>
+      <td style="text-align:left;">2.28e-05</td>
+      <td style="text-align:left;">0.52</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TGCCCCACAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8703</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">788</td>
+      <td style="text-align:left;">799</td>
+      <td style="text-align:left;">2.32e-05</td>
+      <td style="text-align:left;">0.52</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TGGCCCCAAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8730</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">557</td>
+      <td style="text-align:left;">568</td>
+      <td style="text-align:left;">2.49e-05</td>
+      <td style="text-align:left;">0.545</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCCACAATGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8668</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">434</td>
+      <td style="text-align:left;">445</td>
+      <td style="text-align:left;">2.59e-05</td>
+      <td style="text-align:left;">0.553</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TACCTACCAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8765</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">273</td>
+      <td style="text-align:left;">284</td>
+      <td style="text-align:left;">2.89e-05</td>
+      <td style="text-align:left;">0.604</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TGCCAACCAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8991</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">459</td>
+      <td style="text-align:left;">470</td>
+      <td style="text-align:left;">2.96e-05</td>
+      <td style="text-align:left;">0.607</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TGCCGCCCATGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8747</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">930</td>
+      <td style="text-align:left;">941</td>
+      <td style="text-align:left;">3.04e-05</td>
+      <td style="text-align:left;">0.609</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CAGCCCCATAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8690</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">480</td>
+      <td style="text-align:left;">491</td>
+      <td style="text-align:left;">3.17e-05</td>
+      <td style="text-align:left;">0.621</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CGCCTACAATGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8597</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">10</td>
+      <td style="text-align:left;">21</td>
+      <td style="text-align:left;">3.29e-05</td>
+      <td style="text-align:left;">0.628</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TGCCAACAAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8646</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">569</td>
+      <td style="text-align:left;">580</td>
+      <td style="text-align:left;">3.36e-05</td>
+      <td style="text-align:left;">0.628</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TGCCTCCATAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8815</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">902</td>
+      <td style="text-align:left;">913</td>
+      <td style="text-align:left;">3.5e-05</td>
+      <td style="text-align:left;">0.628</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TACCCTAAAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_9034</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">943</td>
+      <td style="text-align:left;">954</td>
+      <td style="text-align:left;">3.5e-05</td>
+      <td style="text-align:left;">0.628</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TGCCCTAAAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8660</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">937</td>
+      <td style="text-align:left;">948</td>
+      <td style="text-align:left;">3.53e-05</td>
+      <td style="text-align:left;">0.628</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CGCCTAAAAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8953</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">84</td>
+      <td style="text-align:left;">95</td>
+      <td style="text-align:left;">3.91e-05</td>
+      <td style="text-align:left;">0.682</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TGCCACCCATAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8758</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">689</td>
+      <td style="text-align:left;">700</td>
+      <td style="text-align:left;">4.26e-05</td>
+      <td style="text-align:left;">0.729</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCGGCAATAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8654</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">967</td>
+      <td style="text-align:left;">978</td>
+      <td style="text-align:left;">4.73e-05</td>
+      <td style="text-align:left;">0.796</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CAGCAACAAAGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8764</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">948</td>
+      <td style="text-align:left;">959</td>
+      <td style="text-align:left;">5.01e-05</td>
+      <td style="text-align:left;">0.828</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TGCCTTCAATAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_9032</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">325</td>
+      <td style="text-align:left;">336</td>
+      <td style="text-align:left;">5.12e-05</td>
+      <td style="text-align:left;">0.831</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCCTAAATGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8717</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">861</td>
+      <td style="text-align:left;">872</td>
+      <td style="text-align:left;">5.75e-05</td>
+      <td style="text-align:left;">0.888</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CGCCCTCCAATG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8766</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">189</td>
+      <td style="text-align:left;">200</td>
+      <td style="text-align:left;">5.76e-05</td>
+      <td style="text-align:left;">0.888</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCAAAAAAAG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">gene_8779</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">682</td>
+      <td style="text-align:left;">693</td>
+      <td style="text-align:left;">5.76e-05</td>
+      <td style="text-align:left;">0.888</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCAAAAAAAG</td>
+   </tr>
+</tbody>
+</table>
+
+<hr>
+<center><big><b><a name="debugging_information">DEBUGGING INFORMATION</a></b></big></center>
+<hr>
+<p>
+Command line:
+</p>
+<pre>
+/opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/antismash6_0/bin/fimo -verbosity 1 -motif 1 -thresh 0.00006 -oc /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Entomophaga_maimaiga_ARSEF_7190/antismash_local/fimo/gene_8908/+03_-01 /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Entomophaga_maimaiga_ARSEF_7190/antismash_local/meme/gene_8908/+03_-01/meme.html /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Entomophaga_maimaiga_ARSEF_7190/antismash_local/Chr_13_promoter_sequences.fasta
+</pre>
+<p>
+Settings:
+</p>
+<pre>
+<table>
+  <tr>
+    <td style="padding-right: 2em">output_directory = /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Entomophaga_maimaiga_ARSEF_7190/antismash_local/fimo/gene_8908/+03_-01</td>
+    <td style="padding-left: 5em; padding-right: 2em">MEME file name = /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Entomophaga_maimaiga_ARSEF_7190/antismash_local/meme/gene_8908/+03_-01/meme.html</td>
+    <td style="padding-left: 5em; padding-right: 2em">sequence file name = /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Entomophaga_maimaiga_ARSEF_7190/antismash_local/Chr_13_promoter_sequences.fasta</td>
+  </tr>  <tr>
+    <td style="padding-right: 2em">background file name = non-redundant database</td>
+    <td style="padding-left: 5em; padding-right: 2em">alphabet = DNA</td>
+    <td style="padding-left: 5em; padding-right: 2em">max stored scores = 100000</td>
+  </tr>  <tr>
+    <td style="padding-right: 2em">allow clobber = true</td>
+    <td style="padding-left: 5em; padding-right: 2em">compute q-values = true</td>
+    <td style="padding-left: 5em; padding-right: 2em">parse genomic coord. = false</td>
+  </tr>
+  <tr>
+    <td style="padding-right: 2em">text only = false</td>
+    <td style="padding-left: 5em; padding-right: 2em">scan both strands = true</td>
+    <td style="padding-left: 5em; padding-right: 2em">max strand = false</td>
+  </tr>
+  <tr>
+    <td style="padding-right: 2em">threshold type = p-value</td>
+    <td style="padding-left: 5em; padding-right: 2em">output theshold = 6e-05</td>
+    <td style="padding-left: 5em; padding-right: 2em">pseudocount = 0.1</td>
+  </tr>
+  <tr>
+    <td style="padding-right: 2em">alpha = 1</td>
+    <td style="padding-left: 5em; padding-right: 2em">verbosity = 1</td>
+    <td style="padding-left: 5em; padding-right: 2em"></td>
+  </tr>
+
+</table>
+</pre>
+<p>
+This information can be useful in the event you wish to report a
+problem with the FIMO software.
+</p>
+<hr>
+<span style="background-color: #DDDDFF"><a href="#top_buttons"><b>Go to top</b></a></span>
+</body>
+</html>

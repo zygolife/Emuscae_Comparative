@@ -1,0 +1,1663 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!-- Document definition -->
+<!-- http://zlab.bu.edu/~phaverty/SupplementalData/CisML/cisml.dtd -->
+<!DOCTYPE cis-element-search[
+<!ELEMENT cis-element-search (program-name, parameters, (pattern | multi-pattern-scan)*)>
+<!ELEMENT program-name (#PCDATA)>
+<!ELEMENT parameters (
+  pattern-file, 
+  sequence-file, 
+  background-seq-file?,
+  pattern-pvalue-cutoff?,
+  sequence-pvalue-cutoff?,
+  site-pvalue-cutoff?,
+  sequence-filtering,
+  ANY*
+ )>
+<!ELEMENT command-line (#PCDATA)>
+<!ELEMENT pattern-file (#PCDATA)>
+<!ELEMENT sequence-file (#PCDATA)>
+<!ELEMENT background-seq-file (#PCDATA)>
+<!ELEMENT pattern-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-pvalue-cutoff (#PCDATA)>
+<!ELEMENT site-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-filtering EMPTY>
+<!ELEMENT multi-pattern-scan (pattern+, ANY*)>
+<!ELEMENT pattern (scanned-sequence+, ANY*)>
+<!ELEMENT scanned-sequence (matched-element*, ANY*)>
+<!ELEMENT matched-element (sequence)>
+<!ELEMENT sequence (#PCDATA)>
+<!ATTLIST cis-element-search
+xmlns:xsi CDATA #IMPLIED
+xmlns:mem CDATA #IMPLIED
+xsi:schemaLocation CDATA #IMPLIED
+>
+<!ATTLIST sequence-filtering
+on-off CDATA #REQUIRED
+type CDATA #IMPLIED
+>
+<!ATTLIST multi-pattern-scan
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+>
+<!ATTLIST pattern
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+pvalue CDATA #IMPLIED
+score CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST scanned-sequence
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+length CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST matched-element
+start CDATA #REQUIRED
+stop CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+clusterid CDATA #IMPLIED
+>
+
+]>
+<cis-element-search
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://zlab.bu.edu/schema/cisml cisml.xsd"
+  xmlns="http://zlab.bu.edu/schema/cisml"
+  xmlns:mem="http://noble.gs.washington.edu/meme"
+>
+<program-name>fimo</program-name>
+<parameters>
+<pattern-file>/bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Entomophaga_maimaiga_ARSEF_7190/antismash_local/meme/gene_5420/+03_-04/meme.html</pattern-file>
+<sequence-file>/bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Entomophaga_maimaiga_ARSEF_7190/antismash_local/Chr_04_promoter_sequences.fasta</sequence-file>
+<site-pvalue-cutoff>6e-05</site-pvalue-cutoff>
+<sequence-filtering on-off="off"/>
+</parameters>
+<pattern accession="1" name="1">
+<scanned-sequence accession="gene_5128" name="gene_5128">
+</scanned-sequence>
+<scanned-sequence accession="gene_5129" name="gene_5129">
+</scanned-sequence>
+<scanned-sequence accession="gene_5130" name="gene_5130">
+</scanned-sequence>
+<scanned-sequence accession="gene_5132" name="gene_5132">
+</scanned-sequence>
+<scanned-sequence accession="gene_5133" name="gene_5133">
+</scanned-sequence>
+<scanned-sequence accession="gene_5134" name="gene_5134">
+</scanned-sequence>
+<scanned-sequence accession="gene_5135" name="gene_5135">
+</scanned-sequence>
+<scanned-sequence accession="gene_5136" name="gene_5136">
+<matched-element start="464" stop="453" score="9.90826" pvalue="2.54e-05">
+<sequence>GGGTCTCCTTCT</sequence>
+<mem:qvalue>0.371</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5137" name="gene_5137">
+</scanned-sequence>
+<scanned-sequence accession="gene_5138" name="gene_5138">
+</scanned-sequence>
+<scanned-sequence accession="gene_5139" name="gene_5139">
+</scanned-sequence>
+<scanned-sequence accession="gene_5140" name="gene_5140">
+</scanned-sequence>
+<scanned-sequence accession="gene_5141" name="gene_5141">
+</scanned-sequence>
+<scanned-sequence accession="gene_5142" name="gene_5142">
+</scanned-sequence>
+<scanned-sequence accession="gene_5143" name="gene_5143">
+</scanned-sequence>
+<scanned-sequence accession="gene_5144+gene_5145" name="gene_5144+gene_5145">
+</scanned-sequence>
+<scanned-sequence accession="gene_5146+gene_5147" name="gene_5146+gene_5147">
+</scanned-sequence>
+<scanned-sequence accession="gene_5148" name="gene_5148">
+</scanned-sequence>
+<scanned-sequence accession="gene_5149" name="gene_5149">
+</scanned-sequence>
+<scanned-sequence accession="gene_5150" name="gene_5150">
+</scanned-sequence>
+<scanned-sequence accession="gene_5151" name="gene_5151">
+</scanned-sequence>
+<scanned-sequence accession="gene_5152+gene_5153" name="gene_5152+gene_5153">
+<matched-element start="106" stop="95" score="9.30275" pvalue="3.42e-05">
+<sequence>AGTTATCTTTCT</sequence>
+<mem:qvalue>0.451</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5154" name="gene_5154">
+</scanned-sequence>
+<scanned-sequence accession="gene_5155" name="gene_5155">
+</scanned-sequence>
+<scanned-sequence accession="gene_5156" name="gene_5156">
+</scanned-sequence>
+<scanned-sequence accession="gene_5157" name="gene_5157">
+<matched-element start="507" stop="496" score="10.6422" pvalue="1.55e-05">
+<sequence>GGTTCTCCTTGG</sequence>
+<mem:qvalue>0.244</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5158" name="gene_5158">
+<matched-element start="507" stop="496" score="10.6422" pvalue="1.55e-05">
+<sequence>GGTTCTCCTTGG</sequence>
+<mem:qvalue>0.244</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5159" name="gene_5159">
+</scanned-sequence>
+<scanned-sequence accession="gene_5160" name="gene_5160">
+<matched-element start="856" stop="845" score="9.47706" pvalue="3.21e-05">
+<sequence>GGATCTCCTCCT</sequence>
+<mem:qvalue>0.436</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5161" name="gene_5161">
+<matched-element start="962" stop="951" score="9.90826" pvalue="2.54e-05">
+<sequence>GGTTCGCCTTCT</sequence>
+<mem:qvalue>0.371</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5162" name="gene_5162">
+</scanned-sequence>
+<scanned-sequence accession="gene_5163" name="gene_5163">
+</scanned-sequence>
+<scanned-sequence accession="gene_5164" name="gene_5164">
+</scanned-sequence>
+<scanned-sequence accession="gene_5165" name="gene_5165">
+</scanned-sequence>
+<scanned-sequence accession="gene_5166" name="gene_5166">
+</scanned-sequence>
+<scanned-sequence accession="gene_5167" name="gene_5167">
+</scanned-sequence>
+<scanned-sequence accession="gene_5168" name="gene_5168">
+</scanned-sequence>
+<scanned-sequence accession="gene_5169" name="gene_5169">
+</scanned-sequence>
+<scanned-sequence accession="gene_5170" name="gene_5170">
+</scanned-sequence>
+<scanned-sequence accession="gene_5171" name="gene_5171">
+</scanned-sequence>
+<scanned-sequence accession="gene_5172" name="gene_5172">
+</scanned-sequence>
+<scanned-sequence accession="gene_5173" name="gene_5173">
+</scanned-sequence>
+<scanned-sequence accession="gene_5174" name="gene_5174">
+<matched-element start="208" stop="219" score="12.0826" pvalue="9.18e-06">
+<sequence>GCTTCTCTTTCT</sequence>
+<mem:qvalue>0.171</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5175" name="gene_5175">
+</scanned-sequence>
+<scanned-sequence accession="gene_5176" name="gene_5176">
+</scanned-sequence>
+<scanned-sequence accession="gene_5177" name="gene_5177">
+</scanned-sequence>
+<scanned-sequence accession="gene_5178" name="gene_5178">
+</scanned-sequence>
+<scanned-sequence accession="gene_5179" name="gene_5179">
+</scanned-sequence>
+<scanned-sequence accession="gene_5180" name="gene_5180">
+</scanned-sequence>
+<scanned-sequence accession="gene_5181" name="gene_5181">
+</scanned-sequence>
+<scanned-sequence accession="gene_5182" name="gene_5182">
+<matched-element start="590" stop="579" score="13.0826" pvalue="5.83e-06">
+<sequence>GGTTCTCTTTTG</sequence>
+<mem:qvalue>0.129</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5183" name="gene_5183">
+</scanned-sequence>
+<scanned-sequence accession="gene_5184" name="gene_5184">
+</scanned-sequence>
+<scanned-sequence accession="gene_5185" name="gene_5185">
+</scanned-sequence>
+<scanned-sequence accession="gene_5186" name="gene_5186">
+</scanned-sequence>
+<scanned-sequence accession="gene_5187" name="gene_5187">
+</scanned-sequence>
+<scanned-sequence accession="gene_5188" name="gene_5188">
+</scanned-sequence>
+<scanned-sequence accession="gene_5189" name="gene_5189">
+</scanned-sequence>
+<scanned-sequence accession="gene_5190" name="gene_5190">
+</scanned-sequence>
+<scanned-sequence accession="gene_5191" name="gene_5191">
+<matched-element start="456" stop="467" score="9.22936" pvalue="3.54e-05">
+<sequence>ATTTCTCTTTCT</sequence>
+<mem:qvalue>0.451</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5192" name="gene_5192">
+</scanned-sequence>
+<scanned-sequence accession="gene_5193" name="gene_5193">
+</scanned-sequence>
+<scanned-sequence accession="gene_5194" name="gene_5194">
+<matched-element start="950" stop="961" score="9.24771" pvalue="3.5e-05">
+<sequence>ACTTCTCTTTCT</sequence>
+<mem:qvalue>0.451</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5195" name="gene_5195">
+</scanned-sequence>
+<scanned-sequence accession="gene_5196" name="gene_5196">
+</scanned-sequence>
+<scanned-sequence accession="gene_5198" name="gene_5198">
+</scanned-sequence>
+<scanned-sequence accession="gene_5199" name="gene_5199">
+</scanned-sequence>
+<scanned-sequence accession="gene_5200" name="gene_5200">
+</scanned-sequence>
+<scanned-sequence accession="gene_5201" name="gene_5201">
+</scanned-sequence>
+<scanned-sequence accession="gene_5202" name="gene_5202">
+</scanned-sequence>
+<scanned-sequence accession="gene_5203" name="gene_5203">
+</scanned-sequence>
+<scanned-sequence accession="gene_5204" name="gene_5204">
+</scanned-sequence>
+<scanned-sequence accession="gene_5205" name="gene_5205">
+</scanned-sequence>
+<scanned-sequence accession="gene_5206" name="gene_5206">
+</scanned-sequence>
+<scanned-sequence accession="gene_5207" name="gene_5207">
+</scanned-sequence>
+<scanned-sequence accession="gene_5208" name="gene_5208">
+</scanned-sequence>
+<scanned-sequence accession="gene_5209" name="gene_5209">
+</scanned-sequence>
+<scanned-sequence accession="gene_5210" name="gene_5210">
+</scanned-sequence>
+<scanned-sequence accession="gene_5211" name="gene_5211">
+<matched-element start="267" stop="278" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+<matched-element start="38" stop="49" score="12.9358" pvalue="6.26e-06">
+<sequence>GGCTCTCTTCCG</sequence>
+<mem:qvalue>0.129</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5212" name="gene_5212">
+</scanned-sequence>
+<scanned-sequence accession="gene_5213" name="gene_5213">
+</scanned-sequence>
+<scanned-sequence accession="gene_5214" name="gene_5214">
+</scanned-sequence>
+<scanned-sequence accession="gene_5215" name="gene_5215">
+</scanned-sequence>
+<scanned-sequence accession="gene_5216" name="gene_5216">
+</scanned-sequence>
+<scanned-sequence accession="gene_5217" name="gene_5217">
+</scanned-sequence>
+<scanned-sequence accession="gene_5218" name="gene_5218">
+</scanned-sequence>
+<scanned-sequence accession="gene_5219" name="gene_5219">
+</scanned-sequence>
+<scanned-sequence accession="gene_5220" name="gene_5220">
+<matched-element start="748" stop="759" score="21.5963" pvalue="5.62e-08">
+<sequence>GGTTCTCTTTCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+<matched-element start="852" stop="841" score="13.0826" pvalue="5.83e-06">
+<sequence>GGTTCTCTTTTG</sequence>
+<mem:qvalue>0.129</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5222" name="gene_5222">
+</scanned-sequence>
+<scanned-sequence accession="gene_5223" name="gene_5223">
+</scanned-sequence>
+<scanned-sequence accession="gene_5224" name="gene_5224">
+</scanned-sequence>
+<scanned-sequence accession="gene_5225" name="gene_5225">
+</scanned-sequence>
+<scanned-sequence accession="gene_5226+gene_5227" name="gene_5226+gene_5227">
+<matched-element start="339" stop="328" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5228" name="gene_5228">
+</scanned-sequence>
+<scanned-sequence accession="gene_5229" name="gene_5229">
+</scanned-sequence>
+<scanned-sequence accession="gene_5230" name="gene_5230">
+</scanned-sequence>
+<scanned-sequence accession="gene_5231" name="gene_5231">
+</scanned-sequence>
+<scanned-sequence accession="gene_5232" name="gene_5232">
+</scanned-sequence>
+<scanned-sequence accession="gene_5234" name="gene_5234">
+</scanned-sequence>
+<scanned-sequence accession="gene_5235" name="gene_5235">
+</scanned-sequence>
+<scanned-sequence accession="gene_5236" name="gene_5236">
+</scanned-sequence>
+<scanned-sequence accession="gene_5237" name="gene_5237">
+</scanned-sequence>
+<scanned-sequence accession="gene_5238" name="gene_5238">
+<matched-element start="405" stop="416" score="20.1284" pvalue="2.27e-07">
+<sequence>GGTTCTCTTCCT</sequence>
+<mem:qvalue>0.00786</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5239" name="gene_5239">
+</scanned-sequence>
+<scanned-sequence accession="gene_5240" name="gene_5240">
+</scanned-sequence>
+<scanned-sequence accession="gene_5241" name="gene_5241">
+<matched-element start="886" stop="875" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5242" name="gene_5242">
+</scanned-sequence>
+<scanned-sequence accession="gene_5243" name="gene_5243">
+</scanned-sequence>
+<scanned-sequence accession="gene_5244" name="gene_5244">
+</scanned-sequence>
+<scanned-sequence accession="gene_5248" name="gene_5248">
+</scanned-sequence>
+<scanned-sequence accession="gene_5249" name="gene_5249">
+</scanned-sequence>
+<scanned-sequence accession="gene_5251" name="gene_5251">
+</scanned-sequence>
+<scanned-sequence accession="gene_5252" name="gene_5252">
+</scanned-sequence>
+<scanned-sequence accession="gene_5253" name="gene_5253">
+</scanned-sequence>
+<scanned-sequence accession="gene_5255" name="gene_5255">
+</scanned-sequence>
+<scanned-sequence accession="gene_5256" name="gene_5256">
+</scanned-sequence>
+<scanned-sequence accession="gene_5258" name="gene_5258">
+</scanned-sequence>
+<scanned-sequence accession="gene_5259" name="gene_5259">
+</scanned-sequence>
+<scanned-sequence accession="gene_5260+gene_5261" name="gene_5260+gene_5261">
+</scanned-sequence>
+<scanned-sequence accession="gene_5262" name="gene_5262">
+</scanned-sequence>
+<scanned-sequence accession="gene_5263" name="gene_5263">
+</scanned-sequence>
+<scanned-sequence accession="gene_5264" name="gene_5264">
+</scanned-sequence>
+<scanned-sequence accession="gene_5265" name="gene_5265">
+</scanned-sequence>
+<scanned-sequence accession="gene_5266" name="gene_5266">
+</scanned-sequence>
+<scanned-sequence accession="gene_5267" name="gene_5267">
+</scanned-sequence>
+<scanned-sequence accession="gene_5268" name="gene_5268">
+</scanned-sequence>
+<scanned-sequence accession="gene_5269" name="gene_5269">
+</scanned-sequence>
+<scanned-sequence accession="gene_5270" name="gene_5270">
+</scanned-sequence>
+<scanned-sequence accession="gene_5271" name="gene_5271">
+</scanned-sequence>
+<scanned-sequence accession="gene_5272" name="gene_5272">
+</scanned-sequence>
+<scanned-sequence accession="gene_5273" name="gene_5273">
+</scanned-sequence>
+<scanned-sequence accession="gene_5274" name="gene_5274">
+</scanned-sequence>
+<scanned-sequence accession="gene_5275" name="gene_5275">
+<matched-element start="968" stop="957" score="9.57798" pvalue="3.02e-05">
+<sequence>CGTTCTCTTTAT</sequence>
+<mem:qvalue>0.416</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5276" name="gene_5276">
+</scanned-sequence>
+<scanned-sequence accession="gene_5277" name="gene_5277">
+</scanned-sequence>
+<scanned-sequence accession="gene_5278" name="gene_5278">
+</scanned-sequence>
+<scanned-sequence accession="gene_5280" name="gene_5280">
+</scanned-sequence>
+<scanned-sequence accession="gene_5282" name="gene_5282">
+</scanned-sequence>
+<scanned-sequence accession="gene_5283" name="gene_5283">
+</scanned-sequence>
+<scanned-sequence accession="gene_5284" name="gene_5284">
+</scanned-sequence>
+<scanned-sequence accession="gene_5285" name="gene_5285">
+</scanned-sequence>
+<scanned-sequence accession="gene_5286" name="gene_5286">
+</scanned-sequence>
+<scanned-sequence accession="gene_5287" name="gene_5287">
+</scanned-sequence>
+<scanned-sequence accession="gene_5288" name="gene_5288">
+</scanned-sequence>
+<scanned-sequence accession="gene_5289" name="gene_5289">
+</scanned-sequence>
+<scanned-sequence accession="gene_5290" name="gene_5290">
+</scanned-sequence>
+<scanned-sequence accession="gene_5291" name="gene_5291">
+</scanned-sequence>
+<scanned-sequence accession="gene_5292" name="gene_5292">
+</scanned-sequence>
+<scanned-sequence accession="gene_5293" name="gene_5293">
+</scanned-sequence>
+<scanned-sequence accession="gene_5294" name="gene_5294">
+<matched-element start="182" stop="171" score="10.6422" pvalue="1.55e-05">
+<sequence>GGTTCTGCTTCG</sequence>
+<mem:qvalue>0.244</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5295" name="gene_5295">
+</scanned-sequence>
+<scanned-sequence accession="gene_5296" name="gene_5296">
+</scanned-sequence>
+<scanned-sequence accession="gene_5297" name="gene_5297">
+</scanned-sequence>
+<scanned-sequence accession="gene_5298" name="gene_5298">
+</scanned-sequence>
+<scanned-sequence accession="gene_5299" name="gene_5299">
+</scanned-sequence>
+<scanned-sequence accession="gene_5300" name="gene_5300">
+</scanned-sequence>
+<scanned-sequence accession="gene_5301" name="gene_5301">
+</scanned-sequence>
+<scanned-sequence accession="gene_5302" name="gene_5302">
+</scanned-sequence>
+<scanned-sequence accession="gene_5303" name="gene_5303">
+<matched-element start="377" stop="388" score="10.8899" pvalue="1.33e-05">
+<sequence>GGTGCTCTTCCA</sequence>
+<mem:qvalue>0.236</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5304" name="gene_5304">
+</scanned-sequence>
+<scanned-sequence accession="gene_5305" name="gene_5305">
+</scanned-sequence>
+<scanned-sequence accession="gene_5306" name="gene_5306">
+</scanned-sequence>
+<scanned-sequence accession="gene_5307" name="gene_5307">
+</scanned-sequence>
+<scanned-sequence accession="gene_5308" name="gene_5308">
+</scanned-sequence>
+<scanned-sequence accession="gene_5309" name="gene_5309">
+</scanned-sequence>
+<scanned-sequence accession="gene_5310" name="gene_5310">
+</scanned-sequence>
+<scanned-sequence accession="gene_5311" name="gene_5311">
+</scanned-sequence>
+<scanned-sequence accession="gene_5312" name="gene_5312">
+</scanned-sequence>
+<scanned-sequence accession="gene_5313" name="gene_5313">
+</scanned-sequence>
+<scanned-sequence accession="gene_5314" name="gene_5314">
+</scanned-sequence>
+<scanned-sequence accession="gene_5315" name="gene_5315">
+</scanned-sequence>
+<scanned-sequence accession="gene_5316" name="gene_5316">
+</scanned-sequence>
+<scanned-sequence accession="gene_5317" name="gene_5317">
+</scanned-sequence>
+<scanned-sequence accession="gene_5318" name="gene_5318">
+</scanned-sequence>
+<scanned-sequence accession="gene_5319" name="gene_5319">
+</scanned-sequence>
+<scanned-sequence accession="gene_5320" name="gene_5320">
+</scanned-sequence>
+<scanned-sequence accession="gene_5321" name="gene_5321">
+</scanned-sequence>
+<scanned-sequence accession="gene_5322" name="gene_5322">
+</scanned-sequence>
+<scanned-sequence accession="gene_5323" name="gene_5323">
+</scanned-sequence>
+<scanned-sequence accession="gene_5324" name="gene_5324">
+</scanned-sequence>
+<scanned-sequence accession="gene_5325" name="gene_5325">
+</scanned-sequence>
+<scanned-sequence accession="gene_5326" name="gene_5326">
+<matched-element start="811" stop="822" score="12.1193" pvalue="9.02e-06">
+<sequence>GGTTGTCTTTCT</sequence>
+<mem:qvalue>0.171</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5327" name="gene_5327">
+</scanned-sequence>
+<scanned-sequence accession="gene_5328" name="gene_5328">
+</scanned-sequence>
+<scanned-sequence accession="gene_5329" name="gene_5329">
+</scanned-sequence>
+<scanned-sequence accession="gene_5330" name="gene_5330">
+</scanned-sequence>
+<scanned-sequence accession="gene_5331" name="gene_5331">
+</scanned-sequence>
+<scanned-sequence accession="gene_5332" name="gene_5332">
+</scanned-sequence>
+<scanned-sequence accession="gene_5333" name="gene_5333">
+</scanned-sequence>
+<scanned-sequence accession="gene_5334" name="gene_5334">
+<matched-element start="472" stop="461" score="12.633" pvalue="7.11e-06">
+<sequence>GGTTCTCTTCTG</sequence>
+<mem:qvalue>0.139</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5335" name="gene_5335">
+</scanned-sequence>
+<scanned-sequence accession="gene_5336" name="gene_5336">
+</scanned-sequence>
+<scanned-sequence accession="gene_5337" name="gene_5337">
+<matched-element start="303" stop="292" score="21.5963" pvalue="5.62e-08">
+<sequence>GGTTCTCTTTCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+<matched-element start="192" stop="203" score="13.0826" pvalue="5.83e-06">
+<sequence>GGTTCTCTTTTG</sequence>
+<mem:qvalue>0.129</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5338" name="gene_5338">
+<matched-element start="438" stop="449" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5339" name="gene_5339">
+</scanned-sequence>
+<scanned-sequence accession="gene_5340" name="gene_5340">
+</scanned-sequence>
+<scanned-sequence accession="gene_5341" name="gene_5341">
+</scanned-sequence>
+<scanned-sequence accession="gene_5342" name="gene_5342">
+</scanned-sequence>
+<scanned-sequence accession="gene_5343" name="gene_5343">
+</scanned-sequence>
+<scanned-sequence accession="gene_5344" name="gene_5344">
+<matched-element start="799" stop="788" score="21.5963" pvalue="5.62e-08">
+<sequence>GGTTCTCTTTCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+<matched-element start="685" stop="696" score="13.3853" pvalue="4.52e-06">
+<sequence>GGCTCTCTTTCG</sequence>
+<mem:qvalue>0.119</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5345" name="gene_5345">
+</scanned-sequence>
+<scanned-sequence accession="gene_5346" name="gene_5346">
+</scanned-sequence>
+<scanned-sequence accession="gene_5347" name="gene_5347">
+<matched-element start="668" stop="657" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5348" name="gene_5348">
+<matched-element start="731" stop="742" score="21.5963" pvalue="5.62e-08">
+<sequence>GGTTCTCTTTCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+<matched-element start="214" stop="225" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+<matched-element start="842" stop="831" score="13.156" pvalue="5.13e-06">
+<sequence>GATTCTCTTTCG</sequence>
+<mem:qvalue>0.129</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5349" name="gene_5349">
+</scanned-sequence>
+<scanned-sequence accession="gene_5350" name="gene_5350">
+<matched-element start="609" stop="598" score="9.80734" pvalue="2.7e-05">
+<sequence>CGTGCTCCACCT</sequence>
+<mem:qvalue>0.384</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5351" name="gene_5351">
+</scanned-sequence>
+<scanned-sequence accession="gene_5352" name="gene_5352">
+<matched-element start="499" stop="510" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5353" name="gene_5353">
+</scanned-sequence>
+<scanned-sequence accession="gene_5354" name="gene_5354">
+</scanned-sequence>
+<scanned-sequence accession="gene_5355" name="gene_5355">
+</scanned-sequence>
+<scanned-sequence accession="gene_5356" name="gene_5356">
+</scanned-sequence>
+<scanned-sequence accession="gene_5358" name="gene_5358">
+<matched-element start="178" stop="167" score="10.6422" pvalue="1.55e-05">
+<sequence>GGTTCTGCTTCG</sequence>
+<mem:qvalue>0.244</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5359" name="gene_5359">
+</scanned-sequence>
+<scanned-sequence accession="gene_5360" name="gene_5360">
+</scanned-sequence>
+<scanned-sequence accession="gene_5361" name="gene_5361">
+</scanned-sequence>
+<scanned-sequence accession="gene_5362" name="gene_5362">
+<matched-element start="649" stop="660" score="13.422" pvalue="4.34e-06">
+<sequence>GGGTCTCTTTCG</sequence>
+<mem:qvalue>0.119</mem:qvalue>
+</matched-element>
+<matched-element start="763" stop="752" score="13.0826" pvalue="5.83e-06">
+<sequence>GGTTCTTTTTCG</sequence>
+<mem:qvalue>0.129</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5363" name="gene_5363">
+</scanned-sequence>
+<scanned-sequence accession="gene_5364" name="gene_5364">
+</scanned-sequence>
+<scanned-sequence accession="gene_5366" name="gene_5366">
+<matched-element start="885" stop="896" score="17.2936" pvalue="1.33e-06">
+<sequence>AGTTCTCTTCCT</sequence>
+<mem:qvalue>0.0393</mem:qvalue>
+</matched-element>
+<matched-element start="994" stop="983" score="9.12844" pvalue="3.7e-05">
+<sequence>CGTTCTCTTCAT</sequence>
+<mem:qvalue>0.466</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5367" name="gene_5367">
+</scanned-sequence>
+<scanned-sequence accession="gene_5368" name="gene_5368">
+</scanned-sequence>
+<scanned-sequence accession="gene_5369" name="gene_5369">
+</scanned-sequence>
+<scanned-sequence accession="gene_5370" name="gene_5370">
+</scanned-sequence>
+<scanned-sequence accession="gene_5371" name="gene_5371">
+</scanned-sequence>
+<scanned-sequence accession="gene_5372" name="gene_5372">
+<matched-element start="234" stop="223" score="13.8349" pvalue="3.44e-06">
+<sequence>GGTTCTCTTTCA</sequence>
+<mem:qvalue>0.0967</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5373" name="gene_5373">
+</scanned-sequence>
+<scanned-sequence accession="gene_5374" name="gene_5374">
+<matched-element start="546" stop="557" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5375" name="gene_5375">
+</scanned-sequence>
+<scanned-sequence accession="gene_5377" name="gene_5377">
+<matched-element start="87" stop="98" score="12.633" pvalue="7.11e-06">
+<sequence>GGTTCTCTTCTG</sequence>
+<mem:qvalue>0.139</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5378" name="gene_5378">
+</scanned-sequence>
+<scanned-sequence accession="gene_5379" name="gene_5379">
+</scanned-sequence>
+<scanned-sequence accession="gene_5380" name="gene_5380">
+</scanned-sequence>
+<scanned-sequence accession="gene_5381" name="gene_5381">
+</scanned-sequence>
+<scanned-sequence accession="gene_5382" name="gene_5382">
+</scanned-sequence>
+<scanned-sequence accession="gene_5383" name="gene_5383">
+</scanned-sequence>
+<scanned-sequence accession="gene_5384" name="gene_5384">
+</scanned-sequence>
+<scanned-sequence accession="gene_5385" name="gene_5385">
+</scanned-sequence>
+<scanned-sequence accession="gene_5386" name="gene_5386">
+</scanned-sequence>
+<scanned-sequence accession="gene_5387" name="gene_5387">
+</scanned-sequence>
+<scanned-sequence accession="gene_5388" name="gene_5388">
+</scanned-sequence>
+<scanned-sequence accession="gene_5389" name="gene_5389">
+</scanned-sequence>
+<scanned-sequence accession="gene_5391" name="gene_5391">
+<matched-element start="902" stop="891" score="13.0459" pvalue="5.97e-06">
+<sequence>AGTGCTCTACCG</sequence>
+<mem:qvalue>0.129</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5392" name="gene_5392">
+</scanned-sequence>
+<scanned-sequence accession="gene_5393" name="gene_5393">
+</scanned-sequence>
+<scanned-sequence accession="gene_5395" name="gene_5395">
+<matched-element start="869" stop="858" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5396" name="gene_5396">
+</scanned-sequence>
+<scanned-sequence accession="gene_5397" name="gene_5397">
+</scanned-sequence>
+<scanned-sequence accession="gene_5399" name="gene_5399">
+</scanned-sequence>
+<scanned-sequence accession="gene_5400" name="gene_5400">
+</scanned-sequence>
+<scanned-sequence accession="gene_5401" name="gene_5401">
+</scanned-sequence>
+<scanned-sequence accession="gene_5403" name="gene_5403">
+</scanned-sequence>
+<scanned-sequence accession="gene_5404" name="gene_5404">
+</scanned-sequence>
+<scanned-sequence accession="gene_5405" name="gene_5405">
+</scanned-sequence>
+<scanned-sequence accession="gene_5406" name="gene_5406">
+</scanned-sequence>
+<scanned-sequence accession="gene_5407" name="gene_5407">
+</scanned-sequence>
+<scanned-sequence accession="gene_5408" name="gene_5408">
+</scanned-sequence>
+<scanned-sequence accession="gene_5409" name="gene_5409">
+</scanned-sequence>
+<scanned-sequence accession="gene_5410" name="gene_5410">
+</scanned-sequence>
+<scanned-sequence accession="gene_5411" name="gene_5411">
+</scanned-sequence>
+<scanned-sequence accession="gene_5412" name="gene_5412">
+</scanned-sequence>
+<scanned-sequence accession="gene_5413" name="gene_5413">
+</scanned-sequence>
+<scanned-sequence accession="gene_5414" name="gene_5414">
+</scanned-sequence>
+<scanned-sequence accession="gene_5415" name="gene_5415">
+</scanned-sequence>
+<scanned-sequence accession="gene_5416" name="gene_5416">
+<matched-element start="959" stop="970" score="17.8073" pvalue="9.74e-07">
+<sequence>GGTTCTCTATCT</sequence>
+<mem:qvalue>0.0302</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5417" name="gene_5417">
+</scanned-sequence>
+<scanned-sequence accession="gene_5418" name="gene_5418">
+</scanned-sequence>
+<scanned-sequence accession="gene_5419" name="gene_5419">
+<matched-element start="590" stop="601" score="21.5963" pvalue="5.62e-08">
+<sequence>GGTTCTCTTTCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+<matched-element start="701" stop="690" score="21.5963" pvalue="5.62e-08">
+<sequence>GGTTCTCTTTCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+<matched-element start="347" stop="336" score="20.1284" pvalue="2.27e-07">
+<sequence>GGTTCTCTTCCT</sequence>
+<mem:qvalue>0.00786</mem:qvalue>
+</matched-element>
+<matched-element start="540" stop="551" score="18.3119" pvalue="7.25e-07">
+<sequence>AGTTCTCTTCCG</sequence>
+<mem:qvalue>0.0231</mem:qvalue>
+</matched-element>
+<matched-element start="235" stop="246" score="15.1376" pvalue="2.68e-06">
+<sequence>GGTGCTCCTCCT</sequence>
+<mem:qvalue>0.0773</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5420" name="gene_5420">
+<matched-element start="242" stop="253" score="21.5963" pvalue="5.62e-08">
+<sequence>GGTTCTCTTTCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+<matched-element start="354" stop="343" score="19.0367" pvalue="3.76e-07">
+<sequence>CGTTCTCTTTCG</sequence>
+<mem:qvalue>0.0126</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5421" name="gene_5421">
+</scanned-sequence>
+<scanned-sequence accession="gene_5422" name="gene_5422">
+</scanned-sequence>
+<scanned-sequence accession="gene_5423" name="gene_5423">
+</scanned-sequence>
+<scanned-sequence accession="gene_5424" name="gene_5424">
+</scanned-sequence>
+<scanned-sequence accession="gene_5425" name="gene_5425">
+</scanned-sequence>
+<scanned-sequence accession="gene_5426" name="gene_5426">
+</scanned-sequence>
+<scanned-sequence accession="gene_5427" name="gene_5427">
+</scanned-sequence>
+<scanned-sequence accession="gene_5428" name="gene_5428">
+<matched-element start="1040" stop="1029" score="9.98165" pvalue="2.47e-05">
+<sequence>TGTTCTCCTTCT</sequence>
+<mem:qvalue>0.369</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5429" name="gene_5429">
+</scanned-sequence>
+<scanned-sequence accession="gene_5430" name="gene_5430">
+</scanned-sequence>
+<scanned-sequence accession="gene_5431" name="gene_5431">
+</scanned-sequence>
+<scanned-sequence accession="gene_5432" name="gene_5432">
+</scanned-sequence>
+<scanned-sequence accession="gene_5433" name="gene_5433">
+</scanned-sequence>
+<scanned-sequence accession="gene_5434" name="gene_5434">
+</scanned-sequence>
+<scanned-sequence accession="gene_5435" name="gene_5435">
+</scanned-sequence>
+<scanned-sequence accession="gene_5437" name="gene_5437">
+<matched-element start="813" stop="802" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5438" name="gene_5438">
+</scanned-sequence>
+<scanned-sequence accession="gene_5439" name="gene_5439">
+</scanned-sequence>
+<scanned-sequence accession="gene_5440" name="gene_5440">
+<matched-element start="596" stop="607" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5441" name="gene_5441">
+</scanned-sequence>
+<scanned-sequence accession="gene_5442" name="gene_5442">
+</scanned-sequence>
+<scanned-sequence accession="gene_5443" name="gene_5443">
+</scanned-sequence>
+<scanned-sequence accession="gene_5444" name="gene_5444">
+</scanned-sequence>
+<scanned-sequence accession="gene_5445" name="gene_5445">
+<matched-element start="970" stop="981" score="12.9358" pvalue="6.26e-06">
+<sequence>GGCTCTCTTCCG</sequence>
+<mem:qvalue>0.129</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5446" name="gene_5446">
+</scanned-sequence>
+<scanned-sequence accession="gene_5447" name="gene_5447">
+<matched-element start="776" stop="787" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5448" name="gene_5448">
+</scanned-sequence>
+<scanned-sequence accession="gene_5449" name="gene_5449">
+</scanned-sequence>
+<scanned-sequence accession="gene_5450" name="gene_5450">
+</scanned-sequence>
+<scanned-sequence accession="gene_5451" name="gene_5451">
+</scanned-sequence>
+<scanned-sequence accession="gene_5452" name="gene_5452">
+</scanned-sequence>
+<scanned-sequence accession="gene_5453" name="gene_5453">
+</scanned-sequence>
+<scanned-sequence accession="gene_5454" name="gene_5454">
+<matched-element start="784" stop="773" score="10.6422" pvalue="1.55e-05">
+<sequence>GGTTCTGCTTCG</sequence>
+<mem:qvalue>0.244</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5455" name="gene_5455">
+<matched-element start="691" stop="702" score="13.1284" pvalue="5.37e-06">
+<sequence>GGTCCTCTTCCG</sequence>
+<mem:qvalue>0.129</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5456+gene_5457" name="gene_5456+gene_5457">
+</scanned-sequence>
+<scanned-sequence accession="gene_5458" name="gene_5458">
+</scanned-sequence>
+<scanned-sequence accession="gene_5459" name="gene_5459">
+<matched-element start="850" stop="861" score="10.6422" pvalue="1.55e-05">
+<sequence>GGTTCTGCTTCG</sequence>
+<mem:qvalue>0.244</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5460" name="gene_5460">
+</scanned-sequence>
+<scanned-sequence accession="gene_5461" name="gene_5461">
+</scanned-sequence>
+<scanned-sequence accession="gene_5462" name="gene_5462">
+<matched-element start="711" stop="700" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+<matched-element start="189" stop="200" score="20.1284" pvalue="2.27e-07">
+<sequence>GGTTCTCTTCCT</sequence>
+<mem:qvalue>0.00786</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5463" name="gene_5463">
+</scanned-sequence>
+<scanned-sequence accession="gene_5464" name="gene_5464">
+</scanned-sequence>
+<scanned-sequence accession="gene_5465" name="gene_5465">
+</scanned-sequence>
+<scanned-sequence accession="gene_5466" name="gene_5466">
+</scanned-sequence>
+<scanned-sequence accession="gene_5467" name="gene_5467">
+</scanned-sequence>
+<scanned-sequence accession="gene_5469" name="gene_5469">
+</scanned-sequence>
+<scanned-sequence accession="gene_5470" name="gene_5470">
+</scanned-sequence>
+<scanned-sequence accession="gene_5471" name="gene_5471">
+</scanned-sequence>
+<scanned-sequence accession="gene_5472" name="gene_5472">
+</scanned-sequence>
+<scanned-sequence accession="gene_5473" name="gene_5473">
+</scanned-sequence>
+<scanned-sequence accession="gene_5475" name="gene_5475">
+</scanned-sequence>
+<scanned-sequence accession="gene_5476" name="gene_5476">
+</scanned-sequence>
+<scanned-sequence accession="gene_5477" name="gene_5477">
+<matched-element start="347" stop="358" score="18.6514" pvalue="5.76e-07">
+<sequence>GGTTCTCCTCCG</sequence>
+<mem:qvalue>0.0189</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5478" name="gene_5478">
+</scanned-sequence>
+<scanned-sequence accession="gene_5479" name="gene_5479">
+</scanned-sequence>
+<scanned-sequence accession="gene_5480" name="gene_5480">
+</scanned-sequence>
+<scanned-sequence accession="gene_5481" name="gene_5481">
+</scanned-sequence>
+<scanned-sequence accession="gene_5482" name="gene_5482">
+</scanned-sequence>
+<scanned-sequence accession="gene_5483" name="gene_5483">
+</scanned-sequence>
+<scanned-sequence accession="gene_5484" name="gene_5484">
+</scanned-sequence>
+<scanned-sequence accession="gene_5485" name="gene_5485">
+</scanned-sequence>
+<scanned-sequence accession="gene_5486" name="gene_5486">
+<matched-element start="259" stop="270" score="9.80734" pvalue="2.7e-05">
+<sequence>CGCTCTCTTTCT</sequence>
+<mem:qvalue>0.384</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5487" name="gene_5487">
+</scanned-sequence>
+<scanned-sequence accession="gene_5488" name="gene_5488">
+</scanned-sequence>
+<scanned-sequence accession="gene_5489" name="gene_5489">
+</scanned-sequence>
+<scanned-sequence accession="gene_5490" name="gene_5490">
+</scanned-sequence>
+<scanned-sequence accession="gene_5491" name="gene_5491">
+</scanned-sequence>
+<scanned-sequence accession="gene_5492" name="gene_5492">
+</scanned-sequence>
+<scanned-sequence accession="gene_5493" name="gene_5493">
+<matched-element start="661" stop="650" score="20.1284" pvalue="2.27e-07">
+<sequence>GGTTCTCTTCCT</sequence>
+<mem:qvalue>0.00786</mem:qvalue>
+</matched-element>
+<matched-element start="136" stop="147" score="13.3853" pvalue="4.52e-06">
+<sequence>GGTTCTCTTCCA</sequence>
+<mem:qvalue>0.119</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5494" name="gene_5494">
+</scanned-sequence>
+<scanned-sequence accession="gene_5495" name="gene_5495">
+</scanned-sequence>
+<scanned-sequence accession="gene_5496" name="gene_5496">
+</scanned-sequence>
+<scanned-sequence accession="gene_5497" name="gene_5497">
+</scanned-sequence>
+<scanned-sequence accession="gene_5498" name="gene_5498">
+</scanned-sequence>
+<scanned-sequence accession="gene_5499" name="gene_5499">
+</scanned-sequence>
+<scanned-sequence accession="gene_5500" name="gene_5500">
+<matched-element start="945" stop="956" score="9.30275" pvalue="3.42e-05">
+<sequence>AGTTATCTTTCT</sequence>
+<mem:qvalue>0.451</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5501" name="gene_5501">
+</scanned-sequence>
+<scanned-sequence accession="gene_5502" name="gene_5502">
+</scanned-sequence>
+<scanned-sequence accession="gene_5503" name="gene_5503">
+</scanned-sequence>
+<scanned-sequence accession="gene_5504" name="gene_5504">
+</scanned-sequence>
+<scanned-sequence accession="gene_5505" name="gene_5505">
+</scanned-sequence>
+<scanned-sequence accession="gene_5506" name="gene_5506">
+<matched-element start="298" stop="287" score="10.945" pvalue="1.29e-05">
+<sequence>AGTTCTCTTTCC</sequence>
+<mem:qvalue>0.232</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5507" name="gene_5507">
+</scanned-sequence>
+<scanned-sequence accession="gene_5508" name="gene_5508">
+</scanned-sequence>
+<scanned-sequence accession="gene_5509" name="gene_5509">
+</scanned-sequence>
+<scanned-sequence accession="gene_5510" name="gene_5510">
+</scanned-sequence>
+<scanned-sequence accession="gene_5511" name="gene_5511">
+</scanned-sequence>
+<scanned-sequence accession="gene_5512" name="gene_5512">
+</scanned-sequence>
+<scanned-sequence accession="gene_5513" name="gene_5513">
+</scanned-sequence>
+<scanned-sequence accession="gene_5514" name="gene_5514">
+</scanned-sequence>
+<scanned-sequence accession="gene_5515" name="gene_5515">
+</scanned-sequence>
+<scanned-sequence accession="gene_5516" name="gene_5516">
+</scanned-sequence>
+<scanned-sequence accession="gene_5517" name="gene_5517">
+</scanned-sequence>
+<scanned-sequence accession="gene_5518" name="gene_5518">
+</scanned-sequence>
+<scanned-sequence accession="gene_5520" name="gene_5520">
+</scanned-sequence>
+<scanned-sequence accession="gene_5521" name="gene_5521">
+</scanned-sequence>
+<scanned-sequence accession="gene_5522" name="gene_5522">
+</scanned-sequence>
+<scanned-sequence accession="gene_5523" name="gene_5523">
+</scanned-sequence>
+<scanned-sequence accession="gene_5524" name="gene_5524">
+</scanned-sequence>
+<scanned-sequence accession="gene_5525" name="gene_5525">
+</scanned-sequence>
+<scanned-sequence accession="gene_5526" name="gene_5526">
+</scanned-sequence>
+<scanned-sequence accession="gene_5527" name="gene_5527">
+</scanned-sequence>
+<scanned-sequence accession="gene_5528" name="gene_5528">
+</scanned-sequence>
+<scanned-sequence accession="gene_5529" name="gene_5529">
+</scanned-sequence>
+<scanned-sequence accession="gene_5530" name="gene_5530">
+</scanned-sequence>
+<scanned-sequence accession="gene_5531" name="gene_5531">
+</scanned-sequence>
+<scanned-sequence accession="gene_5532" name="gene_5532">
+</scanned-sequence>
+<scanned-sequence accession="gene_5533" name="gene_5533">
+</scanned-sequence>
+<scanned-sequence accession="gene_5534" name="gene_5534">
+</scanned-sequence>
+<scanned-sequence accession="gene_5535" name="gene_5535">
+</scanned-sequence>
+<scanned-sequence accession="gene_5536" name="gene_5536">
+</scanned-sequence>
+<scanned-sequence accession="gene_5537" name="gene_5537">
+</scanned-sequence>
+<scanned-sequence accession="gene_5538" name="gene_5538">
+</scanned-sequence>
+<scanned-sequence accession="gene_5539" name="gene_5539">
+</scanned-sequence>
+<scanned-sequence accession="gene_5540" name="gene_5540">
+</scanned-sequence>
+<scanned-sequence accession="gene_5541" name="gene_5541">
+<matched-element start="911" stop="922" score="8.11009" pvalue="4.54e-05">
+<sequence>CGATCTCTATCG</sequence>
+<mem:qvalue>0.561</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5542+gene_5543" name="gene_5542+gene_5543">
+</scanned-sequence>
+<scanned-sequence accession="gene_5544" name="gene_5544">
+</scanned-sequence>
+<scanned-sequence accession="gene_5546" name="gene_5546">
+<matched-element start="667" stop="656" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5547" name="gene_5547">
+</scanned-sequence>
+<scanned-sequence accession="gene_5548" name="gene_5548">
+</scanned-sequence>
+<scanned-sequence accession="gene_5549" name="gene_5549">
+</scanned-sequence>
+<scanned-sequence accession="gene_5550" name="gene_5550">
+</scanned-sequence>
+<scanned-sequence accession="gene_5551" name="gene_5551">
+</scanned-sequence>
+<scanned-sequence accession="gene_5552" name="gene_5552">
+</scanned-sequence>
+<scanned-sequence accession="gene_5553" name="gene_5553">
+</scanned-sequence>
+<scanned-sequence accession="gene_5554" name="gene_5554">
+</scanned-sequence>
+<scanned-sequence accession="gene_5555" name="gene_5555">
+</scanned-sequence>
+<scanned-sequence accession="gene_5556" name="gene_5556">
+</scanned-sequence>
+<scanned-sequence accession="gene_5557" name="gene_5557">
+<matched-element start="935" stop="924" score="10.6422" pvalue="1.55e-05">
+<sequence>GGTTCTGCTTCG</sequence>
+<mem:qvalue>0.244</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5558" name="gene_5558">
+</scanned-sequence>
+<scanned-sequence accession="gene_5559" name="gene_5559">
+</scanned-sequence>
+<scanned-sequence accession="gene_5560" name="gene_5560">
+</scanned-sequence>
+<scanned-sequence accession="gene_5561" name="gene_5561">
+</scanned-sequence>
+<scanned-sequence accession="gene_5562" name="gene_5562">
+</scanned-sequence>
+<scanned-sequence accession="gene_5563" name="gene_5563">
+</scanned-sequence>
+<scanned-sequence accession="gene_5564" name="gene_5564">
+</scanned-sequence>
+<scanned-sequence accession="gene_5566" name="gene_5566">
+<matched-element start="232" stop="221" score="10.6422" pvalue="1.55e-05">
+<sequence>GGTTCTGCTTCG</sequence>
+<mem:qvalue>0.244</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5567" name="gene_5567">
+</scanned-sequence>
+<scanned-sequence accession="gene_5568" name="gene_5568">
+</scanned-sequence>
+<scanned-sequence accession="gene_5569" name="gene_5569">
+</scanned-sequence>
+<scanned-sequence accession="gene_5570" name="gene_5570">
+</scanned-sequence>
+<scanned-sequence accession="gene_5571" name="gene_5571">
+</scanned-sequence>
+<scanned-sequence accession="gene_5572" name="gene_5572">
+</scanned-sequence>
+<scanned-sequence accession="gene_5573" name="gene_5573">
+</scanned-sequence>
+<scanned-sequence accession="gene_5574" name="gene_5574">
+<matched-element start="715" stop="726" score="12.4771" pvalue="7.73e-06">
+<sequence>TGTTCTCTTTCT</sequence>
+<mem:qvalue>0.149</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5575" name="gene_5575">
+</scanned-sequence>
+<scanned-sequence accession="gene_5576" name="gene_5576">
+</scanned-sequence>
+<scanned-sequence accession="gene_5578" name="gene_5578">
+</scanned-sequence>
+<scanned-sequence accession="gene_5579" name="gene_5579">
+</scanned-sequence>
+<scanned-sequence accession="gene_5580" name="gene_5580">
+</scanned-sequence>
+<scanned-sequence accession="gene_5581" name="gene_5581">
+<matched-element start="729" stop="718" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+<matched-element start="121" stop="132" score="12.633" pvalue="7.11e-06">
+<sequence>GGTTCTCTTCTG</sequence>
+<mem:qvalue>0.139</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5582" name="gene_5582">
+</scanned-sequence>
+<scanned-sequence accession="gene_5583" name="gene_5583">
+</scanned-sequence>
+<scanned-sequence accession="gene_5584" name="gene_5584">
+</scanned-sequence>
+<scanned-sequence accession="gene_5585" name="gene_5585">
+</scanned-sequence>
+<scanned-sequence accession="gene_5586" name="gene_5586">
+</scanned-sequence>
+<scanned-sequence accession="gene_5587" name="gene_5587">
+</scanned-sequence>
+<scanned-sequence accession="gene_5588" name="gene_5588">
+<matched-element start="616" stop="627" score="13.0826" pvalue="5.83e-06">
+<sequence>GGTTCTCTTTTG</sequence>
+<mem:qvalue>0.129</mem:qvalue>
+</matched-element>
+<matched-element start="731" stop="720" score="13.0826" pvalue="5.83e-06">
+<sequence>GGTTCTCTTTTG</sequence>
+<mem:qvalue>0.129</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5589" name="gene_5589">
+<matched-element start="710" stop="721" score="9.57798" pvalue="3.02e-05">
+<sequence>CATTCTCTTTCT</sequence>
+<mem:qvalue>0.416</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5590" name="gene_5590">
+</scanned-sequence>
+<scanned-sequence accession="gene_5591" name="gene_5591">
+</scanned-sequence>
+<scanned-sequence accession="gene_5592" name="gene_5592">
+</scanned-sequence>
+<scanned-sequence accession="gene_5593" name="gene_5593">
+</scanned-sequence>
+<scanned-sequence accession="gene_5594" name="gene_5594">
+</scanned-sequence>
+<scanned-sequence accession="gene_5595" name="gene_5595">
+<matched-element start="158" stop="169" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5596" name="gene_5596">
+</scanned-sequence>
+<scanned-sequence accession="gene_5597" name="gene_5597">
+</scanned-sequence>
+<scanned-sequence accession="gene_5598" name="gene_5598">
+</scanned-sequence>
+<scanned-sequence accession="gene_5599" name="gene_5599">
+</scanned-sequence>
+<scanned-sequence accession="gene_5600" name="gene_5600">
+</scanned-sequence>
+<scanned-sequence accession="gene_5601" name="gene_5601">
+</scanned-sequence>
+<scanned-sequence accession="gene_5602" name="gene_5602">
+</scanned-sequence>
+<scanned-sequence accession="gene_5603" name="gene_5603">
+</scanned-sequence>
+<scanned-sequence accession="gene_5604" name="gene_5604">
+</scanned-sequence>
+<scanned-sequence accession="gene_5605" name="gene_5605">
+</scanned-sequence>
+<scanned-sequence accession="gene_5606" name="gene_5606">
+</scanned-sequence>
+<scanned-sequence accession="gene_5607" name="gene_5607">
+</scanned-sequence>
+<scanned-sequence accession="gene_5608" name="gene_5608">
+</scanned-sequence>
+<scanned-sequence accession="gene_5609" name="gene_5609">
+</scanned-sequence>
+<scanned-sequence accession="gene_5610" name="gene_5610">
+</scanned-sequence>
+<scanned-sequence accession="gene_5611" name="gene_5611">
+</scanned-sequence>
+<scanned-sequence accession="gene_5612" name="gene_5612">
+</scanned-sequence>
+<scanned-sequence accession="gene_5613" name="gene_5613">
+</scanned-sequence>
+<scanned-sequence accession="gene_5615" name="gene_5615">
+</scanned-sequence>
+<scanned-sequence accession="gene_5617" name="gene_5617">
+</scanned-sequence>
+<scanned-sequence accession="gene_5618" name="gene_5618">
+</scanned-sequence>
+<scanned-sequence accession="gene_5619" name="gene_5619">
+</scanned-sequence>
+<scanned-sequence accession="gene_5620" name="gene_5620">
+<matched-element start="149" stop="160" score="10.6422" pvalue="1.55e-05">
+<sequence>GGTTCTGCTTCG</sequence>
+<mem:qvalue>0.244</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5621" name="gene_5621">
+<matched-element start="157" stop="146" score="9.22936" pvalue="3.54e-05">
+<sequence>AGTTCTCTTTTT</sequence>
+<mem:qvalue>0.451</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5622" name="gene_5622">
+</scanned-sequence>
+<scanned-sequence accession="gene_5623" name="gene_5623">
+</scanned-sequence>
+<scanned-sequence accession="gene_5624" name="gene_5624">
+<matched-element start="377" stop="366" score="9.22936" pvalue="3.54e-05">
+<sequence>AGTTCTCTTTTT</sequence>
+<mem:qvalue>0.451</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5625" name="gene_5625">
+</scanned-sequence>
+<scanned-sequence accession="gene_5626" name="gene_5626">
+</scanned-sequence>
+<scanned-sequence accession="gene_5627" name="gene_5627">
+</scanned-sequence>
+<scanned-sequence accession="gene_5628" name="gene_5628">
+</scanned-sequence>
+<scanned-sequence accession="gene_5629" name="gene_5629">
+</scanned-sequence>
+<scanned-sequence accession="gene_5630" name="gene_5630">
+</scanned-sequence>
+<scanned-sequence accession="gene_5632" name="gene_5632">
+</scanned-sequence>
+<scanned-sequence accession="gene_5633" name="gene_5633">
+</scanned-sequence>
+<scanned-sequence accession="gene_5634" name="gene_5634">
+</scanned-sequence>
+<scanned-sequence accession="gene_5635" name="gene_5635">
+</scanned-sequence>
+<scanned-sequence accession="gene_5636" name="gene_5636">
+</scanned-sequence>
+<scanned-sequence accession="gene_5637" name="gene_5637">
+</scanned-sequence>
+<scanned-sequence accession="gene_5638" name="gene_5638">
+<matched-element start="876" stop="865" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5639" name="gene_5639">
+</scanned-sequence>
+<scanned-sequence accession="gene_5640" name="gene_5640">
+</scanned-sequence>
+<scanned-sequence accession="gene_5641" name="gene_5641">
+</scanned-sequence>
+<scanned-sequence accession="gene_5643" name="gene_5643">
+<matched-element start="426" stop="415" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5645" name="gene_5645">
+</scanned-sequence>
+<scanned-sequence accession="gene_5646" name="gene_5646">
+</scanned-sequence>
+<scanned-sequence accession="gene_5647" name="gene_5647">
+</scanned-sequence>
+<scanned-sequence accession="gene_5648" name="gene_5648">
+</scanned-sequence>
+<scanned-sequence accession="gene_5649" name="gene_5649">
+</scanned-sequence>
+<scanned-sequence accession="gene_5650" name="gene_5650">
+</scanned-sequence>
+<scanned-sequence accession="gene_5651" name="gene_5651">
+</scanned-sequence>
+<scanned-sequence accession="gene_5652" name="gene_5652">
+</scanned-sequence>
+<scanned-sequence accession="gene_5653" name="gene_5653">
+</scanned-sequence>
+<scanned-sequence accession="gene_5654" name="gene_5654">
+</scanned-sequence>
+<scanned-sequence accession="gene_5655" name="gene_5655">
+</scanned-sequence>
+<scanned-sequence accession="gene_5656" name="gene_5656">
+</scanned-sequence>
+<scanned-sequence accession="gene_5657" name="gene_5657">
+</scanned-sequence>
+<scanned-sequence accession="gene_5658" name="gene_5658">
+</scanned-sequence>
+<scanned-sequence accession="gene_5659" name="gene_5659">
+</scanned-sequence>
+<scanned-sequence accession="gene_5660" name="gene_5660">
+<matched-element start="91" stop="80" score="20.1284" pvalue="2.27e-07">
+<sequence>GGTTCTCTTCCT</sequence>
+<mem:qvalue>0.00786</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5661" name="gene_5661">
+</scanned-sequence>
+<scanned-sequence accession="gene_5662" name="gene_5662">
+</scanned-sequence>
+<scanned-sequence accession="gene_5663" name="gene_5663">
+</scanned-sequence>
+<scanned-sequence accession="gene_5664" name="gene_5664">
+</scanned-sequence>
+<scanned-sequence accession="gene_5665" name="gene_5665">
+</scanned-sequence>
+<scanned-sequence accession="gene_5666" name="gene_5666">
+</scanned-sequence>
+<scanned-sequence accession="gene_5667" name="gene_5667">
+</scanned-sequence>
+<scanned-sequence accession="gene_5668" name="gene_5668">
+</scanned-sequence>
+<scanned-sequence accession="gene_5669" name="gene_5669">
+</scanned-sequence>
+<scanned-sequence accession="gene_5670" name="gene_5670">
+</scanned-sequence>
+<scanned-sequence accession="gene_5671" name="gene_5671">
+</scanned-sequence>
+<scanned-sequence accession="gene_5672" name="gene_5672">
+</scanned-sequence>
+<scanned-sequence accession="gene_5673" name="gene_5673">
+</scanned-sequence>
+<scanned-sequence accession="gene_5674" name="gene_5674">
+</scanned-sequence>
+<scanned-sequence accession="gene_5675" name="gene_5675">
+</scanned-sequence>
+<scanned-sequence accession="gene_5676" name="gene_5676">
+</scanned-sequence>
+<scanned-sequence accession="gene_5677" name="gene_5677">
+</scanned-sequence>
+<scanned-sequence accession="gene_5678" name="gene_5678">
+</scanned-sequence>
+<scanned-sequence accession="gene_5679" name="gene_5679">
+</scanned-sequence>
+<scanned-sequence accession="gene_5680" name="gene_5680">
+</scanned-sequence>
+<scanned-sequence accession="gene_5681" name="gene_5681">
+</scanned-sequence>
+<scanned-sequence accession="gene_5682+gene_5683" name="gene_5682+gene_5683">
+</scanned-sequence>
+<scanned-sequence accession="gene_5684" name="gene_5684">
+</scanned-sequence>
+<scanned-sequence accession="gene_5685" name="gene_5685">
+</scanned-sequence>
+<scanned-sequence accession="gene_5686" name="gene_5686">
+<matched-element start="115" stop="104" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5687" name="gene_5687">
+</scanned-sequence>
+<scanned-sequence accession="gene_5688" name="gene_5688">
+</scanned-sequence>
+<scanned-sequence accession="gene_5689" name="gene_5689">
+</scanned-sequence>
+<scanned-sequence accession="gene_5692" name="gene_5692">
+</scanned-sequence>
+<scanned-sequence accession="gene_5693" name="gene_5693">
+</scanned-sequence>
+<scanned-sequence accession="gene_5694" name="gene_5694">
+</scanned-sequence>
+<scanned-sequence accession="gene_5695" name="gene_5695">
+</scanned-sequence>
+<scanned-sequence accession="gene_5696" name="gene_5696">
+<matched-element start="256" stop="267" score="17.7431" pvalue="1.06e-06">
+<sequence>AGTTCTCTTTCT</sequence>
+<mem:qvalue>0.032</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5697" name="gene_5697">
+</scanned-sequence>
+<scanned-sequence accession="gene_5698" name="gene_5698">
+</scanned-sequence>
+<scanned-sequence accession="gene_5699" name="gene_5699">
+<matched-element start="97" stop="108" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5700" name="gene_5700">
+</scanned-sequence>
+<scanned-sequence accession="gene_5701" name="gene_5701">
+</scanned-sequence>
+<scanned-sequence accession="gene_5702" name="gene_5702">
+</scanned-sequence>
+<scanned-sequence accession="gene_5703" name="gene_5703">
+</scanned-sequence>
+<scanned-sequence accession="gene_5704" name="gene_5704">
+</scanned-sequence>
+<scanned-sequence accession="gene_5705" name="gene_5705">
+</scanned-sequence>
+<scanned-sequence accession="gene_5706" name="gene_5706">
+<matched-element start="234" stop="245" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5707" name="gene_5707">
+<matched-element start="731" stop="742" score="7.87156" pvalue="4.98e-05">
+<sequence>GGTTCTGCATCG</sequence>
+<mem:qvalue>0.61</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5708" name="gene_5708">
+</scanned-sequence>
+<scanned-sequence accession="gene_5709" name="gene_5709">
+<matched-element start="94" stop="105" score="9.62385" pvalue="2.92e-05">
+<sequence>GGTTCTGCTTCT</sequence>
+<mem:qvalue>0.411</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5710" name="gene_5710">
+</scanned-sequence>
+<scanned-sequence accession="gene_5711" name="gene_5711">
+</scanned-sequence>
+<scanned-sequence accession="gene_5712" name="gene_5712">
+</scanned-sequence>
+<scanned-sequence accession="gene_5713" name="gene_5713">
+<matched-element start="924" stop="935" score="12.0642" pvalue="9.51e-06">
+<sequence>GGTTCTCTTTTT</sequence>
+<mem:qvalue>0.174</mem:qvalue>
+</matched-element>
+<matched-element start="276" stop="287" score="10.6055" pvalue="1.63e-05">
+<sequence>AGTTCACTTTCG</sequence>
+<mem:qvalue>0.252</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5714" name="gene_5714">
+</scanned-sequence>
+<scanned-sequence accession="gene_5715" name="gene_5715">
+</scanned-sequence>
+<scanned-sequence accession="gene_5716" name="gene_5716">
+</scanned-sequence>
+<scanned-sequence accession="gene_5717" name="gene_5717">
+</scanned-sequence>
+<scanned-sequence accession="gene_5718" name="gene_5718">
+</scanned-sequence>
+<scanned-sequence accession="gene_5719" name="gene_5719">
+</scanned-sequence>
+<scanned-sequence accession="gene_5720" name="gene_5720">
+</scanned-sequence>
+<scanned-sequence accession="gene_5721" name="gene_5721">
+</scanned-sequence>
+<scanned-sequence accession="gene_5722" name="gene_5722">
+</scanned-sequence>
+<scanned-sequence accession="gene_5723" name="gene_5723">
+</scanned-sequence>
+<scanned-sequence accession="gene_5724" name="gene_5724">
+<matched-element start="662" stop="673" score="12.9358" pvalue="6.26e-06">
+<sequence>GGCTCTCTTCCG</sequence>
+<mem:qvalue>0.129</mem:qvalue>
+</matched-element>
+<matched-element start="777" stop="766" score="12.9358" pvalue="6.26e-06">
+<sequence>GGCTCTCTTCCG</sequence>
+<mem:qvalue>0.129</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5725" name="gene_5725">
+</scanned-sequence>
+<scanned-sequence accession="gene_5726" name="gene_5726">
+</scanned-sequence>
+<scanned-sequence accession="gene_5727" name="gene_5727">
+</scanned-sequence>
+<scanned-sequence accession="gene_5728" name="gene_5728">
+</scanned-sequence>
+<scanned-sequence accession="gene_5729" name="gene_5729">
+</scanned-sequence>
+<scanned-sequence accession="gene_5730" name="gene_5730">
+</scanned-sequence>
+<scanned-sequence accession="gene_5731" name="gene_5731">
+</scanned-sequence>
+<scanned-sequence accession="gene_5732" name="gene_5732">
+</scanned-sequence>
+<scanned-sequence accession="gene_5733" name="gene_5733">
+</scanned-sequence>
+<scanned-sequence accession="gene_5734" name="gene_5734">
+</scanned-sequence>
+<scanned-sequence accession="gene_5735" name="gene_5735">
+</scanned-sequence>
+<scanned-sequence accession="gene_5736+gene_5737" name="gene_5736+gene_5737">
+</scanned-sequence>
+<scanned-sequence accession="gene_5738" name="gene_5738">
+</scanned-sequence>
+<scanned-sequence accession="gene_5740" name="gene_5740">
+<matched-element start="854" stop="865" score="10.3119" pvalue="2.05e-05">
+<sequence>GGTTCTTTATCG</sequence>
+<mem:qvalue>0.311</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5741" name="gene_5741">
+</scanned-sequence>
+<scanned-sequence accession="gene_5742" name="gene_5742">
+</scanned-sequence>
+<scanned-sequence accession="gene_5743" name="gene_5743">
+<matched-element start="316" stop="305" score="8.77982" pvalue="4.06e-05">
+<sequence>ATTTCTCTTCCT</sequence>
+<mem:qvalue>0.507</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5744" name="gene_5744">
+</scanned-sequence>
+<scanned-sequence accession="gene_5745" name="gene_5745">
+</scanned-sequence>
+<scanned-sequence accession="gene_5746" name="gene_5746">
+</scanned-sequence>
+<scanned-sequence accession="gene_5747" name="gene_5747">
+</scanned-sequence>
+<scanned-sequence accession="gene_5748" name="gene_5748">
+</scanned-sequence>
+<scanned-sequence accession="gene_5749" name="gene_5749">
+</scanned-sequence>
+<scanned-sequence accession="gene_5750" name="gene_5750">
+<matched-element start="103" stop="114" score="10.3486" pvalue="1.97e-05">
+<sequence>AGTTCTCATCCG</sequence>
+<mem:qvalue>0.301</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5751" name="gene_5751">
+</scanned-sequence>
+<scanned-sequence accession="gene_5752" name="gene_5752">
+</scanned-sequence>
+<scanned-sequence accession="gene_5753" name="gene_5753">
+<matched-element start="2" stop="13" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5754" name="gene_5754">
+</scanned-sequence>
+<scanned-sequence accession="gene_5755" name="gene_5755">
+<matched-element start="787" stop="798" score="21.1468" pvalue="1.02e-07">
+<sequence>GGTTCTCTTCCG</sequence>
+<mem:qvalue>0.00413</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5756" name="gene_5756">
+<matched-element start="520" stop="531" score="7.57798" pvalue="5.71e-05">
+<sequence>AGTTCTCAACCG</sequence>
+<mem:qvalue>0.692</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_5757" name="gene_5757">
+</scanned-sequence>
+<scanned-sequence accession="gene_5758" name="gene_5758">
+</scanned-sequence>
+<scanned-sequence accession="gene_5759" name="gene_5759">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+</cis-element-search>

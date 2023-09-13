@@ -1,0 +1,4287 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!-- Document definition -->
+<!-- http://zlab.bu.edu/~phaverty/SupplementalData/CisML/cisml.dtd -->
+<!DOCTYPE cis-element-search[
+<!ELEMENT cis-element-search (program-name, parameters, (pattern | multi-pattern-scan)*)>
+<!ELEMENT program-name (#PCDATA)>
+<!ELEMENT parameters (
+  pattern-file, 
+  sequence-file, 
+  background-seq-file?,
+  pattern-pvalue-cutoff?,
+  sequence-pvalue-cutoff?,
+  site-pvalue-cutoff?,
+  sequence-filtering,
+  ANY*
+ )>
+<!ELEMENT command-line (#PCDATA)>
+<!ELEMENT pattern-file (#PCDATA)>
+<!ELEMENT sequence-file (#PCDATA)>
+<!ELEMENT background-seq-file (#PCDATA)>
+<!ELEMENT pattern-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-pvalue-cutoff (#PCDATA)>
+<!ELEMENT site-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-filtering EMPTY>
+<!ELEMENT multi-pattern-scan (pattern+, ANY*)>
+<!ELEMENT pattern (scanned-sequence+, ANY*)>
+<!ELEMENT scanned-sequence (matched-element*, ANY*)>
+<!ELEMENT matched-element (sequence)>
+<!ELEMENT sequence (#PCDATA)>
+<!ATTLIST cis-element-search
+xmlns:xsi CDATA #IMPLIED
+xmlns:mem CDATA #IMPLIED
+xsi:schemaLocation CDATA #IMPLIED
+>
+<!ATTLIST sequence-filtering
+on-off CDATA #REQUIRED
+type CDATA #IMPLIED
+>
+<!ATTLIST multi-pattern-scan
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+>
+<!ATTLIST pattern
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+pvalue CDATA #IMPLIED
+score CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST scanned-sequence
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+length CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST matched-element
+start CDATA #REQUIRED
+stop CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+clusterid CDATA #IMPLIED
+>
+
+]>
+<cis-element-search
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://zlab.bu.edu/schema/cisml cisml.xsd"
+  xmlns="http://zlab.bu.edu/schema/cisml"
+  xmlns:mem="http://noble.gs.washington.edu/meme"
+>
+<program-name>fimo</program-name>
+<parameters>
+<pattern-file>/bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Entomophaga_maimaiga_ARSEF_7190/antismash_local/meme/gene_3440/+04_-01/meme.html</pattern-file>
+<sequence-file>/bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Entomophaga_maimaiga_ARSEF_7190/antismash_local/Chr_02_promoter_sequences.fasta</sequence-file>
+<site-pvalue-cutoff>6e-05</site-pvalue-cutoff>
+<sequence-filtering on-off="off"/>
+</parameters>
+<pattern accession="1" name="1">
+<scanned-sequence accession="gene_1921" name="gene_1921">
+</scanned-sequence>
+<scanned-sequence accession="gene_1923" name="gene_1923">
+</scanned-sequence>
+<scanned-sequence accession="gene_1924" name="gene_1924">
+<matched-element start="154" stop="165" score="12.602" pvalue="2.5e-05">
+<sequence>TAACCCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_1925" name="gene_1925">
+</scanned-sequence>
+<scanned-sequence accession="gene_1926" name="gene_1926">
+</scanned-sequence>
+<scanned-sequence accession="gene_1927" name="gene_1927">
+</scanned-sequence>
+<scanned-sequence accession="gene_1928" name="gene_1928">
+</scanned-sequence>
+<scanned-sequence accession="gene_1931" name="gene_1931">
+</scanned-sequence>
+<scanned-sequence accession="gene_1932" name="gene_1932">
+</scanned-sequence>
+<scanned-sequence accession="gene_1933" name="gene_1933">
+<matched-element start="661" stop="650" score="10.4796" pvalue="5.98e-05">
+<sequence>GGGCACATCAAA</sequence>
+<mem:qvalue>0.812</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_1934" name="gene_1934">
+</scanned-sequence>
+<scanned-sequence accession="gene_1935" name="gene_1935">
+<matched-element start="482" stop="493" score="10.7143" pvalue="5.5e-05">
+<sequence>TGGCACACCCAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_1936" name="gene_1936">
+</scanned-sequence>
+<scanned-sequence accession="gene_1937" name="gene_1937">
+</scanned-sequence>
+<scanned-sequence accession="gene_1938" name="gene_1938">
+</scanned-sequence>
+<scanned-sequence accession="gene_1940" name="gene_1940">
+</scanned-sequence>
+<scanned-sequence accession="gene_1941" name="gene_1941">
+</scanned-sequence>
+<scanned-sequence accession="gene_1942" name="gene_1942">
+</scanned-sequence>
+<scanned-sequence accession="gene_1943" name="gene_1943">
+</scanned-sequence>
+<scanned-sequence accession="gene_1944" name="gene_1944">
+</scanned-sequence>
+<scanned-sequence accession="gene_1945" name="gene_1945">
+</scanned-sequence>
+<scanned-sequence accession="gene_1946" name="gene_1946">
+</scanned-sequence>
+<scanned-sequence accession="gene_1947" name="gene_1947">
+</scanned-sequence>
+<scanned-sequence accession="gene_1948" name="gene_1948">
+</scanned-sequence>
+<scanned-sequence accession="gene_1949" name="gene_1949">
+</scanned-sequence>
+<scanned-sequence accession="gene_1950" name="gene_1950">
+</scanned-sequence>
+<scanned-sequence accession="gene_1951" name="gene_1951">
+</scanned-sequence>
+<scanned-sequence accession="gene_1952" name="gene_1952">
+</scanned-sequence>
+<scanned-sequence accession="gene_1953" name="gene_1953">
+</scanned-sequence>
+<scanned-sequence accession="gene_1954" name="gene_1954">
+</scanned-sequence>
+<scanned-sequence accession="gene_1955" name="gene_1955">
+</scanned-sequence>
+<scanned-sequence accession="gene_1956" name="gene_1956">
+</scanned-sequence>
+<scanned-sequence accession="gene_1957" name="gene_1957">
+</scanned-sequence>
+<scanned-sequence accession="gene_1958" name="gene_1958">
+</scanned-sequence>
+<scanned-sequence accession="gene_1959" name="gene_1959">
+<matched-element start="289" stop="278" score="14.2653" pvalue="9.86e-06">
+<sequence>TGGCACACCAAG</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_1960" name="gene_1960">
+</scanned-sequence>
+<scanned-sequence accession="gene_1961" name="gene_1961">
+</scanned-sequence>
+<scanned-sequence accession="gene_1962" name="gene_1962">
+</scanned-sequence>
+<scanned-sequence accession="gene_1963" name="gene_1963">
+</scanned-sequence>
+<scanned-sequence accession="gene_1964" name="gene_1964">
+</scanned-sequence>
+<scanned-sequence accession="gene_1965" name="gene_1965">
+</scanned-sequence>
+<scanned-sequence accession="gene_1966" name="gene_1966">
+</scanned-sequence>
+<scanned-sequence accession="gene_1967" name="gene_1967">
+</scanned-sequence>
+<scanned-sequence accession="gene_1968" name="gene_1968">
+<matched-element start="93" stop="104" score="13.398" pvalue="1.63e-05">
+<sequence>GGGTTCTACAAC</sequence>
+<mem:qvalue>0.783</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_1969" name="gene_1969">
+</scanned-sequence>
+<scanned-sequence accession="gene_1970" name="gene_1970">
+<matched-element start="639" stop="628" score="18.2551" pvalue="1.91e-07">
+<sequence>GGGCTCTCCAAC</sequence>
+<mem:qvalue>0.577</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_1971" name="gene_1971">
+<matched-element start="993" stop="1004" score="12.0204" pvalue="3.32e-05">
+<sequence>GGACCCCCCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_1972" name="gene_1972">
+</scanned-sequence>
+<scanned-sequence accession="gene_1973" name="gene_1973">
+<matched-element start="777" stop="788" score="12.7041" pvalue="2.35e-05">
+<sequence>GGATTCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_1974" name="gene_1974">
+</scanned-sequence>
+<scanned-sequence accession="gene_1975" name="gene_1975">
+</scanned-sequence>
+<scanned-sequence accession="gene_1977" name="gene_1977">
+</scanned-sequence>
+<scanned-sequence accession="gene_1978" name="gene_1978">
+</scanned-sequence>
+<scanned-sequence accession="gene_1979" name="gene_1979">
+</scanned-sequence>
+<scanned-sequence accession="gene_1980" name="gene_1980">
+</scanned-sequence>
+<scanned-sequence accession="gene_1981" name="gene_1981">
+</scanned-sequence>
+<scanned-sequence accession="gene_1982" name="gene_1982">
+</scanned-sequence>
+<scanned-sequence accession="gene_1983" name="gene_1983">
+</scanned-sequence>
+<scanned-sequence accession="gene_1986" name="gene_1986">
+</scanned-sequence>
+<scanned-sequence accession="gene_1987" name="gene_1987">
+</scanned-sequence>
+<scanned-sequence accession="gene_1988" name="gene_1988">
+</scanned-sequence>
+<scanned-sequence accession="gene_1989" name="gene_1989">
+</scanned-sequence>
+<scanned-sequence accession="gene_1990+gene_1991" name="gene_1990+gene_1991">
+</scanned-sequence>
+<scanned-sequence accession="gene_1992" name="gene_1992">
+</scanned-sequence>
+<scanned-sequence accession="gene_1993" name="gene_1993">
+</scanned-sequence>
+<scanned-sequence accession="gene_1994" name="gene_1994">
+</scanned-sequence>
+<scanned-sequence accession="gene_1995" name="gene_1995">
+</scanned-sequence>
+<scanned-sequence accession="gene_1996" name="gene_1996">
+</scanned-sequence>
+<scanned-sequence accession="gene_1997" name="gene_1997">
+</scanned-sequence>
+<scanned-sequence accession="gene_1998" name="gene_1998">
+</scanned-sequence>
+<scanned-sequence accession="gene_1999" name="gene_1999">
+</scanned-sequence>
+<scanned-sequence accession="gene_2000" name="gene_2000">
+</scanned-sequence>
+<scanned-sequence accession="gene_2002" name="gene_2002">
+</scanned-sequence>
+<scanned-sequence accession="gene_2004" name="gene_2004">
+</scanned-sequence>
+<scanned-sequence accession="gene_2005" name="gene_2005">
+<matched-element start="973" stop="984" score="12.6633" pvalue="2.42e-05">
+<sequence>GAACCCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2006" name="gene_2006">
+</scanned-sequence>
+<scanned-sequence accession="gene_2007" name="gene_2007">
+</scanned-sequence>
+<scanned-sequence accession="gene_2008" name="gene_2008">
+</scanned-sequence>
+<scanned-sequence accession="gene_2009" name="gene_2009">
+</scanned-sequence>
+<scanned-sequence accession="gene_2010" name="gene_2010">
+</scanned-sequence>
+<scanned-sequence accession="gene_2011" name="gene_2011">
+<matched-element start="469" stop="458" score="10.602" pvalue="5.73e-05">
+<sequence>GAGTCCATCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2013" name="gene_2013">
+</scanned-sequence>
+<scanned-sequence accession="gene_2014" name="gene_2014">
+</scanned-sequence>
+<scanned-sequence accession="gene_2016" name="gene_2016">
+</scanned-sequence>
+<scanned-sequence accession="gene_2017" name="gene_2017">
+</scanned-sequence>
+<scanned-sequence accession="gene_2018" name="gene_2018">
+</scanned-sequence>
+<scanned-sequence accession="gene_2019" name="gene_2019">
+</scanned-sequence>
+<scanned-sequence accession="gene_2021" name="gene_2021">
+</scanned-sequence>
+<scanned-sequence accession="gene_2022" name="gene_2022">
+</scanned-sequence>
+<scanned-sequence accession="gene_2023" name="gene_2023">
+</scanned-sequence>
+<scanned-sequence accession="gene_2024" name="gene_2024">
+</scanned-sequence>
+<scanned-sequence accession="gene_2025" name="gene_2025">
+</scanned-sequence>
+<scanned-sequence accession="gene_2026" name="gene_2026">
+</scanned-sequence>
+<scanned-sequence accession="gene_2027" name="gene_2027">
+</scanned-sequence>
+<scanned-sequence accession="gene_2028" name="gene_2028">
+</scanned-sequence>
+<scanned-sequence accession="gene_2029" name="gene_2029">
+</scanned-sequence>
+<scanned-sequence accession="gene_2030" name="gene_2030">
+</scanned-sequence>
+<scanned-sequence accession="gene_2031" name="gene_2031">
+</scanned-sequence>
+<scanned-sequence accession="gene_2032" name="gene_2032">
+</scanned-sequence>
+<scanned-sequence accession="gene_2033" name="gene_2033">
+<matched-element start="898" stop="887" score="17.2755" pvalue="8.48e-07">
+<sequence>TGGGTCACCAAC</sequence>
+<mem:qvalue>0.577</mem:qvalue>
+</matched-element>
+<matched-element start="470" stop="459" score="10.7143" pvalue="5.5e-05">
+<sequence>TGGCACACCCAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2034" name="gene_2034">
+</scanned-sequence>
+<scanned-sequence accession="gene_2035" name="gene_2035">
+</scanned-sequence>
+<scanned-sequence accession="gene_2036" name="gene_2036">
+</scanned-sequence>
+<scanned-sequence accession="gene_2037" name="gene_2037">
+</scanned-sequence>
+<scanned-sequence accession="gene_2038" name="gene_2038">
+</scanned-sequence>
+<scanned-sequence accession="gene_2040" name="gene_2040">
+</scanned-sequence>
+<scanned-sequence accession="gene_2041" name="gene_2041">
+</scanned-sequence>
+<scanned-sequence accession="gene_2042" name="gene_2042">
+</scanned-sequence>
+<scanned-sequence accession="gene_2043" name="gene_2043">
+</scanned-sequence>
+<scanned-sequence accession="gene_2044+gene_2045" name="gene_2044+gene_2045">
+<matched-element start="294" stop="283" score="14.9082" pvalue="6.42e-06">
+<sequence>TGACTCACCCAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2046" name="gene_2046">
+</scanned-sequence>
+<scanned-sequence accession="gene_2047" name="gene_2047">
+</scanned-sequence>
+<scanned-sequence accession="gene_2048" name="gene_2048">
+<matched-element start="480" stop="491" score="11.398" pvalue="4.29e-05">
+<sequence>TAGGCCATCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2049" name="gene_2049">
+</scanned-sequence>
+<scanned-sequence accession="gene_2050" name="gene_2050">
+</scanned-sequence>
+<scanned-sequence accession="gene_2051" name="gene_2051">
+</scanned-sequence>
+<scanned-sequence accession="gene_2053" name="gene_2053">
+</scanned-sequence>
+<scanned-sequence accession="gene_2054" name="gene_2054">
+</scanned-sequence>
+<scanned-sequence accession="gene_2055" name="gene_2055">
+</scanned-sequence>
+<scanned-sequence accession="gene_2056" name="gene_2056">
+</scanned-sequence>
+<scanned-sequence accession="gene_2057" name="gene_2057">
+<matched-element start="514" stop="503" score="10.7755" pvalue="5.37e-05">
+<sequence>TAGGCCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2058" name="gene_2058">
+</scanned-sequence>
+<scanned-sequence accession="gene_2059" name="gene_2059">
+</scanned-sequence>
+<scanned-sequence accession="gene_2060" name="gene_2060">
+</scanned-sequence>
+<scanned-sequence accession="gene_2061" name="gene_2061">
+</scanned-sequence>
+<scanned-sequence accession="gene_2062" name="gene_2062">
+</scanned-sequence>
+<scanned-sequence accession="gene_2063" name="gene_2063">
+</scanned-sequence>
+<scanned-sequence accession="gene_2064" name="gene_2064">
+</scanned-sequence>
+<scanned-sequence accession="gene_2066" name="gene_2066">
+</scanned-sequence>
+<scanned-sequence accession="gene_2067" name="gene_2067">
+</scanned-sequence>
+<scanned-sequence accession="gene_2068" name="gene_2068">
+</scanned-sequence>
+<scanned-sequence accession="gene_2069" name="gene_2069">
+<matched-element start="506" stop="517" score="11.1122" pvalue="4.78e-05">
+<sequence>TGGCCCATCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2070" name="gene_2070">
+</scanned-sequence>
+<scanned-sequence accession="gene_2071" name="gene_2071">
+</scanned-sequence>
+<scanned-sequence accession="gene_2072" name="gene_2072">
+<matched-element start="865" stop="876" score="11.2653" pvalue="4.5e-05">
+<sequence>GGGGCCCCCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2073" name="gene_2073">
+<matched-element start="440" stop="429" score="12.7143" pvalue="2.34e-05">
+<sequence>TGAGTCTTCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2074" name="gene_2074">
+</scanned-sequence>
+<scanned-sequence accession="gene_2075" name="gene_2075">
+</scanned-sequence>
+<scanned-sequence accession="gene_2076" name="gene_2076">
+</scanned-sequence>
+<scanned-sequence accession="gene_2077" name="gene_2077">
+<matched-element start="138" stop="127" score="12.0408" pvalue="3.3e-05">
+<sequence>GAACTCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2078" name="gene_2078">
+</scanned-sequence>
+<scanned-sequence accession="gene_2079" name="gene_2079">
+</scanned-sequence>
+<scanned-sequence accession="gene_2080" name="gene_2080">
+</scanned-sequence>
+<scanned-sequence accession="gene_2081" name="gene_2081">
+</scanned-sequence>
+<scanned-sequence accession="gene_2082" name="gene_2082">
+</scanned-sequence>
+<scanned-sequence accession="gene_2083" name="gene_2083">
+<matched-element start="16" stop="5" score="12.0408" pvalue="3.3e-05">
+<sequence>GAACTCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2084" name="gene_2084">
+</scanned-sequence>
+<scanned-sequence accession="gene_2085" name="gene_2085">
+<matched-element start="544" stop="555" score="14.1429" pvalue="1.06e-05">
+<sequence>GAGCTCAACAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2086" name="gene_2086">
+</scanned-sequence>
+<scanned-sequence accession="gene_2087" name="gene_2087">
+</scanned-sequence>
+<scanned-sequence accession="gene_2088" name="gene_2088">
+</scanned-sequence>
+<scanned-sequence accession="gene_2089" name="gene_2089">
+</scanned-sequence>
+<scanned-sequence accession="gene_2090" name="gene_2090">
+</scanned-sequence>
+<scanned-sequence accession="gene_2091" name="gene_2091">
+</scanned-sequence>
+<scanned-sequence accession="gene_2092" name="gene_2092">
+</scanned-sequence>
+<scanned-sequence accession="gene_2093" name="gene_2093">
+</scanned-sequence>
+<scanned-sequence accession="gene_2094" name="gene_2094">
+</scanned-sequence>
+<scanned-sequence accession="gene_2095" name="gene_2095">
+</scanned-sequence>
+<scanned-sequence accession="gene_2096" name="gene_2096">
+</scanned-sequence>
+<scanned-sequence accession="gene_2097" name="gene_2097">
+<matched-element start="589" stop="600" score="10.5918" pvalue="5.74e-05">
+<sequence>TAGCACCACAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2098" name="gene_2098">
+</scanned-sequence>
+<scanned-sequence accession="gene_2099" name="gene_2099">
+</scanned-sequence>
+<scanned-sequence accession="gene_2100" name="gene_2100">
+</scanned-sequence>
+<scanned-sequence accession="gene_2101" name="gene_2101">
+</scanned-sequence>
+<scanned-sequence accession="gene_2102" name="gene_2102">
+</scanned-sequence>
+<scanned-sequence accession="gene_2103" name="gene_2103">
+</scanned-sequence>
+<scanned-sequence accession="gene_2104" name="gene_2104">
+</scanned-sequence>
+<scanned-sequence accession="gene_2105" name="gene_2105">
+</scanned-sequence>
+<scanned-sequence accession="gene_2106" name="gene_2106">
+</scanned-sequence>
+<scanned-sequence accession="gene_2108" name="gene_2108">
+</scanned-sequence>
+<scanned-sequence accession="gene_2109" name="gene_2109">
+</scanned-sequence>
+<scanned-sequence accession="gene_2110" name="gene_2110">
+</scanned-sequence>
+<scanned-sequence accession="gene_2111" name="gene_2111">
+<matched-element start="823" stop="834" score="12.0408" pvalue="3.3e-05">
+<sequence>GAACTCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2112" name="gene_2112">
+</scanned-sequence>
+<scanned-sequence accession="gene_2113" name="gene_2113">
+</scanned-sequence>
+<scanned-sequence accession="gene_2114" name="gene_2114">
+<matched-element start="746" stop="735" score="12.9898" pvalue="2.03e-05">
+<sequence>GAGTACTCCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2115" name="gene_2115">
+</scanned-sequence>
+<scanned-sequence accession="gene_2116" name="gene_2116">
+</scanned-sequence>
+<scanned-sequence accession="gene_2117" name="gene_2117">
+<matched-element start="347" stop="336" score="12.5204" pvalue="2.59e-05">
+<sequence>GAGCCCTCCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2118" name="gene_2118">
+</scanned-sequence>
+<scanned-sequence accession="gene_2119" name="gene_2119">
+<matched-element start="310" stop="299" score="13.2755" pvalue="1.74e-05">
+<sequence>GGGGTCTTCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2120" name="gene_2120">
+<matched-element start="1005" stop="994" score="12.5408" pvalue="2.57e-05">
+<sequence>GAGCTCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+<matched-element start="495" stop="506" score="12.0408" pvalue="3.3e-05">
+<sequence>GAACTCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2122" name="gene_2122">
+</scanned-sequence>
+<scanned-sequence accession="gene_2123" name="gene_2123">
+</scanned-sequence>
+<scanned-sequence accession="gene_2124" name="gene_2124">
+</scanned-sequence>
+<scanned-sequence accession="gene_2125" name="gene_2125">
+</scanned-sequence>
+<scanned-sequence accession="gene_2126" name="gene_2126">
+<matched-element start="723" stop="734" score="10.551" pvalue="5.82e-05">
+<sequence>GGGTTCCCCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2127" name="gene_2127">
+<matched-element start="62" stop="73" score="10.551" pvalue="5.82e-05">
+<sequence>TGAGCCCCCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2128" name="gene_2128">
+</scanned-sequence>
+<scanned-sequence accession="gene_2129" name="gene_2129">
+</scanned-sequence>
+<scanned-sequence accession="gene_2130" name="gene_2130">
+<matched-element start="257" stop="268" score="11.4286" pvalue="4.21e-05">
+<sequence>TGATCCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2131" name="gene_2131">
+</scanned-sequence>
+<scanned-sequence accession="gene_2132" name="gene_2132">
+</scanned-sequence>
+<scanned-sequence accession="gene_2133" name="gene_2133">
+<matched-element start="1044" stop="1033" score="10.7347" pvalue="5.48e-05">
+<sequence>TGATACTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2134" name="gene_2134">
+</scanned-sequence>
+<scanned-sequence accession="gene_2135" name="gene_2135">
+</scanned-sequence>
+<scanned-sequence accession="gene_2136" name="gene_2136">
+</scanned-sequence>
+<scanned-sequence accession="gene_2137" name="gene_2137">
+</scanned-sequence>
+<scanned-sequence accession="gene_2138" name="gene_2138">
+</scanned-sequence>
+<scanned-sequence accession="gene_2139" name="gene_2139">
+</scanned-sequence>
+<scanned-sequence accession="gene_2140" name="gene_2140">
+</scanned-sequence>
+<scanned-sequence accession="gene_2141" name="gene_2141">
+</scanned-sequence>
+<scanned-sequence accession="gene_2142" name="gene_2142">
+<matched-element start="218" stop="229" score="11.2551" pvalue="4.54e-05">
+<sequence>GAAGCCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2144" name="gene_2144">
+</scanned-sequence>
+<scanned-sequence accession="gene_2145" name="gene_2145">
+</scanned-sequence>
+<scanned-sequence accession="gene_2146" name="gene_2146">
+</scanned-sequence>
+<scanned-sequence accession="gene_2147" name="gene_2147">
+</scanned-sequence>
+<scanned-sequence accession="gene_2148" name="gene_2148">
+</scanned-sequence>
+<scanned-sequence accession="gene_2149" name="gene_2149">
+</scanned-sequence>
+<scanned-sequence accession="gene_2150" name="gene_2150">
+</scanned-sequence>
+<scanned-sequence accession="gene_2151" name="gene_2151">
+</scanned-sequence>
+<scanned-sequence accession="gene_2152" name="gene_2152">
+</scanned-sequence>
+<scanned-sequence accession="gene_2153" name="gene_2153">
+</scanned-sequence>
+<scanned-sequence accession="gene_2154" name="gene_2154">
+</scanned-sequence>
+<scanned-sequence accession="gene_2155" name="gene_2155">
+</scanned-sequence>
+<scanned-sequence accession="gene_2157" name="gene_2157">
+</scanned-sequence>
+<scanned-sequence accession="gene_2158" name="gene_2158">
+</scanned-sequence>
+<scanned-sequence accession="gene_2159" name="gene_2159">
+</scanned-sequence>
+<scanned-sequence accession="gene_2160" name="gene_2160">
+</scanned-sequence>
+<scanned-sequence accession="gene_2161" name="gene_2161">
+</scanned-sequence>
+<scanned-sequence accession="gene_2162" name="gene_2162">
+<matched-element start="167" stop="178" score="11.398" pvalue="4.29e-05">
+<sequence>TGGCACAACAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2164" name="gene_2164">
+<matched-element start="574" stop="563" score="12.3265" pvalue="2.88e-05">
+<sequence>GAAGTCCCCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2165" name="gene_2165">
+</scanned-sequence>
+<scanned-sequence accession="gene_2166" name="gene_2166">
+</scanned-sequence>
+<scanned-sequence accession="gene_2167" name="gene_2167">
+</scanned-sequence>
+<scanned-sequence accession="gene_2168" name="gene_2168">
+</scanned-sequence>
+<scanned-sequence accession="gene_2169" name="gene_2169">
+</scanned-sequence>
+<scanned-sequence accession="gene_2170" name="gene_2170">
+<matched-element start="560" stop="571" score="12.1735" pvalue="3.13e-05">
+<sequence>TAACCCACCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2171" name="gene_2171">
+</scanned-sequence>
+<scanned-sequence accession="gene_2173" name="gene_2173">
+</scanned-sequence>
+<scanned-sequence accession="gene_2174" name="gene_2174">
+</scanned-sequence>
+<scanned-sequence accession="gene_2178" name="gene_2178">
+<matched-element start="950" stop="961" score="11.9082" pvalue="3.5e-05">
+<sequence>GGATACTACAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2179" name="gene_2179">
+</scanned-sequence>
+<scanned-sequence accession="gene_2180" name="gene_2180">
+</scanned-sequence>
+<scanned-sequence accession="gene_2181" name="gene_2181">
+</scanned-sequence>
+<scanned-sequence accession="gene_2182" name="gene_2182">
+</scanned-sequence>
+<scanned-sequence accession="gene_2183" name="gene_2183">
+</scanned-sequence>
+<scanned-sequence accession="gene_2184" name="gene_2184">
+</scanned-sequence>
+<scanned-sequence accession="gene_2185" name="gene_2185">
+</scanned-sequence>
+<scanned-sequence accession="gene_2186" name="gene_2186">
+</scanned-sequence>
+<scanned-sequence accession="gene_2187" name="gene_2187">
+</scanned-sequence>
+<scanned-sequence accession="gene_2188" name="gene_2188">
+</scanned-sequence>
+<scanned-sequence accession="gene_2190" name="gene_2190">
+</scanned-sequence>
+<scanned-sequence accession="gene_2191" name="gene_2191">
+</scanned-sequence>
+<scanned-sequence accession="gene_2192" name="gene_2192">
+</scanned-sequence>
+<scanned-sequence accession="gene_2193" name="gene_2193">
+<matched-element start="231" stop="220" score="14.4796" pvalue="8.67e-06">
+<sequence>GGACTCTCCCAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2194" name="gene_2194">
+</scanned-sequence>
+<scanned-sequence accession="gene_2195" name="gene_2195">
+</scanned-sequence>
+<scanned-sequence accession="gene_2196" name="gene_2196">
+<matched-element start="783" stop="794" score="11.3163" pvalue="4.44e-05">
+<sequence>TAATTCAACAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2197" name="gene_2197">
+</scanned-sequence>
+<scanned-sequence accession="gene_2199" name="gene_2199">
+</scanned-sequence>
+<scanned-sequence accession="gene_2200" name="gene_2200">
+</scanned-sequence>
+<scanned-sequence accession="gene_2201" name="gene_2201">
+</scanned-sequence>
+<scanned-sequence accession="gene_2203" name="gene_2203">
+</scanned-sequence>
+<scanned-sequence accession="gene_2204" name="gene_2204">
+</scanned-sequence>
+<scanned-sequence accession="gene_2205" name="gene_2205">
+</scanned-sequence>
+<scanned-sequence accession="gene_2206" name="gene_2206">
+</scanned-sequence>
+<scanned-sequence accession="gene_2207" name="gene_2207">
+</scanned-sequence>
+<scanned-sequence accession="gene_2208" name="gene_2208">
+</scanned-sequence>
+<scanned-sequence accession="gene_2209" name="gene_2209">
+</scanned-sequence>
+<scanned-sequence accession="gene_2210" name="gene_2210">
+</scanned-sequence>
+<scanned-sequence accession="gene_2211" name="gene_2211">
+</scanned-sequence>
+<scanned-sequence accession="gene_2212" name="gene_2212">
+</scanned-sequence>
+<scanned-sequence accession="gene_2213" name="gene_2213">
+</scanned-sequence>
+<scanned-sequence accession="gene_2214" name="gene_2214">
+</scanned-sequence>
+<scanned-sequence accession="gene_2215" name="gene_2215">
+</scanned-sequence>
+<scanned-sequence accession="gene_2216" name="gene_2216">
+</scanned-sequence>
+<scanned-sequence accession="gene_2217" name="gene_2217">
+</scanned-sequence>
+<scanned-sequence accession="gene_2218" name="gene_2218">
+</scanned-sequence>
+<scanned-sequence accession="gene_2219" name="gene_2219">
+</scanned-sequence>
+<scanned-sequence accession="gene_2220" name="gene_2220">
+</scanned-sequence>
+<scanned-sequence accession="gene_2222" name="gene_2222">
+</scanned-sequence>
+<scanned-sequence accession="gene_2223" name="gene_2223">
+</scanned-sequence>
+<scanned-sequence accession="gene_2224" name="gene_2224">
+</scanned-sequence>
+<scanned-sequence accession="gene_2225" name="gene_2225">
+</scanned-sequence>
+<scanned-sequence accession="gene_2226" name="gene_2226">
+</scanned-sequence>
+<scanned-sequence accession="gene_2228" name="gene_2228">
+</scanned-sequence>
+<scanned-sequence accession="gene_2229" name="gene_2229">
+</scanned-sequence>
+<scanned-sequence accession="gene_2230" name="gene_2230">
+</scanned-sequence>
+<scanned-sequence accession="gene_2231" name="gene_2231">
+<matched-element start="255" stop="266" score="12.6429" pvalue="2.45e-05">
+<sequence>GGGGACACCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2232" name="gene_2232">
+</scanned-sequence>
+<scanned-sequence accession="gene_2233" name="gene_2233">
+</scanned-sequence>
+<scanned-sequence accession="gene_2234" name="gene_2234">
+<matched-element start="379" stop="368" score="14.0408" pvalue="1.12e-05">
+<sequence>GAAGCCTCCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2235" name="gene_2235">
+</scanned-sequence>
+<scanned-sequence accession="gene_2236" name="gene_2236">
+</scanned-sequence>
+<scanned-sequence accession="gene_2237" name="gene_2237">
+</scanned-sequence>
+<scanned-sequence accession="gene_2238" name="gene_2238">
+</scanned-sequence>
+<scanned-sequence accession="gene_2239" name="gene_2239">
+</scanned-sequence>
+<scanned-sequence accession="gene_2240" name="gene_2240">
+</scanned-sequence>
+<scanned-sequence accession="gene_2241" name="gene_2241">
+</scanned-sequence>
+<scanned-sequence accession="gene_2242" name="gene_2242">
+</scanned-sequence>
+<scanned-sequence accession="gene_2243+gene_2244" name="gene_2243+gene_2244">
+</scanned-sequence>
+<scanned-sequence accession="gene_2245" name="gene_2245">
+</scanned-sequence>
+<scanned-sequence accession="gene_2246" name="gene_2246">
+</scanned-sequence>
+<scanned-sequence accession="gene_2247" name="gene_2247">
+</scanned-sequence>
+<scanned-sequence accession="gene_2248" name="gene_2248">
+</scanned-sequence>
+<scanned-sequence accession="gene_2249" name="gene_2249">
+</scanned-sequence>
+<scanned-sequence accession="gene_2250" name="gene_2250">
+</scanned-sequence>
+<scanned-sequence accession="gene_2251" name="gene_2251">
+<matched-element start="1046" stop="1035" score="11.8163" pvalue="3.66e-05">
+<sequence>TAACCCTTCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2252" name="gene_2252">
+<matched-element start="6" stop="17" score="11.8163" pvalue="3.66e-05">
+<sequence>TAACCCTTCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2253" name="gene_2253">
+</scanned-sequence>
+<scanned-sequence accession="gene_2254" name="gene_2254">
+</scanned-sequence>
+<scanned-sequence accession="gene_2255" name="gene_2255">
+</scanned-sequence>
+<scanned-sequence accession="gene_2256" name="gene_2256">
+</scanned-sequence>
+<scanned-sequence accession="gene_2257" name="gene_2257">
+</scanned-sequence>
+<scanned-sequence accession="gene_2258+gene_2259" name="gene_2258+gene_2259">
+</scanned-sequence>
+<scanned-sequence accession="gene_2260" name="gene_2260">
+<matched-element start="515" stop="526" score="11.051" pvalue="4.89e-05">
+<sequence>TGGGCCCCCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2261" name="gene_2261">
+</scanned-sequence>
+<scanned-sequence accession="gene_2263" name="gene_2263">
+<matched-element start="927" stop="916" score="13.7653" pvalue="1.33e-05">
+<sequence>TGACACACCAAG</sequence>
+<mem:qvalue>0.733</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2264" name="gene_2264">
+</scanned-sequence>
+<scanned-sequence accession="gene_2265" name="gene_2265">
+</scanned-sequence>
+<scanned-sequence accession="gene_2266" name="gene_2266">
+</scanned-sequence>
+<scanned-sequence accession="gene_2267" name="gene_2267">
+</scanned-sequence>
+<scanned-sequence accession="gene_2269" name="gene_2269">
+</scanned-sequence>
+<scanned-sequence accession="gene_2270" name="gene_2270">
+</scanned-sequence>
+<scanned-sequence accession="gene_2271" name="gene_2271">
+</scanned-sequence>
+<scanned-sequence accession="gene_2272" name="gene_2272">
+</scanned-sequence>
+<scanned-sequence accession="gene_2273" name="gene_2273">
+</scanned-sequence>
+<scanned-sequence accession="gene_2274" name="gene_2274">
+</scanned-sequence>
+<scanned-sequence accession="gene_2275" name="gene_2275">
+</scanned-sequence>
+<scanned-sequence accession="gene_2276" name="gene_2276">
+</scanned-sequence>
+<scanned-sequence accession="gene_2278" name="gene_2278">
+</scanned-sequence>
+<scanned-sequence accession="gene_2279" name="gene_2279">
+</scanned-sequence>
+<scanned-sequence accession="gene_2280" name="gene_2280">
+</scanned-sequence>
+<scanned-sequence accession="gene_2281" name="gene_2281">
+</scanned-sequence>
+<scanned-sequence accession="gene_2282" name="gene_2282">
+</scanned-sequence>
+<scanned-sequence accession="gene_2283" name="gene_2283">
+</scanned-sequence>
+<scanned-sequence accession="gene_2284" name="gene_2284">
+</scanned-sequence>
+<scanned-sequence accession="gene_2285" name="gene_2285">
+</scanned-sequence>
+<scanned-sequence accession="gene_2286" name="gene_2286">
+</scanned-sequence>
+<scanned-sequence accession="gene_2287" name="gene_2287">
+</scanned-sequence>
+<scanned-sequence accession="gene_2288" name="gene_2288">
+</scanned-sequence>
+<scanned-sequence accession="gene_2289" name="gene_2289">
+</scanned-sequence>
+<scanned-sequence accession="gene_2290" name="gene_2290">
+</scanned-sequence>
+<scanned-sequence accession="gene_2292" name="gene_2292">
+</scanned-sequence>
+<scanned-sequence accession="gene_2293" name="gene_2293">
+</scanned-sequence>
+<scanned-sequence accession="gene_2294" name="gene_2294">
+</scanned-sequence>
+<scanned-sequence accession="gene_2295" name="gene_2295">
+</scanned-sequence>
+<scanned-sequence accession="gene_2296" name="gene_2296">
+</scanned-sequence>
+<scanned-sequence accession="gene_2297" name="gene_2297">
+</scanned-sequence>
+<scanned-sequence accession="gene_2298" name="gene_2298">
+</scanned-sequence>
+<scanned-sequence accession="gene_2299" name="gene_2299">
+</scanned-sequence>
+<scanned-sequence accession="gene_2300" name="gene_2300">
+</scanned-sequence>
+<scanned-sequence accession="gene_2301" name="gene_2301">
+</scanned-sequence>
+<scanned-sequence accession="gene_2302" name="gene_2302">
+</scanned-sequence>
+<scanned-sequence accession="gene_2303" name="gene_2303">
+</scanned-sequence>
+<scanned-sequence accession="gene_2304" name="gene_2304">
+</scanned-sequence>
+<scanned-sequence accession="gene_2305" name="gene_2305">
+<matched-element start="962" stop="973" score="11.7857" pvalue="3.68e-05">
+<sequence>GGATTCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+<matched-element start="888" stop="899" score="11.6837" pvalue="3.86e-05">
+<sequence>TAACCCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2306" name="gene_2306">
+</scanned-sequence>
+<scanned-sequence accession="gene_2307" name="gene_2307">
+</scanned-sequence>
+<scanned-sequence accession="gene_2308" name="gene_2308">
+</scanned-sequence>
+<scanned-sequence accession="gene_2309" name="gene_2309">
+</scanned-sequence>
+<scanned-sequence accession="gene_2310" name="gene_2310">
+</scanned-sequence>
+<scanned-sequence accession="gene_2311" name="gene_2311">
+</scanned-sequence>
+<scanned-sequence accession="gene_2312" name="gene_2312">
+<matched-element start="507" stop="496" score="12.2347" pvalue="3.01e-05">
+<sequence>GAAGTCAACAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2313" name="gene_2313">
+</scanned-sequence>
+<scanned-sequence accession="gene_2314" name="gene_2314">
+</scanned-sequence>
+<scanned-sequence accession="gene_2315" name="gene_2315">
+</scanned-sequence>
+<scanned-sequence accession="gene_2316" name="gene_2316">
+</scanned-sequence>
+<scanned-sequence accession="gene_2317" name="gene_2317">
+</scanned-sequence>
+<scanned-sequence accession="gene_2318" name="gene_2318">
+</scanned-sequence>
+<scanned-sequence accession="gene_2319" name="gene_2319">
+</scanned-sequence>
+<scanned-sequence accession="gene_2320" name="gene_2320">
+</scanned-sequence>
+<scanned-sequence accession="gene_2321" name="gene_2321">
+</scanned-sequence>
+<scanned-sequence accession="gene_2322" name="gene_2322">
+</scanned-sequence>
+<scanned-sequence accession="gene_2323" name="gene_2323">
+</scanned-sequence>
+<scanned-sequence accession="gene_2324" name="gene_2324">
+</scanned-sequence>
+<scanned-sequence accession="gene_2325" name="gene_2325">
+</scanned-sequence>
+<scanned-sequence accession="gene_2326" name="gene_2326">
+</scanned-sequence>
+<scanned-sequence accession="gene_2327" name="gene_2327">
+<matched-element start="378" stop="367" score="14.4796" pvalue="8.67e-06">
+<sequence>TAGGCCTCCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2328" name="gene_2328">
+</scanned-sequence>
+<scanned-sequence accession="gene_2329" name="gene_2329">
+</scanned-sequence>
+<scanned-sequence accession="gene_2330" name="gene_2330">
+<matched-element start="930" stop="941" score="11.3265" pvalue="4.43e-05">
+<sequence>GAACACTCCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2332" name="gene_2332">
+<matched-element start="94" stop="105" score="12.4592" pvalue="2.68e-05">
+<sequence>TGGCCCCCCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+<matched-element start="788" stop="799" score="11.3367" pvalue="4.39e-05">
+<sequence>TGACTCATCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2333" name="gene_2333">
+</scanned-sequence>
+<scanned-sequence accession="gene_2334" name="gene_2334">
+</scanned-sequence>
+<scanned-sequence accession="gene_2335" name="gene_2335">
+</scanned-sequence>
+<scanned-sequence accession="gene_2337" name="gene_2337">
+</scanned-sequence>
+<scanned-sequence accession="gene_2339" name="gene_2339">
+</scanned-sequence>
+<scanned-sequence accession="gene_2340" name="gene_2340">
+</scanned-sequence>
+<scanned-sequence accession="gene_2341" name="gene_2341">
+</scanned-sequence>
+<scanned-sequence accession="gene_2342" name="gene_2342">
+<matched-element start="134" stop="123" score="11.9796" pvalue="3.38e-05">
+<sequence>GGATCCACCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2344" name="gene_2344">
+</scanned-sequence>
+<scanned-sequence accession="gene_2345" name="gene_2345">
+</scanned-sequence>
+<scanned-sequence accession="gene_2346" name="gene_2346">
+<matched-element start="236" stop="225" score="10.6939" pvalue="5.58e-05">
+<sequence>TGGCACATCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2347" name="gene_2347">
+</scanned-sequence>
+<scanned-sequence accession="gene_2348" name="gene_2348">
+</scanned-sequence>
+<scanned-sequence accession="gene_2349" name="gene_2349">
+<matched-element start="74" stop="63" score="12.602" pvalue="2.5e-05">
+<sequence>TAACTCATCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+<matched-element start="278" stop="289" score="12.2755" pvalue="2.94e-05">
+<sequence>GGATTCACCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2350" name="gene_2350">
+</scanned-sequence>
+<scanned-sequence accession="gene_2351" name="gene_2351">
+</scanned-sequence>
+<scanned-sequence accession="gene_2352" name="gene_2352">
+</scanned-sequence>
+<scanned-sequence accession="gene_2353" name="gene_2353">
+</scanned-sequence>
+<scanned-sequence accession="gene_2354" name="gene_2354">
+</scanned-sequence>
+<scanned-sequence accession="gene_2355" name="gene_2355">
+</scanned-sequence>
+<scanned-sequence accession="gene_2356" name="gene_2356">
+</scanned-sequence>
+<scanned-sequence accession="gene_2357" name="gene_2357">
+</scanned-sequence>
+<scanned-sequence accession="gene_2358" name="gene_2358">
+</scanned-sequence>
+<scanned-sequence accession="gene_2359" name="gene_2359">
+</scanned-sequence>
+<scanned-sequence accession="gene_2360" name="gene_2360">
+</scanned-sequence>
+<scanned-sequence accession="gene_2361" name="gene_2361">
+<matched-element start="622" stop="633" score="14.4796" pvalue="8.67e-06">
+<sequence>TGACTCACCAAA</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+<matched-element start="610" stop="621" score="10.7449" pvalue="5.47e-05">
+<sequence>TAGCTCCCCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2362+gene_2363" name="gene_2362+gene_2363">
+</scanned-sequence>
+<scanned-sequence accession="gene_2365" name="gene_2365">
+</scanned-sequence>
+<scanned-sequence accession="gene_2366" name="gene_2366">
+</scanned-sequence>
+<scanned-sequence accession="gene_2367" name="gene_2367">
+</scanned-sequence>
+<scanned-sequence accession="gene_2368" name="gene_2368">
+</scanned-sequence>
+<scanned-sequence accession="gene_2369" name="gene_2369">
+</scanned-sequence>
+<scanned-sequence accession="gene_2370+gene_2371" name="gene_2370+gene_2371">
+</scanned-sequence>
+<scanned-sequence accession="gene_2372" name="gene_2372">
+</scanned-sequence>
+<scanned-sequence accession="gene_2373" name="gene_2373">
+</scanned-sequence>
+<scanned-sequence accession="gene_2374" name="gene_2374">
+</scanned-sequence>
+<scanned-sequence accession="gene_2376" name="gene_2376">
+</scanned-sequence>
+<scanned-sequence accession="gene_2377" name="gene_2377">
+</scanned-sequence>
+<scanned-sequence accession="gene_2378" name="gene_2378">
+</scanned-sequence>
+<scanned-sequence accession="gene_2379" name="gene_2379">
+<matched-element start="826" stop="837" score="12.6633" pvalue="2.42e-05">
+<sequence>GAACCCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2380" name="gene_2380">
+<matched-element start="796" stop="785" score="11.0816" pvalue="4.82e-05">
+<sequence>GAATCCAACAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2381" name="gene_2381">
+</scanned-sequence>
+<scanned-sequence accession="gene_2382" name="gene_2382">
+</scanned-sequence>
+<scanned-sequence accession="gene_2383" name="gene_2383">
+</scanned-sequence>
+<scanned-sequence accession="gene_2384" name="gene_2384">
+</scanned-sequence>
+<scanned-sequence accession="gene_2385" name="gene_2385">
+<matched-element start="1026" stop="1037" score="15.1939" pvalue="5.27e-06">
+<sequence>GGATCCTCCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2386" name="gene_2386">
+</scanned-sequence>
+<scanned-sequence accession="gene_2387" name="gene_2387">
+</scanned-sequence>
+<scanned-sequence accession="gene_2388" name="gene_2388">
+</scanned-sequence>
+<scanned-sequence accession="gene_2389" name="gene_2389">
+</scanned-sequence>
+<scanned-sequence accession="gene_2390" name="gene_2390">
+</scanned-sequence>
+<scanned-sequence accession="gene_2391" name="gene_2391">
+</scanned-sequence>
+<scanned-sequence accession="gene_2392" name="gene_2392">
+</scanned-sequence>
+<scanned-sequence accession="gene_2393" name="gene_2393">
+</scanned-sequence>
+<scanned-sequence accession="gene_2394" name="gene_2394">
+</scanned-sequence>
+<scanned-sequence accession="gene_2395" name="gene_2395">
+</scanned-sequence>
+<scanned-sequence accession="gene_2396" name="gene_2396">
+<matched-element start="409" stop="420" score="13.3878" pvalue="1.63e-05">
+<sequence>GGATTCAACAAC</sequence>
+<mem:qvalue>0.783</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2397" name="gene_2397">
+</scanned-sequence>
+<scanned-sequence accession="gene_2398" name="gene_2398">
+</scanned-sequence>
+<scanned-sequence accession="gene_2399" name="gene_2399">
+</scanned-sequence>
+<scanned-sequence accession="gene_2400" name="gene_2400">
+</scanned-sequence>
+<scanned-sequence accession="gene_2401" name="gene_2401">
+</scanned-sequence>
+<scanned-sequence accession="gene_2402" name="gene_2402">
+</scanned-sequence>
+<scanned-sequence accession="gene_2403" name="gene_2403">
+</scanned-sequence>
+<scanned-sequence accession="gene_2404" name="gene_2404">
+</scanned-sequence>
+<scanned-sequence accession="gene_2405" name="gene_2405">
+</scanned-sequence>
+<scanned-sequence accession="gene_2406" name="gene_2406">
+</scanned-sequence>
+<scanned-sequence accession="gene_2407" name="gene_2407">
+</scanned-sequence>
+<scanned-sequence accession="gene_2408" name="gene_2408">
+</scanned-sequence>
+<scanned-sequence accession="gene_2409" name="gene_2409">
+</scanned-sequence>
+<scanned-sequence accession="gene_2412" name="gene_2412">
+</scanned-sequence>
+<scanned-sequence accession="gene_2413" name="gene_2413">
+</scanned-sequence>
+<scanned-sequence accession="gene_2414" name="gene_2414">
+<matched-element start="587" stop="598" score="10.7143" pvalue="5.5e-05">
+<sequence>AGGCTCACCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2415" name="gene_2415">
+</scanned-sequence>
+<scanned-sequence accession="gene_2416" name="gene_2416">
+</scanned-sequence>
+<scanned-sequence accession="gene_2417" name="gene_2417">
+</scanned-sequence>
+<scanned-sequence accession="gene_2419" name="gene_2419">
+</scanned-sequence>
+<scanned-sequence accession="gene_2420" name="gene_2420">
+</scanned-sequence>
+<scanned-sequence accession="gene_2421" name="gene_2421">
+</scanned-sequence>
+<scanned-sequence accession="gene_2422" name="gene_2422">
+</scanned-sequence>
+<scanned-sequence accession="gene_2423" name="gene_2423">
+</scanned-sequence>
+<scanned-sequence accession="gene_2424" name="gene_2424">
+</scanned-sequence>
+<scanned-sequence accession="gene_2425" name="gene_2425">
+</scanned-sequence>
+<scanned-sequence accession="gene_2426" name="gene_2426">
+<matched-element start="453" stop="442" score="14.7551" pvalue="7.18e-06">
+<sequence>GAACACTCCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2427" name="gene_2427">
+</scanned-sequence>
+<scanned-sequence accession="gene_2428" name="gene_2428">
+</scanned-sequence>
+<scanned-sequence accession="gene_2429" name="gene_2429">
+</scanned-sequence>
+<scanned-sequence accession="gene_2431" name="gene_2431">
+</scanned-sequence>
+<scanned-sequence accession="gene_2433" name="gene_2433">
+<matched-element start="187" stop="198" score="12.4082" pvalue="2.77e-05">
+<sequence>GGATTCATCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2434" name="gene_2434">
+</scanned-sequence>
+<scanned-sequence accession="gene_2435" name="gene_2435">
+</scanned-sequence>
+<scanned-sequence accession="gene_2436" name="gene_2436">
+</scanned-sequence>
+<scanned-sequence accession="gene_2437" name="gene_2437">
+</scanned-sequence>
+<scanned-sequence accession="gene_2438" name="gene_2438">
+</scanned-sequence>
+<scanned-sequence accession="gene_2439" name="gene_2439">
+</scanned-sequence>
+<scanned-sequence accession="gene_2440" name="gene_2440">
+</scanned-sequence>
+<scanned-sequence accession="gene_2441" name="gene_2441">
+</scanned-sequence>
+<scanned-sequence accession="gene_2442" name="gene_2442">
+</scanned-sequence>
+<scanned-sequence accession="gene_2443" name="gene_2443">
+</scanned-sequence>
+<scanned-sequence accession="gene_2444" name="gene_2444">
+</scanned-sequence>
+<scanned-sequence accession="gene_2445" name="gene_2445">
+</scanned-sequence>
+<scanned-sequence accession="gene_2447" name="gene_2447">
+<matched-element start="560" stop="549" score="12.2551" pvalue="2.97e-05">
+<sequence>TAGCACACCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2448" name="gene_2448">
+</scanned-sequence>
+<scanned-sequence accession="gene_2449" name="gene_2449">
+</scanned-sequence>
+<scanned-sequence accession="gene_2450" name="gene_2450">
+</scanned-sequence>
+<scanned-sequence accession="gene_2451" name="gene_2451">
+</scanned-sequence>
+<scanned-sequence accession="gene_2452" name="gene_2452">
+</scanned-sequence>
+<scanned-sequence accession="gene_2453" name="gene_2453">
+</scanned-sequence>
+<scanned-sequence accession="gene_2454" name="gene_2454">
+</scanned-sequence>
+<scanned-sequence accession="gene_2455" name="gene_2455">
+<matched-element start="816" stop="827" score="13.9082" pvalue="1.22e-05">
+<sequence>TAATTCACCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2456" name="gene_2456">
+</scanned-sequence>
+<scanned-sequence accession="gene_2457" name="gene_2457">
+</scanned-sequence>
+<scanned-sequence accession="gene_2458" name="gene_2458">
+</scanned-sequence>
+<scanned-sequence accession="gene_2459" name="gene_2459">
+</scanned-sequence>
+<scanned-sequence accession="gene_2460" name="gene_2460">
+</scanned-sequence>
+<scanned-sequence accession="gene_2462" name="gene_2462">
+</scanned-sequence>
+<scanned-sequence accession="gene_2463" name="gene_2463">
+</scanned-sequence>
+<scanned-sequence accession="gene_2464" name="gene_2464">
+</scanned-sequence>
+<scanned-sequence accession="gene_2465" name="gene_2465">
+</scanned-sequence>
+<scanned-sequence accession="gene_2466" name="gene_2466">
+</scanned-sequence>
+<scanned-sequence accession="gene_2467" name="gene_2467">
+</scanned-sequence>
+<scanned-sequence accession="gene_2469" name="gene_2469">
+</scanned-sequence>
+<scanned-sequence accession="gene_2470" name="gene_2470">
+</scanned-sequence>
+<scanned-sequence accession="gene_2471" name="gene_2471">
+</scanned-sequence>
+<scanned-sequence accession="gene_2472" name="gene_2472">
+</scanned-sequence>
+<scanned-sequence accession="gene_2473" name="gene_2473">
+</scanned-sequence>
+<scanned-sequence accession="gene_2474" name="gene_2474">
+</scanned-sequence>
+<scanned-sequence accession="gene_2475" name="gene_2475">
+</scanned-sequence>
+<scanned-sequence accession="gene_2477" name="gene_2477">
+</scanned-sequence>
+<scanned-sequence accession="gene_2478" name="gene_2478">
+</scanned-sequence>
+<scanned-sequence accession="gene_2479" name="gene_2479">
+</scanned-sequence>
+<scanned-sequence accession="gene_2480" name="gene_2480">
+</scanned-sequence>
+<scanned-sequence accession="gene_2481" name="gene_2481">
+</scanned-sequence>
+<scanned-sequence accession="gene_2482" name="gene_2482">
+</scanned-sequence>
+<scanned-sequence accession="gene_2483" name="gene_2483">
+</scanned-sequence>
+<scanned-sequence accession="gene_2485" name="gene_2485">
+</scanned-sequence>
+<scanned-sequence accession="gene_2486" name="gene_2486">
+</scanned-sequence>
+<scanned-sequence accession="gene_2487" name="gene_2487">
+</scanned-sequence>
+<scanned-sequence accession="gene_2488" name="gene_2488">
+</scanned-sequence>
+<scanned-sequence accession="gene_2489" name="gene_2489">
+</scanned-sequence>
+<scanned-sequence accession="gene_2490" name="gene_2490">
+</scanned-sequence>
+<scanned-sequence accession="gene_2491" name="gene_2491">
+<matched-element start="954" stop="943" score="14.2449" pvalue="1e-05">
+<sequence>GGAGTCAACAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2492" name="gene_2492">
+<matched-element start="197" stop="186" score="10.7755" pvalue="5.37e-05">
+<sequence>GGACTCTCCCAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2493" name="gene_2493">
+</scanned-sequence>
+<scanned-sequence accession="gene_2494" name="gene_2494">
+</scanned-sequence>
+<scanned-sequence accession="gene_2495" name="gene_2495">
+</scanned-sequence>
+<scanned-sequence accession="gene_2496" name="gene_2496">
+</scanned-sequence>
+<scanned-sequence accession="gene_2497" name="gene_2497">
+</scanned-sequence>
+<scanned-sequence accession="gene_2498" name="gene_2498">
+</scanned-sequence>
+<scanned-sequence accession="gene_2499" name="gene_2499">
+</scanned-sequence>
+<scanned-sequence accession="gene_2500" name="gene_2500">
+</scanned-sequence>
+<scanned-sequence accession="gene_2501" name="gene_2501">
+</scanned-sequence>
+<scanned-sequence accession="gene_2502" name="gene_2502">
+</scanned-sequence>
+<scanned-sequence accession="gene_2503" name="gene_2503">
+</scanned-sequence>
+<scanned-sequence accession="gene_2504" name="gene_2504">
+</scanned-sequence>
+<scanned-sequence accession="gene_2505" name="gene_2505">
+</scanned-sequence>
+<scanned-sequence accession="gene_2506" name="gene_2506">
+</scanned-sequence>
+<scanned-sequence accession="gene_2507" name="gene_2507">
+</scanned-sequence>
+<scanned-sequence accession="gene_2509" name="gene_2509">
+</scanned-sequence>
+<scanned-sequence accession="gene_2510" name="gene_2510">
+<matched-element start="228" stop="217" score="10.6837" pvalue="5.61e-05">
+<sequence>TGGGCCAACAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2511" name="gene_2511">
+</scanned-sequence>
+<scanned-sequence accession="gene_2512" name="gene_2512">
+</scanned-sequence>
+<scanned-sequence accession="gene_2513" name="gene_2513">
+</scanned-sequence>
+<scanned-sequence accession="gene_2514" name="gene_2514">
+</scanned-sequence>
+<scanned-sequence accession="gene_2515" name="gene_2515">
+</scanned-sequence>
+<scanned-sequence accession="gene_2516" name="gene_2516">
+</scanned-sequence>
+<scanned-sequence accession="gene_2517" name="gene_2517">
+</scanned-sequence>
+<scanned-sequence accession="gene_2519" name="gene_2519">
+</scanned-sequence>
+<scanned-sequence accession="gene_2520" name="gene_2520">
+</scanned-sequence>
+<scanned-sequence accession="gene_2521" name="gene_2521">
+</scanned-sequence>
+<scanned-sequence accession="gene_2523" name="gene_2523">
+</scanned-sequence>
+<scanned-sequence accession="gene_2524" name="gene_2524">
+</scanned-sequence>
+<scanned-sequence accession="gene_2526" name="gene_2526">
+</scanned-sequence>
+<scanned-sequence accession="gene_2527" name="gene_2527">
+</scanned-sequence>
+<scanned-sequence accession="gene_2528" name="gene_2528">
+</scanned-sequence>
+<scanned-sequence accession="gene_2529" name="gene_2529">
+</scanned-sequence>
+<scanned-sequence accession="gene_2530" name="gene_2530">
+</scanned-sequence>
+<scanned-sequence accession="gene_2531" name="gene_2531">
+</scanned-sequence>
+<scanned-sequence accession="gene_2532" name="gene_2532">
+</scanned-sequence>
+<scanned-sequence accession="gene_2533" name="gene_2533">
+</scanned-sequence>
+<scanned-sequence accession="gene_2534" name="gene_2534">
+</scanned-sequence>
+<scanned-sequence accession="gene_2535" name="gene_2535">
+<matched-element start="91" stop="102" score="12.8163" pvalue="2.21e-05">
+<sequence>GGGCTCCCCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2536" name="gene_2536">
+</scanned-sequence>
+<scanned-sequence accession="gene_2537" name="gene_2537">
+</scanned-sequence>
+<scanned-sequence accession="gene_2538" name="gene_2538">
+</scanned-sequence>
+<scanned-sequence accession="gene_2539" name="gene_2539">
+</scanned-sequence>
+<scanned-sequence accession="gene_2540" name="gene_2540">
+</scanned-sequence>
+<scanned-sequence accession="gene_2541" name="gene_2541">
+</scanned-sequence>
+<scanned-sequence accession="gene_2542" name="gene_2542">
+</scanned-sequence>
+<scanned-sequence accession="gene_2543" name="gene_2543">
+</scanned-sequence>
+<scanned-sequence accession="gene_2544" name="gene_2544">
+</scanned-sequence>
+<scanned-sequence accession="gene_2545" name="gene_2545">
+</scanned-sequence>
+<scanned-sequence accession="gene_2546" name="gene_2546">
+<matched-element start="334" stop="345" score="17.2755" pvalue="8.48e-07">
+<sequence>TGGGTCACCAAC</sequence>
+<mem:qvalue>0.577</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2547" name="gene_2547">
+<matched-element start="1042" stop="1031" score="13.0306" pvalue="1.99e-05">
+<sequence>TGATCCAACAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2548" name="gene_2548">
+<matched-element start="981" stop="970" score="12.4796" pvalue="2.65e-05">
+<sequence>TGGCTCCCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2549" name="gene_2549">
+</scanned-sequence>
+<scanned-sequence accession="gene_2550" name="gene_2550">
+</scanned-sequence>
+<scanned-sequence accession="gene_2551" name="gene_2551">
+</scanned-sequence>
+<scanned-sequence accession="gene_2552" name="gene_2552">
+</scanned-sequence>
+<scanned-sequence accession="gene_2553" name="gene_2553">
+</scanned-sequence>
+<scanned-sequence accession="gene_2554" name="gene_2554">
+</scanned-sequence>
+<scanned-sequence accession="gene_2557" name="gene_2557">
+<matched-element start="14" stop="3" score="12.9286" pvalue="2.07e-05">
+<sequence>TGGTACCCCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+<matched-element start="250" stop="239" score="11.7449" pvalue="3.75e-05">
+<sequence>GGACCCCCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2559" name="gene_2559">
+</scanned-sequence>
+<scanned-sequence accession="gene_2560" name="gene_2560">
+</scanned-sequence>
+<scanned-sequence accession="gene_2561" name="gene_2561">
+</scanned-sequence>
+<scanned-sequence accession="gene_2562" name="gene_2562">
+</scanned-sequence>
+<scanned-sequence accession="gene_2563" name="gene_2563">
+</scanned-sequence>
+<scanned-sequence accession="gene_2564" name="gene_2564">
+</scanned-sequence>
+<scanned-sequence accession="gene_2565" name="gene_2565">
+</scanned-sequence>
+<scanned-sequence accession="gene_2566" name="gene_2566">
+<matched-element start="311" stop="322" score="11.0306" pvalue="4.92e-05">
+<sequence>TGGTCCCACAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2567" name="gene_2567">
+</scanned-sequence>
+<scanned-sequence accession="gene_2568" name="gene_2568">
+</scanned-sequence>
+<scanned-sequence accession="gene_2569" name="gene_2569">
+</scanned-sequence>
+<scanned-sequence accession="gene_2570" name="gene_2570">
+</scanned-sequence>
+<scanned-sequence accession="gene_2571" name="gene_2571">
+</scanned-sequence>
+<scanned-sequence accession="gene_2572" name="gene_2572">
+</scanned-sequence>
+<scanned-sequence accession="gene_2573" name="gene_2573">
+</scanned-sequence>
+<scanned-sequence accession="gene_2574" name="gene_2574">
+</scanned-sequence>
+<scanned-sequence accession="gene_2575" name="gene_2575">
+</scanned-sequence>
+<scanned-sequence accession="gene_2576" name="gene_2576">
+</scanned-sequence>
+<scanned-sequence accession="gene_2577" name="gene_2577">
+</scanned-sequence>
+<scanned-sequence accession="gene_2578" name="gene_2578">
+</scanned-sequence>
+<scanned-sequence accession="gene_2579" name="gene_2579">
+</scanned-sequence>
+<scanned-sequence accession="gene_2580" name="gene_2580">
+</scanned-sequence>
+<scanned-sequence accession="gene_2581" name="gene_2581">
+</scanned-sequence>
+<scanned-sequence accession="gene_2582" name="gene_2582">
+</scanned-sequence>
+<scanned-sequence accession="gene_2583" name="gene_2583">
+</scanned-sequence>
+<scanned-sequence accession="gene_2584" name="gene_2584">
+</scanned-sequence>
+<scanned-sequence accession="gene_2587" name="gene_2587">
+</scanned-sequence>
+<scanned-sequence accession="gene_2588" name="gene_2588">
+</scanned-sequence>
+<scanned-sequence accession="gene_2589" name="gene_2589">
+</scanned-sequence>
+<scanned-sequence accession="gene_2590" name="gene_2590">
+</scanned-sequence>
+<scanned-sequence accession="gene_2591" name="gene_2591">
+</scanned-sequence>
+<scanned-sequence accession="gene_2592" name="gene_2592">
+</scanned-sequence>
+<scanned-sequence accession="gene_2593" name="gene_2593">
+</scanned-sequence>
+<scanned-sequence accession="gene_2594" name="gene_2594">
+</scanned-sequence>
+<scanned-sequence accession="gene_2595" name="gene_2595">
+</scanned-sequence>
+<scanned-sequence accession="gene_2596" name="gene_2596">
+</scanned-sequence>
+<scanned-sequence accession="gene_2597" name="gene_2597">
+</scanned-sequence>
+<scanned-sequence accession="gene_2598" name="gene_2598">
+</scanned-sequence>
+<scanned-sequence accession="gene_2599" name="gene_2599">
+</scanned-sequence>
+<scanned-sequence accession="gene_2600" name="gene_2600">
+</scanned-sequence>
+<scanned-sequence accession="gene_2603" name="gene_2603">
+</scanned-sequence>
+<scanned-sequence accession="gene_2604" name="gene_2604">
+</scanned-sequence>
+<scanned-sequence accession="gene_2606" name="gene_2606">
+</scanned-sequence>
+<scanned-sequence accession="gene_2607" name="gene_2607">
+</scanned-sequence>
+<scanned-sequence accession="gene_2608" name="gene_2608">
+</scanned-sequence>
+<scanned-sequence accession="gene_2609" name="gene_2609">
+</scanned-sequence>
+<scanned-sequence accession="gene_2610" name="gene_2610">
+</scanned-sequence>
+<scanned-sequence accession="gene_2611" name="gene_2611">
+<matched-element start="176" stop="187" score="12.1633" pvalue="3.14e-05">
+<sequence>TGACTCAACAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2612" name="gene_2612">
+</scanned-sequence>
+<scanned-sequence accession="gene_2614" name="gene_2614">
+</scanned-sequence>
+<scanned-sequence accession="gene_2615" name="gene_2615">
+</scanned-sequence>
+<scanned-sequence accession="gene_2616" name="gene_2616">
+</scanned-sequence>
+<scanned-sequence accession="gene_2617" name="gene_2617">
+<matched-element start="351" stop="362" score="15.8878" pvalue="3e-06">
+<sequence>TAGCCCTCCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2619" name="gene_2619">
+</scanned-sequence>
+<scanned-sequence accession="gene_2620+gene_2621" name="gene_2620+gene_2621">
+</scanned-sequence>
+<scanned-sequence accession="gene_2622" name="gene_2622">
+<matched-element start="950" stop="961" score="11.8265" pvalue="3.64e-05">
+<sequence>TGGCACAACCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2623" name="gene_2623">
+</scanned-sequence>
+<scanned-sequence accession="gene_2624" name="gene_2624">
+</scanned-sequence>
+<scanned-sequence accession="gene_2625" name="gene_2625">
+</scanned-sequence>
+<scanned-sequence accession="gene_2626" name="gene_2626">
+</scanned-sequence>
+<scanned-sequence accession="gene_2628" name="gene_2628">
+</scanned-sequence>
+<scanned-sequence accession="gene_2629" name="gene_2629">
+</scanned-sequence>
+<scanned-sequence accession="gene_2630" name="gene_2630">
+</scanned-sequence>
+<scanned-sequence accession="gene_2631" name="gene_2631">
+</scanned-sequence>
+<scanned-sequence accession="gene_2632" name="gene_2632">
+<matched-element start="188" stop="177" score="15.8878" pvalue="3e-06">
+<sequence>TAGCCCTCCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2633" name="gene_2633">
+</scanned-sequence>
+<scanned-sequence accession="gene_2634" name="gene_2634">
+</scanned-sequence>
+<scanned-sequence accession="gene_2635" name="gene_2635">
+</scanned-sequence>
+<scanned-sequence accession="gene_2636" name="gene_2636">
+</scanned-sequence>
+<scanned-sequence accession="gene_2637" name="gene_2637">
+</scanned-sequence>
+<scanned-sequence accession="gene_2638" name="gene_2638">
+</scanned-sequence>
+<scanned-sequence accession="gene_2640" name="gene_2640">
+</scanned-sequence>
+<scanned-sequence accession="gene_2641" name="gene_2641">
+<matched-element start="926" stop="937" score="11.2041" pvalue="4.61e-05">
+<sequence>TGACTCACCCAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2642" name="gene_2642">
+<matched-element start="245" stop="234" score="10.7755" pvalue="5.37e-05">
+<sequence>GGACTCTCCCAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2643" name="gene_2643">
+<matched-element start="90" stop="101" score="11.9082" pvalue="3.5e-05">
+<sequence>TAGTTCCCCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2644" name="gene_2644">
+</scanned-sequence>
+<scanned-sequence accession="gene_2645" name="gene_2645">
+</scanned-sequence>
+<scanned-sequence accession="gene_2646" name="gene_2646">
+</scanned-sequence>
+<scanned-sequence accession="gene_2647" name="gene_2647">
+<matched-element start="545" stop="534" score="11.2245" pvalue="4.58e-05">
+<sequence>GGATACTCCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2648" name="gene_2648">
+</scanned-sequence>
+<scanned-sequence accession="gene_2649" name="gene_2649">
+</scanned-sequence>
+<scanned-sequence accession="gene_2650" name="gene_2650">
+</scanned-sequence>
+<scanned-sequence accession="gene_2651" name="gene_2651">
+</scanned-sequence>
+<scanned-sequence accession="gene_2652" name="gene_2652">
+</scanned-sequence>
+<scanned-sequence accession="gene_2653" name="gene_2653">
+</scanned-sequence>
+<scanned-sequence accession="gene_2654" name="gene_2654">
+</scanned-sequence>
+<scanned-sequence accession="gene_2655" name="gene_2655">
+</scanned-sequence>
+<scanned-sequence accession="gene_2656" name="gene_2656">
+</scanned-sequence>
+<scanned-sequence accession="gene_2657" name="gene_2657">
+</scanned-sequence>
+<scanned-sequence accession="gene_2658" name="gene_2658">
+<matched-element start="447" stop="436" score="11.5816" pvalue="4e-05">
+<sequence>GAGTCCAACAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+<matched-element start="308" stop="297" score="11.3878" pvalue="4.32e-05">
+<sequence>TGGCCCATCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2659" name="gene_2659">
+</scanned-sequence>
+<scanned-sequence accession="gene_2660" name="gene_2660">
+</scanned-sequence>
+<scanned-sequence accession="gene_2661" name="gene_2661">
+<matched-element start="295" stop="284" score="10.7755" pvalue="5.37e-05">
+<sequence>GGACTCTCCCAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2663" name="gene_2663">
+</scanned-sequence>
+<scanned-sequence accession="gene_2664" name="gene_2664">
+</scanned-sequence>
+<scanned-sequence accession="gene_2665" name="gene_2665">
+</scanned-sequence>
+<scanned-sequence accession="gene_2666" name="gene_2666">
+</scanned-sequence>
+<scanned-sequence accession="gene_2667" name="gene_2667">
+</scanned-sequence>
+<scanned-sequence accession="gene_2668" name="gene_2668">
+</scanned-sequence>
+<scanned-sequence accession="gene_2669" name="gene_2669">
+</scanned-sequence>
+<scanned-sequence accession="gene_2671" name="gene_2671">
+</scanned-sequence>
+<scanned-sequence accession="gene_2672" name="gene_2672">
+</scanned-sequence>
+<scanned-sequence accession="gene_2673" name="gene_2673">
+</scanned-sequence>
+<scanned-sequence accession="gene_2674" name="gene_2674">
+</scanned-sequence>
+<scanned-sequence accession="gene_2675" name="gene_2675">
+<matched-element start="1016" stop="1005" score="15.2959" pvalue="4.89e-06">
+<sequence>TGACCCAACAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2676" name="gene_2676">
+</scanned-sequence>
+<scanned-sequence accession="gene_2677" name="gene_2677">
+</scanned-sequence>
+<scanned-sequence accession="gene_2678" name="gene_2678">
+</scanned-sequence>
+<scanned-sequence accession="gene_2679" name="gene_2679">
+</scanned-sequence>
+<scanned-sequence accession="gene_2680" name="gene_2680">
+</scanned-sequence>
+<scanned-sequence accession="gene_2681" name="gene_2681">
+</scanned-sequence>
+<scanned-sequence accession="gene_2682" name="gene_2682">
+</scanned-sequence>
+<scanned-sequence accession="gene_2683" name="gene_2683">
+</scanned-sequence>
+<scanned-sequence accession="gene_2684" name="gene_2684">
+</scanned-sequence>
+<scanned-sequence accession="gene_2685" name="gene_2685">
+</scanned-sequence>
+<scanned-sequence accession="gene_2687" name="gene_2687">
+</scanned-sequence>
+<scanned-sequence accession="gene_2688" name="gene_2688">
+</scanned-sequence>
+<scanned-sequence accession="gene_2689" name="gene_2689">
+</scanned-sequence>
+<scanned-sequence accession="gene_2690" name="gene_2690">
+</scanned-sequence>
+<scanned-sequence accession="gene_2691" name="gene_2691">
+<matched-element start="936" stop="925" score="13.6429" pvalue="1.42e-05">
+<sequence>GAACTCAACAAC</sequence>
+<mem:qvalue>0.747</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2692" name="gene_2692">
+</scanned-sequence>
+<scanned-sequence accession="gene_2693" name="gene_2693">
+</scanned-sequence>
+<scanned-sequence accession="gene_2694" name="gene_2694">
+</scanned-sequence>
+<scanned-sequence accession="gene_2695" name="gene_2695">
+</scanned-sequence>
+<scanned-sequence accession="gene_2697" name="gene_2697">
+</scanned-sequence>
+<scanned-sequence accession="gene_2698" name="gene_2698">
+</scanned-sequence>
+<scanned-sequence accession="gene_2699" name="gene_2699">
+</scanned-sequence>
+<scanned-sequence accession="gene_2700" name="gene_2700">
+</scanned-sequence>
+<scanned-sequence accession="gene_2701" name="gene_2701">
+</scanned-sequence>
+<scanned-sequence accession="gene_2702" name="gene_2702">
+</scanned-sequence>
+<scanned-sequence accession="gene_2703" name="gene_2703">
+</scanned-sequence>
+<scanned-sequence accession="gene_2704" name="gene_2704">
+</scanned-sequence>
+<scanned-sequence accession="gene_2705" name="gene_2705">
+</scanned-sequence>
+<scanned-sequence accession="gene_2706" name="gene_2706">
+</scanned-sequence>
+<scanned-sequence accession="gene_2707" name="gene_2707">
+</scanned-sequence>
+<scanned-sequence accession="gene_2708" name="gene_2708">
+</scanned-sequence>
+<scanned-sequence accession="gene_2709" name="gene_2709">
+<matched-element start="253" stop="264" score="11.2959" pvalue="4.45e-05">
+<sequence>GGGTACTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2710" name="gene_2710">
+</scanned-sequence>
+<scanned-sequence accession="gene_2711" name="gene_2711">
+</scanned-sequence>
+<scanned-sequence accession="gene_2713" name="gene_2713">
+</scanned-sequence>
+<scanned-sequence accession="gene_2714" name="gene_2714">
+</scanned-sequence>
+<scanned-sequence accession="gene_2716" name="gene_2716">
+</scanned-sequence>
+<scanned-sequence accession="gene_2717" name="gene_2717">
+</scanned-sequence>
+<scanned-sequence accession="gene_2718" name="gene_2718">
+</scanned-sequence>
+<scanned-sequence accession="gene_2719" name="gene_2719">
+</scanned-sequence>
+<scanned-sequence accession="gene_2720" name="gene_2720">
+</scanned-sequence>
+<scanned-sequence accession="gene_2721" name="gene_2721">
+</scanned-sequence>
+<scanned-sequence accession="gene_2722" name="gene_2722">
+</scanned-sequence>
+<scanned-sequence accession="gene_2723" name="gene_2723">
+</scanned-sequence>
+<scanned-sequence accession="gene_2724" name="gene_2724">
+</scanned-sequence>
+<scanned-sequence accession="gene_2725" name="gene_2725">
+</scanned-sequence>
+<scanned-sequence accession="gene_2726" name="gene_2726">
+</scanned-sequence>
+<scanned-sequence accession="gene_2727" name="gene_2727">
+</scanned-sequence>
+<scanned-sequence accession="gene_2728" name="gene_2728">
+</scanned-sequence>
+<scanned-sequence accession="gene_2730" name="gene_2730">
+</scanned-sequence>
+<scanned-sequence accession="gene_2731" name="gene_2731">
+</scanned-sequence>
+<scanned-sequence accession="gene_2732" name="gene_2732">
+</scanned-sequence>
+<scanned-sequence accession="gene_2733" name="gene_2733">
+</scanned-sequence>
+<scanned-sequence accession="gene_2734" name="gene_2734">
+</scanned-sequence>
+<scanned-sequence accession="gene_2735" name="gene_2735">
+<matched-element start="94" stop="83" score="14.2347" pvalue="1.01e-05">
+<sequence>GAGCTCCCCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2736" name="gene_2736">
+<matched-element start="16" stop="5" score="14.2653" pvalue="9.86e-06">
+<sequence>TGGCACACCAAG</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2737" name="gene_2737">
+</scanned-sequence>
+<scanned-sequence accession="gene_2738" name="gene_2738">
+</scanned-sequence>
+<scanned-sequence accession="gene_2739" name="gene_2739">
+</scanned-sequence>
+<scanned-sequence accession="gene_2740" name="gene_2740">
+</scanned-sequence>
+<scanned-sequence accession="gene_2741" name="gene_2741">
+</scanned-sequence>
+<scanned-sequence accession="gene_2742" name="gene_2742">
+</scanned-sequence>
+<scanned-sequence accession="gene_2743" name="gene_2743">
+</scanned-sequence>
+<scanned-sequence accession="gene_2744" name="gene_2744">
+</scanned-sequence>
+<scanned-sequence accession="gene_2745" name="gene_2745">
+<matched-element start="768" stop="779" score="11.8878" pvalue="3.54e-05">
+<sequence>TGACTCAACAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2746" name="gene_2746">
+</scanned-sequence>
+<scanned-sequence accession="gene_2747" name="gene_2747">
+<matched-element start="905" stop="894" score="12.6633" pvalue="2.42e-05">
+<sequence>GAACCCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2748" name="gene_2748">
+</scanned-sequence>
+<scanned-sequence accession="gene_2749" name="gene_2749">
+</scanned-sequence>
+<scanned-sequence accession="gene_2750" name="gene_2750">
+</scanned-sequence>
+<scanned-sequence accession="gene_2751" name="gene_2751">
+</scanned-sequence>
+<scanned-sequence accession="gene_2752" name="gene_2752">
+</scanned-sequence>
+<scanned-sequence accession="gene_2753" name="gene_2753">
+</scanned-sequence>
+<scanned-sequence accession="gene_2754" name="gene_2754">
+</scanned-sequence>
+<scanned-sequence accession="gene_2755" name="gene_2755">
+</scanned-sequence>
+<scanned-sequence accession="gene_2756" name="gene_2756">
+</scanned-sequence>
+<scanned-sequence accession="gene_2757" name="gene_2757">
+</scanned-sequence>
+<scanned-sequence accession="gene_2758" name="gene_2758">
+</scanned-sequence>
+<scanned-sequence accession="gene_2759" name="gene_2759">
+</scanned-sequence>
+<scanned-sequence accession="gene_2760" name="gene_2760">
+</scanned-sequence>
+<scanned-sequence accession="gene_2761" name="gene_2761">
+</scanned-sequence>
+<scanned-sequence accession="gene_2762" name="gene_2762">
+</scanned-sequence>
+<scanned-sequence accession="gene_2763" name="gene_2763">
+</scanned-sequence>
+<scanned-sequence accession="gene_2764" name="gene_2764">
+</scanned-sequence>
+<scanned-sequence accession="gene_2765" name="gene_2765">
+</scanned-sequence>
+<scanned-sequence accession="gene_2766" name="gene_2766">
+</scanned-sequence>
+<scanned-sequence accession="gene_2767" name="gene_2767">
+</scanned-sequence>
+<scanned-sequence accession="gene_2768" name="gene_2768">
+</scanned-sequence>
+<scanned-sequence accession="gene_2769" name="gene_2769">
+</scanned-sequence>
+<scanned-sequence accession="gene_2770" name="gene_2770">
+</scanned-sequence>
+<scanned-sequence accession="gene_2771" name="gene_2771">
+</scanned-sequence>
+<scanned-sequence accession="gene_2772" name="gene_2772">
+</scanned-sequence>
+<scanned-sequence accession="gene_2773" name="gene_2773">
+</scanned-sequence>
+<scanned-sequence accession="gene_2774" name="gene_2774">
+<matched-element start="674" stop="685" score="10.7755" pvalue="5.37e-05">
+<sequence>GGGCACACCCAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2775" name="gene_2775">
+</scanned-sequence>
+<scanned-sequence accession="gene_2776" name="gene_2776">
+</scanned-sequence>
+<scanned-sequence accession="gene_2777" name="gene_2777">
+</scanned-sequence>
+<scanned-sequence accession="gene_2778" name="gene_2778">
+</scanned-sequence>
+<scanned-sequence accession="gene_2779" name="gene_2779">
+</scanned-sequence>
+<scanned-sequence accession="gene_2780" name="gene_2780">
+</scanned-sequence>
+<scanned-sequence accession="gene_2781" name="gene_2781">
+</scanned-sequence>
+<scanned-sequence accession="gene_2782" name="gene_2782">
+</scanned-sequence>
+<scanned-sequence accession="gene_2783" name="gene_2783">
+</scanned-sequence>
+<scanned-sequence accession="gene_2784" name="gene_2784">
+</scanned-sequence>
+<scanned-sequence accession="gene_2785" name="gene_2785">
+</scanned-sequence>
+<scanned-sequence accession="gene_2786" name="gene_2786">
+</scanned-sequence>
+<scanned-sequence accession="gene_2787" name="gene_2787">
+</scanned-sequence>
+<scanned-sequence accession="gene_2788" name="gene_2788">
+<matched-element start="196" stop="185" score="14.4694" pvalue="8.82e-06">
+<sequence>TAAGCCACCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2789" name="gene_2789">
+</scanned-sequence>
+<scanned-sequence accession="gene_2790" name="gene_2790">
+</scanned-sequence>
+<scanned-sequence accession="gene_2792" name="gene_2792">
+</scanned-sequence>
+<scanned-sequence accession="gene_2793" name="gene_2793">
+</scanned-sequence>
+<scanned-sequence accession="gene_2794" name="gene_2794">
+<matched-element start="99" stop="110" score="13.9796" pvalue="1.17e-05">
+<sequence>GGGTTCCCCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2796" name="gene_2796">
+<matched-element start="177" stop="166" score="15.6531" pvalue="3.83e-06">
+<sequence>GGACTCAACAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2797" name="gene_2797">
+</scanned-sequence>
+<scanned-sequence accession="gene_2799" name="gene_2799">
+</scanned-sequence>
+<scanned-sequence accession="gene_2800" name="gene_2800">
+</scanned-sequence>
+<scanned-sequence accession="gene_2801" name="gene_2801">
+</scanned-sequence>
+<scanned-sequence accession="gene_2802" name="gene_2802">
+</scanned-sequence>
+<scanned-sequence accession="gene_2803" name="gene_2803">
+</scanned-sequence>
+<scanned-sequence accession="gene_2804" name="gene_2804">
+</scanned-sequence>
+<scanned-sequence accession="gene_2805" name="gene_2805">
+</scanned-sequence>
+<scanned-sequence accession="gene_2806" name="gene_2806">
+<matched-element start="224" stop="213" score="11.898" pvalue="3.51e-05">
+<sequence>GAGGTCACCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2807" name="gene_2807">
+</scanned-sequence>
+<scanned-sequence accession="gene_2808" name="gene_2808">
+<matched-element start="749" stop="760" score="10.7449" pvalue="5.47e-05">
+<sequence>GGGGCCAACAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2809" name="gene_2809">
+</scanned-sequence>
+<scanned-sequence accession="gene_2810" name="gene_2810">
+</scanned-sequence>
+<scanned-sequence accession="gene_2811" name="gene_2811">
+</scanned-sequence>
+<scanned-sequence accession="gene_2812" name="gene_2812">
+</scanned-sequence>
+<scanned-sequence accession="gene_2813" name="gene_2813">
+</scanned-sequence>
+<scanned-sequence accession="gene_2814" name="gene_2814">
+</scanned-sequence>
+<scanned-sequence accession="gene_2815" name="gene_2815">
+</scanned-sequence>
+<scanned-sequence accession="gene_2816" name="gene_2816">
+</scanned-sequence>
+<scanned-sequence accession="gene_2817" name="gene_2817">
+</scanned-sequence>
+<scanned-sequence accession="gene_2818" name="gene_2818">
+</scanned-sequence>
+<scanned-sequence accession="gene_2819" name="gene_2819">
+</scanned-sequence>
+<scanned-sequence accession="gene_2820+gene_2821" name="gene_2820+gene_2821">
+</scanned-sequence>
+<scanned-sequence accession="gene_2822" name="gene_2822">
+</scanned-sequence>
+<scanned-sequence accession="gene_2823" name="gene_2823">
+</scanned-sequence>
+<scanned-sequence accession="gene_2824" name="gene_2824">
+</scanned-sequence>
+<scanned-sequence accession="gene_2825" name="gene_2825">
+</scanned-sequence>
+<scanned-sequence accession="gene_2826" name="gene_2826">
+</scanned-sequence>
+<scanned-sequence accession="gene_2827" name="gene_2827">
+<matched-element start="973" stop="962" score="12.6735" pvalue="2.39e-05">
+<sequence>TAGCCCACCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+<matched-element start="1040" stop="1051" score="10.6939" pvalue="5.58e-05">
+<sequence>GAATTCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2828" name="gene_2828">
+</scanned-sequence>
+<scanned-sequence accession="gene_2829" name="gene_2829">
+</scanned-sequence>
+<scanned-sequence accession="gene_2830" name="gene_2830">
+</scanned-sequence>
+<scanned-sequence accession="gene_2831" name="gene_2831">
+</scanned-sequence>
+<scanned-sequence accession="gene_2832" name="gene_2832">
+</scanned-sequence>
+<scanned-sequence accession="gene_2833+gene_2834" name="gene_2833+gene_2834">
+<matched-element start="1212" stop="1201" score="11.051" pvalue="4.89e-05">
+<sequence>GGACACCCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2835" name="gene_2835">
+</scanned-sequence>
+<scanned-sequence accession="gene_2836" name="gene_2836">
+</scanned-sequence>
+<scanned-sequence accession="gene_2837" name="gene_2837">
+</scanned-sequence>
+<scanned-sequence accession="gene_2838" name="gene_2838">
+</scanned-sequence>
+<scanned-sequence accession="gene_2839" name="gene_2839">
+</scanned-sequence>
+<scanned-sequence accession="gene_2840" name="gene_2840">
+</scanned-sequence>
+<scanned-sequence accession="gene_2841" name="gene_2841">
+</scanned-sequence>
+<scanned-sequence accession="gene_2842" name="gene_2842">
+</scanned-sequence>
+<scanned-sequence accession="gene_2844" name="gene_2844">
+<matched-element start="996" stop="1007" score="10.7143" pvalue="5.5e-05">
+<sequence>TGGCACACCCAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2845" name="gene_2845">
+</scanned-sequence>
+<scanned-sequence accession="gene_2846" name="gene_2846">
+</scanned-sequence>
+<scanned-sequence accession="gene_2847" name="gene_2847">
+<matched-element start="766" stop="777" score="10.7041" pvalue="5.55e-05">
+<sequence>TAGTTCACCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2848" name="gene_2848">
+</scanned-sequence>
+<scanned-sequence accession="gene_2849" name="gene_2849">
+<matched-element start="293" stop="304" score="10.6429" pvalue="5.65e-05">
+<sequence>TAGTTCTCCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2850" name="gene_2850">
+</scanned-sequence>
+<scanned-sequence accession="gene_2851" name="gene_2851">
+</scanned-sequence>
+<scanned-sequence accession="gene_2852" name="gene_2852">
+</scanned-sequence>
+<scanned-sequence accession="gene_2853" name="gene_2853">
+</scanned-sequence>
+<scanned-sequence accession="gene_2854" name="gene_2854">
+</scanned-sequence>
+<scanned-sequence accession="gene_2855" name="gene_2855">
+</scanned-sequence>
+<scanned-sequence accession="gene_2856" name="gene_2856">
+</scanned-sequence>
+<scanned-sequence accession="gene_2858" name="gene_2858">
+</scanned-sequence>
+<scanned-sequence accession="gene_2859" name="gene_2859">
+</scanned-sequence>
+<scanned-sequence accession="gene_2860" name="gene_2860">
+</scanned-sequence>
+<scanned-sequence accession="gene_2862" name="gene_2862">
+</scanned-sequence>
+<scanned-sequence accession="gene_2864" name="gene_2864">
+<matched-element start="158" stop="169" score="11.3878" pvalue="4.32e-05">
+<sequence>TAAGCCTACAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2865" name="gene_2865">
+<matched-element start="947" stop="958" score="12.6633" pvalue="2.42e-05">
+<sequence>GAACCCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2866" name="gene_2866">
+</scanned-sequence>
+<scanned-sequence accession="gene_2867" name="gene_2867">
+</scanned-sequence>
+<scanned-sequence accession="gene_2869" name="gene_2869">
+</scanned-sequence>
+<scanned-sequence accession="gene_2870" name="gene_2870">
+</scanned-sequence>
+<scanned-sequence accession="gene_2871" name="gene_2871">
+</scanned-sequence>
+<scanned-sequence accession="gene_2872" name="gene_2872">
+<matched-element start="21" stop="32" score="11.8776" pvalue="3.57e-05">
+<sequence>GAACCCTTCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2873" name="gene_2873">
+</scanned-sequence>
+<scanned-sequence accession="gene_2874" name="gene_2874">
+</scanned-sequence>
+<scanned-sequence accession="gene_2875" name="gene_2875">
+</scanned-sequence>
+<scanned-sequence accession="gene_2876" name="gene_2876">
+</scanned-sequence>
+<scanned-sequence accession="gene_2878" name="gene_2878">
+</scanned-sequence>
+<scanned-sequence accession="gene_2879" name="gene_2879">
+</scanned-sequence>
+<scanned-sequence accession="gene_2880" name="gene_2880">
+</scanned-sequence>
+<scanned-sequence accession="gene_2883" name="gene_2883">
+</scanned-sequence>
+<scanned-sequence accession="gene_2884" name="gene_2884">
+</scanned-sequence>
+<scanned-sequence accession="gene_2885" name="gene_2885">
+</scanned-sequence>
+<scanned-sequence accession="gene_2886" name="gene_2886">
+</scanned-sequence>
+<scanned-sequence accession="gene_2888" name="gene_2888">
+</scanned-sequence>
+<scanned-sequence accession="gene_2889" name="gene_2889">
+</scanned-sequence>
+<scanned-sequence accession="gene_2890" name="gene_2890">
+</scanned-sequence>
+<scanned-sequence accession="gene_2891" name="gene_2891">
+</scanned-sequence>
+<scanned-sequence accession="gene_2892" name="gene_2892">
+</scanned-sequence>
+<scanned-sequence accession="gene_2893" name="gene_2893">
+<matched-element start="299" stop="310" score="13.2041" pvalue="1.8e-05">
+<sequence>TGAGTCATCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2894" name="gene_2894">
+</scanned-sequence>
+<scanned-sequence accession="gene_2895" name="gene_2895">
+<matched-element start="363" stop="352" score="11.4286" pvalue="4.21e-05">
+<sequence>TGATCCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2896" name="gene_2896">
+</scanned-sequence>
+<scanned-sequence accession="gene_2897" name="gene_2897">
+</scanned-sequence>
+<scanned-sequence accession="gene_2898" name="gene_2898">
+</scanned-sequence>
+<scanned-sequence accession="gene_2899" name="gene_2899">
+</scanned-sequence>
+<scanned-sequence accession="gene_2900" name="gene_2900">
+</scanned-sequence>
+<scanned-sequence accession="gene_2901" name="gene_2901">
+<matched-element start="498" stop="487" score="15.7449" pvalue="3.47e-06">
+<sequence>GAACTCTCCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2902" name="gene_2902">
+</scanned-sequence>
+<scanned-sequence accession="gene_2903" name="gene_2903">
+</scanned-sequence>
+<scanned-sequence accession="gene_2904" name="gene_2904">
+</scanned-sequence>
+<scanned-sequence accession="gene_2905" name="gene_2905">
+</scanned-sequence>
+<scanned-sequence accession="gene_2906" name="gene_2906">
+</scanned-sequence>
+<scanned-sequence accession="gene_2907" name="gene_2907">
+</scanned-sequence>
+<scanned-sequence accession="gene_2908" name="gene_2908">
+</scanned-sequence>
+<scanned-sequence accession="gene_2909" name="gene_2909">
+</scanned-sequence>
+<scanned-sequence accession="gene_2910" name="gene_2910">
+</scanned-sequence>
+<scanned-sequence accession="gene_2911" name="gene_2911">
+</scanned-sequence>
+<scanned-sequence accession="gene_2912" name="gene_2912">
+</scanned-sequence>
+<scanned-sequence accession="gene_2913" name="gene_2913">
+</scanned-sequence>
+<scanned-sequence accession="gene_2914" name="gene_2914">
+</scanned-sequence>
+<scanned-sequence accession="gene_2915" name="gene_2915">
+</scanned-sequence>
+<scanned-sequence accession="gene_2916" name="gene_2916">
+</scanned-sequence>
+<scanned-sequence accession="gene_2917" name="gene_2917">
+</scanned-sequence>
+<scanned-sequence accession="gene_2918" name="gene_2918">
+</scanned-sequence>
+<scanned-sequence accession="gene_2919" name="gene_2919">
+</scanned-sequence>
+<scanned-sequence accession="gene_2920" name="gene_2920">
+</scanned-sequence>
+<scanned-sequence accession="gene_2921" name="gene_2921">
+</scanned-sequence>
+<scanned-sequence accession="gene_2923" name="gene_2923">
+</scanned-sequence>
+<scanned-sequence accession="gene_2925" name="gene_2925">
+</scanned-sequence>
+<scanned-sequence accession="gene_2926" name="gene_2926">
+</scanned-sequence>
+<scanned-sequence accession="gene_2927" name="gene_2927">
+</scanned-sequence>
+<scanned-sequence accession="gene_2928" name="gene_2928">
+</scanned-sequence>
+<scanned-sequence accession="gene_2929" name="gene_2929">
+</scanned-sequence>
+<scanned-sequence accession="gene_2930" name="gene_2930">
+</scanned-sequence>
+<scanned-sequence accession="gene_2931" name="gene_2931">
+</scanned-sequence>
+<scanned-sequence accession="gene_2932" name="gene_2932">
+</scanned-sequence>
+<scanned-sequence accession="gene_2934" name="gene_2934">
+</scanned-sequence>
+<scanned-sequence accession="gene_2935" name="gene_2935">
+</scanned-sequence>
+<scanned-sequence accession="gene_2936" name="gene_2936">
+<matched-element start="131" stop="142" score="12.9082" pvalue="2.12e-05">
+<sequence>TGGCTCCCCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2937" name="gene_2937">
+</scanned-sequence>
+<scanned-sequence accession="gene_2938" name="gene_2938">
+<matched-element start="805" stop="794" score="11.3878" pvalue="4.32e-05">
+<sequence>TGGCCCATCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2939" name="gene_2939">
+</scanned-sequence>
+<scanned-sequence accession="gene_2940" name="gene_2940">
+</scanned-sequence>
+<scanned-sequence accession="gene_2941" name="gene_2941">
+</scanned-sequence>
+<scanned-sequence accession="gene_2942" name="gene_2942">
+</scanned-sequence>
+<scanned-sequence accession="gene_2943" name="gene_2943">
+</scanned-sequence>
+<scanned-sequence accession="gene_2944" name="gene_2944">
+</scanned-sequence>
+<scanned-sequence accession="gene_2945" name="gene_2945">
+<matched-element start="542" stop="553" score="13.0306" pvalue="1.99e-05">
+<sequence>TGATCCAACAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2946" name="gene_2946">
+</scanned-sequence>
+<scanned-sequence accession="gene_2948" name="gene_2948">
+</scanned-sequence>
+<scanned-sequence accession="gene_2949" name="gene_2949">
+</scanned-sequence>
+<scanned-sequence accession="gene_2950" name="gene_2950">
+<matched-element start="587" stop="576" score="12.2245" pvalue="3.03e-05">
+<sequence>TGGTTCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2951" name="gene_2951">
+</scanned-sequence>
+<scanned-sequence accession="gene_2952" name="gene_2952">
+<matched-element start="665" stop="654" score="10.9082" pvalue="5.15e-05">
+<sequence>TGGGCCCTCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2953" name="gene_2953">
+</scanned-sequence>
+<scanned-sequence accession="gene_2954" name="gene_2954">
+</scanned-sequence>
+<scanned-sequence accession="gene_2955" name="gene_2955">
+</scanned-sequence>
+<scanned-sequence accession="gene_2956" name="gene_2956">
+</scanned-sequence>
+<scanned-sequence accession="gene_2957" name="gene_2957">
+</scanned-sequence>
+<scanned-sequence accession="gene_2958" name="gene_2958">
+</scanned-sequence>
+<scanned-sequence accession="gene_2959" name="gene_2959">
+<matched-element start="233" stop="222" score="16.0918" pvalue="2.5e-06">
+<sequence>TGGCTCAACAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2960" name="gene_2960">
+</scanned-sequence>
+<scanned-sequence accession="gene_2961" name="gene_2961">
+<matched-element start="73" stop="84" score="12.2551" pvalue="2.97e-05">
+<sequence>TAACTCTCCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2962" name="gene_2962">
+</scanned-sequence>
+<scanned-sequence accession="gene_2963" name="gene_2963">
+</scanned-sequence>
+<scanned-sequence accession="gene_2965" name="gene_2965">
+<matched-element start="392" stop="381" score="13.9694" pvalue="1.18e-05">
+<sequence>GAATTCACCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2966" name="gene_2966">
+</scanned-sequence>
+<scanned-sequence accession="gene_2967" name="gene_2967">
+</scanned-sequence>
+<scanned-sequence accession="gene_2969" name="gene_2969">
+</scanned-sequence>
+<scanned-sequence accession="gene_2970" name="gene_2970">
+<matched-element start="171" stop="182" score="12.6633" pvalue="2.42e-05">
+<sequence>GAACCCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2973" name="gene_2973">
+</scanned-sequence>
+<scanned-sequence accession="gene_2974" name="gene_2974">
+</scanned-sequence>
+<scanned-sequence accession="gene_2975" name="gene_2975">
+<matched-element start="718" stop="707" score="10.7143" pvalue="5.5e-05">
+<sequence>GAGCTCAACAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2976" name="gene_2976">
+<matched-element start="696" stop="685" score="12" pvalue="3.33e-05">
+<sequence>TGGTACACCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2977" name="gene_2977">
+</scanned-sequence>
+<scanned-sequence accession="gene_2978" name="gene_2978">
+</scanned-sequence>
+<scanned-sequence accession="gene_2979" name="gene_2979">
+</scanned-sequence>
+<scanned-sequence accession="gene_2980" name="gene_2980">
+</scanned-sequence>
+<scanned-sequence accession="gene_2981" name="gene_2981">
+</scanned-sequence>
+<scanned-sequence accession="gene_2982" name="gene_2982">
+</scanned-sequence>
+<scanned-sequence accession="gene_2983" name="gene_2983">
+</scanned-sequence>
+<scanned-sequence accession="gene_2984" name="gene_2984">
+</scanned-sequence>
+<scanned-sequence accession="gene_2985" name="gene_2985">
+<matched-element start="400" stop="389" score="12.9082" pvalue="2.12e-05">
+<sequence>GGGTCCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2986" name="gene_2986">
+</scanned-sequence>
+<scanned-sequence accession="gene_2987" name="gene_2987">
+</scanned-sequence>
+<scanned-sequence accession="gene_2988" name="gene_2988">
+<matched-element start="294" stop="305" score="10.5714" pvalue="5.78e-05">
+<sequence>TAAGTCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2989" name="gene_2989">
+</scanned-sequence>
+<scanned-sequence accession="gene_2990" name="gene_2990">
+<matched-element start="329" stop="318" score="12.0918" pvalue="3.24e-05">
+<sequence>GGGCCCTACCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_2992" name="gene_2992">
+</scanned-sequence>
+<scanned-sequence accession="gene_2993" name="gene_2993">
+</scanned-sequence>
+<scanned-sequence accession="gene_2994" name="gene_2994">
+</scanned-sequence>
+<scanned-sequence accession="gene_2995" name="gene_2995">
+</scanned-sequence>
+<scanned-sequence accession="gene_2996" name="gene_2996">
+</scanned-sequence>
+<scanned-sequence accession="gene_2998" name="gene_2998">
+</scanned-sequence>
+<scanned-sequence accession="gene_2999" name="gene_2999">
+</scanned-sequence>
+<scanned-sequence accession="gene_3001" name="gene_3001">
+</scanned-sequence>
+<scanned-sequence accession="gene_3002" name="gene_3002">
+<matched-element start="502" stop="513" score="10.9184" pvalue="5.1e-05">
+<sequence>TGGCTCTTCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3003" name="gene_3003">
+</scanned-sequence>
+<scanned-sequence accession="gene_3004" name="gene_3004">
+</scanned-sequence>
+<scanned-sequence accession="gene_3005" name="gene_3005">
+</scanned-sequence>
+<scanned-sequence accession="gene_3006" name="gene_3006">
+</scanned-sequence>
+<scanned-sequence accession="gene_3007" name="gene_3007">
+</scanned-sequence>
+<scanned-sequence accession="gene_3008" name="gene_3008">
+</scanned-sequence>
+<scanned-sequence accession="gene_3010" name="gene_3010">
+<matched-element start="944" stop="955" score="15.102" pvalue="5.78e-06">
+<sequence>TGGCACAACAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3012" name="gene_3012">
+</scanned-sequence>
+<scanned-sequence accession="gene_3013" name="gene_3013">
+</scanned-sequence>
+<scanned-sequence accession="gene_3014" name="gene_3014">
+</scanned-sequence>
+<scanned-sequence accession="gene_3015" name="gene_3015">
+</scanned-sequence>
+<scanned-sequence accession="gene_3016" name="gene_3016">
+</scanned-sequence>
+<scanned-sequence accession="gene_3017" name="gene_3017">
+</scanned-sequence>
+<scanned-sequence accession="gene_3019" name="gene_3019">
+<matched-element start="693" stop="682" score="12.4694" pvalue="2.67e-05">
+<sequence>TAACTCACCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3020" name="gene_3020">
+</scanned-sequence>
+<scanned-sequence accession="gene_3021" name="gene_3021">
+<matched-element start="226" stop="237" score="13.8469" pvalue="1.26e-05">
+<sequence>GAGCCCAACAAC</sequence>
+<mem:qvalue>0.733</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3022" name="gene_3022">
+</scanned-sequence>
+<scanned-sequence accession="gene_3023" name="gene_3023">
+</scanned-sequence>
+<scanned-sequence accession="gene_3024" name="gene_3024">
+</scanned-sequence>
+<scanned-sequence accession="gene_3025" name="gene_3025">
+</scanned-sequence>
+<scanned-sequence accession="gene_3026" name="gene_3026">
+</scanned-sequence>
+<scanned-sequence accession="gene_3027" name="gene_3027">
+</scanned-sequence>
+<scanned-sequence accession="gene_3028" name="gene_3028">
+</scanned-sequence>
+<scanned-sequence accession="gene_3029" name="gene_3029">
+</scanned-sequence>
+<scanned-sequence accession="gene_3030" name="gene_3030">
+</scanned-sequence>
+<scanned-sequence accession="gene_3031" name="gene_3031">
+</scanned-sequence>
+<scanned-sequence accession="gene_3032" name="gene_3032">
+</scanned-sequence>
+<scanned-sequence accession="gene_3034" name="gene_3034">
+</scanned-sequence>
+<scanned-sequence accession="gene_3035" name="gene_3035">
+</scanned-sequence>
+<scanned-sequence accession="gene_3036" name="gene_3036">
+</scanned-sequence>
+<scanned-sequence accession="gene_3037" name="gene_3037">
+</scanned-sequence>
+<scanned-sequence accession="gene_3038" name="gene_3038">
+<matched-element start="474" stop="485" score="11.4082" pvalue="4.26e-05">
+<sequence>GAGGTCTCCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3039" name="gene_3039">
+</scanned-sequence>
+<scanned-sequence accession="gene_3040" name="gene_3040">
+<matched-element start="561" stop="550" score="10.8469" pvalue="5.26e-05">
+<sequence>TGAGTCCCCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3041" name="gene_3041">
+</scanned-sequence>
+<scanned-sequence accession="gene_3042" name="gene_3042">
+<matched-element start="803" stop="792" score="11.3878" pvalue="4.32e-05">
+<sequence>TGGCCCATCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3043" name="gene_3043">
+</scanned-sequence>
+<scanned-sequence accession="gene_3044" name="gene_3044">
+</scanned-sequence>
+<scanned-sequence accession="gene_3045" name="gene_3045">
+</scanned-sequence>
+<scanned-sequence accession="gene_3046" name="gene_3046">
+</scanned-sequence>
+<scanned-sequence accession="gene_3047" name="gene_3047">
+</scanned-sequence>
+<scanned-sequence accession="gene_3049" name="gene_3049">
+<matched-element start="957" stop="946" score="13.5306" pvalue="1.51e-05">
+<sequence>TGGTCCAACAAC</sequence>
+<mem:qvalue>0.759</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3050" name="gene_3050">
+</scanned-sequence>
+<scanned-sequence accession="gene_3051" name="gene_3051">
+</scanned-sequence>
+<scanned-sequence accession="gene_3052" name="gene_3052">
+</scanned-sequence>
+<scanned-sequence accession="gene_3053" name="gene_3053">
+<matched-element start="811" stop="822" score="13.9184" pvalue="1.21e-05">
+<sequence>TGACACACCCAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3054" name="gene_3054">
+<matched-element start="739" stop="728" score="10.6531" pvalue="5.64e-05">
+<sequence>TAGCTCAACAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3055" name="gene_3055">
+</scanned-sequence>
+<scanned-sequence accession="gene_3056" name="gene_3056">
+</scanned-sequence>
+<scanned-sequence accession="gene_3057" name="gene_3057">
+</scanned-sequence>
+<scanned-sequence accession="gene_3058" name="gene_3058">
+</scanned-sequence>
+<scanned-sequence accession="gene_3059" name="gene_3059">
+</scanned-sequence>
+<scanned-sequence accession="gene_3061" name="gene_3061">
+<matched-element start="823" stop="834" score="14.9592" pvalue="6.21e-06">
+<sequence>TGGCCCACCAAG</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3062" name="gene_3062">
+</scanned-sequence>
+<scanned-sequence accession="gene_3063" name="gene_3063">
+</scanned-sequence>
+<scanned-sequence accession="gene_3064" name="gene_3064">
+</scanned-sequence>
+<scanned-sequence accession="gene_3065" name="gene_3065">
+</scanned-sequence>
+<scanned-sequence accession="gene_3066" name="gene_3066">
+</scanned-sequence>
+<scanned-sequence accession="gene_3067" name="gene_3067">
+<matched-element start="58" stop="69" score="13.8265" pvalue="1.29e-05">
+<sequence>GGACACACCAAG</sequence>
+<mem:qvalue>0.733</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3068" name="gene_3068">
+</scanned-sequence>
+<scanned-sequence accession="gene_3069" name="gene_3069">
+</scanned-sequence>
+<scanned-sequence accession="gene_3070" name="gene_3070">
+</scanned-sequence>
+<scanned-sequence accession="gene_3071" name="gene_3071">
+</scanned-sequence>
+<scanned-sequence accession="gene_3072" name="gene_3072">
+</scanned-sequence>
+<scanned-sequence accession="gene_3073" name="gene_3073">
+</scanned-sequence>
+<scanned-sequence accession="gene_3074" name="gene_3074">
+</scanned-sequence>
+<scanned-sequence accession="gene_3075" name="gene_3075">
+</scanned-sequence>
+<scanned-sequence accession="gene_3076" name="gene_3076">
+</scanned-sequence>
+<scanned-sequence accession="gene_3077" name="gene_3077">
+</scanned-sequence>
+<scanned-sequence accession="gene_3079" name="gene_3079">
+</scanned-sequence>
+<scanned-sequence accession="gene_3080" name="gene_3080">
+</scanned-sequence>
+<scanned-sequence accession="gene_3082" name="gene_3082">
+</scanned-sequence>
+<scanned-sequence accession="gene_3083" name="gene_3083">
+</scanned-sequence>
+<scanned-sequence accession="gene_3085" name="gene_3085">
+</scanned-sequence>
+<scanned-sequence accession="gene_3086" name="gene_3086">
+<matched-element start="397" stop="408" score="10.6327" pvalue="5.68e-05">
+<sequence>GAAGTCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3087" name="gene_3087">
+<matched-element start="374" stop="363" score="11.9184" pvalue="3.48e-05">
+<sequence>GGGTACATCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3089" name="gene_3089">
+</scanned-sequence>
+<scanned-sequence accession="gene_3090" name="gene_3090">
+</scanned-sequence>
+<scanned-sequence accession="gene_3091" name="gene_3091">
+</scanned-sequence>
+<scanned-sequence accession="gene_3092" name="gene_3092">
+</scanned-sequence>
+<scanned-sequence accession="gene_3093" name="gene_3093">
+</scanned-sequence>
+<scanned-sequence accession="gene_3095" name="gene_3095">
+</scanned-sequence>
+<scanned-sequence accession="gene_3096" name="gene_3096">
+</scanned-sequence>
+<scanned-sequence accession="gene_3097" name="gene_3097">
+</scanned-sequence>
+<scanned-sequence accession="gene_3099" name="gene_3099">
+<matched-element start="24" stop="35" score="12.0408" pvalue="3.3e-05">
+<sequence>GAACTCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3100" name="gene_3100">
+</scanned-sequence>
+<scanned-sequence accession="gene_3101" name="gene_3101">
+</scanned-sequence>
+<scanned-sequence accession="gene_3102" name="gene_3102">
+</scanned-sequence>
+<scanned-sequence accession="gene_3103" name="gene_3103">
+<matched-element start="160" stop="149" score="11.0408" pvalue="4.91e-05">
+<sequence>TGACCCATCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3104" name="gene_3104">
+</scanned-sequence>
+<scanned-sequence accession="gene_3105" name="gene_3105">
+<matched-element start="731" stop="720" score="13.5816" pvalue="1.48e-05">
+<sequence>TAACTCAACAAC</sequence>
+<mem:qvalue>0.755</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3106" name="gene_3106">
+</scanned-sequence>
+<scanned-sequence accession="gene_3107" name="gene_3107">
+</scanned-sequence>
+<scanned-sequence accession="gene_3108" name="gene_3108">
+</scanned-sequence>
+<scanned-sequence accession="gene_3109" name="gene_3109">
+</scanned-sequence>
+<scanned-sequence accession="gene_3110" name="gene_3110">
+</scanned-sequence>
+<scanned-sequence accession="gene_3111" name="gene_3111">
+<matched-element start="783" stop="772" score="12.0408" pvalue="3.3e-05">
+<sequence>GAACTCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+<matched-element start="147" stop="136" score="10.8469" pvalue="5.26e-05">
+<sequence>GAACCCCACAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3112" name="gene_3112">
+</scanned-sequence>
+<scanned-sequence accession="gene_3113" name="gene_3113">
+</scanned-sequence>
+<scanned-sequence accession="gene_3114" name="gene_3114">
+</scanned-sequence>
+<scanned-sequence accession="gene_3115" name="gene_3115">
+</scanned-sequence>
+<scanned-sequence accession="gene_3117" name="gene_3117">
+</scanned-sequence>
+<scanned-sequence accession="gene_3118" name="gene_3118">
+</scanned-sequence>
+<scanned-sequence accession="gene_3119" name="gene_3119">
+</scanned-sequence>
+<scanned-sequence accession="gene_3120" name="gene_3120">
+</scanned-sequence>
+<scanned-sequence accession="gene_3121" name="gene_3121">
+</scanned-sequence>
+<scanned-sequence accession="gene_3122" name="gene_3122">
+</scanned-sequence>
+<scanned-sequence accession="gene_3123" name="gene_3123">
+</scanned-sequence>
+<scanned-sequence accession="gene_3124" name="gene_3124">
+</scanned-sequence>
+<scanned-sequence accession="gene_3125" name="gene_3125">
+<matched-element start="338" stop="349" score="11.7551" pvalue="3.72e-05">
+<sequence>TAACACACCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+<matched-element start="1047" stop="1036" score="11.4694" pvalue="4.16e-05">
+<sequence>GGGCCCACCCAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3126" name="gene_3126">
+</scanned-sequence>
+<scanned-sequence accession="gene_3127" name="gene_3127">
+</scanned-sequence>
+<scanned-sequence accession="gene_3128" name="gene_3128">
+</scanned-sequence>
+<scanned-sequence accession="gene_3129" name="gene_3129">
+<matched-element start="736" stop="725" score="12.2551" pvalue="2.97e-05">
+<sequence>TAACTCTCCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3130" name="gene_3130">
+<matched-element start="1045" stop="1034" score="10.7347" pvalue="5.48e-05">
+<sequence>TGATACTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3131" name="gene_3131">
+</scanned-sequence>
+<scanned-sequence accession="gene_3132" name="gene_3132">
+</scanned-sequence>
+<scanned-sequence accession="gene_3133" name="gene_3133">
+</scanned-sequence>
+<scanned-sequence accession="gene_3134" name="gene_3134">
+</scanned-sequence>
+<scanned-sequence accession="gene_3135" name="gene_3135">
+</scanned-sequence>
+<scanned-sequence accession="gene_3136" name="gene_3136">
+</scanned-sequence>
+<scanned-sequence accession="gene_3137" name="gene_3137">
+</scanned-sequence>
+<scanned-sequence accession="gene_3138" name="gene_3138">
+</scanned-sequence>
+<scanned-sequence accession="gene_3139" name="gene_3139">
+</scanned-sequence>
+<scanned-sequence accession="gene_3140" name="gene_3140">
+</scanned-sequence>
+<scanned-sequence accession="gene_3141" name="gene_3141">
+</scanned-sequence>
+<scanned-sequence accession="gene_3142" name="gene_3142">
+</scanned-sequence>
+<scanned-sequence accession="gene_3143" name="gene_3143">
+<matched-element start="226" stop="237" score="11.6224" pvalue="3.94e-05">
+<sequence>TAGCACTTCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3144" name="gene_3144">
+</scanned-sequence>
+<scanned-sequence accession="gene_3145" name="gene_3145">
+</scanned-sequence>
+<scanned-sequence accession="gene_3146" name="gene_3146">
+</scanned-sequence>
+<scanned-sequence accession="gene_3147" name="gene_3147">
+</scanned-sequence>
+<scanned-sequence accession="gene_3148" name="gene_3148">
+</scanned-sequence>
+<scanned-sequence accession="gene_3149" name="gene_3149">
+</scanned-sequence>
+<scanned-sequence accession="gene_3150+gene_3151" name="gene_3150+gene_3151">
+</scanned-sequence>
+<scanned-sequence accession="gene_3152" name="gene_3152">
+</scanned-sequence>
+<scanned-sequence accession="gene_3153" name="gene_3153">
+</scanned-sequence>
+<scanned-sequence accession="gene_3155" name="gene_3155">
+</scanned-sequence>
+<scanned-sequence accession="gene_3156" name="gene_3156">
+</scanned-sequence>
+<scanned-sequence accession="gene_3157" name="gene_3157">
+</scanned-sequence>
+<scanned-sequence accession="gene_3158" name="gene_3158">
+<matched-element start="406" stop="395" score="14.2551" pvalue="9.94e-06">
+<sequence>GGGCCCTCCAAA</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+<matched-element start="632" stop="643" score="14.2551" pvalue="9.94e-06">
+<sequence>GGGCCCTCCAAA</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3159" name="gene_3159">
+<matched-element start="578" stop="567" score="14.7551" pvalue="7.18e-06">
+<sequence>GAACACTCCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3160" name="gene_3160">
+</scanned-sequence>
+<scanned-sequence accession="gene_3161" name="gene_3161">
+</scanned-sequence>
+<scanned-sequence accession="gene_3162" name="gene_3162">
+</scanned-sequence>
+<scanned-sequence accession="gene_3163" name="gene_3163">
+</scanned-sequence>
+<scanned-sequence accession="gene_3165" name="gene_3165">
+</scanned-sequence>
+<scanned-sequence accession="gene_3166" name="gene_3166">
+</scanned-sequence>
+<scanned-sequence accession="gene_3167" name="gene_3167">
+</scanned-sequence>
+<scanned-sequence accession="gene_3168" name="gene_3168">
+<matched-element start="980" stop="991" score="13.6122" pvalue="1.46e-05">
+<sequence>GGGGCCACCAAG</sequence>
+<mem:qvalue>0.754</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3169" name="gene_3169">
+</scanned-sequence>
+<scanned-sequence accession="gene_3170" name="gene_3170">
+</scanned-sequence>
+<scanned-sequence accession="gene_3171" name="gene_3171">
+</scanned-sequence>
+<scanned-sequence accession="gene_3172" name="gene_3172">
+</scanned-sequence>
+<scanned-sequence accession="gene_3173" name="gene_3173">
+</scanned-sequence>
+<scanned-sequence accession="gene_3174" name="gene_3174">
+</scanned-sequence>
+<scanned-sequence accession="gene_3175" name="gene_3175">
+</scanned-sequence>
+<scanned-sequence accession="gene_3176" name="gene_3176">
+</scanned-sequence>
+<scanned-sequence accession="gene_3177" name="gene_3177">
+</scanned-sequence>
+<scanned-sequence accession="gene_3178" name="gene_3178">
+</scanned-sequence>
+<scanned-sequence accession="gene_3179" name="gene_3179">
+</scanned-sequence>
+<scanned-sequence accession="gene_3180" name="gene_3180">
+</scanned-sequence>
+<scanned-sequence accession="gene_3181" name="gene_3181">
+</scanned-sequence>
+<scanned-sequence accession="gene_3182" name="gene_3182">
+</scanned-sequence>
+<scanned-sequence accession="gene_3183" name="gene_3183">
+</scanned-sequence>
+<scanned-sequence accession="gene_3184" name="gene_3184">
+</scanned-sequence>
+<scanned-sequence accession="gene_3185" name="gene_3185">
+</scanned-sequence>
+<scanned-sequence accession="gene_3186" name="gene_3186">
+<matched-element start="376" stop="365" score="13.0714" pvalue="1.95e-05">
+<sequence>TGAGTCACCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3187" name="gene_3187">
+</scanned-sequence>
+<scanned-sequence accession="gene_3188" name="gene_3188">
+</scanned-sequence>
+<scanned-sequence accession="gene_3189" name="gene_3189">
+</scanned-sequence>
+<scanned-sequence accession="gene_3191" name="gene_3191">
+</scanned-sequence>
+<scanned-sequence accession="gene_3192" name="gene_3192">
+</scanned-sequence>
+<scanned-sequence accession="gene_3193" name="gene_3193">
+</scanned-sequence>
+<scanned-sequence accession="gene_3194" name="gene_3194">
+</scanned-sequence>
+<scanned-sequence accession="gene_3195" name="gene_3195">
+</scanned-sequence>
+<scanned-sequence accession="gene_3196" name="gene_3196">
+</scanned-sequence>
+<scanned-sequence accession="gene_3197" name="gene_3197">
+</scanned-sequence>
+<scanned-sequence accession="gene_3198" name="gene_3198">
+</scanned-sequence>
+<scanned-sequence accession="gene_3199" name="gene_3199">
+</scanned-sequence>
+<scanned-sequence accession="gene_3200" name="gene_3200">
+</scanned-sequence>
+<scanned-sequence accession="gene_3201" name="gene_3201">
+</scanned-sequence>
+<scanned-sequence accession="gene_3202" name="gene_3202">
+<matched-element start="676" stop="665" score="11.2041" pvalue="4.61e-05">
+<sequence>TGACTCACCCAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3203" name="gene_3203">
+<matched-element start="183" stop="172" score="11.9796" pvalue="3.38e-05">
+<sequence>GGATCCACCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3204" name="gene_3204">
+</scanned-sequence>
+<scanned-sequence accession="gene_3205" name="gene_3205">
+</scanned-sequence>
+<scanned-sequence accession="gene_3206" name="gene_3206">
+</scanned-sequence>
+<scanned-sequence accession="gene_3207" name="gene_3207">
+</scanned-sequence>
+<scanned-sequence accession="gene_3208" name="gene_3208">
+</scanned-sequence>
+<scanned-sequence accession="gene_3209" name="gene_3209">
+</scanned-sequence>
+<scanned-sequence accession="gene_3210" name="gene_3210">
+</scanned-sequence>
+<scanned-sequence accession="gene_3211" name="gene_3211">
+</scanned-sequence>
+<scanned-sequence accession="gene_3212" name="gene_3212">
+</scanned-sequence>
+<scanned-sequence accession="gene_3214" name="gene_3214">
+</scanned-sequence>
+<scanned-sequence accession="gene_3215" name="gene_3215">
+</scanned-sequence>
+<scanned-sequence accession="gene_3216" name="gene_3216">
+</scanned-sequence>
+<scanned-sequence accession="gene_3217" name="gene_3217">
+</scanned-sequence>
+<scanned-sequence accession="gene_3218" name="gene_3218">
+</scanned-sequence>
+<scanned-sequence accession="gene_3219" name="gene_3219">
+</scanned-sequence>
+<scanned-sequence accession="gene_3220" name="gene_3220">
+</scanned-sequence>
+<scanned-sequence accession="gene_3221" name="gene_3221">
+</scanned-sequence>
+<scanned-sequence accession="gene_3222" name="gene_3222">
+</scanned-sequence>
+<scanned-sequence accession="gene_3223" name="gene_3223">
+</scanned-sequence>
+<scanned-sequence accession="gene_3224" name="gene_3224">
+</scanned-sequence>
+<scanned-sequence accession="gene_3225" name="gene_3225">
+</scanned-sequence>
+<scanned-sequence accession="gene_3226" name="gene_3226">
+<matched-element start="840" stop="829" score="11.5612" pvalue="4.03e-05">
+<sequence>TAGGTCACCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3227+gene_3228" name="gene_3227+gene_3228">
+<matched-element start="902" stop="891" score="11.1837" pvalue="4.68e-05">
+<sequence>GAACACTTCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3229" name="gene_3229">
+</scanned-sequence>
+<scanned-sequence accession="gene_3230" name="gene_3230">
+<matched-element start="706" stop="717" score="12.6429" pvalue="2.45e-05">
+<sequence>TGATTCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3231" name="gene_3231">
+</scanned-sequence>
+<scanned-sequence accession="gene_3233" name="gene_3233">
+</scanned-sequence>
+<scanned-sequence accession="gene_3234" name="gene_3234">
+</scanned-sequence>
+<scanned-sequence accession="gene_3235" name="gene_3235">
+</scanned-sequence>
+<scanned-sequence accession="gene_3236+gene_3237" name="gene_3236+gene_3237">
+</scanned-sequence>
+<scanned-sequence accession="gene_3238" name="gene_3238">
+</scanned-sequence>
+<scanned-sequence accession="gene_3239" name="gene_3239">
+<matched-element start="869" stop="880" score="12.7143" pvalue="2.34e-05">
+<sequence>GGGTTCTCCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+<matched-element start="810" stop="821" score="12.4694" pvalue="2.67e-05">
+<sequence>GGACTCCCCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3240" name="gene_3240">
+</scanned-sequence>
+<scanned-sequence accession="gene_3241" name="gene_3241">
+</scanned-sequence>
+<scanned-sequence accession="gene_3242" name="gene_3242">
+</scanned-sequence>
+<scanned-sequence accession="gene_3243" name="gene_3243">
+</scanned-sequence>
+<scanned-sequence accession="gene_3244" name="gene_3244">
+</scanned-sequence>
+<scanned-sequence accession="gene_3245" name="gene_3245">
+</scanned-sequence>
+<scanned-sequence accession="gene_3246" name="gene_3246">
+</scanned-sequence>
+<scanned-sequence accession="gene_3248" name="gene_3248">
+</scanned-sequence>
+<scanned-sequence accession="gene_3249" name="gene_3249">
+</scanned-sequence>
+<scanned-sequence accession="gene_3250" name="gene_3250">
+</scanned-sequence>
+<scanned-sequence accession="gene_3251" name="gene_3251">
+</scanned-sequence>
+<scanned-sequence accession="gene_3252" name="gene_3252">
+</scanned-sequence>
+<scanned-sequence accession="gene_3253" name="gene_3253">
+</scanned-sequence>
+<scanned-sequence accession="gene_3254" name="gene_3254">
+</scanned-sequence>
+<scanned-sequence accession="gene_3255" name="gene_3255">
+</scanned-sequence>
+<scanned-sequence accession="gene_3256" name="gene_3256">
+</scanned-sequence>
+<scanned-sequence accession="gene_3257" name="gene_3257">
+</scanned-sequence>
+<scanned-sequence accession="gene_3258" name="gene_3258">
+</scanned-sequence>
+<scanned-sequence accession="gene_3259" name="gene_3259">
+</scanned-sequence>
+<scanned-sequence accession="gene_3261" name="gene_3261">
+<matched-element start="1040" stop="1051" score="11.2041" pvalue="4.61e-05">
+<sequence>TGACTCACCCAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3262+gene_3263" name="gene_3262+gene_3263">
+</scanned-sequence>
+<scanned-sequence accession="gene_3264" name="gene_3264">
+</scanned-sequence>
+<scanned-sequence accession="gene_3265" name="gene_3265">
+</scanned-sequence>
+<scanned-sequence accession="gene_3266" name="gene_3266">
+<matched-element start="859" stop="848" score="15.8878" pvalue="3e-06">
+<sequence>TAGCCCTCCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3267" name="gene_3267">
+</scanned-sequence>
+<scanned-sequence accession="gene_3268" name="gene_3268">
+</scanned-sequence>
+<scanned-sequence accession="gene_3269" name="gene_3269">
+</scanned-sequence>
+<scanned-sequence accession="gene_3270" name="gene_3270">
+</scanned-sequence>
+<scanned-sequence accession="gene_3271" name="gene_3271">
+</scanned-sequence>
+<scanned-sequence accession="gene_3272" name="gene_3272">
+</scanned-sequence>
+<scanned-sequence accession="gene_3273" name="gene_3273">
+</scanned-sequence>
+<scanned-sequence accession="gene_3274" name="gene_3274">
+</scanned-sequence>
+<scanned-sequence accession="gene_3275" name="gene_3275">
+</scanned-sequence>
+<scanned-sequence accession="gene_3276" name="gene_3276">
+</scanned-sequence>
+<scanned-sequence accession="gene_3277" name="gene_3277">
+</scanned-sequence>
+<scanned-sequence accession="gene_3278" name="gene_3278">
+</scanned-sequence>
+<scanned-sequence accession="gene_3279" name="gene_3279">
+</scanned-sequence>
+<scanned-sequence accession="gene_3280" name="gene_3280">
+</scanned-sequence>
+<scanned-sequence accession="gene_3281" name="gene_3281">
+</scanned-sequence>
+<scanned-sequence accession="gene_3282" name="gene_3282">
+</scanned-sequence>
+<scanned-sequence accession="gene_3283" name="gene_3283">
+</scanned-sequence>
+<scanned-sequence accession="gene_3284" name="gene_3284">
+</scanned-sequence>
+<scanned-sequence accession="gene_3285" name="gene_3285">
+<matched-element start="207" stop="196" score="11.1327" pvalue="4.73e-05">
+<sequence>TAGTTCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3286" name="gene_3286">
+</scanned-sequence>
+<scanned-sequence accession="gene_3287" name="gene_3287">
+</scanned-sequence>
+<scanned-sequence accession="gene_3288" name="gene_3288">
+</scanned-sequence>
+<scanned-sequence accession="gene_3289" name="gene_3289">
+</scanned-sequence>
+<scanned-sequence accession="gene_3290" name="gene_3290">
+<matched-element start="504" stop="515" score="14.2347" pvalue="1.01e-05">
+<sequence>GAGCTCCCCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3291" name="gene_3291">
+</scanned-sequence>
+<scanned-sequence accession="gene_3292" name="gene_3292">
+</scanned-sequence>
+<scanned-sequence accession="gene_3293" name="gene_3293">
+<matched-element start="134" stop="123" score="13.3265" pvalue="1.69e-05">
+<sequence>TGATTCAACAAC</sequence>
+<mem:qvalue>0.789</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3295" name="gene_3295">
+</scanned-sequence>
+<scanned-sequence accession="gene_3296" name="gene_3296">
+</scanned-sequence>
+<scanned-sequence accession="gene_3297" name="gene_3297">
+</scanned-sequence>
+<scanned-sequence accession="gene_3298" name="gene_3298">
+</scanned-sequence>
+<scanned-sequence accession="gene_3299" name="gene_3299">
+</scanned-sequence>
+<scanned-sequence accession="gene_3300" name="gene_3300">
+</scanned-sequence>
+<scanned-sequence accession="gene_3301" name="gene_3301">
+</scanned-sequence>
+<scanned-sequence accession="gene_3302" name="gene_3302">
+<matched-element start="1040" stop="1051" score="11.4796" pvalue="4.14e-05">
+<sequence>TAACACACCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3303" name="gene_3303">
+</scanned-sequence>
+<scanned-sequence accession="gene_3304" name="gene_3304">
+</scanned-sequence>
+<scanned-sequence accession="gene_3305" name="gene_3305">
+</scanned-sequence>
+<scanned-sequence accession="gene_3306" name="gene_3306">
+</scanned-sequence>
+<scanned-sequence accession="gene_3307" name="gene_3307">
+</scanned-sequence>
+<scanned-sequence accession="gene_3309" name="gene_3309">
+</scanned-sequence>
+<scanned-sequence accession="gene_3310" name="gene_3310">
+</scanned-sequence>
+<scanned-sequence accession="gene_3311" name="gene_3311">
+</scanned-sequence>
+<scanned-sequence accession="gene_3312" name="gene_3312">
+</scanned-sequence>
+<scanned-sequence accession="gene_3313" name="gene_3313">
+<matched-element start="655" stop="666" score="12.0612" pvalue="3.27e-05">
+<sequence>GGATTCTCCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3314" name="gene_3314">
+</scanned-sequence>
+<scanned-sequence accession="gene_3315" name="gene_3315">
+</scanned-sequence>
+<scanned-sequence accession="gene_3316" name="gene_3316">
+</scanned-sequence>
+<scanned-sequence accession="gene_3317" name="gene_3317">
+</scanned-sequence>
+<scanned-sequence accession="gene_3318" name="gene_3318">
+</scanned-sequence>
+<scanned-sequence accession="gene_3319" name="gene_3319">
+</scanned-sequence>
+<scanned-sequence accession="gene_3321" name="gene_3321">
+</scanned-sequence>
+<scanned-sequence accession="gene_3322" name="gene_3322">
+</scanned-sequence>
+<scanned-sequence accession="gene_3323" name="gene_3323">
+<matched-element start="106" stop="117" score="13.9082" pvalue="1.22e-05">
+<sequence>TAATTCACCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3324" name="gene_3324">
+</scanned-sequence>
+<scanned-sequence accession="gene_3325" name="gene_3325">
+</scanned-sequence>
+<scanned-sequence accession="gene_3326" name="gene_3326">
+<matched-element start="439" stop="428" score="13.7347" pvalue="1.35e-05">
+<sequence>GAACTCCCCAAC</sequence>
+<mem:qvalue>0.733</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3327" name="gene_3327">
+</scanned-sequence>
+<scanned-sequence accession="gene_3328+gene_3329" name="gene_3328+gene_3329">
+</scanned-sequence>
+<scanned-sequence accession="gene_3330" name="gene_3330">
+</scanned-sequence>
+<scanned-sequence accession="gene_3331" name="gene_3331">
+</scanned-sequence>
+<scanned-sequence accession="gene_3332" name="gene_3332">
+</scanned-sequence>
+<scanned-sequence accession="gene_3333" name="gene_3333">
+</scanned-sequence>
+<scanned-sequence accession="gene_3334" name="gene_3334">
+</scanned-sequence>
+<scanned-sequence accession="gene_3335" name="gene_3335">
+<matched-element start="485" stop="496" score="12.0408" pvalue="3.3e-05">
+<sequence>GAACTCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3337" name="gene_3337">
+</scanned-sequence>
+<scanned-sequence accession="gene_3338" name="gene_3338">
+</scanned-sequence>
+<scanned-sequence accession="gene_3339" name="gene_3339">
+</scanned-sequence>
+<scanned-sequence accession="gene_3340" name="gene_3340">
+</scanned-sequence>
+<scanned-sequence accession="gene_3342" name="gene_3342">
+</scanned-sequence>
+<scanned-sequence accession="gene_3343" name="gene_3343">
+</scanned-sequence>
+<scanned-sequence accession="gene_3344" name="gene_3344">
+</scanned-sequence>
+<scanned-sequence accession="gene_3345" name="gene_3345">
+</scanned-sequence>
+<scanned-sequence accession="gene_3346" name="gene_3346">
+</scanned-sequence>
+<scanned-sequence accession="gene_3348" name="gene_3348">
+</scanned-sequence>
+<scanned-sequence accession="gene_3349" name="gene_3349">
+</scanned-sequence>
+<scanned-sequence accession="gene_3350" name="gene_3350">
+</scanned-sequence>
+<scanned-sequence accession="gene_3351" name="gene_3351">
+</scanned-sequence>
+<scanned-sequence accession="gene_3352" name="gene_3352">
+<matched-element start="208" stop="197" score="14.4796" pvalue="8.67e-06">
+<sequence>GGACTCTCCCAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+<matched-element start="193" stop="182" score="10.7653" pvalue="5.42e-05">
+<sequence>TAAGCCACCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3353" name="gene_3353">
+</scanned-sequence>
+<scanned-sequence accession="gene_3354" name="gene_3354">
+</scanned-sequence>
+<scanned-sequence accession="gene_3355" name="gene_3355">
+</scanned-sequence>
+<scanned-sequence accession="gene_3356" name="gene_3356">
+</scanned-sequence>
+<scanned-sequence accession="gene_3357" name="gene_3357">
+</scanned-sequence>
+<scanned-sequence accession="gene_3358" name="gene_3358">
+</scanned-sequence>
+<scanned-sequence accession="gene_3359" name="gene_3359">
+</scanned-sequence>
+<scanned-sequence accession="gene_3360" name="gene_3360">
+</scanned-sequence>
+<scanned-sequence accession="gene_3361" name="gene_3361">
+</scanned-sequence>
+<scanned-sequence accession="gene_3362" name="gene_3362">
+</scanned-sequence>
+<scanned-sequence accession="gene_3363" name="gene_3363">
+<matched-element start="913" stop="902" score="13.3878" pvalue="1.63e-05">
+<sequence>GGATTCAACAAC</sequence>
+<mem:qvalue>0.783</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3364" name="gene_3364">
+</scanned-sequence>
+<scanned-sequence accession="gene_3365" name="gene_3365">
+<matched-element start="971" stop="982" score="11.3878" pvalue="4.32e-05">
+<sequence>TGGCCCATCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+<matched-element start="486" stop="497" score="10.5714" pvalue="5.78e-05">
+<sequence>GAGCCCAACCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3366" name="gene_3366">
+</scanned-sequence>
+<scanned-sequence accession="gene_3367" name="gene_3367">
+</scanned-sequence>
+<scanned-sequence accession="gene_3368" name="gene_3368">
+</scanned-sequence>
+<scanned-sequence accession="gene_3369" name="gene_3369">
+</scanned-sequence>
+<scanned-sequence accession="gene_3370" name="gene_3370">
+</scanned-sequence>
+<scanned-sequence accession="gene_3371" name="gene_3371">
+</scanned-sequence>
+<scanned-sequence accession="gene_3372" name="gene_3372">
+<matched-element start="329" stop="318" score="11.7449" pvalue="3.75e-05">
+<sequence>GGACCCCCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3373" name="gene_3373">
+</scanned-sequence>
+<scanned-sequence accession="gene_3374" name="gene_3374">
+</scanned-sequence>
+<scanned-sequence accession="gene_3375" name="gene_3375">
+</scanned-sequence>
+<scanned-sequence accession="gene_3376" name="gene_3376">
+<matched-element start="1030" stop="1041" score="11.2551" pvalue="4.54e-05">
+<sequence>GGGCCCTCCCAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3377" name="gene_3377">
+</scanned-sequence>
+<scanned-sequence accession="gene_3378" name="gene_3378">
+</scanned-sequence>
+<scanned-sequence accession="gene_3379" name="gene_3379">
+</scanned-sequence>
+<scanned-sequence accession="gene_3380" name="gene_3380">
+</scanned-sequence>
+<scanned-sequence accession="gene_3381" name="gene_3381">
+</scanned-sequence>
+<scanned-sequence accession="gene_3382" name="gene_3382">
+<matched-element start="835" stop="824" score="10.6531" pvalue="5.64e-05">
+<sequence>GAGCACCACAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3383" name="gene_3383">
+</scanned-sequence>
+<scanned-sequence accession="gene_3384" name="gene_3384">
+</scanned-sequence>
+<scanned-sequence accession="gene_3385" name="gene_3385">
+</scanned-sequence>
+<scanned-sequence accession="gene_3387" name="gene_3387">
+</scanned-sequence>
+<scanned-sequence accession="gene_3388" name="gene_3388">
+</scanned-sequence>
+<scanned-sequence accession="gene_3389+gene_3390" name="gene_3389+gene_3390">
+<matched-element start="293" stop="282" score="14.9082" pvalue="6.42e-06">
+<sequence>TGACTCACCCAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3391" name="gene_3391">
+</scanned-sequence>
+<scanned-sequence accession="gene_3392" name="gene_3392">
+</scanned-sequence>
+<scanned-sequence accession="gene_3393" name="gene_3393">
+</scanned-sequence>
+<scanned-sequence accession="gene_3394" name="gene_3394">
+</scanned-sequence>
+<scanned-sequence accession="gene_3395" name="gene_3395">
+<matched-element start="12" stop="1" score="10.7143" pvalue="5.5e-05">
+<sequence>TGGCACACCCAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3396" name="gene_3396">
+</scanned-sequence>
+<scanned-sequence accession="gene_3397" name="gene_3397">
+</scanned-sequence>
+<scanned-sequence accession="gene_3398" name="gene_3398">
+</scanned-sequence>
+<scanned-sequence accession="gene_3399" name="gene_3399">
+</scanned-sequence>
+<scanned-sequence accession="gene_3400" name="gene_3400">
+</scanned-sequence>
+<scanned-sequence accession="gene_3401" name="gene_3401">
+</scanned-sequence>
+<scanned-sequence accession="gene_3402" name="gene_3402">
+</scanned-sequence>
+<scanned-sequence accession="gene_3403" name="gene_3403">
+<matched-element start="312" stop="323" score="11.7551" pvalue="3.72e-05">
+<sequence>GAGGCCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3405" name="gene_3405">
+</scanned-sequence>
+<scanned-sequence accession="gene_3406" name="gene_3406">
+</scanned-sequence>
+<scanned-sequence accession="gene_3407" name="gene_3407">
+</scanned-sequence>
+<scanned-sequence accession="gene_3408" name="gene_3408">
+</scanned-sequence>
+<scanned-sequence accession="gene_3410" name="gene_3410">
+</scanned-sequence>
+<scanned-sequence accession="gene_3411" name="gene_3411">
+</scanned-sequence>
+<scanned-sequence accession="gene_3413" name="gene_3413">
+</scanned-sequence>
+<scanned-sequence accession="gene_3414" name="gene_3414">
+<matched-element start="721" stop="732" score="10.6837" pvalue="5.61e-05">
+<sequence>TGGGCCAACAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3415" name="gene_3415">
+</scanned-sequence>
+<scanned-sequence accession="gene_3416" name="gene_3416">
+</scanned-sequence>
+<scanned-sequence accession="gene_3418" name="gene_3418">
+</scanned-sequence>
+<scanned-sequence accession="gene_3419" name="gene_3419">
+</scanned-sequence>
+<scanned-sequence accession="gene_3420" name="gene_3420">
+</scanned-sequence>
+<scanned-sequence accession="gene_3421" name="gene_3421">
+<matched-element start="1002" stop="1013" score="14.1224" pvalue="1.08e-05">
+<sequence>TGGCACATCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+<matched-element start="696" stop="707" score="12.6633" pvalue="2.42e-05">
+<sequence>GAACCCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3422" name="gene_3422">
+</scanned-sequence>
+<scanned-sequence accession="gene_3423" name="gene_3423">
+</scanned-sequence>
+<scanned-sequence accession="gene_3424" name="gene_3424">
+</scanned-sequence>
+<scanned-sequence accession="gene_3425" name="gene_3425">
+</scanned-sequence>
+<scanned-sequence accession="gene_3426" name="gene_3426">
+</scanned-sequence>
+<scanned-sequence accession="gene_3427" name="gene_3427">
+</scanned-sequence>
+<scanned-sequence accession="gene_3428" name="gene_3428">
+</scanned-sequence>
+<scanned-sequence accession="gene_3429" name="gene_3429">
+</scanned-sequence>
+<scanned-sequence accession="gene_3430" name="gene_3430">
+</scanned-sequence>
+<scanned-sequence accession="gene_3431" name="gene_3431">
+</scanned-sequence>
+<scanned-sequence accession="gene_3433" name="gene_3433">
+</scanned-sequence>
+<scanned-sequence accession="gene_3434" name="gene_3434">
+<matched-element start="937" stop="948" score="12.8367" pvalue="2.2e-05">
+<sequence>TGGTACAACAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3435" name="gene_3435">
+</scanned-sequence>
+<scanned-sequence accession="gene_3436" name="gene_3436">
+</scanned-sequence>
+<scanned-sequence accession="gene_3437" name="gene_3437">
+</scanned-sequence>
+<scanned-sequence accession="gene_3438" name="gene_3438">
+<matched-element start="642" stop="631" score="13.6939" pvalue="1.38e-05">
+<sequence>GGGCACTTCAAC</sequence>
+<mem:qvalue>0.737</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3440" name="gene_3440">
+<matched-element start="313" stop="324" score="15.3878" pvalue="4.52e-06">
+<sequence>TGACCCCCCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+<matched-element start="367" stop="378" score="14.9796" pvalue="6.09e-06">
+<sequence>TGGCTCACCAAA</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+<matched-element start="545" stop="534" score="14.1837" pvalue="1.04e-05">
+<sequence>TGAGTCAACAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+<matched-element start="633" stop="622" score="13.3469" pvalue="1.67e-05">
+<sequence>TGAGTCACCAAG</sequence>
+<mem:qvalue>0.789</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3441" name="gene_3441">
+<matched-element start="191" stop="202" score="17.2653" pvalue="8.85e-07">
+<sequence>GGGCACTCCAAC</sequence>
+<mem:qvalue>0.577</mem:qvalue>
+</matched-element>
+<matched-element start="222" stop="211" score="17.2653" pvalue="8.85e-07">
+<sequence>GGGCACTCCAAC</sequence>
+<mem:qvalue>0.577</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3442" name="gene_3442">
+<matched-element start="605" stop="616" score="16.1224" pvalue="2.45e-06">
+<sequence>TGGTCCACCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+<matched-element start="940" stop="951" score="15.8878" pvalue="3e-06">
+<sequence>TAGCCCTCCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+<matched-element start="486" stop="497" score="15.5918" pvalue="4.05e-06">
+<sequence>TGACTCAACAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3443" name="gene_3443">
+<matched-element start="936" stop="925" score="12.6633" pvalue="2.42e-05">
+<sequence>GAACCCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3444" name="gene_3444">
+<matched-element start="548" stop="537" score="15.4898" pvalue="4.16e-06">
+<sequence>GGATTCTCCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+<matched-element start="751" stop="740" score="15.3265" pvalue="4.7e-06">
+<sequence>GAGGTCACCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3446" name="gene_3446">
+</scanned-sequence>
+<scanned-sequence accession="gene_3447" name="gene_3447">
+</scanned-sequence>
+<scanned-sequence accession="gene_3448" name="gene_3448">
+</scanned-sequence>
+<scanned-sequence accession="gene_3449" name="gene_3449">
+</scanned-sequence>
+<scanned-sequence accession="gene_3450" name="gene_3450">
+</scanned-sequence>
+<scanned-sequence accession="gene_3451" name="gene_3451">
+</scanned-sequence>
+<scanned-sequence accession="gene_3452" name="gene_3452">
+<matched-element start="769" stop="780" score="11.2041" pvalue="4.61e-05">
+<sequence>TGACTCACCCAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3453" name="gene_3453">
+</scanned-sequence>
+<scanned-sequence accession="gene_3454" name="gene_3454">
+<matched-element start="672" stop="661" score="10.9082" pvalue="5.15e-05">
+<sequence>TGACTCATCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3455" name="gene_3455">
+</scanned-sequence>
+<scanned-sequence accession="gene_3456" name="gene_3456">
+</scanned-sequence>
+<scanned-sequence accession="gene_3457" name="gene_3457">
+</scanned-sequence>
+<scanned-sequence accession="gene_3458" name="gene_3458">
+<matched-element start="62" stop="73" score="14.6837" pvalue="7.55e-06">
+<sequence>GGGCCCTCCCAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3459" name="gene_3459">
+</scanned-sequence>
+<scanned-sequence accession="gene_3460" name="gene_3460">
+</scanned-sequence>
+<scanned-sequence accession="gene_3461" name="gene_3461">
+</scanned-sequence>
+<scanned-sequence accession="gene_3462" name="gene_3462">
+</scanned-sequence>
+<scanned-sequence accession="gene_3464" name="gene_3464">
+</scanned-sequence>
+<scanned-sequence accession="gene_3465" name="gene_3465">
+</scanned-sequence>
+<scanned-sequence accession="gene_3466" name="gene_3466">
+</scanned-sequence>
+<scanned-sequence accession="gene_3467" name="gene_3467">
+</scanned-sequence>
+<scanned-sequence accession="gene_3468" name="gene_3468">
+</scanned-sequence>
+<scanned-sequence accession="gene_3469" name="gene_3469">
+</scanned-sequence>
+<scanned-sequence accession="gene_3470" name="gene_3470">
+</scanned-sequence>
+<scanned-sequence accession="gene_3471" name="gene_3471">
+</scanned-sequence>
+<scanned-sequence accession="gene_3473" name="gene_3473">
+</scanned-sequence>
+<scanned-sequence accession="gene_3474" name="gene_3474">
+<matched-element start="983" stop="972" score="12.2551" pvalue="2.97e-05">
+<sequence>TAGCACACCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3475" name="gene_3475">
+</scanned-sequence>
+<scanned-sequence accession="gene_3476" name="gene_3476">
+</scanned-sequence>
+<scanned-sequence accession="gene_3477" name="gene_3477">
+</scanned-sequence>
+<scanned-sequence accession="gene_3478" name="gene_3478">
+</scanned-sequence>
+<scanned-sequence accession="gene_3479" name="gene_3479">
+</scanned-sequence>
+<scanned-sequence accession="gene_3480" name="gene_3480">
+<matched-element start="329" stop="340" score="12.1939" pvalue="3.06e-05">
+<sequence>TGATCCACCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3481" name="gene_3481">
+</scanned-sequence>
+<scanned-sequence accession="gene_3482" name="gene_3482">
+</scanned-sequence>
+<scanned-sequence accession="gene_3483" name="gene_3483">
+</scanned-sequence>
+<scanned-sequence accession="gene_3486" name="gene_3486">
+</scanned-sequence>
+<scanned-sequence accession="gene_3487" name="gene_3487">
+</scanned-sequence>
+<scanned-sequence accession="gene_3488" name="gene_3488">
+</scanned-sequence>
+<scanned-sequence accession="gene_3489" name="gene_3489">
+</scanned-sequence>
+<scanned-sequence accession="gene_3490" name="gene_3490">
+</scanned-sequence>
+<scanned-sequence accession="gene_3491" name="gene_3491">
+</scanned-sequence>
+<scanned-sequence accession="gene_3492" name="gene_3492">
+</scanned-sequence>
+<scanned-sequence accession="gene_3493" name="gene_3493">
+</scanned-sequence>
+<scanned-sequence accession="gene_3494" name="gene_3494">
+</scanned-sequence>
+<scanned-sequence accession="gene_3495" name="gene_3495">
+</scanned-sequence>
+<scanned-sequence accession="gene_3496" name="gene_3496">
+<matched-element start="822" stop="811" score="10.6939" pvalue="5.58e-05">
+<sequence>GAATTCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3497" name="gene_3497">
+<matched-element start="182" stop="193" score="15.7857" pvalue="3.33e-06">
+<sequence>TGAGACACCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3498" name="gene_3498">
+</scanned-sequence>
+<scanned-sequence accession="gene_3499" name="gene_3499">
+</scanned-sequence>
+<scanned-sequence accession="gene_3500" name="gene_3500">
+<matched-element start="545" stop="534" score="10.4898" pvalue="5.93e-05">
+<sequence>TGACACACCCAG</sequence>
+<mem:qvalue>0.812</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3501" name="gene_3501">
+<matched-element start="563" stop="552" score="13.7857" pvalue="1.3e-05">
+<sequence>TGGGACCCCAAC</sequence>
+<mem:qvalue>0.733</mem:qvalue>
+</matched-element>
+<matched-element start="101" stop="112" score="10.9898" pvalue="4.98e-05">
+<sequence>TGGCACACCCAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3502" name="gene_3502">
+</scanned-sequence>
+<scanned-sequence accession="gene_3503" name="gene_3503">
+</scanned-sequence>
+<scanned-sequence accession="gene_3504" name="gene_3504">
+</scanned-sequence>
+<scanned-sequence accession="gene_3505" name="gene_3505">
+<matched-element start="427" stop="416" score="10.9082" pvalue="5.15e-05">
+<sequence>TGACTCATCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3506" name="gene_3506">
+</scanned-sequence>
+<scanned-sequence accession="gene_3507" name="gene_3507">
+<matched-element start="922" stop="911" score="11.7449" pvalue="3.75e-05">
+<sequence>GGGCTCATCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3509+gene_3510" name="gene_3509+gene_3510">
+</scanned-sequence>
+<scanned-sequence accession="gene_3511" name="gene_3511">
+</scanned-sequence>
+<scanned-sequence accession="gene_3512" name="gene_3512">
+</scanned-sequence>
+<scanned-sequence accession="gene_3513" name="gene_3513">
+<matched-element start="476" stop="487" score="13.9796" pvalue="1.17e-05">
+<sequence>TGAGCCCCCAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3514" name="gene_3514">
+</scanned-sequence>
+<scanned-sequence accession="gene_3516" name="gene_3516">
+</scanned-sequence>
+<scanned-sequence accession="gene_3517" name="gene_3517">
+<matched-element start="143" stop="132" score="10.4796" pvalue="5.98e-05">
+<sequence>GAATACCCCAAC</sequence>
+<mem:qvalue>0.812</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3519" name="gene_3519">
+<matched-element start="756" stop="745" score="11.2041" pvalue="4.61e-05">
+<sequence>TGACTCACCCAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3520" name="gene_3520">
+<matched-element start="699" stop="688" score="12.0408" pvalue="3.3e-05">
+<sequence>GAACTCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3521" name="gene_3521">
+</scanned-sequence>
+<scanned-sequence accession="gene_3522+gene_3523" name="gene_3522+gene_3523">
+<matched-element start="55" stop="66" score="11.4796" pvalue="4.14e-05">
+<sequence>TGACTCACCCAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3524" name="gene_3524">
+</scanned-sequence>
+<scanned-sequence accession="gene_3525" name="gene_3525">
+</scanned-sequence>
+<scanned-sequence accession="gene_3526" name="gene_3526">
+</scanned-sequence>
+<scanned-sequence accession="gene_3527" name="gene_3527">
+</scanned-sequence>
+<scanned-sequence accession="gene_3528" name="gene_3528">
+</scanned-sequence>
+<scanned-sequence accession="gene_3529" name="gene_3529">
+</scanned-sequence>
+<scanned-sequence accession="gene_3530" name="gene_3530">
+</scanned-sequence>
+<scanned-sequence accession="gene_3531" name="gene_3531">
+</scanned-sequence>
+<scanned-sequence accession="gene_3532" name="gene_3532">
+</scanned-sequence>
+<scanned-sequence accession="gene_3533" name="gene_3533">
+</scanned-sequence>
+<scanned-sequence accession="gene_3534" name="gene_3534">
+</scanned-sequence>
+<scanned-sequence accession="gene_3535" name="gene_3535">
+</scanned-sequence>
+<scanned-sequence accession="gene_3536" name="gene_3536">
+</scanned-sequence>
+<scanned-sequence accession="gene_3537" name="gene_3537">
+</scanned-sequence>
+<scanned-sequence accession="gene_3538" name="gene_3538">
+</scanned-sequence>
+<scanned-sequence accession="gene_3539" name="gene_3539">
+</scanned-sequence>
+<scanned-sequence accession="gene_3540" name="gene_3540">
+</scanned-sequence>
+<scanned-sequence accession="gene_3541" name="gene_3541">
+<matched-element start="488" stop="499" score="12.0408" pvalue="3.3e-05">
+<sequence>GAACTCTCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3542" name="gene_3542">
+<matched-element start="221" stop="210" score="12.3163" pvalue="2.91e-05">
+<sequence>GAGCACACCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3543" name="gene_3543">
+</scanned-sequence>
+<scanned-sequence accession="gene_3544" name="gene_3544">
+</scanned-sequence>
+<scanned-sequence accession="gene_3545" name="gene_3545">
+</scanned-sequence>
+<scanned-sequence accession="gene_3546" name="gene_3546">
+</scanned-sequence>
+<scanned-sequence accession="gene_3547" name="gene_3547">
+</scanned-sequence>
+<scanned-sequence accession="gene_3550" name="gene_3550">
+</scanned-sequence>
+<scanned-sequence accession="gene_3551" name="gene_3551">
+<matched-element start="1026" stop="1037" score="10.9184" pvalue="5.1e-05">
+<sequence>TGGCCCTCCCAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3552" name="gene_3552">
+</scanned-sequence>
+<scanned-sequence accession="gene_3553" name="gene_3553">
+</scanned-sequence>
+<scanned-sequence accession="gene_3554" name="gene_3554">
+</scanned-sequence>
+<scanned-sequence accession="gene_3556" name="gene_3556">
+</scanned-sequence>
+<scanned-sequence accession="gene_3557" name="gene_3557">
+</scanned-sequence>
+<scanned-sequence accession="gene_3558" name="gene_3558">
+</scanned-sequence>
+<scanned-sequence accession="gene_3559" name="gene_3559">
+</scanned-sequence>
+<scanned-sequence accession="gene_3560" name="gene_3560">
+</scanned-sequence>
+<scanned-sequence accession="gene_3561" name="gene_3561">
+</scanned-sequence>
+<scanned-sequence accession="gene_3562" name="gene_3562">
+<matched-element start="334" stop="323" score="14.2653" pvalue="9.86e-06">
+<sequence>TGGCACACCAAG</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3563" name="gene_3563">
+</scanned-sequence>
+<scanned-sequence accession="gene_3564" name="gene_3564">
+</scanned-sequence>
+<scanned-sequence accession="gene_3565" name="gene_3565">
+</scanned-sequence>
+<scanned-sequence accession="gene_3566" name="gene_3566">
+</scanned-sequence>
+<scanned-sequence accession="gene_3567" name="gene_3567">
+</scanned-sequence>
+<scanned-sequence accession="gene_3568" name="gene_3568">
+</scanned-sequence>
+<scanned-sequence accession="gene_3569" name="gene_3569">
+</scanned-sequence>
+<scanned-sequence accession="gene_3570" name="gene_3570">
+<matched-element start="670" stop="681" score="13.9898" pvalue="1.14e-05">
+<sequence>TGGCACACCAAA</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3571" name="gene_3571">
+</scanned-sequence>
+<scanned-sequence accession="gene_3574" name="gene_3574">
+</scanned-sequence>
+<scanned-sequence accession="gene_3575" name="gene_3575">
+</scanned-sequence>
+<scanned-sequence accession="gene_3576" name="gene_3576">
+</scanned-sequence>
+<scanned-sequence accession="gene_3577" name="gene_3577">
+<matched-element start="732" stop="721" score="11.3878" pvalue="4.32e-05">
+<sequence>TAAGCCTACAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3578" name="gene_3578">
+</scanned-sequence>
+<scanned-sequence accession="gene_3579" name="gene_3579">
+</scanned-sequence>
+<scanned-sequence accession="gene_3580" name="gene_3580">
+</scanned-sequence>
+<scanned-sequence accession="gene_3582" name="gene_3582">
+</scanned-sequence>
+<scanned-sequence accession="gene_3583" name="gene_3583">
+</scanned-sequence>
+<scanned-sequence accession="gene_3584" name="gene_3584">
+</scanned-sequence>
+<scanned-sequence accession="gene_3585" name="gene_3585">
+<matched-element start="746" stop="757" score="10.6122" pvalue="5.71e-05">
+<sequence>GGGTTCAACCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3586" name="gene_3586">
+</scanned-sequence>
+<scanned-sequence accession="gene_3587" name="gene_3587">
+</scanned-sequence>
+<scanned-sequence accession="gene_3589" name="gene_3589">
+</scanned-sequence>
+<scanned-sequence accession="gene_3590" name="gene_3590">
+</scanned-sequence>
+<scanned-sequence accession="gene_3591" name="gene_3591">
+</scanned-sequence>
+<scanned-sequence accession="gene_3592" name="gene_3592">
+</scanned-sequence>
+<scanned-sequence accession="gene_3593" name="gene_3593">
+</scanned-sequence>
+<scanned-sequence accession="gene_3594" name="gene_3594">
+<matched-element start="1039" stop="1050" score="13.1224" pvalue="1.89e-05">
+<sequence>TAATCCTCCAAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3595" name="gene_3595">
+</scanned-sequence>
+<scanned-sequence accession="gene_3596" name="gene_3596">
+</scanned-sequence>
+<scanned-sequence accession="gene_3597+gene_3598" name="gene_3597+gene_3598">
+</scanned-sequence>
+<scanned-sequence accession="gene_3599" name="gene_3599">
+</scanned-sequence>
+<scanned-sequence accession="gene_3600" name="gene_3600">
+</scanned-sequence>
+<scanned-sequence accession="gene_3601" name="gene_3601">
+</scanned-sequence>
+<scanned-sequence accession="gene_3602" name="gene_3602">
+</scanned-sequence>
+<scanned-sequence accession="gene_3603" name="gene_3603">
+</scanned-sequence>
+<scanned-sequence accession="gene_3604" name="gene_3604">
+</scanned-sequence>
+<scanned-sequence accession="gene_3605" name="gene_3605">
+</scanned-sequence>
+<scanned-sequence accession="gene_3607" name="gene_3607">
+</scanned-sequence>
+<scanned-sequence accession="gene_3608" name="gene_3608">
+</scanned-sequence>
+<scanned-sequence accession="gene_3609" name="gene_3609">
+</scanned-sequence>
+<scanned-sequence accession="gene_3610" name="gene_3610">
+</scanned-sequence>
+<scanned-sequence accession="gene_3611+gene_3612" name="gene_3611+gene_3612">
+</scanned-sequence>
+<scanned-sequence accession="gene_3613" name="gene_3613">
+</scanned-sequence>
+<scanned-sequence accession="gene_3614" name="gene_3614">
+</scanned-sequence>
+<scanned-sequence accession="gene_3615" name="gene_3615">
+<matched-element start="238" stop="249" score="11.898" pvalue="3.51e-05">
+<sequence>GGGCTCATCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3616" name="gene_3616">
+</scanned-sequence>
+<scanned-sequence accession="gene_3617" name="gene_3617">
+</scanned-sequence>
+<scanned-sequence accession="gene_3618" name="gene_3618">
+</scanned-sequence>
+<scanned-sequence accession="gene_3619" name="gene_3619">
+</scanned-sequence>
+<scanned-sequence accession="gene_3620" name="gene_3620">
+</scanned-sequence>
+<scanned-sequence accession="gene_3622" name="gene_3622">
+</scanned-sequence>
+<scanned-sequence accession="gene_3623" name="gene_3623">
+</scanned-sequence>
+<scanned-sequence accession="gene_3624" name="gene_3624">
+</scanned-sequence>
+<scanned-sequence accession="gene_3625" name="gene_3625">
+<matched-element start="622" stop="611" score="11.6224" pvalue="3.94e-05">
+<sequence>GAGGTCACCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+<matched-element start="841" stop="852" score="10.6939" pvalue="5.58e-05">
+<sequence>GAATTCACCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3626" name="gene_3626">
+</scanned-sequence>
+<scanned-sequence accession="gene_3627" name="gene_3627">
+</scanned-sequence>
+<scanned-sequence accession="gene_3628" name="gene_3628">
+<matched-element start="944" stop="933" score="14.4898" pvalue="8.46e-06">
+<sequence>TGGCTCTCCAAA</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3629" name="gene_3629">
+</scanned-sequence>
+<scanned-sequence accession="gene_3630" name="gene_3630">
+<matched-element start="933" stop="922" score="11.0612" pvalue="4.86e-05">
+<sequence>TAAGTCACCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3631" name="gene_3631">
+</scanned-sequence>
+<scanned-sequence accession="gene_3632" name="gene_3632">
+</scanned-sequence>
+<scanned-sequence accession="gene_3634" name="gene_3634">
+</scanned-sequence>
+<scanned-sequence accession="gene_3635" name="gene_3635">
+</scanned-sequence>
+<scanned-sequence accession="gene_3636" name="gene_3636">
+</scanned-sequence>
+<scanned-sequence accession="gene_3637" name="gene_3637">
+</scanned-sequence>
+<scanned-sequence accession="gene_3638" name="gene_3638">
+</scanned-sequence>
+<scanned-sequence accession="gene_3639" name="gene_3639">
+</scanned-sequence>
+<scanned-sequence accession="gene_3640" name="gene_3640">
+</scanned-sequence>
+<scanned-sequence accession="gene_3641" name="gene_3641">
+</scanned-sequence>
+<scanned-sequence accession="gene_3642" name="gene_3642">
+</scanned-sequence>
+<scanned-sequence accession="gene_3643" name="gene_3643">
+</scanned-sequence>
+<scanned-sequence accession="gene_3644" name="gene_3644">
+</scanned-sequence>
+<scanned-sequence accession="gene_3645" name="gene_3645">
+</scanned-sequence>
+<scanned-sequence accession="gene_3646" name="gene_3646">
+</scanned-sequence>
+<scanned-sequence accession="gene_3647" name="gene_3647">
+</scanned-sequence>
+<scanned-sequence accession="gene_3648" name="gene_3648">
+<matched-element start="489" stop="500" score="13.949" pvalue="1.19e-05">
+<sequence>GGAGCCAACAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3649" name="gene_3649">
+</scanned-sequence>
+<scanned-sequence accession="gene_3650" name="gene_3650">
+<matched-element start="932" stop="921" score="10.6327" pvalue="5.68e-05">
+<sequence>GGAGTCCCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3651" name="gene_3651">
+</scanned-sequence>
+<scanned-sequence accession="gene_3652" name="gene_3652">
+</scanned-sequence>
+<scanned-sequence accession="gene_3653" name="gene_3653">
+</scanned-sequence>
+<scanned-sequence accession="gene_3654" name="gene_3654">
+</scanned-sequence>
+<scanned-sequence accession="gene_3655" name="gene_3655">
+<matched-element start="945" stop="934" score="11.102" pvalue="4.8e-05">
+<sequence>GAAGCCACCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3656" name="gene_3656">
+</scanned-sequence>
+<scanned-sequence accession="gene_3657" name="gene_3657">
+</scanned-sequence>
+<scanned-sequence accession="gene_3658" name="gene_3658">
+</scanned-sequence>
+<scanned-sequence accession="gene_3659" name="gene_3659">
+</scanned-sequence>
+<scanned-sequence accession="gene_3660" name="gene_3660">
+</scanned-sequence>
+<scanned-sequence accession="gene_3661+gene_3662" name="gene_3661+gene_3662">
+</scanned-sequence>
+<scanned-sequence accession="gene_3663" name="gene_3663">
+</scanned-sequence>
+<scanned-sequence accession="gene_3664" name="gene_3664">
+</scanned-sequence>
+<scanned-sequence accession="gene_3665" name="gene_3665">
+</scanned-sequence>
+<scanned-sequence accession="gene_3666" name="gene_3666">
+</scanned-sequence>
+<scanned-sequence accession="gene_3668" name="gene_3668">
+</scanned-sequence>
+<scanned-sequence accession="gene_3670" name="gene_3670">
+</scanned-sequence>
+<scanned-sequence accession="gene_3671" name="gene_3671">
+</scanned-sequence>
+<scanned-sequence accession="gene_3672" name="gene_3672">
+<matched-element start="391" stop="380" score="14.449" pvalue="8.9e-06">
+<sequence>GGGGCCAACAAC</sequence>
+<mem:qvalue>0.724</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3673" name="gene_3673">
+</scanned-sequence>
+<scanned-sequence accession="gene_3674" name="gene_3674">
+</scanned-sequence>
+<scanned-sequence accession="gene_3675" name="gene_3675">
+</scanned-sequence>
+<scanned-sequence accession="gene_3676" name="gene_3676">
+</scanned-sequence>
+<scanned-sequence accession="gene_3677" name="gene_3677">
+</scanned-sequence>
+<scanned-sequence accession="gene_3678" name="gene_3678">
+</scanned-sequence>
+<scanned-sequence accession="gene_3679" name="gene_3679">
+</scanned-sequence>
+<scanned-sequence accession="gene_3680" name="gene_3680">
+<matched-element start="699" stop="688" score="11.6531" pvalue="3.91e-05">
+<sequence>GGACCCAACAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3682" name="gene_3682">
+</scanned-sequence>
+<scanned-sequence accession="gene_3683" name="gene_3683">
+</scanned-sequence>
+<scanned-sequence accession="gene_3684" name="gene_3684">
+</scanned-sequence>
+<scanned-sequence accession="gene_3685" name="gene_3685">
+</scanned-sequence>
+<scanned-sequence accession="gene_3686" name="gene_3686">
+</scanned-sequence>
+<scanned-sequence accession="gene_3687" name="gene_3687">
+</scanned-sequence>
+<scanned-sequence accession="gene_3688" name="gene_3688">
+</scanned-sequence>
+<scanned-sequence accession="gene_3689" name="gene_3689">
+</scanned-sequence>
+<scanned-sequence accession="gene_3690" name="gene_3690">
+</scanned-sequence>
+<scanned-sequence accession="gene_3691" name="gene_3691">
+<matched-element start="32" stop="43" score="10.9796" pvalue="5.01e-05">
+<sequence>TAGTTCACCAAG</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+<matched-element start="363" stop="352" score="10.7653" pvalue="5.42e-05">
+<sequence>GAAGCCTCCCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3692" name="gene_3692">
+</scanned-sequence>
+<scanned-sequence accession="gene_3693" name="gene_3693">
+<matched-element start="231" stop="242" score="10.8367" pvalue="5.29e-05">
+<sequence>GGGGCCCCCAAA</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3694" name="gene_3694">
+</scanned-sequence>
+<scanned-sequence accession="gene_3695" name="gene_3695">
+</scanned-sequence>
+<scanned-sequence accession="gene_3696" name="gene_3696">
+</scanned-sequence>
+<scanned-sequence accession="gene_3697" name="gene_3697">
+</scanned-sequence>
+<scanned-sequence accession="gene_3698" name="gene_3698">
+<matched-element start="308" stop="319" score="10.9694" pvalue="5.04e-05">
+<sequence>GGAGTCAACCAC</sequence>
+<mem:qvalue>0.801</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="gene_3699" name="gene_3699">
+</scanned-sequence>
+<scanned-sequence accession="gene_3700" name="gene_3700">
+</scanned-sequence>
+<scanned-sequence accession="gene_3702" name="gene_3702">
+</scanned-sequence>
+<scanned-sequence accession="gene_3703" name="gene_3703">
+</scanned-sequence>
+<scanned-sequence accession="gene_3704" name="gene_3704">
+</scanned-sequence>
+<scanned-sequence accession="gene_3705" name="gene_3705">
+</scanned-sequence>
+<scanned-sequence accession="gene_3706" name="gene_3706">
+</scanned-sequence>
+<scanned-sequence accession="gene_3707" name="gene_3707">
+</scanned-sequence>
+<scanned-sequence accession="gene_3708" name="gene_3708">
+</scanned-sequence>
+<scanned-sequence accession="gene_3709" name="gene_3709">
+</scanned-sequence>
+<scanned-sequence accession="gene_3710+gene_3711" name="gene_3710+gene_3711">
+</scanned-sequence>
+<scanned-sequence accession="gene_3712" name="gene_3712">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+</cis-element-search>

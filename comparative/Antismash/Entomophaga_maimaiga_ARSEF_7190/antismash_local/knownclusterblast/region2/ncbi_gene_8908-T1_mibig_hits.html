@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>BBF25314.1</td>
+              <td>NRPS-like_oxidoreductase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001923/1">BGC0001923</a></td>
+              <td>Terpene + Polyketide</td>
+              <td>27.0</td>
+              <td>105.6</td>
+              <td>262.0</td>
+              <td>3.5e-69</td>
+          </tr>
+    
+          <tr>
+              <td>BAV19380.1</td>
+              <td>NRPS-like_enzyme</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001390/1">BGC0001390</a></td>
+              <td>NRP + Polyketide</td>
+              <td>25.0</td>
+              <td>105.6</td>
+              <td>217.0</td>
+              <td>9.8e-56</td>
+          </tr>
+    
+          <tr>
+              <td>KFA69336.1</td>
+              <td>hypothetical_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001626/1">BGC0001626</a></td>
+              <td>Polyketide</td>
+              <td>25.0</td>
+              <td>102.7</td>
+              <td>215.0</td>
+              <td>3.7e-55</td>
+          </tr>
+    
+          <tr>
+              <td>ALI92655.1</td>
+              <td>CitS_citrinin_polyketide_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001338/1">BGC0001338</a></td>
+              <td>Polyketide:Iterative type I</td>
+              <td>31.0</td>
+              <td>45.5</td>
+              <td>153.0</td>
+              <td>2.3e-36</td>
+          </tr>
+    
+          <tr>
+              <td>ADH01663.1</td>
+              <td>putative_polyketide_synthase_PKS3</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000099/1">BGC0000099</a></td>
+              <td>Polyketide</td>
+              <td>28.0</td>
+              <td>45.4</td>
+              <td>139.0</td>
+              <td>2.6e-32</td>
+          </tr>
+    
+          <tr>
+              <td>EED18001.1</td>
+              <td>NR-PKS</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000154/1">BGC0000154</a></td>
+              <td>Polyketide:Iterative type I</td>
+              <td>29.0</td>
+              <td>43.7</td>
+              <td>133.0</td>
+              <td>1.4e-30</td>
+          </tr>
+    
+          <tr>
+              <td>AWM95789.1</td>
+              <td>non-reduciing_polyketide_synthase_methylorcinaldehyde_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001827/1">BGC0001827</a></td>
+              <td>Polyketide</td>
+              <td>26.0</td>
+              <td>50.3</td>
+              <td>129.0</td>
+              <td>2.7e-29</td>
+          </tr>
+    
+          <tr>
+              <td>AGN71604.1</td>
+              <td>conidial_yellow_pigment_biosynthesis_polyketide_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000027/1">BGC0000027</a></td>
+              <td>Polyketide:Iterative type I</td>
+              <td>27.0</td>
+              <td>41.9</td>
+              <td>123.0</td>
+              <td>1.9e-27</td>
+          </tr>
+    
+          <tr>
+              <td>EAA65602.1</td>
+              <td>hypothetical_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000022/1">BGC0000022</a></td>
+              <td>Polyketide</td>
+              <td>28.0</td>
+              <td>41.1</td>
+              <td>121.0</td>
+              <td>5.6e-27</td>
+          </tr>
+    
+          <tr>
+              <td>CCE67070.1</td>
+              <td>polyketide_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001242/1">BGC0001242</a></td>
+              <td>Polyketide</td>
+              <td>27.0</td>
+              <td>41.1</td>
+              <td>112.0</td>
+              <td>4.4e-24</td>
+          </tr>
+    
+          <tr>
+              <td>CBF83139.1</td>
+              <td>polyketide_synthase,_putative_(JCVI)</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001722/1">BGC0001722</a></td>
+              <td>Polyketide</td>
+              <td>28.0</td>
+              <td>39.8</td>
+              <td>111.0</td>
+              <td>5.8e-24</td>
+          </tr>
+    
+          <tr>
+              <td>QCO93110.1</td>
+              <td>polyketide_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001977/1">BGC0001977</a></td>
+              <td>Other</td>
+              <td>26.0</td>
+              <td>43.6</td>
+              <td>109.0</td>
+              <td>2.2e-23</td>
+          </tr>
+    
+          <tr>
+              <td>CAP95404.1</td>
+              <td></td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001404/1">BGC0001404</a></td>
+              <td>Polyketide</td>
+              <td>26.0</td>
+              <td>42.1</td>
+              <td>107.0</td>
+              <td>1.1e-22</td>
+          </tr>
+    
+          <tr>
+              <td>BAO84866.1</td>
+              <td>putative_non-ribosomal_peptide_synthetase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000414/1">BGC0000414</a></td>
+              <td>NRP</td>
+              <td>22.0</td>
+              <td>106.5</td>
+              <td>78.0</td>
+              <td>7.1e-14</td>
+          </tr>
+    
+          <tr>
+              <td>AGD80618.1</td>
+              <td>non-ribosomal_peptide_synthetase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000394/1">BGC0000394</a></td>
+              <td>NRP</td>
+              <td>22.0</td>
+              <td>44.1</td>
+              <td>68.0</td>
+              <td>7.3e-11</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

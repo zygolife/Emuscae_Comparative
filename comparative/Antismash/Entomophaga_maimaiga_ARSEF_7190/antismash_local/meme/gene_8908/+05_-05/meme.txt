@@ -1,0 +1,257 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 4.11.2 (Release date: Thu May 05 14:58:55 2016 -0700)
+
+For further information on how to interpret these results or to get
+a copy of the MEME software please access http://meme-suite.org .
+
+This file may be used as input to the MAST algorithm for searching
+sequence databases for matches to groups of motifs.  MAST is available
+for interactive use and downloading at http://meme-suite.org .
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to discover
+motifs in biopolymers", Proceedings of the Second International
+Conference on Intelligent Systems for Molecular Biology, pp. 28-36,
+AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+DATAFILE= /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Entomophaga_maimaiga_ARSEF_7190/antismash_local/meme/gene_8908/+05_-05/promoters.fasta
+ALPHABET= ACGT
+Sequence name            Weight Length  Sequence name            Weight Length  
+-------------            ------ ------  -------------            ------ ------  
+gene_8901+gene_8902      1.0000    148  gene_8903                1.0000   1051  
+gene_8904                1.0000   1051  gene_8905                1.0000    516  
+gene_8907                1.0000   1051  gene_8908__ANCHOR        1.0000   1051  
+gene_8909                1.0000   1051  gene_8910                1.0000   1051  
+gene_8911                1.0000   1051  gene_8912                1.0000   1051  
+gene_8913                1.0000   1051  
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Entomophaga_maimaiga_ARSEF_7190/antismash_local/meme/gene_8908/+05_-05/promoters.fasta -oc /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/comparative/Antismash/Entomophaga_maimaiga_ARSEF_7190/antismash_local/meme/gene_8908/+05_-05 -dna -nostatus -mod anr -nmotifs 1 -minw 6 -maxw 12 -revcomp -evt 1.0e+005 
+
+model:  mod=           anr    nmotifs=         1    evt=        100000
+object function=  E-value of product of p-values
+width:  minw=            6    maxw=           12
+width:  wg=             11    ws=              1    endgaps=       yes
+nsites: minsites=        2    maxsites=       50    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+global: substring=     yes    branching=      no    wbranch=        no
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+data:   n=           10123    N=              11    shuffle=        -1
+strands: + -
+sample: seed=            0    ctfrac=         -1    maxwords=       -1
+Letter frequencies in dataset:
+A 0.317 C 0.183 G 0.183 T 0.317 
+Background letter frequencies (from dataset with add-one prior applied):
+A 0.317 C 0.183 G 0.183 T 0.317 
+********************************************************************************
+
+
+********************************************************************************
+MOTIF  1 MEME	width =  11  sites =  20  llr = 211  E-value = 4.5e-003
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif 1 Description
+--------------------------------------------------------------------------------
+Simplified        A  ::::::41::3
+pos.-specific     C  :2:6::::::4
+probability       G  9884:4764a3
+matrix            T  1:2:a7:47:1
+
+         bits    2.4          * 
+                 2.2          * 
+                 2.0 *        * 
+                 1.7 **  *    * 
+Relative         1.5 *****    * 
+Entropy          1.2 ***** *  * 
+(15.2 bits)      1.0 ******* ** 
+                 0.7 ********** 
+                 0.5 ***********
+                 0.2 ***********
+                 0.0 -----------
+
+Multilevel           GGGCTTGGTGC
+consensus             CTG GATG G
+sequence                       A
+                                
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value               Site  
+-------------            ------  ----- ---------            -----------
+gene_8907                    -    361  9.97e-08 TAATACGTGA GGGCTGGGTGC ATAAGCGTTG
+gene_8905                    +    110  9.97e-08 AGTTAGCTTG GGGCTTGGGGC TAAAAGTGAG
+gene_8905                    +    352  2.99e-07 TTTTGCCCCC GGGGTTGGGGC AAAAGGTCAG
+gene_8905                    +     63  2.99e-07 GGGTCTGGAA GGGGTTGGGGC AATGGGGCTT
+gene_8905                    +     36  3.99e-07 AAGTCGGTTT GGGGTTGGTGG AGGGTTGGGT
+gene_8903                    -     18  2.42e-06 AAACATTTGT GGGGTGAGTGG GCTGGATTGT
+gene_8907                    -     38  2.60e-06 GGCCAGTTAT GGTCTTGGTGC CCGTTATGTT
+gene_8912                    -    413  3.00e-06 AGTTAAGGGC GGGCTGGTGGA ATTTTTGGGT
+gene_8911                    +    882  5.06e-06 TATTGGAGGT GGGCTGATTGG GATGATGAGA
+gene_8903                    +    852  7.68e-06 GTGAATTATT TGGCTTGGTGC AGCCCTTCGT
+gene_8907                    -    395  9.44e-06 TATGTACAGA GCGGTTGTTGG CTGGGACACT
+gene_8913                    +    807  1.03e-05 GCCAAAGCTT GGGCTGATTGA CGTTGTGATG
+gene_8909                    +    205  1.49e-05 ACCTGCTTGT GCTCTGGGTGG TCTTAAAAGG
+gene_8911                    +    511  1.65e-05 TCAAACTGGT GGGCTTAATGG GAATGAATTA
+gene_8908__ANCHOR            -    454  1.65e-05 GAGATGAATT GGGGTTGAGGA ACTCCAAGCG
+gene_8905                    -    400  1.65e-05 GTGAAAAAGT GGGCTGAGGGT AGGGATCACA
+gene_8904                    +     39  1.89e-05 AGAACTCTTG GCGGTTATTGC AGATGGTGTT
+gene_8909                    +    355  2.63e-05 TAACAGGAAA GGTGTTGTTGA TGGCCATTAT
+gene_8907                    -    913  2.86e-05 CTGTAGGTAT GCTCTTAGGGC GGCGTCTTTG
+gene_8913                    -     25  3.51e-05 TCGATAAACA TGGCTTGTTGA TCACTAATGG
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+gene_8907                         2.9e-05  37_[-1]_312_[-1]_23_[-1]_507_[-1]_128
+gene_8905                         1.6e-05  35_[+1]_16_[+1]_36_[+1]_231_[+1]_
+                                           37_[-1]_106
+gene_8903                         2.4e-06  17_[-1]_823_[+1]_189
+gene_8912                           3e-06  412_[-1]_628
+gene_8911                         1.6e-05  510_[+1]_360_[+1]_159
+gene_8913                         3.5e-05  24_[-1]_771_[+1]_234
+gene_8909                         2.6e-05  204_[+1]_139_[+1]_686
+gene_8908__ANCHOR                 1.6e-05  453_[-1]_587
+gene_8904                         1.9e-05  38_[+1]_1002
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF 1 width=11 seqs=20
+gene_8907                (  361) GGGCTGGGTGC  1 
+gene_8905                (  110) GGGCTTGGGGC  1 
+gene_8905                (  352) GGGGTTGGGGC  1 
+gene_8905                (   63) GGGGTTGGGGC  1 
+gene_8905                (   36) GGGGTTGGTGG  1 
+gene_8903                (   18) GGGGTGAGTGG  1 
+gene_8907                (   38) GGTCTTGGTGC  1 
+gene_8912                (  413) GGGCTGGTGGA  1 
+gene_8911                (  882) GGGCTGATTGG  1 
+gene_8903                (  852) TGGCTTGGTGC  1 
+gene_8907                (  395) GCGGTTGTTGG  1 
+gene_8913                (  807) GGGCTGATTGA  1 
+gene_8909                (  205) GCTCTGGGTGG  1 
+gene_8911                (  511) GGGCTTAATGG  1 
+gene_8908__ANCHOR        (  454) GGGGTTGAGGA  1 
+gene_8905                (  400) GGGCTGAGGGT  1 
+gene_8904                (   39) GCGGTTATTGC  1 
+gene_8909                (  355) GGTGTTGTTGA  1 
+gene_8907                (  913) GCTCTTAGGGC  1 
+gene_8913                (   25) TGGCTTGTTGA  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 11 n= 10013 bayes= 10.8034 E= 4.5e-003 
+ -1097  -1097    230   -166 
+ -1097     13    213  -1097 
+ -1097  -1097    213    -66 
+ -1097    171    113  -1097 
+ -1097  -1097  -1097    166 
+ -1097  -1097     93    104 
+    14  -1097    183  -1097 
+  -166  -1097    159     14 
+ -1097  -1097     93    104 
+ -1097  -1097    245  -1097 
+   -34    113     71   -266 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 11 nsites= 20 E= 4.5e-003 
+ 0.000000  0.000000  0.900000  0.100000 
+ 0.000000  0.200000  0.800000  0.000000 
+ 0.000000  0.000000  0.800000  0.200000 
+ 0.000000  0.600000  0.400000  0.000000 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.000000  0.000000  0.350000  0.650000 
+ 0.350000  0.000000  0.650000  0.000000 
+ 0.100000  0.000000  0.550000  0.350000 
+ 0.000000  0.000000  0.350000  0.650000 
+ 0.000000  0.000000  1.000000  0.000000 
+ 0.250000  0.400000  0.300000  0.050000 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 regular expression
+--------------------------------------------------------------------------------
+G[GC][GT][CG]T[TG][GA][GT][TG]G[CGA]
+--------------------------------------------------------------------------------
+
+
+
+
+Time 23.48 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+SUMMARY OF MOTIFS
+********************************************************************************
+
+--------------------------------------------------------------------------------
+	Combined block diagrams: non-overlapping sites with p-value < 0.0001
+--------------------------------------------------------------------------------
+SEQUENCE NAME            COMBINED P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+gene_8901+gene_8902              3.81e-01  148
+gene_8903                        5.04e-03  17_[-1(2.42e-06)]_823_\
+    [+1(7.68e-06)]_189
+gene_8904                        3.85e-02  38_[+1(1.89e-05)]_858_\
+    [+1(7.65e-05)]_133
+gene_8905                        1.01e-04  35_[+1(3.99e-07)]_16_[+1(2.99e-07)]_\
+    36_[+1(9.97e-08)]_231_[+1(2.99e-07)]_37_[-1(1.65e-05)]_106
+gene_8907                        2.08e-04  37_[-1(2.60e-06)]_312_\
+    [-1(9.97e-08)]_23_[-1(9.44e-06)]_49_[-1(6.54e-05)]_447_[-1(2.86e-05)]_128
+gene_8908__ANCHOR                3.37e-02  453_[-1(1.65e-05)]_587
+gene_8909                        3.06e-02  204_[+1(1.49e-05)]_139_\
+    [+1(2.63e-05)]_686
+gene_8910                        6.45e-01  1051
+gene_8911                        1.05e-02  510_[+1(1.65e-05)]_360_\
+    [+1(5.06e-06)]_159
+gene_8912                        6.22e-03  412_[-1(3.00e-06)]_628
+gene_8913                        2.12e-02  24_[-1(3.51e-05)]_771_\
+    [+1(1.03e-05)]_234
+--------------------------------------------------------------------------------
+
+********************************************************************************
+
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: c28
+
+********************************************************************************
