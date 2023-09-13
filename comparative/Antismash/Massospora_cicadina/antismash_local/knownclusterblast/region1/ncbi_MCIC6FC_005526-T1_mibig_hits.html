@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>ADQ74616.1</td>
+              <td>isochorismate_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000921/1">BGC0000921</a></td>
+              <td>Polyketide + NRP + Other:Shikimate-derived</td>
+              <td>39.0</td>
+              <td>59.8</td>
+              <td>294.0</td>
+              <td>5.1e-79</td>
+          </tr>
+    
+          <tr>
+              <td>BAF98626.1</td>
+              <td>putative_isochorismate_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000651/1">BGC0000651</a></td>
+              <td>Terpene</td>
+              <td>41.0</td>
+              <td>34.6</td>
+              <td>198.0</td>
+              <td>5e-50</td>
+          </tr>
+    
+          <tr>
+              <td>AEI70242.1</td>
+              <td>isochorismate_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000401/1">BGC0000401</a></td>
+              <td>NRP</td>
+              <td>40.0</td>
+              <td>36.7</td>
+              <td>190.0</td>
+              <td>1e-47</td>
+          </tr>
+    
+          <tr>
+              <td>YP_856993.1</td>
+              <td>isochorismate_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001502/1">BGC0001502</a></td>
+              <td>NRP</td>
+              <td>40.0</td>
+              <td>35.0</td>
+              <td>181.0</td>
+              <td>6.3e-45</td>
+          </tr>
+    
+          <tr>
+              <td>AAZ55905.1</td>
+              <td>isochorismate_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000359/1">BGC0000359</a></td>
+              <td>NRP</td>
+              <td>43.0</td>
+              <td>35.0</td>
+              <td>175.0</td>
+              <td>2.7e-43</td>
+          </tr>
+    
+          <tr>
+              <td>ACR13729.1</td>
+              <td>isochorismate_synthase_DhbC</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000451/1">BGC0000451</a></td>
+              <td>NRP</td>
+              <td>38.0</td>
+              <td>34.7</td>
+              <td>174.0</td>
+              <td>7.7e-43</td>
+          </tr>
+    
+          <tr>
+              <td>AAO07758.1</td>
+              <td>Isochorismate_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000460/1">BGC0000460</a></td>
+              <td>NRP</td>
+              <td>37.0</td>
+              <td>37.3</td>
+              <td>166.0</td>
+              <td>1.6e-40</td>
+          </tr>
+    
+          <tr>
+              <td>ABS75235.1</td>
+              <td>DhbC</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001185/1">BGC0001185</a></td>
+              <td>NRP:NRP siderophore</td>
+              <td>38.0</td>
+              <td>34.6</td>
+              <td>165.0</td>
+              <td>3.6e-40</td>
+          </tr>
+    
+          <tr>
+              <td>ACY02012.1</td>
+              <td>isochorismate_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000343/1">BGC0000343</a></td>
+              <td>NRP</td>
+              <td>38.0</td>
+              <td>34.0</td>
+              <td>165.0</td>
+              <td>4.7e-40</td>
+          </tr>
+    
+          <tr>
+              <td>CBA63662.1</td>
+              <td>isochorismate_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000368/1">BGC0000368</a></td>
+              <td>NRP</td>
+              <td>39.0</td>
+              <td>34.1</td>
+              <td>164.0</td>
+              <td>6.1e-40</td>
+          </tr>
+    
+          <tr>
+              <td>AAG31127.1</td>
+              <td>MxcD</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001345/1">BGC0001345</a></td>
+              <td>NRP</td>
+              <td>37.0</td>
+              <td>39.8</td>
+              <td>162.0</td>
+              <td>3e-39</td>
+          </tr>
+    
+          <tr>
+              <td>ABU70374.1</td>
+              <td>hypothetical_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001890/1">BGC0001890</a></td>
+              <td>NRP</td>
+              <td>35.0</td>
+              <td>37.0</td>
+              <td>159.0</td>
+              <td>2.6e-38</td>
+          </tr>
+    
+          <tr>
+              <td>CAB15189.2</td>
+              <td>isochorismate_synthase_(siderophore-specific)</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000309/1">BGC0000309</a></td>
+              <td>NRP</td>
+              <td>34.0</td>
+              <td>38.7</td>
+              <td>156.0</td>
+              <td>1.7e-37</td>
+          </tr>
+    
+          <tr>
+              <td>ACU36661.1</td>
+              <td>isochorismate_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000392/1">BGC0000392</a></td>
+              <td>NRP</td>
+              <td>39.0</td>
+              <td>35.7</td>
+              <td>153.0</td>
+              <td>1.1e-36</td>
+          </tr>
+    
+          <tr>
+              <td>CAJ45635.1</td>
+              <td>isochorismate_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000454/1">BGC0000454</a></td>
+              <td>NRP</td>
+              <td>36.0</td>
+              <td>35.3</td>
+              <td>153.0</td>
+              <td>1.8e-36</td>
+          </tr>
+    
+          <tr>
+              <td>CAG69520.1</td>
+              <td>isochorismate_synthetase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000352/1">BGC0000352</a></td>
+              <td>NRP:NRP siderophore</td>
+              <td>35.0</td>
+              <td>38.9</td>
+              <td>152.0</td>
+              <td>2.4e-36</td>
+          </tr>
+    
+          <tr>
+              <td>BAH33403.1</td>
+              <td>isochorismate_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000371/1">BGC0000371</a></td>
+              <td>NRP</td>
+              <td>38.0</td>
+              <td>40.8</td>
+              <td>152.0</td>
+              <td>2.4e-36</td>
+          </tr>
+    
+          <tr>
+              <td>ACD75091.1</td>
+              <td>MenF</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000913/1">BGC0000913</a></td>
+              <td>Other</td>
+              <td>34.0</td>
+              <td>45.4</td>
+              <td>143.0</td>
+              <td>1.5e-33</td>
+          </tr>
+    
+          <tr>
+              <td>BAC87913.1</td>
+              <td>probable_acinetobactin_biosynthesis_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000294/1">BGC0000294</a></td>
+              <td>NRP</td>
+              <td>33.0</td>
+              <td>35.4</td>
+              <td>136.0</td>
+              <td>1.8e-31</td>
+          </tr>
+    
+          <tr>
+              <td>CAB38585.1</td>
+              <td>probable_anthranilate_synthase_component_I_(trpE2)</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000315/1">BGC0000315</a></td>
+              <td>NRP:Ca+-dependent lipopeptide</td>
+              <td>32.0</td>
+              <td>37.8</td>
+              <td>126.0</td>
+              <td>1.4e-28</td>
+          </tr>
+    
+          <tr>
+              <td>ADE34507.1</td>
+              <td>ssfH</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000269/1">BGC0000269</a></td>
+              <td>Polyketide:Type II + Saccharide:Hybrid/tailoring</td>
+              <td>28.0</td>
+              <td>58.4</td>
+              <td>97.0</td>
+              <td>1.2e-19</td>
+          </tr>
+    
+          <tr>
+              <td>AFW04564.1</td>
+              <td>Anthranilate_synthase,PhzE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001783/1">BGC0001783</a></td>
+              <td>Other</td>
+              <td>28.0</td>
+              <td>39.1</td>
+              <td>72.0</td>
+              <td>3.2e-12</td>
+          </tr>
+    
+          <tr>
+              <td>WP_051872438.1</td>
+              <td>phenazine-specific_anthranilate_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001771/1">BGC0001771</a></td>
+              <td>NRP</td>
+              <td>27.0</td>
+              <td>32.0</td>
+              <td>67.0</td>
+              <td>1.3e-10</td>
+          </tr>
+    
+          <tr>
+              <td>AKC91615.1</td>
+              <td>2-amino-2-deoxy-isochorismate_synthase_PhzE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001302/1">BGC0001302</a></td>
+              <td>Other</td>
+              <td>28.0</td>
+              <td>29.3</td>
+              <td>60.0</td>
+              <td>1.2e-08</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

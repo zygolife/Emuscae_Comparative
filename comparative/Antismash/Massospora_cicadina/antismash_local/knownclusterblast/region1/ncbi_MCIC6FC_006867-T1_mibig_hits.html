@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>ABO15880.1</td>
+              <td>assimilatory_nitrate_reductase_catalytic_subunit</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000132/1">BGC0000132</a></td>
+              <td>Polyketide</td>
+              <td>33.0</td>
+              <td>51.5</td>
+              <td>329.0</td>
+              <td>2.6e-89</td>
+          </tr>
+    
+          <tr>
+              <td>ABO15854.1</td>
+              <td>assimilatory_nitrate_reductase_catalytic_subunit</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000130/1">BGC0000130</a></td>
+              <td>Polyketide</td>
+              <td>33.0</td>
+              <td>51.6</td>
+              <td>324.0</td>
+              <td>6.4e-88</td>
+          </tr>
+    
+          <tr>
+              <td>TXD00031.1</td>
+              <td>cytochrome_P450</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001877/1">BGC0001877</a></td>
+              <td>Polyketide</td>
+              <td>28.0</td>
+              <td>43.6</td>
+              <td>174.0</td>
+              <td>1.1e-42</td>
+          </tr>
+    
+          <tr>
+              <td>ARK19477.1</td>
+              <td>oxidoreductase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001540/1">BGC0001540</a></td>
+              <td>Other</td>
+              <td>25.0</td>
+              <td>50.1</td>
+              <td>173.0</td>
+              <td>1.8e-42</td>
+          </tr>
+    
+          <tr>
+              <td>ADZ13548.1</td>
+              <td>YtkK</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000466/1">BGC0000466</a></td>
+              <td>NRP</td>
+              <td>26.0</td>
+              <td>49.9</td>
+              <td>171.0</td>
+              <td>1.2e-41</td>
+          </tr>
+    
+          <tr>
+              <td>ARO49582.1</td>
+              <td>molybdopterin_oxidoreductase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001441/1">BGC0001441</a></td>
+              <td>Other</td>
+              <td>26.0</td>
+              <td>50.6</td>
+              <td>166.0</td>
+              <td>3.8e-40</td>
+          </tr>
+    
+          <tr>
+              <td>WP_078869217.1</td>
+              <td>molybdopterin-dependent_oxidoreductase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001607/1">BGC0001607</a></td>
+              <td>Other</td>
+              <td>24.0</td>
+              <td>49.7</td>
+              <td>163.0</td>
+              <td>3.2e-39</td>
+          </tr>
+    
+          <tr>
+              <td>BBF25317.1</td>
+              <td>bifunctional_P-450:NADPH-P450_reductase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001923/1">BGC0001923</a></td>
+              <td>Terpene + Polyketide</td>
+              <td>27.0</td>
+              <td>41.8</td>
+              <td>148.0</td>
+              <td>8.2e-35</td>
+          </tr>
+    
+          <tr>
+              <td>WP_079028369.1</td>
+              <td>molybdopterin-dependent_oxidoreductase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001283/1">BGC0001283</a></td>
+              <td>Polyketide</td>
+              <td>22.0</td>
+              <td>59.1</td>
+              <td>148.0</td>
+              <td>1.1e-34</td>
+          </tr>
+    
+          <tr>
+              <td>AAM54108.1</td>
+              <td>cytochrome_P450</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000020/1">BGC0000020</a></td>
+              <td>Polyketide</td>
+              <td>29.0</td>
+              <td>35.7</td>
+              <td>146.0</td>
+              <td>3.1e-34</td>
+          </tr>
+    
+          <tr>
+              <td>ADZ24986.1</td>
+              <td>formate_dehydrogenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000380/1">BGC0000380</a></td>
+              <td>NRP + Polyketide:Modular type I</td>
+              <td>25.0</td>
+              <td>53.2</td>
+              <td>142.0</td>
+              <td>4.5e-33</td>
+          </tr>
+    
+          <tr>
+              <td>AAG27132.1</td>
+              <td>Fum6p</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000062/1">BGC0000062</a></td>
+              <td>Polyketide</td>
+              <td>27.0</td>
+              <td>44.3</td>
+              <td>134.0</td>
+              <td>9.4e-31</td>
+          </tr>
+    
+          <tr>
+              <td>ACB12553.1</td>
+              <td>Fum6</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000063/1">BGC0000063</a></td>
+              <td>Polyketide</td>
+              <td>28.0</td>
+              <td>30.1</td>
+              <td>114.0</td>
+              <td>1.3e-24</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

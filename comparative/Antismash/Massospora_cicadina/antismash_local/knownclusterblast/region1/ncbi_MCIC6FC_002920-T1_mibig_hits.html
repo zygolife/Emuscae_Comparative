@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>CEF75881.1</td>
+              <td></td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001600/1">BGC0001600</a></td>
+              <td>Polyketide</td>
+              <td>24.0</td>
+              <td>65.0</td>
+              <td>162.0</td>
+              <td>3e-39</td>
+          </tr>
+    
+          <tr>
+              <td>AAK57184.1</td>
+              <td>MxaA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001022/1">BGC0001022</a></td>
+              <td>NRP + Polyketide</td>
+              <td>28.0</td>
+              <td>41.5</td>
+              <td>114.0</td>
+              <td>9.2e-25</td>
+          </tr>
+    
+          <tr>
+              <td>ABC35796.1</td>
+              <td>polyketide_synthase,_putative</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001102/1">BGC0001102</a></td>
+              <td>NRP:Beta-lactam + Polyketide:Modular type I</td>
+              <td>25.0</td>
+              <td>47.6</td>
+              <td>105.0</td>
+              <td>4.3e-22</td>
+          </tr>
+    
+          <tr>
+              <td>ALP32042.1</td>
+              <td>CycB</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001293/1">BGC0001293</a></td>
+              <td>Polyketide</td>
+              <td>27.0</td>
+              <td>47.6</td>
+              <td>105.0</td>
+              <td>5.6e-22</td>
+          </tr>
+    
+          <tr>
+              <td>ATD51278.1</td>
+              <td>nonribosomal_peptide_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001650/1">BGC0001650</a></td>
+              <td>NRP</td>
+              <td>27.0</td>
+              <td>26.2</td>
+              <td>84.0</td>
+              <td>1e-15</td>
+          </tr>
+    
+          <tr>
+              <td>CDE97356.1</td>
+              <td>plipastatin_synthase_subunit_C</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001686/1">BGC0001686</a></td>
+              <td>NRP</td>
+              <td>22.0</td>
+              <td>56.2</td>
+              <td>81.0</td>
+              <td>6.6e-15</td>
+          </tr>
+    
+          <tr>
+              <td>AQV04224.1</td>
+              <td>SwnK</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001793/1">BGC0001793</a></td>
+              <td>Polyketide</td>
+              <td>23.0</td>
+              <td>48.8</td>
+              <td>63.0</td>
+              <td>1.9e-09</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

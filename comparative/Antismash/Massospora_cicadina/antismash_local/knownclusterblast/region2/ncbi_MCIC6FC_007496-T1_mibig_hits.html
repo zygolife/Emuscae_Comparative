@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>BAK64657.1</td>
+              <td>putative_dehydrogenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000135/1">BGC0000135</a></td>
+              <td>Polyketide</td>
+              <td>35.0</td>
+              <td>95.6</td>
+              <td>150.0</td>
+              <td>5e-36</td>
+          </tr>
+    
+          <tr>
+              <td>EME52996.1</td>
+              <td>D-isomer_specific_2-hydroxyacid_dehydrogenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001460/1">BGC0001460</a></td>
+              <td>NRP:Glycopeptide</td>
+              <td>30.0</td>
+              <td>83.0</td>
+              <td>110.0</td>
+              <td>5.8e-24</td>
+          </tr>
+    
+          <tr>
+              <td>AQH32479.1</td>
+              <td>phosphoglycerate_dehydrogenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001667/1">BGC0001667</a></td>
+              <td>NRP + Polyketide</td>
+              <td>35.0</td>
+              <td>71.0</td>
+              <td>109.0</td>
+              <td>7.5e-24</td>
+          </tr>
+    
+          <tr>
+              <td>AAO62580.1</td>
+              <td>phosphoglycerate_dehydrogenase-like_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001016/1">BGC0001016</a></td>
+              <td>NRP + Polyketide</td>
+              <td>34.0</td>
+              <td>71.0</td>
+              <td>109.0</td>
+              <td>9.8e-24</td>
+          </tr>
+    
+          <tr>
+              <td>ATP76237.1</td>
+              <td>NdaH</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001705/1">BGC0001705</a></td>
+              <td>NRP + Polyketide</td>
+              <td>32.0</td>
+              <td>71.0</td>
+              <td>107.0</td>
+              <td>3.7e-23</td>
+          </tr>
+    
+          <tr>
+              <td>AIG79249.1</td>
+              <td>D-Lactate_dehydrogenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000419/1">BGC0000419</a></td>
+              <td>Saccharide + NRP:Glycopeptide</td>
+              <td>29.0</td>
+              <td>88.0</td>
+              <td>106.0</td>
+              <td>6.4e-23</td>
+          </tr>
+    
+          <tr>
+              <td>AEI58859.1</td>
+              <td>D-lactate_dehydrogenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000455/1">BGC0000455</a></td>
+              <td>NRP</td>
+              <td>32.0</td>
+              <td>69.4</td>
+              <td>105.0</td>
+              <td>1.4e-22</td>
+          </tr>
+    
+          <tr>
+              <td>OLZ50880.1</td>
+              <td>lactate_dehydrogenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001461/1">BGC0001461</a></td>
+              <td>NRP:Glycopeptide</td>
+              <td>32.0</td>
+              <td>69.4</td>
+              <td>104.0</td>
+              <td>2.4e-22</td>
+          </tr>
+    
+          <tr>
+              <td>AYA22342.1</td>
+              <td>VanH</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001955/1">BGC0001955</a></td>
+              <td>Other</td>
+              <td>32.0</td>
+              <td>69.4</td>
+              <td>104.0</td>
+              <td>2.4e-22</td>
+          </tr>
+    
+          <tr>
+              <td>CAJ14043.1</td>
+              <td>putative_D-3-phosphoglycerate_dehydrogenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000406/1">BGC0000406</a></td>
+              <td>NRP</td>
+              <td>33.0</td>
+              <td>66.2</td>
+              <td>99.0</td>
+              <td>1e-20</td>
+          </tr>
+    
+          <tr>
+              <td>AIE77051.1</td>
+              <td>VanH</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000418/1">BGC0000418</a></td>
+              <td>NRP</td>
+              <td>28.0</td>
+              <td>83.0</td>
+              <td>99.0</td>
+              <td>1.3e-20</td>
+          </tr>
+    
+          <tr>
+              <td>AAC23583.1</td>
+              <td>D-lactate_dehydrogenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000290/1">BGC0000290</a></td>
+              <td>NRP:Glycopeptide</td>
+              <td>32.0</td>
+              <td>70.7</td>
+              <td>97.0</td>
+              <td>5e-20</td>
+          </tr>
+    
+          <tr>
+              <td>AGS77306.1</td>
+              <td>D-lactate_dehydrogenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001178/1">BGC0001178</a></td>
+              <td>NRP:Glycopeptide</td>
+              <td>31.0</td>
+              <td>68.5</td>
+              <td>97.0</td>
+              <td>5e-20</td>
+          </tr>
+    
+          <tr>
+              <td>AAX31571.1</td>
+              <td>putative_dehydrogenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000336/1">BGC0000336</a></td>
+              <td>NRP</td>
+              <td>28.0</td>
+              <td>88.6</td>
+              <td>96.0</td>
+              <td>6.6e-20</td>
+          </tr>
+    
+          <tr>
+              <td>OKA09416.1</td>
+              <td>lactate_dehydrogenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001459/1">BGC0001459</a></td>
+              <td>NRP:Glycopeptide</td>
+              <td>29.0</td>
+              <td>75.7</td>
+              <td>96.0</td>
+              <td>8.6e-20</td>
+          </tr>
+    
+          <tr>
+              <td>OLZ52462.1</td>
+              <td>lactate_dehydrogenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001462/1">BGC0001462</a></td>
+              <td>NRP:Glycopeptide</td>
+              <td>29.0</td>
+              <td>69.7</td>
+              <td>94.0</td>
+              <td>4.3e-19</td>
+          </tr>
+    
+          <tr>
+              <td>CAE53343.1</td>
+              <td>VanH_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000440/1">BGC0000440</a></td>
+              <td>NRP:Glycopeptide</td>
+              <td>27.0</td>
+              <td>73.5</td>
+              <td>88.0</td>
+              <td>2.3e-17</td>
+          </tr>
+    
+          <tr>
+              <td>CAG15002.1</td>
+              <td>D-lactate_dehydrogenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000441/1">BGC0000441</a></td>
+              <td>NRP</td>
+              <td>27.0</td>
+              <td>73.5</td>
+              <td>88.0</td>
+              <td>2.3e-17</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

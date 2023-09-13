@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>AYM52856.1</td>
+              <td>3-demethylubiquinone-9_3-methyltransferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001964/1">BGC0001964</a></td>
+              <td>Polyketide</td>
+              <td>42.0</td>
+              <td>21.4</td>
+              <td>126.0</td>
+              <td>2.2e-28</td>
+          </tr>
+    
+          <tr>
+              <td>SCN11943.1</td>
+              <td>esterase_LipW</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001580/1">BGC0001580</a></td>
+              <td>Polyketide</td>
+              <td>33.0</td>
+              <td>31.8</td>
+              <td>97.0</td>
+              <td>1.1e-19</td>
+          </tr>
+    
+          <tr>
+              <td>BAW27710.1</td>
+              <td>esterase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001764/1">BGC0001764</a></td>
+              <td>NRP</td>
+              <td>31.0</td>
+              <td>33.4</td>
+              <td>92.0</td>
+              <td>2e-18</td>
+          </tr>
+    
+          <tr>
+              <td>AAU93813.2</td>
+              <td>LipN</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000054/1">BGC0000054</a></td>
+              <td>Polyketide</td>
+              <td>28.0</td>
+              <td>33.0</td>
+              <td>86.0</td>
+              <td>1.5e-16</td>
+          </tr>
+    
+          <tr>
+              <td>CAP12611.1</td>
+              <td>lipase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000219/1">BGC0000219</a></td>
+              <td>Polyketide:Type II + Saccharide:Hybrid/tailoring</td>
+              <td>29.0</td>
+              <td>33.4</td>
+              <td>77.0</td>
+              <td>8.9e-14</td>
+          </tr>
+    
+          <tr>
+              <td>BAV56003.1</td>
+              <td>esterase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001597/1">BGC0001597</a></td>
+              <td>Polyketide</td>
+              <td>28.0</td>
+              <td>37.0</td>
+              <td>70.0</td>
+              <td>1.1e-11</td>
+          </tr>
+    
+          <tr>
+              <td>AAS90006.1</td>
+              <td>EstA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000007/1">BGC0000007</a></td>
+              <td>Polyketide</td>
+              <td>24.0</td>
+              <td>39.3</td>
+              <td>61.0</td>
+              <td>6.6e-09</td>
+          </tr>
+    
+          <tr>
+              <td>AAS90098.1</td>
+              <td>EstA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000006/1">BGC0000006</a></td>
+              <td>Polyketide</td>
+              <td>24.0</td>
+              <td>39.3</td>
+              <td>60.0</td>
+              <td>1.1e-08</td>
+          </tr>
+    
+          <tr>
+              <td>AAS90029.1</td>
+              <td>EstA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000008/1">BGC0000008</a></td>
+              <td>Polyketide</td>
+              <td>24.0</td>
+              <td>39.3</td>
+              <td>60.0</td>
+              <td>1.1e-08</td>
+          </tr>
+    
+          <tr>
+              <td>AAS90054.1</td>
+              <td>EstA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000009/1">BGC0000009</a></td>
+              <td>Polyketide</td>
+              <td>24.0</td>
+              <td>39.3</td>
+              <td>60.0</td>
+              <td>1.1e-08</td>
+          </tr>
+    
+          <tr>
+              <td>AAS90075.1</td>
+              <td>EstA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000010/1">BGC0000010</a></td>
+              <td>Polyketide</td>
+              <td>24.0</td>
+              <td>39.3</td>
+              <td>60.0</td>
+              <td>1.1e-08</td>
+          </tr>
+    
+          <tr>
+              <td>BAE71321.1</td>
+              <td>esterase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000004/1">BGC0000004</a></td>
+              <td>Polyketide</td>
+              <td>24.0</td>
+              <td>39.3</td>
+              <td>59.0</td>
+              <td>1.9e-08</td>
+          </tr>
+    
+          <tr>
+              <td>AAN76353.1</td>
+              <td>esterase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000005/1">BGC0000005</a></td>
+              <td>Polyketide</td>
+              <td>25.0</td>
+              <td>39.3</td>
+              <td>59.0</td>
+              <td>2.5e-08</td>
+          </tr>
+    
+          <tr>
+              <td>AAC49197.1</td>
+              <td>putative_lipase/esterase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000152/1">BGC0000152</a></td>
+              <td>Polyketide</td>
+              <td>28.0</td>
+              <td>33.1</td>
+              <td>58.0</td>
+              <td>5.6e-08</td>
+          </tr>
+    
+          <tr>
+              <td>ACH72902.1</td>
+              <td>AflJ</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000011/1">BGC0000011</a></td>
+              <td>Polyketide</td>
+              <td>24.0</td>
+              <td>37.7</td>
+              <td>56.0</td>
+              <td>2.1e-07</td>
+          </tr>
+    
+          <tr>
+              <td>CCT69238.1</td>
+              <td>uncharacterized_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000030/1">BGC0000030</a></td>
+              <td>Polyketide</td>
+              <td>26.0</td>
+              <td>35.8</td>
+              <td>56.0</td>
+              <td>2.8e-07</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

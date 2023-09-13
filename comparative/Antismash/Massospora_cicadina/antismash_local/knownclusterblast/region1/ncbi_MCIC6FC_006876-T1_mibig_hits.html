@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>ABB05107.1</td>
+              <td>LipX3</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001003/1">BGC0001003</a></td>
+              <td>NRP:Lipopeptide + Polyketide:Modular type I + Saccharide:Hybrid/tailoring</td>
+              <td>35.0</td>
+              <td>51.2</td>
+              <td>146.0</td>
+              <td>1.6e-34</td>
+          </tr>
+    
+          <tr>
+              <td>AOE46830.1</td>
+              <td>putative_deoxyribonuclease</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001735/1">BGC0001735</a></td>
+              <td>Other</td>
+              <td>35.0</td>
+              <td>40.6</td>
+              <td>133.0</td>
+              <td>1.4e-30</td>
+          </tr>
+    
+          <tr>
+              <td>ARE67866.1</td>
+              <td>type_IV_secretion_protein_Rhs</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001492/1">BGC0001492</a></td>
+              <td>Polyketide</td>
+              <td>33.0</td>
+              <td>42.4</td>
+              <td>126.0</td>
+              <td>1.7e-28</td>
+          </tr>
+    
+          <tr>
+              <td>CAI94694.1</td>
+              <td>hypothetical_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000141/1">BGC0000141</a></td>
+              <td>Polyketide</td>
+              <td>31.0</td>
+              <td>47.3</td>
+              <td>116.0</td>
+              <td>1.8e-25</td>
+          </tr>
+    
+          <tr>
+              <td>BAI63267.1</td>
+              <td>hypothetical_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000434/1">BGC0000434</a></td>
+              <td>NRP</td>
+              <td>31.0</td>
+              <td>40.0</td>
+              <td>114.0</td>
+              <td>5.3e-25</td>
+          </tr>
+    
+          <tr>
+              <td>AAO65783.1</td>
+              <td>dihidro-dipicolinate_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000100/1">BGC0000100</a></td>
+              <td>Polyketide</td>
+              <td>35.0</td>
+              <td>30.0</td>
+              <td>82.0</td>
+              <td>1.7e-15</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

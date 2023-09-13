@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>AEH59067.1</td>
+              <td>putative_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000385/1">BGC0000385</a></td>
+              <td>NRP</td>
+              <td>34.0</td>
+              <td>90.2</td>
+              <td>135.0</td>
+              <td>1.6e-31</td>
+          </tr>
+    
+          <tr>
+              <td>AAG29800.2</td>
+              <td>regulatory_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000833/1">BGC0000833</a></td>
+              <td>Saccharide:Hybrid/tailoring + Other:Aminocoumarin</td>
+              <td>36.0</td>
+              <td>90.9</td>
+              <td>120.0</td>
+              <td>4e-27</td>
+          </tr>
+    
+          <tr>
+              <td>AFB35639.1</td>
+              <td>Transcriptional_regulation</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000935/1">BGC0000935</a></td>
+              <td>Polyketide + Other:Aminocoumarin</td>
+              <td>34.0</td>
+              <td>84.5</td>
+              <td>114.0</td>
+              <td>3.7e-25</td>
+          </tr>
+    
+          <tr>
+              <td>CRI73788.1</td>
+              <td>LysR_family_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001215/1">BGC0001215</a></td>
+              <td>NRP</td>
+              <td>30.0</td>
+              <td>100.7</td>
+              <td>108.0</td>
+              <td>2.7e-23</td>
+          </tr>
+    
+          <tr>
+              <td>CAE15166.1</td>
+              <td></td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001736/1">BGC0001736</a></td>
+              <td>NRP</td>
+              <td>33.0</td>
+              <td>82.8</td>
+              <td>105.0</td>
+              <td>1.3e-22</td>
+          </tr>
+    
+          <tr>
+              <td>ALJ49934.1</td>
+              <td>TtmL</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001236/1">BGC0001236</a></td>
+              <td>Polyketide</td>
+              <td>29.0</td>
+              <td>99.0</td>
+              <td>97.0</td>
+              <td>4.7e-20</td>
+          </tr>
+    
+          <tr>
+              <td>AHW81478.1</td>
+              <td>EpaS</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000934/1">BGC0000934</a></td>
+              <td>Other:Phenazine</td>
+              <td>29.0</td>
+              <td>81.5</td>
+              <td>96.0</td>
+              <td>1.1e-19</td>
+          </tr>
+    
+          <tr>
+              <td>CCC21116.1</td>
+              <td>lysr_family_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000171/1">BGC0000171</a></td>
+              <td>Polyketide:Modular type I</td>
+              <td>30.0</td>
+              <td>90.2</td>
+              <td>90.0</td>
+              <td>5.8e-18</td>
+          </tr>
+    
+          <tr>
+              <td>AAG23282.1</td>
+              <td>probable_lysR-type_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000148/1">BGC0000148</a></td>
+              <td>Polyketide</td>
+              <td>33.0</td>
+              <td>69.4</td>
+              <td>83.0</td>
+              <td>7.1e-16</td>
+          </tr>
+    
+          <tr>
+              <td>AFO93380.1</td>
+              <td>transcriptional_regulator,_LysR_family</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001362/1">BGC0001362</a></td>
+              <td>Other</td>
+              <td>26.0</td>
+              <td>88.2</td>
+              <td>70.0</td>
+              <td>6.2e-12</td>
+          </tr>
+    
+          <tr>
+              <td>AID65227.1</td>
+              <td>LysR_family_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000335/1">BGC0000335</a></td>
+              <td>NRP</td>
+              <td>25.0</td>
+              <td>66.0</td>
+              <td>50.0</td>
+              <td>5.1e-06</td>
+          </tr>
+    
+          <tr>
+              <td>EDY47128.1</td>
+              <td>transcription_activator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000845/1">BGC0000845</a></td>
+              <td>Other:Non-NRP beta-lactam</td>
+              <td>23.0</td>
+              <td>83.5</td>
+              <td>50.0</td>
+              <td>5.1e-06</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>CEF75881.1</td>
+              <td></td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001600/1">BGC0001600</a></td>
+              <td>Polyketide</td>
+              <td>24.0</td>
+              <td>89.4</td>
+              <td>219.0</td>
+              <td>2.9e-56</td>
+          </tr>
+    
+          <tr>
+              <td>ASK38699.1</td>
+              <td>putative_nonribosomal_peptide_synthetase-like_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001557/1">BGC0001557</a></td>
+              <td>Polyketide</td>
+              <td>24.0</td>
+              <td>93.5</td>
+              <td>185.0</td>
+              <td>6e-46</td>
+          </tr>
+    
+          <tr>
+              <td>EWG54274.1</td>
+              <td>hypothetical_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001190/1">BGC0001190</a></td>
+              <td>Polyketide</td>
+              <td>23.0</td>
+              <td>90.3</td>
+              <td>181.0</td>
+              <td>6.6e-45</td>
+          </tr>
+    
+          <tr>
+              <td>AAK57184.1</td>
+              <td>MxaA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001022/1">BGC0001022</a></td>
+              <td>NRP + Polyketide</td>
+              <td>26.0</td>
+              <td>45.0</td>
+              <td>111.0</td>
+              <td>6.4e-24</td>
+          </tr>
+    
+          <tr>
+              <td>ALP32042.1</td>
+              <td>CycB</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001293/1">BGC0001293</a></td>
+              <td>Polyketide</td>
+              <td>25.0</td>
+              <td>44.7</td>
+              <td>97.0</td>
+              <td>9.6e-20</td>
+          </tr>
+    
+          <tr>
+              <td>EOY45602.1</td>
+              <td>non-ribosomal_peptide_synthetase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001168/1">BGC0001168</a></td>
+              <td>NRP</td>
+              <td>26.0</td>
+              <td>36.6</td>
+              <td>90.0</td>
+              <td>1.5e-17</td>
+          </tr>
+    
+          <tr>
+              <td>ABC35796.1</td>
+              <td>polyketide_synthase,_putative</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001102/1">BGC0001102</a></td>
+              <td>NRP:Beta-lactam + Polyketide:Modular type I</td>
+              <td>24.0</td>
+              <td>44.5</td>
+              <td>88.0</td>
+              <td>5.8e-17</td>
+          </tr>
+    
+          <tr>
+              <td>ATD51278.1</td>
+              <td>nonribosomal_peptide_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001650/1">BGC0001650</a></td>
+              <td>NRP</td>
+              <td>21.0</td>
+              <td>75.8</td>
+              <td>87.0</td>
+              <td>1.3e-16</td>
+          </tr>
+    
+          <tr>
+              <td>CDE97356.1</td>
+              <td>plipastatin_synthase_subunit_C</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001686/1">BGC0001686</a></td>
+              <td>NRP</td>
+              <td>22.0</td>
+              <td>75.5</td>
+              <td>85.0</td>
+              <td>4.9e-16</td>
+          </tr>
+    
+          <tr>
+              <td>AAO23334.1</td>
+              <td>NcpB</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000397/1">BGC0000397</a></td>
+              <td>NRP</td>
+              <td>23.0</td>
+              <td>36.7</td>
+              <td>80.0</td>
+              <td>1.6e-14</td>
+          </tr>
+    
+          <tr>
+              <td>AEI98652.1</td>
+              <td>CtcI</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000209/1">BGC0000209</a></td>
+              <td>Polyketide</td>
+              <td>24.0</td>
+              <td>45.3</td>
+              <td>68.0</td>
+              <td>8.1e-11</td>
+          </tr>
+    
+          <tr>
+              <td>WP_015507663.1</td>
+              <td>non-ribosomal_peptide_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001792/1">BGC0001792</a></td>
+              <td>NRP</td>
+              <td>24.0</td>
+              <td>56.1</td>
+              <td>62.0</td>
+              <td>3.4e-09</td>
+          </tr>
+    
+          <tr>
+              <td>AQV04224.1</td>
+              <td>SwnK</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001793/1">BGC0001793</a></td>
+              <td>Polyketide</td>
+              <td>21.0</td>
+              <td>28.8</td>
+              <td>57.0</td>
+              <td>1.9e-07</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

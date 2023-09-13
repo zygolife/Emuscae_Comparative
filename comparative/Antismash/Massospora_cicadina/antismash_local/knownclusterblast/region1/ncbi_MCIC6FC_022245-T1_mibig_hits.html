@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>AAN79653.1</td>
+              <td>Conserved_hypothetical_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000836/1">BGC0000836</a></td>
+              <td>Other</td>
+              <td>60.0</td>
+              <td>43.2</td>
+              <td>781.0</td>
+              <td>2.9e-225</td>
+          </tr>
+    
+          <tr>
+              <td>WP_045972724.1</td>
+              <td>MMPL_family_transporter</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0002008/1">BGC0002008</a></td>
+              <td>Other</td>
+              <td>57.0</td>
+              <td>43.4</td>
+              <td>753.0</td>
+              <td>4.9e-217</td>
+          </tr>
+    
+          <tr>
+              <td>AAN79656.1</td>
+              <td>Putative_enzyme</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000836/1">BGC0000836</a></td>
+              <td>Other</td>
+              <td>68.0</td>
+              <td>33.7</td>
+              <td>726.0</td>
+              <td>1.1e-208</td>
+          </tr>
+    
+          <tr>
+              <td>WP_045972720.1</td>
+              <td>glycosyltransferase_family_2_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0002008/1">BGC0002008</a></td>
+              <td>Other</td>
+              <td>62.0</td>
+              <td>33.8</td>
+              <td>690.0</td>
+              <td>8.7e-198</td>
+          </tr>
+    
+          <tr>
+              <td>AAW85346.1</td>
+              <td>predicted_acyltransferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000837/1">BGC0000837</a></td>
+              <td>Other</td>
+              <td>51.0</td>
+              <td>33.8</td>
+              <td>546.0</td>
+              <td>1.6e-154</td>
+          </tr>
+    
+          <tr>
+              <td>AAW85350.1</td>
+              <td>transporter</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000837/1">BGC0000837</a></td>
+              <td>Other</td>
+              <td>29.0</td>
+              <td>34.3</td>
+              <td>194.0</td>
+              <td>1.2e-48</td>
+          </tr>
+    
+          <tr>
+              <td>AAG38837.1</td>
+              <td>putative_inner_membrane_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000840/1">BGC0000840</a></td>
+              <td>Other</td>
+              <td>27.0</td>
+              <td>32.1</td>
+              <td>88.0</td>
+              <td>8.9e-17</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

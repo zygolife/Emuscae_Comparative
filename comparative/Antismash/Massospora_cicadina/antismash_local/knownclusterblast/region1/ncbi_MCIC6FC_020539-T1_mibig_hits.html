@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>AAX98202.1</td>
+              <td>amine_oxidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000052/1">BGC0000052</a></td>
+              <td>Polyketide</td>
+              <td>55.0</td>
+              <td>32.3</td>
+              <td>623.0</td>
+              <td>1.3e-177</td>
+          </tr>
+    
+          <tr>
+              <td>AXI91557.1</td>
+              <td>FunA13</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001944/1">BGC0001944</a></td>
+              <td>Polyketide</td>
+              <td>57.0</td>
+              <td>32.3</td>
+              <td>618.0</td>
+              <td>2.5e-176</td>
+          </tr>
+    
+          <tr>
+              <td>AVV61994.1</td>
+              <td>amine_oxidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001477/1">BGC0001477</a></td>
+              <td>NRP + Polyketide:Modular type I</td>
+              <td>54.0</td>
+              <td>32.2</td>
+              <td>613.0</td>
+              <td>1.4e-174</td>
+          </tr>
+    
+          <tr>
+              <td>AWC08667.1</td>
+              <td>putative_L-arginine_monooxygenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001932/1">BGC0001932</a></td>
+              <td>Polyketide</td>
+              <td>54.0</td>
+              <td>32.3</td>
+              <td>593.0</td>
+              <td>1.1e-168</td>
+          </tr>
+    
+          <tr>
+              <td>ARP51743.1</td>
+              <td>tryptophan_oxidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001782/1">BGC0001782</a></td>
+              <td>Other</td>
+              <td>25.0</td>
+              <td>31.1</td>
+              <td>92.0</td>
+              <td>4.8e-18</td>
+          </tr>
+    
+          <tr>
+              <td>AEO12711.1</td>
+              <td>amino_acid_oxidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001334/1">BGC0001334</a></td>
+              <td>Alkaloid</td>
+              <td>26.0</td>
+              <td>33.0</td>
+              <td>87.0</td>
+              <td>2e-16</td>
+          </tr>
+    
+          <tr>
+              <td>AEF32099.1</td>
+              <td>tryptophan_oxidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001333/1">BGC0001333</a></td>
+              <td>Alkaloid</td>
+              <td>23.0</td>
+              <td>32.5</td>
+              <td>80.0</td>
+              <td>2.5e-14</td>
+          </tr>
+    
+          <tr>
+              <td>ABD59212.1</td>
+              <td>InkO</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000813/1">BGC0000813</a></td>
+              <td>Alkaloid</td>
+              <td>25.0</td>
+              <td>31.7</td>
+              <td>79.0</td>
+              <td>4.2e-14</td>
+          </tr>
+    
+          <tr>
+              <td>ACN29719.1</td>
+              <td>L-amino_acid_oxidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000814/1">BGC0000814</a></td>
+              <td>Alkaloid</td>
+              <td>25.0</td>
+              <td>31.7</td>
+              <td>79.0</td>
+              <td>4.2e-14</td>
+          </tr>
+    
+          <tr>
+              <td>ABV98187.1</td>
+              <td>amine_oxidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000827/1">BGC0000827</a></td>
+              <td>Alkaloid</td>
+              <td>24.0</td>
+              <td>32.4</td>
+              <td>74.0</td>
+              <td>1.3e-12</td>
+          </tr>
+    
+          <tr>
+              <td>AKQ20700.1</td>
+              <td>RebO-like_L-amino_acid_oxidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001337/1">BGC0001337</a></td>
+              <td>Alkaloid</td>
+              <td>23.0</td>
+              <td>32.1</td>
+              <td>71.0</td>
+              <td>1.1e-11</td>
+          </tr>
+    
+          <tr>
+              <td>BAC10674.1</td>
+              <td>putative_L-amino_acid_oxidase_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000821/1">BGC0000821</a></td>
+              <td>Other:Aminocoumarin</td>
+              <td>25.0</td>
+              <td>31.3</td>
+              <td>71.0</td>
+              <td>1.9e-11</td>
+          </tr>
+    
+          <tr>
+              <td>CAC93714.1</td>
+              <td>putative_L-tryptophan_oxidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000822/1">BGC0000822</a></td>
+              <td>Alkaloid</td>
+              <td>25.0</td>
+              <td>31.3</td>
+              <td>71.0</td>
+              <td>1.9e-11</td>
+          </tr>
+    
+          <tr>
+              <td>BAC15750.1</td>
+              <td>L-amino_acid_oxygenase_RebO</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000823/1">BGC0000823</a></td>
+              <td>Alkaloid</td>
+              <td>25.0</td>
+              <td>31.3</td>
+              <td>71.0</td>
+              <td>1.9e-11</td>
+          </tr>
+    
+          <tr>
+              <td>AKG47112.1</td>
+              <td>RedO</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001224/1">BGC0001224</a></td>
+              <td>Other</td>
+              <td>25.0</td>
+              <td>32.6</td>
+              <td>71.0</td>
+              <td>1.9e-11</td>
+          </tr>
+    
+          <tr>
+              <td>ABC02789.1</td>
+              <td>putative_L-tryptophan_oxidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000809/1">BGC0000809</a></td>
+              <td>Alkaloid</td>
+              <td>23.0</td>
+              <td>31.3</td>
+              <td>70.0</td>
+              <td>2.5e-11</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

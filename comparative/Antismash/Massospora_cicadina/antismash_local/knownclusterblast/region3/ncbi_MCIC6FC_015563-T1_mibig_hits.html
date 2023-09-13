@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>CCJ67633.1</td>
+              <td>multidrug/solvent_efflux_pump_outer_membrane_protein_mepC</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000447/1">BGC0000447</a></td>
+              <td>NRP:Lipopeptide</td>
+              <td>74.0</td>
+              <td>65.5</td>
+              <td>656.0</td>
+              <td>4.9e-188</td>
+          </tr>
+    
+          <tr>
+              <td>AFH75317.1</td>
+              <td>outer_membrane_efflux_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000425/1">BGC0000425</a></td>
+              <td>NRP:Cyclic depsipeptide</td>
+              <td>73.0</td>
+              <td>65.5</td>
+              <td>644.0</td>
+              <td>1.5e-184</td>
+          </tr>
+    
+          <tr>
+              <td>AAY91416.1</td>
+              <td>efflux_transporter,_outer_membrane_factor_lipoprotein,_NodT_family</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000399/1">BGC0000399</a></td>
+              <td>NRP:Cyclic depsipeptide</td>
+              <td>73.0</td>
+              <td>65.4</td>
+              <td>633.0</td>
+              <td>5.8e-181</td>
+          </tr>
+    
+          <tr>
+              <td>CDF96617.1</td>
+              <td>RND_efflux_system</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001149/1">BGC0001149</a></td>
+              <td>NRP:Lipopeptide + Saccharide:Hybrid/tailoring</td>
+              <td>72.0</td>
+              <td>63.0</td>
+              <td>629.0</td>
+              <td>4.9e-180</td>
+          </tr>
+    
+          <tr>
+              <td>WP_064118563.1</td>
+              <td>efflux_transporter_outer_membrane_subunit</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001509/1">BGC0001509</a></td>
+              <td>NRP</td>
+              <td>73.0</td>
+              <td>63.7</td>
+              <td>624.0</td>
+              <td>2.7e-178</td>
+          </tr>
+    
+          <tr>
+              <td>KPN90367.1</td>
+              <td>NunG</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001416/1">BGC0001416</a></td>
+              <td>NRP</td>
+              <td>70.0</td>
+              <td>63.8</td>
+              <td>621.0</td>
+              <td>1.7e-177</td>
+          </tr>
+    
+          <tr>
+              <td>QDF82261.1</td>
+              <td>RND_efflux_system,_outer_membrane_lipoprotein_CmeC</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001980/1">BGC0001980</a></td>
+              <td>NRP</td>
+              <td>72.0</td>
+              <td>63.7</td>
+              <td>620.0</td>
+              <td>3e-177</td>
+          </tr>
+    
+          <tr>
+              <td>ABW17373.1</td>
+              <td>OprM</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000411/1">BGC0000411</a></td>
+              <td>NRP</td>
+              <td>72.0</td>
+              <td>63.3</td>
+              <td>604.0</td>
+              <td>2.9e-172</td>
+          </tr>
+    
+          <tr>
+              <td>AAY37645.1</td>
+              <td>RND_efflux_system,_outer_membrane_lipoprotein,_NodT</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000437/1">BGC0000437</a></td>
+              <td>NRP</td>
+              <td>68.0</td>
+              <td>63.3</td>
+              <td>587.0</td>
+              <td>2.1e-167</td>
+          </tr>
+    
+          <tr>
+              <td>AOA33119.1</td>
+              <td>RND_efflux_system,_outer_membrane_lipoprotein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001346/1">BGC0001346</a></td>
+              <td>NRP:Cyclic depsipeptide</td>
+              <td>71.0</td>
+              <td>48.7</td>
+              <td>457.0</td>
+              <td>4.3e-128</td>
+          </tr>
+    
+          <tr>
+              <td>BAC67533.1</td>
+              <td>putative_DNA_binding_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000305/1">BGC0000305</a></td>
+              <td>NRP:Lipopeptide</td>
+              <td>61.0</td>
+              <td>36.7</td>
+              <td>297.0</td>
+              <td>4.4e-80</td>
+          </tr>
+    
+          <tr>
+              <td>AOA33120.1</td>
+              <td>LuxR_family_DNA-binding_response_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001346/1">BGC0001346</a></td>
+              <td>NRP:Cyclic depsipeptide</td>
+              <td>61.0</td>
+              <td>36.7</td>
+              <td>297.0</td>
+              <td>4.4e-80</td>
+          </tr>
+    
+          <tr>
+              <td>ABA73953.1</td>
+              <td>putative_LuxR-family_regulatory_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001842/1">BGC0001842</a></td>
+              <td>NRP:Lipopeptide</td>
+              <td>61.0</td>
+              <td>36.7</td>
+              <td>297.0</td>
+              <td>4.4e-80</td>
+          </tr>
+    
+          <tr>
+              <td>QDF82260.1</td>
+              <td>transcriptional_regulator,_LuxR_family</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001980/1">BGC0001980</a></td>
+              <td>NRP</td>
+              <td>61.0</td>
+              <td>36.7</td>
+              <td>297.0</td>
+              <td>4.4e-80</td>
+          </tr>
+    
+          <tr>
+              <td>AAY91417.1</td>
+              <td>transcriptional_regulator,_LuxR_family</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000399/1">BGC0000399</a></td>
+              <td>NRP:Cyclic depsipeptide</td>
+              <td>62.0</td>
+              <td>37.4</td>
+              <td>297.0</td>
+              <td>5.7e-80</td>
+          </tr>
+    
+          <tr>
+              <td>WP_064118562.1</td>
+              <td>helix-turn-helix_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001509/1">BGC0001509</a></td>
+              <td>NRP</td>
+              <td>61.0</td>
+              <td>36.7</td>
+              <td>294.0</td>
+              <td>3.7e-79</td>
+          </tr>
+    
+          <tr>
+              <td>AFH75327.1</td>
+              <td>LuxR_family_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000398/1">BGC0000398</a></td>
+              <td>NRP:Cyclic depsipeptide</td>
+              <td>59.0</td>
+              <td>37.4</td>
+              <td>280.0</td>
+              <td>5.6e-75</td>
+          </tr>
+    
+          <tr>
+              <td>KPN90368.1</td>
+              <td>NunF</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001416/1">BGC0001416</a></td>
+              <td>NRP</td>
+              <td>53.0</td>
+              <td>38.5</td>
+              <td>260.0</td>
+              <td>1e-68</td>
+          </tr>
+    
+          <tr>
+              <td>CCJ67634.1</td>
+              <td>bacterial_regulatory,_luxR_family_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000447/1">BGC0000447</a></td>
+              <td>NRP:Lipopeptide</td>
+              <td>54.0</td>
+              <td>37.6</td>
+              <td>255.0</td>
+              <td>3.3e-67</td>
+          </tr>
+    
+          <tr>
+              <td>ABW17374.1</td>
+              <td>PsoR</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000411/1">BGC0000411</a></td>
+              <td>NRP</td>
+              <td>54.0</td>
+              <td>36.7</td>
+              <td>253.0</td>
+              <td>9.5e-67</td>
+          </tr>
+    
+          <tr>
+              <td>CDF96616.1</td>
+              <td>LuxR-type_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001149/1">BGC0001149</a></td>
+              <td>NRP:Lipopeptide + Saccharide:Hybrid/tailoring</td>
+              <td>52.0</td>
+              <td>37.3</td>
+              <td>253.0</td>
+              <td>9.5e-67</td>
+          </tr>
+    
+          <tr>
+              <td>AFH75318.1</td>
+              <td>LuxR_family_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000425/1">BGC0000425</a></td>
+              <td>NRP:Cyclic depsipeptide</td>
+              <td>52.0</td>
+              <td>37.2</td>
+              <td>247.0</td>
+              <td>8.9e-65</td>
+          </tr>
+    
+          <tr>
+              <td>AAO56327.1</td>
+              <td>transcriptional_regulator_SyrR</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000435/1">BGC0000435</a></td>
+              <td>NRP</td>
+              <td>55.0</td>
+              <td>35.6</td>
+              <td>245.0</td>
+              <td>2.6e-64</td>
+          </tr>
+    
+          <tr>
+              <td>AHZ34234.1</td>
+              <td>LuxR</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000323/1">BGC0000323</a></td>
+              <td>NRP:Lipopeptide</td>
+              <td>49.0</td>
+              <td>37.4</td>
+              <td>235.0</td>
+              <td>3.5e-61</td>
+          </tr>
+    
+          <tr>
+              <td>AAY37646.1</td>
+              <td>regulatory_protein,_LuxR</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000437/1">BGC0000437</a></td>
+              <td>NRP</td>
+              <td>45.0</td>
+              <td>37.3</td>
+              <td>218.0</td>
+              <td>3.4e-56</td>
+          </tr>
+    
+          <tr>
+              <td>AOZ21318.1</td>
+              <td>SulK</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001790/1">BGC0001790</a></td>
+              <td>NRP</td>
+              <td>31.0</td>
+              <td>64.9</td>
+              <td>195.0</td>
+              <td>2.4e-49</td>
+          </tr>
+    
+          <tr>
+              <td>WP_039806869.1</td>
+              <td>efflux_transporter_outer_membrane_subunit</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0002001/1">BGC0002001</a></td>
+              <td>NRP + Polyketide</td>
+              <td>31.0</td>
+              <td>66.2</td>
+              <td>173.0</td>
+              <td>1.6e-42</td>
+          </tr>
+    
+          <tr>
+              <td>AHZ34244.1</td>
+              <td>PseA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001389/1">BGC0001389</a></td>
+              <td>NRP</td>
+              <td>29.0</td>
+              <td>68.2</td>
+              <td>158.0</td>
+              <td>5.4e-38</td>
+          </tr>
+    
+          <tr>
+              <td>KFL51893.1</td>
+              <td>LuxR_family_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001711/1">BGC0001711</a></td>
+              <td>NRP + Polyketide</td>
+              <td>38.0</td>
+              <td>36.3</td>
+              <td>157.0</td>
+              <td>9.3e-38</td>
+          </tr>
+    
+          <tr>
+              <td>AGN11896.1</td>
+              <td>tstA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001114/1">BGC0001114</a></td>
+              <td>NRP + Polyketide</td>
+              <td>33.0</td>
+              <td>37.2</td>
+              <td>127.0</td>
+              <td>7.9e-29</td>
+          </tr>
+    
+          <tr>
+              <td>ACV88180.1</td>
+              <td>RfiA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000329/1">BGC0000329</a></td>
+              <td>NRP</td>
+              <td>28.0</td>
+              <td>40.5</td>
+              <td>109.0</td>
+              <td>2.2e-23</td>
+          </tr>
+    
+          <tr>
+              <td>KFL51891.1</td>
+              <td>LuxR_family_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001711/1">BGC0001711</a></td>
+              <td>NRP + Polyketide</td>
+              <td>33.0</td>
+              <td>36.5</td>
+              <td>106.0</td>
+              <td>2.5e-22</td>
+          </tr>
+    
+          <tr>
+              <td>AHZ34250.1</td>
+              <td>LuxR</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001389/1">BGC0001389</a></td>
+              <td>NRP</td>
+              <td>32.0</td>
+              <td>34.9</td>
+              <td>104.0</td>
+              <td>7.1e-22</td>
+          </tr>
+    
+          <tr>
+              <td>ABA73959.1</td>
+              <td>putative_LuxR-family_regulatory_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001842/1">BGC0001842</a></td>
+              <td>NRP:Lipopeptide</td>
+              <td>30.0</td>
+              <td>34.4</td>
+              <td>95.0</td>
+              <td>4.3e-19</td>
+          </tr>
+    
+          <tr>
+              <td>AFH75333.1</td>
+              <td>LuxR_family_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000398/1">BGC0000398</a></td>
+              <td>NRP:Cyclic depsipeptide</td>
+              <td>30.0</td>
+              <td>36.7</td>
+              <td>92.0</td>
+              <td>2.1e-18</td>
+          </tr>
+    
+          <tr>
+              <td>AAY91424.1</td>
+              <td>transcriptional_regulator,_LuxR_family</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000399/1">BGC0000399</a></td>
+              <td>NRP:Cyclic depsipeptide</td>
+              <td>29.0</td>
+              <td>36.9</td>
+              <td>91.0</td>
+              <td>6.3e-18</td>
+          </tr>
+    
+          <tr>
+              <td>AOA33126.1</td>
+              <td>LuxR_family_DNA-binding_response_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001346/1">BGC0001346</a></td>
+              <td>NRP:Cyclic depsipeptide</td>
+              <td>30.0</td>
+              <td>34.4</td>
+              <td>91.0</td>
+              <td>8.2e-18</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

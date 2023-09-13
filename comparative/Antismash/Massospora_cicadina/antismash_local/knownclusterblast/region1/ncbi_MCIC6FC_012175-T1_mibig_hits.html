@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>BAE95596.1</td>
+              <td>putative_sugar-transport_ATP_binding_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000703/1">BGC0000703</a></td>
+              <td>Saccharide</td>
+              <td>26.0</td>
+              <td>34.8</td>
+              <td>139.0</td>
+              <td>4.1e-32</td>
+          </tr>
+    
+          <tr>
+              <td>CAF60513.1</td>
+              <td>putative_sugar_ABC-transproter_ATP-binding_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000704/1">BGC0000704</a></td>
+              <td>Saccharide</td>
+              <td>26.0</td>
+              <td>34.8</td>
+              <td>139.0</td>
+              <td>4.1e-32</td>
+          </tr>
+    
+          <tr>
+              <td>CAF31568.1</td>
+              <td>putative_sugar_ABC_transporter</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000705/1">BGC0000705</a></td>
+              <td>Saccharide</td>
+              <td>26.0</td>
+              <td>34.8</td>
+              <td>139.0</td>
+              <td>4.1e-32</td>
+          </tr>
+    
+          <tr>
+              <td>ARE67845.1</td>
+              <td>AbsF4</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001492/1">BGC0001492</a></td>
+              <td>Polyketide</td>
+              <td>26.0</td>
+              <td>35.4</td>
+              <td>120.0</td>
+              <td>2.6e-26</td>
+          </tr>
+    
+          <tr>
+              <td>AAN85531.1</td>
+              <td>ABC_transporter_component,_ATP_hydrolase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001101/1">BGC0001101</a></td>
+              <td>NRP + Polyketide:Modular type I + Polyketide:Trans-AT type I</td>
+              <td>26.0</td>
+              <td>34.6</td>
+              <td>119.0</td>
+              <td>3.3e-26</td>
+          </tr>
+    
+          <tr>
+              <td>AVI57415.1</td>
+              <td>AbmF4</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001694/1">BGC0001694</a></td>
+              <td>Polyketide</td>
+              <td>25.0</td>
+              <td>36.5</td>
+              <td>119.0</td>
+              <td>5.7e-26</td>
+          </tr>
+    
+          <tr>
+              <td>AEK75511.1</td>
+              <td>ATP-binding_ABC_peptide_transporter</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000001/1">BGC0000001</a></td>
+              <td>Polyketide:Modular type I</td>
+              <td>25.0</td>
+              <td>34.4</td>
+              <td>116.0</td>
+              <td>2.8e-25</td>
+          </tr>
+    
+          <tr>
+              <td>BAP34737.1</td>
+              <td>ABC-type_multidrug_transport_system</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000078/1">BGC0000078</a></td>
+              <td>Polyketide</td>
+              <td>28.0</td>
+              <td>20.3</td>
+              <td>97.0</td>
+              <td>1.8e-19</td>
+          </tr>
+    
+          <tr>
+              <td>BAM09402.1</td>
+              <td>putative_ABC-transporter</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000619/1">BGC0000619</a></td>
+              <td>RiPP</td>
+              <td>24.0</td>
+              <td>28.7</td>
+              <td>93.0</td>
+              <td>2.6e-18</td>
+          </tr>
+    
+          <tr>
+              <td>BBE52944.1</td>
+              <td>putative_ABC-transporter</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001602/1">BGC0001602</a></td>
+              <td>RiPP</td>
+              <td>24.0</td>
+              <td>28.7</td>
+              <td>93.0</td>
+              <td>2.6e-18</td>
+          </tr>
+    
+          <tr>
+              <td>ALX37944.1</td>
+              <td>GaeT</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001388/1">BGC0001388</a></td>
+              <td>RiPP</td>
+              <td>24.0</td>
+              <td>28.7</td>
+              <td>93.0</td>
+              <td>3.4e-18</td>
+          </tr>
+    
+          <tr>
+              <td>CAJ88181.1</td>
+              <td>putative_ABC_transporter,_ATP-binding_subunit</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000151/1">BGC0000151</a></td>
+              <td>Polyketide:Modular type I + Saccharide:Hybrid/tailoring</td>
+              <td>27.0</td>
+              <td>20.9</td>
+              <td>88.0</td>
+              <td>8.3e-17</td>
+          </tr>
+    
+          <tr>
+              <td>WP_078957969.1</td>
+              <td>ABC_transporter_ATP-binding_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001551/1">BGC0001551</a></td>
+              <td>RiPP</td>
+              <td>26.0</td>
+              <td>23.5</td>
+              <td>71.0</td>
+              <td>1.8e-11</td>
+          </tr>
+    
+          <tr>
+              <td>WP_052230046.1</td>
+              <td>ABC_transporter_ATP-binding_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001188/1">BGC0001188</a></td>
+              <td>RiPP</td>
+              <td>26.0</td>
+              <td>23.1</td>
+              <td>67.0</td>
+              <td>1.5e-10</td>
+          </tr>
+    
+          <tr>
+              <td>CAD15511.1</td>
+              <td>ATP-binding_transmembrane_ABC_transporter_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001014/1">BGC0001014</a></td>
+              <td>NRP:NRP siderophore + Polyketide:Modular type I + Polyketide:Iterative type I</td>
+              <td>24.0</td>
+              <td>32.9</td>
+              <td>64.0</td>
+              <td>1.3e-09</td>
+          </tr>
+    
+          <tr>
+              <td>BAC73398.1</td>
+              <td>putative_ABC_transporter_ATP-binding_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001552/1">BGC0001552</a></td>
+              <td>RiPP</td>
+              <td>23.0</td>
+              <td>23.3</td>
+              <td>57.0</td>
+              <td>1.6e-07</td>
+          </tr>
+    
+          <tr>
+              <td>WP_078613549.1</td>
+              <td>ABC_transporter_ATP-binding_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001550/1">BGC0001550</a></td>
+              <td>RiPP</td>
+              <td>24.0</td>
+              <td>23.5</td>
+              <td>54.0</td>
+              <td>1.3e-06</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

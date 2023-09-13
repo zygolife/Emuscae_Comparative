@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>CAJ45638.1</td>
+              <td>putative_siderophore_exporter</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000454/1">BGC0000454</a></td>
+              <td>NRP</td>
+              <td>50.0</td>
+              <td>109.1</td>
+              <td>353.0</td>
+              <td>3.4e-97</td>
+          </tr>
+    
+          <tr>
+              <td>ACR13598.1</td>
+              <td>putative_enterobactin_exporter_EntS</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000451/1">BGC0000451</a></td>
+              <td>NRP</td>
+              <td>47.0</td>
+              <td>99.2</td>
+              <td>305.0</td>
+              <td>1.1e-82</td>
+          </tr>
+    
+          <tr>
+              <td>ABG94127.1</td>
+              <td>transporter,_MFS_superfamily_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000417/1">BGC0000417</a></td>
+              <td>NRP</td>
+              <td>37.0</td>
+              <td>107.4</td>
+              <td>211.0</td>
+              <td>2.8e-54</td>
+          </tr>
+    
+          <tr>
+              <td>BAH33411.1</td>
+              <td>putative_siderophore_export_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000371/1">BGC0000371</a></td>
+              <td>NRP</td>
+              <td>36.0</td>
+              <td>109.3</td>
+              <td>204.0</td>
+              <td>2.6e-52</td>
+          </tr>
+    
+          <tr>
+              <td>EFL06870.1</td>
+              <td>major_facilitator_superfamily_transporter_multidrug_resistance_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000300/1">BGC0000300</a></td>
+              <td>NRP</td>
+              <td>33.0</td>
+              <td>104.4</td>
+              <td>176.0</td>
+              <td>5.8e-44</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

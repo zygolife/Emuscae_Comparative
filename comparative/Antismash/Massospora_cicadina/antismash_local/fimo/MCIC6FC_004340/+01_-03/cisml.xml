@@ -1,0 +1,577 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!-- Document definition -->
+<!-- http://zlab.bu.edu/~phaverty/SupplementalData/CisML/cisml.dtd -->
+<!DOCTYPE cis-element-search[
+<!ELEMENT cis-element-search (program-name, parameters, (pattern | multi-pattern-scan)*)>
+<!ELEMENT program-name (#PCDATA)>
+<!ELEMENT parameters (
+  pattern-file, 
+  sequence-file, 
+  background-seq-file?,
+  pattern-pvalue-cutoff?,
+  sequence-pvalue-cutoff?,
+  site-pvalue-cutoff?,
+  sequence-filtering,
+  ANY*
+ )>
+<!ELEMENT command-line (#PCDATA)>
+<!ELEMENT pattern-file (#PCDATA)>
+<!ELEMENT sequence-file (#PCDATA)>
+<!ELEMENT background-seq-file (#PCDATA)>
+<!ELEMENT pattern-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-pvalue-cutoff (#PCDATA)>
+<!ELEMENT site-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-filtering EMPTY>
+<!ELEMENT multi-pattern-scan (pattern+, ANY*)>
+<!ELEMENT pattern (scanned-sequence+, ANY*)>
+<!ELEMENT scanned-sequence (matched-element*, ANY*)>
+<!ELEMENT matched-element (sequence)>
+<!ELEMENT sequence (#PCDATA)>
+<!ATTLIST cis-element-search
+xmlns:xsi CDATA #IMPLIED
+xmlns:mem CDATA #IMPLIED
+xsi:schemaLocation CDATA #IMPLIED
+>
+<!ATTLIST sequence-filtering
+on-off CDATA #REQUIRED
+type CDATA #IMPLIED
+>
+<!ATTLIST multi-pattern-scan
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+>
+<!ATTLIST pattern
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+pvalue CDATA #IMPLIED
+score CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST scanned-sequence
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+length CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST matched-element
+start CDATA #REQUIRED
+stop CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+clusterid CDATA #IMPLIED
+>
+
+]>
+<cis-element-search
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://zlab.bu.edu/schema/cisml cisml.xsd"
+  xmlns="http://zlab.bu.edu/schema/cisml"
+  xmlns:mem="http://noble.gs.washington.edu/meme"
+>
+<program-name>fimo</program-name>
+<parameters>
+<pattern-file>/bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/Entomophthora_muscae_UCB/annotate/Massospora_cicadina_6FC.v_medaka/antismash_local/meme/MCIC6FC_004340/+01_-03/meme.html</pattern-file>
+<sequence-file>/bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/Entomophthora_muscae_UCB/annotate/Massospora_cicadina_6FC.v_medaka/antismash_local/contig_21402_promoter_sequences.fasta</sequence-file>
+<site-pvalue-cutoff>6e-05</site-pvalue-cutoff>
+<sequence-filtering on-off="off"/>
+</parameters>
+<pattern accession="1" name="1">
+<scanned-sequence accession="MCIC6FC_004308" name="MCIC6FC_004308">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004309" name="MCIC6FC_004309">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004310" name="MCIC6FC_004310">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004311+MCIC6FC_004312" name="MCIC6FC_004311+MCIC6FC_004312">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004313" name="MCIC6FC_004313">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004314" name="MCIC6FC_004314">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004315+MCIC6FC_004316" name="MCIC6FC_004315+MCIC6FC_004316">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004317" name="MCIC6FC_004317">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004318+MCIC6FC_004319" name="MCIC6FC_004318+MCIC6FC_004319">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004320+MCIC6FC_004321" name="MCIC6FC_004320+MCIC6FC_004321">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004322+MCIC6FC_004323" name="MCIC6FC_004322+MCIC6FC_004323">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004324" name="MCIC6FC_004324">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004325" name="MCIC6FC_004325">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004326+MCIC6FC_004327" name="MCIC6FC_004326+MCIC6FC_004327">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004328+MCIC6FC_004329" name="MCIC6FC_004328+MCIC6FC_004329">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004330" name="MCIC6FC_004330">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004331" name="MCIC6FC_004331">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004332" name="MCIC6FC_004332">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004333" name="MCIC6FC_004333">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004334" name="MCIC6FC_004334">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004335" name="MCIC6FC_004335">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004336" name="MCIC6FC_004336">
+<matched-element start="130" stop="123" score="14.9262" pvalue="1.63e-05">
+<sequence>CGGTGCCG</sequence>
+<mem:qvalue>0.146</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004337" name="MCIC6FC_004337">
+<matched-element start="184" stop="191" score="15.918" pvalue="8.13e-06">
+<sequence>CGGTGCGG</sequence>
+<mem:qvalue>0.136</mem:qvalue>
+</matched-element>
+<matched-element start="221" stop="228" score="15.918" pvalue="8.13e-06">
+<sequence>CGGTGCGG</sequence>
+<mem:qvalue>0.136</mem:qvalue>
+</matched-element>
+<matched-element start="238" stop="231" score="15.918" pvalue="8.13e-06">
+<sequence>CGGTGCGG</sequence>
+<mem:qvalue>0.136</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004338" name="MCIC6FC_004338">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004339+MCIC6FC_004340" name="MCIC6FC_004339+MCIC6FC_004340">
+<matched-element start="171" stop="178" score="13.623" pvalue="2.44e-05">
+<sequence>GGGTGCGG</sequence>
+<mem:qvalue>0.204</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004341" name="MCIC6FC_004341">
+<matched-element start="207" stop="200" score="14.9262" pvalue="1.63e-05">
+<sequence>CGGTGCCG</sequence>
+<mem:qvalue>0.146</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004342" name="MCIC6FC_004342">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004343+MCIC6FC_004344" name="MCIC6FC_004343+MCIC6FC_004344">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004345" name="MCIC6FC_004345">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004346" name="MCIC6FC_004346">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004347+MCIC6FC_004348" name="MCIC6FC_004347+MCIC6FC_004348">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004349" name="MCIC6FC_004349">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004350+MCIC6FC_004351" name="MCIC6FC_004350+MCIC6FC_004351">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004352" name="MCIC6FC_004352">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004353" name="MCIC6FC_004353">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004354" name="MCIC6FC_004354">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004355" name="MCIC6FC_004355">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004356" name="MCIC6FC_004356">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004357+MCIC6FC_004358" name="MCIC6FC_004357+MCIC6FC_004358">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004359" name="MCIC6FC_004359">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004360+MCIC6FC_004361" name="MCIC6FC_004360+MCIC6FC_004361">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004362" name="MCIC6FC_004362">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004363" name="MCIC6FC_004363">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004364" name="MCIC6FC_004364">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004365+MCIC6FC_004366" name="MCIC6FC_004365+MCIC6FC_004366">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004367" name="MCIC6FC_004367">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004368+MCIC6FC_004369" name="MCIC6FC_004368+MCIC6FC_004369">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004370" name="MCIC6FC_004370">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004371+MCIC6FC_004372" name="MCIC6FC_004371+MCIC6FC_004372">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004373" name="MCIC6FC_004373">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004374+MCIC6FC_004375" name="MCIC6FC_004374+MCIC6FC_004375">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004376+MCIC6FC_004377" name="MCIC6FC_004376+MCIC6FC_004377">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004378" name="MCIC6FC_004378">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004379+MCIC6FC_004380" name="MCIC6FC_004379+MCIC6FC_004380">
+<matched-element start="19" stop="12" score="15.918" pvalue="8.13e-06">
+<sequence>CGGTGCGG</sequence>
+<mem:qvalue>0.136</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004381+MCIC6FC_004382" name="MCIC6FC_004381+MCIC6FC_004382">
+<matched-element start="25" stop="18" score="15.918" pvalue="8.13e-06">
+<sequence>CGGTGCGG</sequence>
+<mem:qvalue>0.136</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004383" name="MCIC6FC_004383">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004384" name="MCIC6FC_004384">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004385" name="MCIC6FC_004385">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004386+MCIC6FC_004387" name="MCIC6FC_004386+MCIC6FC_004387">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004388" name="MCIC6FC_004388">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004389+MCIC6FC_004390" name="MCIC6FC_004389+MCIC6FC_004390">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004391" name="MCIC6FC_004391">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004392" name="MCIC6FC_004392">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004393" name="MCIC6FC_004393">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004394" name="MCIC6FC_004394">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004395" name="MCIC6FC_004395">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004396+MCIC6FC_004397" name="MCIC6FC_004396+MCIC6FC_004397">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004398+MCIC6FC_004399" name="MCIC6FC_004398+MCIC6FC_004399">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004400" name="MCIC6FC_004400">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004401+MCIC6FC_004402" name="MCIC6FC_004401+MCIC6FC_004402">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004403+MCIC6FC_004404" name="MCIC6FC_004403+MCIC6FC_004404">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004405+MCIC6FC_004406" name="MCIC6FC_004405+MCIC6FC_004406">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004407" name="MCIC6FC_004407">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004408+MCIC6FC_004409" name="MCIC6FC_004408+MCIC6FC_004409">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004410+MCIC6FC_004411" name="MCIC6FC_004410+MCIC6FC_004411">
+<matched-element start="144" stop="151" score="15.918" pvalue="8.13e-06">
+<sequence>CGGTGCGG</sequence>
+<mem:qvalue>0.136</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004412" name="MCIC6FC_004412">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004413" name="MCIC6FC_004413">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004414" name="MCIC6FC_004414">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004415+MCIC6FC_004416" name="MCIC6FC_004415+MCIC6FC_004416">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004417" name="MCIC6FC_004417">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004418+MCIC6FC_004419" name="MCIC6FC_004418+MCIC6FC_004419">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004420" name="MCIC6FC_004420">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004421" name="MCIC6FC_004421">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004422" name="MCIC6FC_004422">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004423" name="MCIC6FC_004423">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004424" name="MCIC6FC_004424">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004425" name="MCIC6FC_004425">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004426" name="MCIC6FC_004426">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004427" name="MCIC6FC_004427">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004428+MCIC6FC_004429" name="MCIC6FC_004428+MCIC6FC_004429">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004430" name="MCIC6FC_004430">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004431" name="MCIC6FC_004431">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004432" name="MCIC6FC_004432">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004433+MCIC6FC_004434" name="MCIC6FC_004433+MCIC6FC_004434">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004435+MCIC6FC_004436" name="MCIC6FC_004435+MCIC6FC_004436">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004437" name="MCIC6FC_004437">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004438" name="MCIC6FC_004438">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004439" name="MCIC6FC_004439">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004440" name="MCIC6FC_004440">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004441+MCIC6FC_004442" name="MCIC6FC_004441+MCIC6FC_004442">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004443" name="MCIC6FC_004443">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004444" name="MCIC6FC_004444">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004445" name="MCIC6FC_004445">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004446" name="MCIC6FC_004446">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004447" name="MCIC6FC_004447">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004448" name="MCIC6FC_004448">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004449" name="MCIC6FC_004449">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004450" name="MCIC6FC_004450">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004451+MCIC6FC_004452" name="MCIC6FC_004451+MCIC6FC_004452">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004453" name="MCIC6FC_004453">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004454" name="MCIC6FC_004454">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004455+MCIC6FC_004456" name="MCIC6FC_004455+MCIC6FC_004456">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004457" name="MCIC6FC_004457">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004458" name="MCIC6FC_004458">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004459" name="MCIC6FC_004459">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004460" name="MCIC6FC_004460">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004461" name="MCIC6FC_004461">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004462" name="MCIC6FC_004462">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004463+MCIC6FC_004464" name="MCIC6FC_004463+MCIC6FC_004464">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004465" name="MCIC6FC_004465">
+<matched-element start="29" stop="36" score="14.9262" pvalue="1.63e-05">
+<sequence>CGGTGCCG</sequence>
+<mem:qvalue>0.146</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004466+MCIC6FC_004467" name="MCIC6FC_004466+MCIC6FC_004467">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004468" name="MCIC6FC_004468">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004469" name="MCIC6FC_004469">
+<matched-element start="29" stop="22" score="14.9262" pvalue="1.63e-05">
+<sequence>CGGTGCCG</sequence>
+<mem:qvalue>0.146</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004470" name="MCIC6FC_004470">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004471+MCIC6FC_004472" name="MCIC6FC_004471+MCIC6FC_004472">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004473+MCIC6FC_004474" name="MCIC6FC_004473+MCIC6FC_004474">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004475+MCIC6FC_004476" name="MCIC6FC_004475+MCIC6FC_004476">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004477" name="MCIC6FC_004477">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004478+MCIC6FC_004479" name="MCIC6FC_004478+MCIC6FC_004479">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004480+MCIC6FC_004481" name="MCIC6FC_004480+MCIC6FC_004481">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004482+MCIC6FC_004483" name="MCIC6FC_004482+MCIC6FC_004483">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004484+MCIC6FC_004485" name="MCIC6FC_004484+MCIC6FC_004485">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004486" name="MCIC6FC_004486">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004487+MCIC6FC_004488" name="MCIC6FC_004487+MCIC6FC_004488">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004489" name="MCIC6FC_004489">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004490+MCIC6FC_004491" name="MCIC6FC_004490+MCIC6FC_004491">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004492+MCIC6FC_004493" name="MCIC6FC_004492+MCIC6FC_004493">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004494" name="MCIC6FC_004494">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004495" name="MCIC6FC_004495">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004496" name="MCIC6FC_004496">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004497" name="MCIC6FC_004497">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004498" name="MCIC6FC_004498">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004499+MCIC6FC_004500" name="MCIC6FC_004499+MCIC6FC_004500">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004501" name="MCIC6FC_004501">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004502+MCIC6FC_004503" name="MCIC6FC_004502+MCIC6FC_004503">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004504" name="MCIC6FC_004504">
+<matched-element start="111" stop="118" score="15.918" pvalue="8.13e-06">
+<sequence>CGGTGCGG</sequence>
+<mem:qvalue>0.136</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004505+MCIC6FC_004506" name="MCIC6FC_004505+MCIC6FC_004506">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004507+MCIC6FC_004508" name="MCIC6FC_004507+MCIC6FC_004508">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004509" name="MCIC6FC_004509">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004510+MCIC6FC_004511" name="MCIC6FC_004510+MCIC6FC_004511">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004512+MCIC6FC_004513" name="MCIC6FC_004512+MCIC6FC_004513">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004514" name="MCIC6FC_004514">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004515" name="MCIC6FC_004515">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004516" name="MCIC6FC_004516">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004517" name="MCIC6FC_004517">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004518+MCIC6FC_004519" name="MCIC6FC_004518+MCIC6FC_004519">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004520" name="MCIC6FC_004520">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004521" name="MCIC6FC_004521">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004522" name="MCIC6FC_004522">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004523" name="MCIC6FC_004523">
+<matched-element start="8" stop="1" score="14.9262" pvalue="1.63e-05">
+<sequence>CGGTGCCG</sequence>
+<mem:qvalue>0.146</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004524" name="MCIC6FC_004524">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004525+MCIC6FC_004526" name="MCIC6FC_004525+MCIC6FC_004526">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004527+MCIC6FC_004528" name="MCIC6FC_004527+MCIC6FC_004528">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004529" name="MCIC6FC_004529">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004530" name="MCIC6FC_004530">
+<matched-element start="184" stop="177" score="14.9262" pvalue="1.63e-05">
+<sequence>CGGTGCCG</sequence>
+<mem:qvalue>0.146</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004531" name="MCIC6FC_004531">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004532" name="MCIC6FC_004532">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004533+MCIC6FC_004534" name="MCIC6FC_004533+MCIC6FC_004534">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004535" name="MCIC6FC_004535">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004536" name="MCIC6FC_004536">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004537+MCIC6FC_004538" name="MCIC6FC_004537+MCIC6FC_004538">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004539" name="MCIC6FC_004539">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004540+MCIC6FC_004541" name="MCIC6FC_004540+MCIC6FC_004541">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004542" name="MCIC6FC_004542">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004543+MCIC6FC_004544" name="MCIC6FC_004543+MCIC6FC_004544">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004545+MCIC6FC_004546" name="MCIC6FC_004545+MCIC6FC_004546">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004547" name="MCIC6FC_004547">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004548+MCIC6FC_004549" name="MCIC6FC_004548+MCIC6FC_004549">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004550+MCIC6FC_004551" name="MCIC6FC_004550+MCIC6FC_004551">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004552" name="MCIC6FC_004552">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004553+MCIC6FC_004554" name="MCIC6FC_004553+MCIC6FC_004554">
+<matched-element start="150" stop="143" score="8.47541" pvalue="4.24e-05">
+<sequence>CGGTGCAG</sequence>
+<mem:qvalue>0.331</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004555" name="MCIC6FC_004555">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004556+MCIC6FC_004557" name="MCIC6FC_004556+MCIC6FC_004557">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004558+MCIC6FC_004559" name="MCIC6FC_004558+MCIC6FC_004559">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004560" name="MCIC6FC_004560">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004561+MCIC6FC_004562" name="MCIC6FC_004561+MCIC6FC_004562">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004563" name="MCIC6FC_004563">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004564" name="MCIC6FC_004564">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004565" name="MCIC6FC_004565">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004566+MCIC6FC_004567" name="MCIC6FC_004566+MCIC6FC_004567">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004568" name="MCIC6FC_004568">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004569+MCIC6FC_004570" name="MCIC6FC_004569+MCIC6FC_004570">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004571+MCIC6FC_004572" name="MCIC6FC_004571+MCIC6FC_004572">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004573+MCIC6FC_004574" name="MCIC6FC_004573+MCIC6FC_004574">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004575+MCIC6FC_004576" name="MCIC6FC_004575+MCIC6FC_004576">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004577+MCIC6FC_004578" name="MCIC6FC_004577+MCIC6FC_004578">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004579" name="MCIC6FC_004579">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004580" name="MCIC6FC_004580">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004581+MCIC6FC_004582" name="MCIC6FC_004581+MCIC6FC_004582">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004583" name="MCIC6FC_004583">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004584+MCIC6FC_004585" name="MCIC6FC_004584+MCIC6FC_004585">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004586" name="MCIC6FC_004586">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004587+MCIC6FC_004588" name="MCIC6FC_004587+MCIC6FC_004588">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004589+MCIC6FC_004590" name="MCIC6FC_004589+MCIC6FC_004590">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004591+MCIC6FC_004592" name="MCIC6FC_004591+MCIC6FC_004592">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004593" name="MCIC6FC_004593">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004594" name="MCIC6FC_004594">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004595+MCIC6FC_004596" name="MCIC6FC_004595+MCIC6FC_004596">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004597" name="MCIC6FC_004597">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004598" name="MCIC6FC_004598">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004599" name="MCIC6FC_004599">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004600" name="MCIC6FC_004600">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004601" name="MCIC6FC_004601">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004602" name="MCIC6FC_004602">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004603" name="MCIC6FC_004603">
+</scanned-sequence>
+<scanned-sequence accession="MCIC6FC_004604+MCIC6FC_004605" name="MCIC6FC_004604+MCIC6FC_004605">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+</cis-element-search>

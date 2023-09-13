@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>ALS30796.1</td>
+              <td>trans-aconitate_decarboxylase_1</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001286/1">BGC0001286</a></td>
+              <td>Other</td>
+              <td>50.0</td>
+              <td>96.2</td>
+              <td>418.0</td>
+              <td>1.1e-116</td>
+          </tr>
+    
+          <tr>
+              <td>ALA99201.1</td>
+              <td>CreD</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001295/1">BGC0001295</a></td>
+              <td>Other</td>
+              <td>38.0</td>
+              <td>101.1</td>
+              <td>272.0</td>
+              <td>9.5e-73</td>
+          </tr>
+    
+          <tr>
+              <td>AGH68898.1</td>
+              <td>3-carboxymuconate_cycloisomerase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001083/1">BGC0001083</a></td>
+              <td>Terpene + Polyketide:Type III</td>
+              <td>39.0</td>
+              <td>100.2</td>
+              <td>270.0</td>
+              <td>3.6e-72</td>
+          </tr>
+    
+          <tr>
+              <td>AYV61402.1</td>
+              <td>3-carboxy-ciscis-muconate_cycloisomerase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001965/1">BGC0001965</a></td>
+              <td>Other</td>
+              <td>38.0</td>
+              <td>101.3</td>
+              <td>268.0</td>
+              <td>2.4e-71</td>
+          </tr>
+    
+          <tr>
+              <td>AXO35222.1</td>
+              <td>3-carboxy-ciscis-muconate_cycloisomerase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001848/1">BGC0001848</a></td>
+              <td>Other</td>
+              <td>37.0</td>
+              <td>101.8</td>
+              <td>265.0</td>
+              <td>1.2e-70</td>
+          </tr>
+    
+          <tr>
+              <td>AFW04563.1</td>
+              <td>3-carboxymuconate_cycloisomerase_PcaB</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001783/1">BGC0001783</a></td>
+              <td>Other</td>
+              <td>37.0</td>
+              <td>100.9</td>
+              <td>259.0</td>
+              <td>1.4e-68</td>
+          </tr>
+    
+          <tr>
+              <td>AEH42493.1</td>
+              <td>3-carboxymuconate_cycloisomerase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000032/1">BGC0000032</a></td>
+              <td>Polyketide</td>
+              <td>37.0</td>
+              <td>99.3</td>
+              <td>258.0</td>
+              <td>2.4e-68</td>
+          </tr>
+    
+          <tr>
+              <td>BAE78985.1</td>
+              <td>3-carboxy-cis,cis-muconate_cycloisomerase_homologue</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001078/1">BGC0001078</a></td>
+              <td>Terpene + Polyketide</td>
+              <td>37.0</td>
+              <td>100.2</td>
+              <td>257.0</td>
+              <td>4.1e-68</td>
+          </tr>
+    
+          <tr>
+              <td>QCT05749.1</td>
+              <td>Tri16</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001983/1">BGC0001983</a></td>
+              <td>Other</td>
+              <td>36.0</td>
+              <td>98.4</td>
+              <td>253.0</td>
+              <td>4.6e-67</td>
+          </tr>
+    
+          <tr>
+              <td>CBL93728.1</td>
+              <td>3-carboxymuconate_cycloisomerase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000360/1">BGC0000360</a></td>
+              <td>NRP</td>
+              <td>35.0</td>
+              <td>101.6</td>
+              <td>238.0</td>
+              <td>2e-62</td>
+          </tr>
+    
+          <tr>
+              <td>RZB16710.1</td>
+              <td>3-carboxy-cis,cis-muconate_cycloisomerase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001850/1">BGC0001850</a></td>
+              <td>Other:Shikimate-derived</td>
+              <td>35.0</td>
+              <td>101.6</td>
+              <td>235.0</td>
+              <td>1.7e-61</td>
+          </tr>
+    
+          <tr>
+              <td>AGZ93907.1</td>
+              <td>3-carboxy-ciscis-muconate_cycloisomerase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000937/1">BGC0000937</a></td>
+              <td>Other</td>
+              <td>34.0</td>
+              <td>106.7</td>
+              <td>224.0</td>
+              <td>3e-58</td>
+          </tr>
+    
+          <tr>
+              <td>ACF06637.1</td>
+              <td>ToyF</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000879/1">BGC0000879</a></td>
+              <td>Other</td>
+              <td>33.0</td>
+              <td>96.2</td>
+              <td>211.0</td>
+              <td>3.4e-54</td>
+          </tr>
+    
+          <tr>
+              <td>QDO67111.1</td>
+              <td>PyrB</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001985/1">BGC0001985</a></td>
+              <td>Other</td>
+              <td>24.0</td>
+              <td>100.2</td>
+              <td>85.0</td>
+              <td>2.2e-16</td>
+          </tr>
+    
+          <tr>
+              <td>AJO72760.1</td>
+              <td>Adenylosuccinate_lyase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001381/1">BGC0001381</a></td>
+              <td>Polyketide</td>
+              <td>24.0</td>
+              <td>101.8</td>
+              <td>83.0</td>
+              <td>1.1e-15</td>
+          </tr>
+    
+          <tr>
+              <td>EFE73297.1</td>
+              <td>argininosuccinate_lyase_ArgH</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000431/1">BGC0000431</a></td>
+              <td>NRP:Cyclic depsipeptide</td>
+              <td>28.0</td>
+              <td>85.6</td>
+              <td>82.0</td>
+              <td>1.4e-15</td>
+          </tr>
+    
+          <tr>
+              <td>AEG64687.1</td>
+              <td>diaminobutyric_acid_synthase_B</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000379/1">BGC0000379</a></td>
+              <td>NRP</td>
+              <td>26.0</td>
+              <td>91.4</td>
+              <td>76.0</td>
+              <td>1.7e-13</td>
+          </tr>
+    
+          <tr>
+              <td>CAM56768.1</td>
+              <td>DabB</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000354/1">BGC0000354</a></td>
+              <td>NRP</td>
+              <td>26.0</td>
+              <td>72.1</td>
+              <td>67.0</td>
+              <td>8e-11</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

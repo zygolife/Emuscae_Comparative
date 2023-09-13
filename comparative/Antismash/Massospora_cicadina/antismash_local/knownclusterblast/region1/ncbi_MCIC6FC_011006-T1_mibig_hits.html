@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>BAC76463.1</td>
+              <td>pyrroloquinoline_quinone_biosynthesis_protein_E</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001100/1">BGC0001100</a></td>
+              <td>NRP + Polyketide</td>
+              <td>48.0</td>
+              <td>83.8</td>
+              <td>349.0</td>
+              <td>9.7e-96</td>
+          </tr>
+    
+          <tr>
+              <td>ABU41510.1</td>
+              <td>NirJ1</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000906/1">BGC0000906</a></td>
+              <td>Other</td>
+              <td>25.0</td>
+              <td>83.3</td>
+              <td>92.0</td>
+              <td>1.3e-18</td>
+          </tr>
+    
+          <tr>
+              <td>ABT18044.1</td>
+              <td>heme_d1_biosynthesis_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000905/1">BGC0000905</a></td>
+              <td>Other</td>
+              <td>24.0</td>
+              <td>83.3</td>
+              <td>92.0</td>
+              <td>2.1e-18</td>
+          </tr>
+    
+          <tr>
+              <td>ABT18046.1</td>
+              <td>heme_d1_biosynthesis_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000905/1">BGC0000905</a></td>
+              <td>Other</td>
+              <td>23.0</td>
+              <td>74.9</td>
+              <td>74.0</td>
+              <td>6e-13</td>
+          </tr>
+    
+          <tr>
+              <td>WP_019503880.1</td>
+              <td>nif11-class_peptide_radical_SAM_maturase_3</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001745/1">BGC0001745</a></td>
+              <td>RiPP</td>
+              <td>22.0</td>
+              <td>84.2</td>
+              <td>72.0</td>
+              <td>1.8e-12</td>
+          </tr>
+    
+          <tr>
+              <td>WP_015143117.1</td>
+              <td>nif11-class_peptide_radical_SAM_maturase_3</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001733/1">BGC0001733</a></td>
+              <td>RiPP</td>
+              <td>21.0</td>
+              <td>84.7</td>
+              <td>70.0</td>
+              <td>6.7e-12</td>
+          </tr>
+    
+          <tr>
+              <td>ABU41512.1</td>
+              <td>NirJ2</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000906/1">BGC0000906</a></td>
+              <td>Other</td>
+              <td>27.0</td>
+              <td>38.4</td>
+              <td>69.0</td>
+              <td>1.1e-11</td>
+          </tr>
+    
+          <tr>
+              <td>ABF89352.1</td>
+              <td>radical_SAM_domain_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001025/1">BGC0001025</a></td>
+              <td>NRP + Polyketide:Trans-AT type I</td>
+              <td>29.0</td>
+              <td>40.6</td>
+              <td>65.0</td>
+              <td>2.8e-10</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

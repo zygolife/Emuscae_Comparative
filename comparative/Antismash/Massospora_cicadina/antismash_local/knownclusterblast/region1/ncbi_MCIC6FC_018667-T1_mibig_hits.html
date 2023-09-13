@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>ADJ63844.1</td>
+              <td>TonB-dependent_Fe3+-serobactin_transporter</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000424/1">BGC0000424</a></td>
+              <td>NRP:NRP siderophore</td>
+              <td>40.0</td>
+              <td>53.5</td>
+              <td>495.0</td>
+              <td>1.9e-139</td>
+          </tr>
+    
+          <tr>
+              <td>ADJ63836.1</td>
+              <td>TonB-dependent_transducer</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000424/1">BGC0000424</a></td>
+              <td>NRP:NRP siderophore</td>
+              <td>38.0</td>
+              <td>61.8</td>
+              <td>478.0</td>
+              <td>3.2e-134</td>
+          </tr>
+    
+          <tr>
+              <td>CAQ71830.1</td>
+              <td>TonB-dependent_siderophore_receptor,_HYDROXAMATE-TYPE_FERRISIDEROPHORE_RECEPTOR_precursor</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001189/1">BGC0001189</a></td>
+              <td>NRP</td>
+              <td>38.0</td>
+              <td>54.8</td>
+              <td>431.0</td>
+              <td>3.5e-120</td>
+          </tr>
+    
+          <tr>
+              <td>AUD11990.1</td>
+              <td>OrbA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001721/1">BGC0001721</a></td>
+              <td>NRP</td>
+              <td>38.0</td>
+              <td>54.1</td>
+              <td>406.0</td>
+              <td>2e-112</td>
+          </tr>
+    
+          <tr>
+              <td>WP_006051166.1</td>
+              <td>TonB-dependent_siderophore_receptor</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001999/1">BGC0001999</a></td>
+              <td>NRP</td>
+              <td>36.0</td>
+              <td>55.4</td>
+              <td>403.0</td>
+              <td>1e-111</td>
+          </tr>
+    
+          <tr>
+              <td>AEH59074.1</td>
+              <td>TonB-dependent_receptor</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000385/1">BGC0000385</a></td>
+              <td>NRP</td>
+              <td>36.0</td>
+              <td>54.9</td>
+              <td>356.0</td>
+              <td>2.4e-97</td>
+          </tr>
+    
+          <tr>
+              <td>WP_040566524.1</td>
+              <td>TonB-dependent_receptor</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0002004/1">BGC0002004</a></td>
+              <td>RiPP</td>
+              <td>28.0</td>
+              <td>65.1</td>
+              <td>275.0</td>
+              <td>3.2e-73</td>
+          </tr>
+    
+          <tr>
+              <td>ABB02669.2</td>
+              <td>PsuA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000947/1">BGC0000947</a></td>
+              <td>Other</td>
+              <td>25.0</td>
+              <td>49.7</td>
+              <td>159.0</td>
+              <td>4.3e-38</td>
+          </tr>
+    
+          <tr>
+              <td>CAJ96464.1</td>
+              <td>outer_membrane_receptor,_TonB_dependent</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000330/1">BGC0000330</a></td>
+              <td>NRP:NRP siderophore</td>
+              <td>25.0</td>
+              <td>53.5</td>
+              <td>149.0</td>
+              <td>3.4e-35</td>
+          </tr>
+    
+          <tr>
+              <td>AEH59054.1</td>
+              <td>putative_ferric_siderophore_receptor_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000385/1">BGC0000385</a></td>
+              <td>NRP</td>
+              <td>24.0</td>
+              <td>62.1</td>
+              <td>131.0</td>
+              <td>9.7e-30</td>
+          </tr>
+    
+          <tr>
+              <td>PHM29813.1</td>
+              <td>ferric_alcaligin_siderophore_receptor</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001870/1">BGC0001870</a></td>
+              <td>Other</td>
+              <td>22.0</td>
+              <td>54.3</td>
+              <td>123.0</td>
+              <td>3.4e-27</td>
+          </tr>
+    
+          <tr>
+              <td>ABB02670.1</td>
+              <td>PvuA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000947/1">BGC0000947</a></td>
+              <td>Other</td>
+              <td>22.0</td>
+              <td>50.6</td>
+              <td>57.0</td>
+              <td>1.4e-07</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

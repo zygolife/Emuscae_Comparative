@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>NP_626685.1</td>
+              <td>GntR_family_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000595/1">BGC0000595</a></td>
+              <td>RiPP</td>
+              <td>27.0</td>
+              <td>89.8</td>
+              <td>70.0</td>
+              <td>5.3e-12</td>
+          </tr>
+    
+          <tr>
+              <td>WP_003976364.1</td>
+              <td>FadR_family_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000596/1">BGC0000596</a></td>
+              <td>RiPP</td>
+              <td>27.0</td>
+              <td>89.8</td>
+              <td>70.0</td>
+              <td>5.3e-12</td>
+          </tr>
+    
+          <tr>
+              <td>QBF51751.1</td>
+              <td>GntR_family_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001856/1">BGC0001856</a></td>
+              <td>Polyketide:Modular type I</td>
+              <td>25.0</td>
+              <td>91.4</td>
+              <td>60.0</td>
+              <td>4.2e-09</td>
+          </tr>
+    
+          <tr>
+              <td>AET51839.1</td>
+              <td>GntR_family_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001138/1">BGC0001138</a></td>
+              <td>Other:Nucleoside</td>
+              <td>26.0</td>
+              <td>88.6</td>
+              <td>59.0</td>
+              <td>9.4e-09</td>
+          </tr>
+    
+          <tr>
+              <td>TXD00036.1</td>
+              <td>FadR_family_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001877/1">BGC0001877</a></td>
+              <td>Polyketide</td>
+              <td>24.0</td>
+              <td>94.9</td>
+              <td>56.0</td>
+              <td>7.9e-08</td>
+          </tr>
+    
+          <tr>
+              <td>AKQ99301.1</td>
+              <td>bacterial_regulatory_protein,gntR_family</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001484/1">BGC0001484</a></td>
+              <td>Other</td>
+              <td>44.0</td>
+              <td>28.6</td>
+              <td>53.0</td>
+              <td>6.7e-07</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

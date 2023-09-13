@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>AAD21203.1</td>
+              <td>MoaB</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000917/1">BGC0000917</a></td>
+              <td>Other</td>
+              <td>39.0</td>
+              <td>21.5</td>
+              <td>112.0</td>
+              <td>3.6e-24</td>
+          </tr>
+    
+          <tr>
+              <td>AAL65285.1</td>
+              <td>QbsC</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000925/1">BGC0000925</a></td>
+              <td>Other</td>
+              <td>38.0</td>
+              <td>21.6</td>
+              <td>101.0</td>
+              <td>4.8e-21</td>
+          </tr>
+    
+          <tr>
+              <td>AIE54197.1</td>
+              <td>Pau30</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001731/1">BGC0001731</a></td>
+              <td>Other</td>
+              <td>32.0</td>
+              <td>20.7</td>
+              <td>56.0</td>
+              <td>2.3e-07</td>
+          </tr>
+    
+          <tr>
+              <td>AIE54250.1</td>
+              <td>PauY30</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001732/1">BGC0001732</a></td>
+              <td>Other</td>
+              <td>32.0</td>
+              <td>20.7</td>
+              <td>56.0</td>
+              <td>2.3e-07</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>WP_006051164.1</td>
+              <td>Fe(3+)-hydroxamate_ABC_transporter_permease_FhuB</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001999/1">BGC0001999</a></td>
+              <td>NRP</td>
+              <td>43.0</td>
+              <td>60.6</td>
+              <td>337.0</td>
+              <td>8.1e-92</td>
+          </tr>
+    
+          <tr>
+              <td>BAE16001.1</td>
+              <td>membrane_permease</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000939/1">BGC0000939</a></td>
+              <td>Other</td>
+              <td>33.0</td>
+              <td>62.4</td>
+              <td>230.0</td>
+              <td>1.1e-59</td>
+          </tr>
+    
+          <tr>
+              <td>ARF06235.1</td>
+              <td>ferric_hydroxamate_ABC_transporter_permease_component</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001593/1">BGC0001593</a></td>
+              <td>NRP</td>
+              <td>29.0</td>
+              <td>59.6</td>
+              <td>139.0</td>
+              <td>1.9e-32</td>
+          </tr>
+    
+          <tr>
+              <td>ctg1_orf1270</td>
+              <td></td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001752/1">BGC0001752</a></td>
+              <td>NRP</td>
+              <td>38.0</td>
+              <td>32.6</td>
+              <td>139.0</td>
+              <td>1.9e-32</td>
+          </tr>
+    
+          <tr>
+              <td>CDL83409.1</td>
+              <td>Iron(3+)-hydroxamate-binding_protein_fhuD</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001498/1">BGC0001498</a></td>
+              <td>Other</td>
+              <td>35.0</td>
+              <td>33.2</td>
+              <td>139.0</td>
+              <td>2.5e-32</td>
+          </tr>
+    
+          <tr>
+              <td>WP_020635025.1</td>
+              <td>iron_chelate_uptake_ABC_transporter_family_permease_subunit</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001211/1">BGC0001211</a></td>
+              <td>NRP</td>
+              <td>34.0</td>
+              <td>32.3</td>
+              <td>120.0</td>
+              <td>1.5e-26</td>
+          </tr>
+    
+          <tr>
+              <td>PHM29815.1</td>
+              <td>hypothetical_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001870/1">BGC0001870</a></td>
+              <td>Other</td>
+              <td>36.0</td>
+              <td>30.1</td>
+              <td>119.0</td>
+              <td>3.5e-26</td>
+          </tr>
+    
+          <tr>
+              <td>CAG38694.1</td>
+              <td>transport_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000708/1">BGC0000708</a></td>
+              <td>Saccharide</td>
+              <td>33.0</td>
+              <td>37.5</td>
+              <td>117.0</td>
+              <td>1.3e-25</td>
+          </tr>
+    
+          <tr>
+              <td>ctg1_orf1271</td>
+              <td></td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001752/1">BGC0001752</a></td>
+              <td>NRP</td>
+              <td>31.0</td>
+              <td>40.1</td>
+              <td>114.0</td>
+              <td>1.1e-24</td>
+          </tr>
+    
+          <tr>
+              <td>AEZ64560.1</td>
+              <td>Fe3+-siderophore_ABC_transporter_permease</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001065/1">BGC0001065</a></td>
+              <td>Polyketide</td>
+              <td>34.0</td>
+              <td>30.7</td>
+              <td>111.0</td>
+              <td>9.4e-24</td>
+          </tr>
+    
+          <tr>
+              <td>ABD29255.1</td>
+              <td>lipoprotein,_SirC,_putative</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000943/1">BGC0000943</a></td>
+              <td>Other</td>
+              <td>30.0</td>
+              <td>31.7</td>
+              <td>106.0</td>
+              <td>1.8e-22</td>
+          </tr>
+    
+          <tr>
+              <td>EFL06872.1</td>
+              <td>predicted_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000300/1">BGC0000300</a></td>
+              <td>NRP</td>
+              <td>30.0</td>
+              <td>34.1</td>
+              <td>102.0</td>
+              <td>3.3e-21</td>
+          </tr>
+    
+          <tr>
+              <td>AGE11897.1</td>
+              <td>iron_siderophore_transporter</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000366/1">BGC0000366</a></td>
+              <td>NRP</td>
+              <td>31.0</td>
+              <td>31.4</td>
+              <td>99.0</td>
+              <td>3.7e-20</td>
+          </tr>
+    
+          <tr>
+              <td>ABS50190.1</td>
+              <td>putative_transport_system_permease_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000410/1">BGC0000410</a></td>
+              <td>NRP</td>
+              <td>30.0</td>
+              <td>33.6</td>
+              <td>84.0</td>
+              <td>7.2e-16</td>
+          </tr>
+    
+          <tr>
+              <td>ctg1_orf25</td>
+              <td></td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001767/1">BGC0001767</a></td>
+              <td>NRP</td>
+              <td>31.0</td>
+              <td>34.9</td>
+              <td>81.0</td>
+              <td>6.1e-15</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

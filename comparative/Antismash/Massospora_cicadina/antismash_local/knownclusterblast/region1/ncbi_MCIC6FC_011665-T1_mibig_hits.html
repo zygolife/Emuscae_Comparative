@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>AAY59070.1</td>
+              <td>outer_membrane_channel_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000128/1">BGC0000128</a></td>
+              <td>Polyketide</td>
+              <td>33.0</td>
+              <td>35.8</td>
+              <td>245.0</td>
+              <td>4.8e-64</td>
+          </tr>
+    
+          <tr>
+              <td>AAX56377.1</td>
+              <td>PltO</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000127/1">BGC0000127</a></td>
+              <td>Polyketide</td>
+              <td>32.0</td>
+              <td>36.7</td>
+              <td>238.0</td>
+              <td>4.5e-62</td>
+          </tr>
+    
+          <tr>
+              <td>WP_064118563.1</td>
+              <td>efflux_transporter_outer_membrane_subunit</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001509/1">BGC0001509</a></td>
+              <td>NRP</td>
+              <td>34.0</td>
+              <td>35.5</td>
+              <td>218.0</td>
+              <td>4.9e-56</td>
+          </tr>
+    
+          <tr>
+              <td>CCJ67633.1</td>
+              <td>multidrug/solvent_efflux_pump_outer_membrane_protein_mepC</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000447/1">BGC0000447</a></td>
+              <td>NRP:Lipopeptide</td>
+              <td>32.0</td>
+              <td>34.4</td>
+              <td>213.0</td>
+              <td>2.7e-54</td>
+          </tr>
+    
+          <tr>
+              <td>QDF82261.1</td>
+              <td>RND_efflux_system,_outer_membrane_lipoprotein_CmeC</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001980/1">BGC0001980</a></td>
+              <td>NRP</td>
+              <td>33.0</td>
+              <td>35.3</td>
+              <td>211.0</td>
+              <td>1e-53</td>
+          </tr>
+    
+          <tr>
+              <td>KPN90367.1</td>
+              <td>NunG</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001416/1">BGC0001416</a></td>
+              <td>NRP</td>
+              <td>33.0</td>
+              <td>34.4</td>
+              <td>208.0</td>
+              <td>6.6e-53</td>
+          </tr>
+    
+          <tr>
+              <td>CDF96617.1</td>
+              <td>RND_efflux_system</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001149/1">BGC0001149</a></td>
+              <td>NRP:Lipopeptide + Saccharide:Hybrid/tailoring</td>
+              <td>31.0</td>
+              <td>35.4</td>
+              <td>206.0</td>
+              <td>2.5e-52</td>
+          </tr>
+    
+          <tr>
+              <td>AFH75317.1</td>
+              <td>outer_membrane_efflux_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000425/1">BGC0000425</a></td>
+              <td>NRP:Cyclic depsipeptide</td>
+              <td>32.0</td>
+              <td>34.4</td>
+              <td>203.0</td>
+              <td>2.1e-51</td>
+          </tr>
+    
+          <tr>
+              <td>AEA60654.1</td>
+              <td>secretion_protein_HlyD</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000892/1">BGC0000892</a></td>
+              <td>Other</td>
+              <td>36.0</td>
+              <td>25.3</td>
+              <td>198.0</td>
+              <td>8.9e-50</td>
+          </tr>
+    
+          <tr>
+              <td>AAY91416.1</td>
+              <td>efflux_transporter,_outer_membrane_factor_lipoprotein,_NodT_family</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000399/1">BGC0000399</a></td>
+              <td>NRP:Cyclic depsipeptide</td>
+              <td>32.0</td>
+              <td>35.4</td>
+              <td>197.0</td>
+              <td>1.2e-49</td>
+          </tr>
+    
+          <tr>
+              <td>AOZ21318.1</td>
+              <td>SulK</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001790/1">BGC0001790</a></td>
+              <td>NRP</td>
+              <td>29.0</td>
+              <td>36.4</td>
+              <td>193.0</td>
+              <td>2.2e-48</td>
+          </tr>
+    
+          <tr>
+              <td>AAY37645.1</td>
+              <td>RND_efflux_system,_outer_membrane_lipoprotein,_NodT</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000437/1">BGC0000437</a></td>
+              <td>NRP</td>
+              <td>31.0</td>
+              <td>35.0</td>
+              <td>188.0</td>
+              <td>7e-47</td>
+          </tr>
+    
+          <tr>
+              <td>ABW17373.1</td>
+              <td>OprM</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000411/1">BGC0000411</a></td>
+              <td>NRP</td>
+              <td>31.0</td>
+              <td>35.7</td>
+              <td>185.0</td>
+              <td>5.9e-46</td>
+          </tr>
+    
+          <tr>
+              <td>AHZ34244.1</td>
+              <td>PseA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001389/1">BGC0001389</a></td>
+              <td>NRP</td>
+              <td>30.0</td>
+              <td>35.0</td>
+              <td>176.0</td>
+              <td>2.1e-43</td>
+          </tr>
+    
+          <tr>
+              <td>WP_039806869.1</td>
+              <td>efflux_transporter_outer_membrane_subunit</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0002001/1">BGC0002001</a></td>
+              <td>NRP + Polyketide</td>
+              <td>31.0</td>
+              <td>35.6</td>
+              <td>172.0</td>
+              <td>5.2e-42</td>
+          </tr>
+    
+          <tr>
+              <td>AOA33119.1</td>
+              <td>RND_efflux_system,_outer_membrane_lipoprotein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001346/1">BGC0001346</a></td>
+              <td>NRP:Cyclic depsipeptide</td>
+              <td>33.0</td>
+              <td>27.0</td>
+              <td>162.0</td>
+              <td>4.1e-39</td>
+          </tr>
+    
+          <tr>
+              <td>AAY93388.1</td>
+              <td>efflux_transporter,_outer_membrane_factor_lipoprotein,_NodT_family</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000413/1">BGC0000413</a></td>
+              <td>NRP</td>
+              <td>28.0</td>
+              <td>36.0</td>
+              <td>161.0</td>
+              <td>1.2e-38</td>
+          </tr>
+    
+          <tr>
+              <td>ACU62763.1</td>
+              <td>secretion_protein_HlyD_family_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001392/1">BGC0001392</a></td>
+              <td>RiPP</td>
+              <td>33.0</td>
+              <td>25.0</td>
+              <td>158.0</td>
+              <td>6e-38</td>
+          </tr>
+    
+          <tr>
+              <td>ACV88183.1</td>
+              <td>PcoA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000329/1">BGC0000329</a></td>
+              <td>NRP</td>
+              <td>26.0</td>
+              <td>36.7</td>
+              <td>155.0</td>
+              <td>5e-37</td>
+          </tr>
+    
+          <tr>
+              <td>AAY93387.1</td>
+              <td>auxiliary_transport_protein,_membrane_fusion_protein_family</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000413/1">BGC0000413</a></td>
+              <td>NRP</td>
+              <td>33.0</td>
+              <td>27.3</td>
+              <td>154.0</td>
+              <td>1.1e-36</td>
+          </tr>
+    
+          <tr>
+              <td>AAY93344.1</td>
+              <td>efflux_transporter,_outer_membrane_factor_lipoprotein,_NodT_family</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000413/1">BGC0000413</a></td>
+              <td>NRP</td>
+              <td>29.0</td>
+              <td>31.2</td>
+              <td>148.0</td>
+              <td>1.1e-34</td>
+          </tr>
+    
+          <tr>
+              <td>AJF34460.1</td>
+              <td>outer_membrane_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001207/1">BGC0001207</a></td>
+              <td>NRP</td>
+              <td>28.0</td>
+              <td>35.3</td>
+              <td>141.0</td>
+              <td>9.8e-33</td>
+          </tr>
+    
+          <tr>
+              <td>CBA63674.1</td>
+              <td>MFS_griseobactin_exporter</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000368/1">BGC0000368</a></td>
+              <td>NRP</td>
+              <td>29.0</td>
+              <td>20.6</td>
+              <td>85.0</td>
+              <td>8.4e-16</td>
+          </tr>
+    
+          <tr>
+              <td>WP_027148173.1</td>
+              <td>multidrug_efflux_MFS_transporter</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001480/1">BGC0001480</a></td>
+              <td>Other</td>
+              <td>23.0</td>
+              <td>24.6</td>
+              <td>79.0</td>
+              <td>3.5e-14</td>
+          </tr>
+    
+          <tr>
+              <td>AFU65888.1</td>
+              <td>DacR2</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000216/1">BGC0000216</a></td>
+              <td>Polyketide</td>
+              <td>26.0</td>
+              <td>37.5</td>
+              <td>79.0</td>
+              <td>6e-14</td>
+          </tr>
+    
+          <tr>
+              <td>ADE34501.1</td>
+              <td>ssfR</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000269/1">BGC0000269</a></td>
+              <td>Polyketide:Type II + Saccharide:Hybrid/tailoring</td>
+              <td>25.0</td>
+              <td>24.5</td>
+              <td>59.0</td>
+              <td>3.8e-08</td>
+          </tr>
+    
+          <tr>
+              <td>CCJ67641.1</td>
+              <td>macrolide-specific_efflux_protein_macA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000447/1">BGC0000447</a></td>
+              <td>NRP:Lipopeptide</td>
+              <td>25.0</td>
+              <td>22.0</td>
+              <td>53.0</td>
+              <td>3.5e-06</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

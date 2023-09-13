@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>AAY93360.1</td>
+              <td>transcriptional_regulator,_TetR_family</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000413/1">BGC0000413</a></td>
+              <td>NRP</td>
+              <td>68.0</td>
+              <td>99.5</td>
+              <td>248.0</td>
+              <td>6.2e-66</td>
+          </tr>
+    
+          <tr>
+              <td>CAC36768.1</td>
+              <td>putative_2-Alkyl-4-hydroxymethylfuran-3-carboxylic_acid-dependent_transcriptional_regulator_(TetR-family),_MmfR</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000914/1">BGC0000914</a></td>
+              <td>Other</td>
+              <td>32.0</td>
+              <td>50.3</td>
+              <td>59.0</td>
+              <td>9.2e-09</td>
+          </tr>
+    
+          <tr>
+              <td>CAD18970.1</td>
+              <td>putative_lactone-dependent_transcriptional_regulator</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000847/1">BGC0000847</a></td>
+              <td>Other:Non-NRP beta-lactam</td>
+              <td>45.0</td>
+              <td>32.5</td>
+              <td>53.0</td>
+              <td>5e-07</td>
+          </tr>
+    
+          <tr>
+              <td>AGN74906.1</td>
+              <td>gamma-butyrolactone_receptor</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000459/1">BGC0000459</a></td>
+              <td>NRP:Cyclic depsipeptide + Polyketide:Trans-AT type I</td>
+              <td>38.0</td>
+              <td>42.9</td>
+              <td>49.0</td>
+              <td>5.6e-06</td>
+          </tr>
+    
+          <tr>
+              <td>ACO51013.1</td>
+              <td>SabS</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000850/1">BGC0000850</a></td>
+              <td>Other</td>
+              <td>39.0</td>
+              <td>37.2</td>
+              <td>49.0</td>
+              <td>7.3e-06</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

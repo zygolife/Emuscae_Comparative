@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>AAL26690.1</td>
+              <td>unknown</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000758/1">BGC0000758</a></td>
+              <td>Saccharide:Exopolysaccharide</td>
+              <td>34.0</td>
+              <td>53.4</td>
+              <td>194.0</td>
+              <td>6.6e-49</td>
+          </tr>
+    
+          <tr>
+              <td>AWM72921.1</td>
+              <td>luciferase-like_monooxygenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001719/1">BGC0001719</a></td>
+              <td>Polyketide</td>
+              <td>34.0</td>
+              <td>47.3</td>
+              <td>141.0</td>
+              <td>6.6e-33</td>
+          </tr>
+    
+          <tr>
+              <td>ACR33054.1</td>
+              <td>monooxygenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000495/1">BGC0000495</a></td>
+              <td>RiPP:Lanthipeptide</td>
+              <td>34.0</td>
+              <td>46.4</td>
+              <td>138.0</td>
+              <td>4.3e-32</td>
+          </tr>
+    
+          <tr>
+              <td>AHL46727.1</td>
+              <td>luciferase-like_monooxygenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001179/1">BGC0001179</a></td>
+              <td>Polyketide:Type II</td>
+              <td>34.0</td>
+              <td>47.6</td>
+              <td>136.0</td>
+              <td>2.1e-31</td>
+          </tr>
+    
+          <tr>
+              <td>AEM00622.1</td>
+              <td>aminohydrolase/peptidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000605/1">BGC0000605</a></td>
+              <td>RiPP:Thiopeptide</td>
+              <td>33.0</td>
+              <td>38.6</td>
+              <td>134.0</td>
+              <td>6.2e-31</td>
+          </tr>
+    
+          <tr>
+              <td>AVI57424.1</td>
+              <td>AbmE1</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001694/1">BGC0001694</a></td>
+              <td>Polyketide</td>
+              <td>32.0</td>
+              <td>47.2</td>
+              <td>125.0</td>
+              <td>2.9e-28</td>
+          </tr>
+    
+          <tr>
+              <td>ADG87283.1</td>
+              <td>amidohydrolase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001860/1">BGC0001860</a></td>
+              <td>RiPP:Thiopeptide</td>
+              <td>28.0</td>
+              <td>55.5</td>
+              <td>124.0</td>
+              <td>4.9e-28</td>
+          </tr>
+    
+          <tr>
+              <td>AHL46694.1</td>
+              <td>luciferase-like_monooxygenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001177/1">BGC0001177</a></td>
+              <td>Polyketide:Type II</td>
+              <td>37.0</td>
+              <td>35.8</td>
+              <td>123.0</td>
+              <td>1.1e-27</td>
+          </tr>
+    
+          <tr>
+              <td>AEK75507.1</td>
+              <td>luciferase/monooxygenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000001/1">BGC0000001</a></td>
+              <td>Polyketide:Modular type I</td>
+              <td>31.0</td>
+              <td>46.4</td>
+              <td>120.0</td>
+              <td>9.2e-27</td>
+          </tr>
+    
+          <tr>
+              <td>ACS83788.1</td>
+              <td>peptidase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000613/1">BGC0000613</a></td>
+              <td>RiPP:Thiopeptide</td>
+              <td>30.0</td>
+              <td>53.3</td>
+              <td>118.0</td>
+              <td>4.6e-26</td>
+          </tr>
+    
+          <tr>
+              <td>QBF51781.1</td>
+              <td>flavin-dependent_oxidoreductase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001856/1">BGC0001856</a></td>
+              <td>Polyketide:Modular type I</td>
+              <td>29.0</td>
+              <td>37.0</td>
+              <td>66.0</td>
+              <td>2.1e-10</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

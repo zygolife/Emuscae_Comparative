@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>CAJ45638.1</td>
+              <td>putative_siderophore_exporter</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000454/1">BGC0000454</a></td>
+              <td>NRP</td>
+              <td>45.0</td>
+              <td>106.6</td>
+              <td>311.0</td>
+              <td>2e-84</td>
+          </tr>
+    
+          <tr>
+              <td>ACR13598.1</td>
+              <td>putative_enterobactin_exporter_EntS</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000451/1">BGC0000451</a></td>
+              <td>NRP</td>
+              <td>45.0</td>
+              <td>100.8</td>
+              <td>277.0</td>
+              <td>3.3e-74</td>
+          </tr>
+    
+          <tr>
+              <td>BAH33411.1</td>
+              <td>putative_siderophore_export_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000371/1">BGC0000371</a></td>
+              <td>NRP</td>
+              <td>36.0</td>
+              <td>105.3</td>
+              <td>190.0</td>
+              <td>5.2e-48</td>
+          </tr>
+    
+          <tr>
+              <td>AEE65510.1</td>
+              <td>integral_membrane_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000223/1">BGC0000223</a></td>
+              <td>Polyketide:Type II</td>
+              <td>29.0</td>
+              <td>96.3</td>
+              <td>88.0</td>
+              <td>2.1e-17</td>
+          </tr>
+    
+          <tr>
+              <td>CAC20933.1</td>
+              <td>PimH_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000125/1">BGC0000125</a></td>
+              <td>Polyketide</td>
+              <td>26.0</td>
+              <td>100.8</td>
+              <td>61.0</td>
+              <td>2.8e-09</td>
+          </tr>
+    
+          <tr>
+              <td>AQT01380.1</td>
+              <td>SgnH</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001690/1">BGC0001690</a></td>
+              <td>Polyketide</td>
+              <td>26.0</td>
+              <td>100.8</td>
+              <td>61.0</td>
+              <td>2.8e-09</td>
+          </tr>
+    
+          <tr>
+              <td>ARO44648.1</td>
+              <td>major_facilitator_transporter</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001769/1">BGC0001769</a></td>
+              <td>Polyketide</td>
+              <td>26.0</td>
+              <td>98.9</td>
+              <td>56.0</td>
+              <td>1.5e-07</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

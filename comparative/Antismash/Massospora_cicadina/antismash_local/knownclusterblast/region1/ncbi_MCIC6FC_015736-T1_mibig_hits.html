@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>orf7</td>
+              <td>ATP-dependent_RNA_helicase_RhlE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001422/1">BGC0001422</a></td>
+              <td>NRP:Cyclic depsipeptide + Polyketide:Iterative type I</td>
+              <td>34.0</td>
+              <td>70.6</td>
+              <td>125.0</td>
+              <td>1.7e-28</td>
+          </tr>
+    
+          <tr>
+              <td>APZ78746.1</td>
+              <td>ATP-dependent_RNA_helicase_RhlE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001422/1">BGC0001422</a></td>
+              <td>NRP:Cyclic depsipeptide + Polyketide:Iterative type I</td>
+              <td>34.0</td>
+              <td>70.6</td>
+              <td>125.0</td>
+              <td>1.7e-28</td>
+          </tr>
+    
+          <tr>
+              <td>orf6</td>
+              <td>ATP-dependent_RNA_helicase_RhlE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001428/1">BGC0001428</a></td>
+              <td>NRP:Cyclic depsipeptide + Polyketide:Iterative type I</td>
+              <td>33.0</td>
+              <td>71.3</td>
+              <td>121.0</td>
+              <td>2.5e-27</td>
+          </tr>
+    
+          <tr>
+              <td>AQM37586.1</td>
+              <td>ATP-dependent_RNA_helicase_RhlE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001424/1">BGC0001424</a></td>
+              <td>NRP:Cyclic depsipeptide + Polyketide:Iterative type I</td>
+              <td>34.0</td>
+              <td>70.6</td>
+              <td>125.0</td>
+              <td>2.2e-28</td>
+          </tr>
+    
+          <tr>
+              <td>orf5</td>
+              <td>ATP-dependent_RNA_helicase_RhlE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001427/1">BGC0001427</a></td>
+              <td>NRP:Cyclic depsipeptide + Polyketide:Iterative type I</td>
+              <td>33.0</td>
+              <td>70.6</td>
+              <td>120.0</td>
+              <td>5.5e-27</td>
+          </tr>
+    
+          <tr>
+              <td>APZ78771.1</td>
+              <td>ATP-dependent_RNA_helicase_RhlE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001425/1">BGC0001425</a></td>
+              <td>NRP:Cyclic depsipeptide + Polyketide:Iterative type I</td>
+              <td>33.0</td>
+              <td>70.6</td>
+              <td>123.0</td>
+              <td>8.5e-28</td>
+          </tr>
+    
+          <tr>
+              <td>APZ78731.1</td>
+              <td>ATP-dependent_RNA_helicase_RhlE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001421/1">BGC0001421</a></td>
+              <td>NRP:Cyclic depsipeptide + Polyketide:Iterative type I</td>
+              <td>34.0</td>
+              <td>71.5</td>
+              <td>121.0</td>
+              <td>2.5e-27</td>
+          </tr>
+    
+          <tr>
+              <td>APZ78758.1</td>
+              <td>ATP-dependent_RNA_helicase_RhlE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001423/1">BGC0001423</a></td>
+              <td>NRP:Cyclic depsipeptide + Polyketide:Iterative type I</td>
+              <td>33.0</td>
+              <td>71.5</td>
+              <td>121.0</td>
+              <td>2.5e-27</td>
+          </tr>
+    
+          <tr>
+              <td>APZ78811.1</td>
+              <td>ATP-dependent_RNA_helicase_RhlE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001428/1">BGC0001428</a></td>
+              <td>NRP:Cyclic depsipeptide + Polyketide:Iterative type I</td>
+              <td>33.0</td>
+              <td>71.3</td>
+              <td>121.0</td>
+              <td>2.5e-27</td>
+          </tr>
+    
+          <tr>
+              <td>APZ78784.1</td>
+              <td>ATP-dependent_RNA_helicase_RhlE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001426/1">BGC0001426</a></td>
+              <td>NRP:Cyclic depsipeptide + Polyketide:Iterative type I</td>
+              <td>33.0</td>
+              <td>70.6</td>
+              <td>121.0</td>
+              <td>4.2e-27</td>
+          </tr>
+    
+          <tr>
+              <td>APZ78797.1</td>
+              <td>ATP-dependent_RNA_helicase_RhlE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001427/1">BGC0001427</a></td>
+              <td>NRP:Cyclic depsipeptide + Polyketide:Iterative type I</td>
+              <td>33.0</td>
+              <td>70.6</td>
+              <td>120.0</td>
+              <td>5.5e-27</td>
+          </tr>
+    
+          <tr>
+              <td>ACG60739.1</td>
+              <td>probable_DEAD-box_RNA_helicase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001058/1">BGC0001058</a></td>
+              <td>NRP:Glycopeptide + Polyketide:Modular type I + Saccharide:Hybrid/tailoring</td>
+              <td>30.0</td>
+              <td>98.3</td>
+              <td>87.0</td>
+              <td>4e-17</td>
+          </tr>
+    
+          <tr>
+              <td>ACJ24856.1</td>
+              <td>putative_ATP-dependent_RNA_helicase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000119/1">BGC0000119</a></td>
+              <td>Polyketide:Iterative type I + Saccharide:Hybrid/tailoring</td>
+              <td>29.0</td>
+              <td>69.6</td>
+              <td>84.0</td>
+              <td>3.4e-16</td>
+          </tr>
+    
+          <tr>
+              <td>BAF92582.1</td>
+              <td>ATP-dependent_RNA_helicase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000118/1">BGC0000118</a></td>
+              <td>Polyketide</td>
+              <td>33.0</td>
+              <td>38.2</td>
+              <td>68.0</td>
+              <td>3.3e-11</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

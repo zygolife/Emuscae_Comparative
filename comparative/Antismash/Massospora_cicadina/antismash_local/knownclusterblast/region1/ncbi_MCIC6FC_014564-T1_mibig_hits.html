@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>AWD37885.1</td>
+              <td>putative_siderophore_biosynthesis_protein_DfoC</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001572/1">BGC0001572</a></td>
+              <td>Other</td>
+              <td>96.0</td>
+              <td>102.3</td>
+              <td>1508.0</td>
+              <td>0.0</td>
+          </tr>
+    
+          <tr>
+              <td>PHM29821.1</td>
+              <td>desferrioxamine_siderophore_biosynthesis_protein_dfoC</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001870/1">BGC0001870</a></td>
+              <td>Other</td>
+              <td>52.0</td>
+              <td>102.5</td>
+              <td>827.0</td>
+              <td>1.3e-239</td>
+          </tr>
+    
+          <tr>
+              <td>BAX07668.1</td>
+              <td>IucA/IucC</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001531/1">BGC0001531</a></td>
+              <td>Other</td>
+              <td>44.0</td>
+              <td>103.6</td>
+              <td>683.0</td>
+              <td>3.9e-196</td>
+          </tr>
+    
+          <tr>
+              <td>AVV61969.1</td>
+              <td>DesA</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001478/1">BGC0001478</a></td>
+              <td>Other</td>
+              <td>54.0</td>
+              <td>77.8</td>
+              <td>628.0</td>
+              <td>1.1e-179</td>
+          </tr>
+    
+          <tr>
+              <td>BAG21576.1</td>
+              <td>putative_siderophore_biosynthetic_enzyme</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000941/1">BGC0000941</a></td>
+              <td>Other</td>
+              <td>53.0</td>
+              <td>77.6</td>
+              <td>622.0</td>
+              <td>8.1e-178</td>
+          </tr>
+    
+          <tr>
+              <td>CAB87222.1</td>
+              <td>ATP-dependent_siderophore_synthetase_(IucA-IucC_family)</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000940/1">BGC0000940</a></td>
+              <td>Other</td>
+              <td>53.0</td>
+              <td>78.3</td>
+              <td>622.0</td>
+              <td>1.1e-177</td>
+          </tr>
+    
+          <tr>
+              <td>PHM29812.1</td>
+              <td>desferrioxamine_siderophore_biosynthesis_protein_dfoC</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001870/1">BGC0001870</a></td>
+              <td>Other</td>
+              <td>53.0</td>
+              <td>78.2</td>
+              <td>621.0</td>
+              <td>1.8e-177</td>
+          </tr>
+    
+          <tr>
+              <td>desaD</td>
+              <td>NTP-dependent_siderophore_synthetase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001453/1">BGC0001453</a></td>
+              <td>Other</td>
+              <td>52.0</td>
+              <td>78.8</td>
+              <td>616.0</td>
+              <td>5.8e-176</td>
+          </tr>
+    
+          <tr>
+              <td>BAX07670.1</td>
+              <td>IucA/IucC</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001531/1">BGC0001531</a></td>
+              <td>Other</td>
+              <td>49.0</td>
+              <td>79.1</td>
+              <td>582.0</td>
+              <td>1.2e-165</td>
+          </tr>
+    
+          <tr>
+              <td>ARF06237.1</td>
+              <td>siderophore_synthetase_component,_ligase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001593/1">BGC0001593</a></td>
+              <td>NRP</td>
+              <td>34.0</td>
+              <td>74.4</td>
+              <td>311.0</td>
+              <td>3.1e-84</td>
+          </tr>
+    
+          <tr>
+              <td>KIU65664.1</td>
+              <td>IucA/IucC_family_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001713/1">BGC0001713</a></td>
+              <td>Other</td>
+              <td>30.0</td>
+              <td>77.8</td>
+              <td>272.0</td>
+              <td>2.7e-72</td>
+          </tr>
+    
+          <tr>
+              <td>BAE16004.1</td>
+              <td>aerobactin_synthetase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000939/1">BGC0000939</a></td>
+              <td>Other</td>
+              <td>28.0</td>
+              <td>73.5</td>
+              <td>266.0</td>
+              <td>1.5e-70</td>
+          </tr>
+    
+          <tr>
+              <td>AWD37850.1</td>
+              <td>aerobactin_biosynthesis_protein_IucC</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001499/1">BGC0001499</a></td>
+              <td>Other</td>
+              <td>29.0</td>
+              <td>73.4</td>
+              <td>264.0</td>
+              <td>5.6e-70</td>
+          </tr>
+    
+          <tr>
+              <td>YP_002539374.1</td>
+              <td>IucC</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001555/1">BGC0001555</a></td>
+              <td>RiPP</td>
+              <td>28.0</td>
+              <td>73.8</td>
+              <td>247.0</td>
+              <td>7.1e-65</td>
+          </tr>
+    
+          <tr>
+              <td>CDL83402.1</td>
+              <td>Aerobactin_siderophore_biosynthesis_protein_iucC</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001498/1">BGC0001498</a></td>
+              <td>Other</td>
+              <td>28.0</td>
+              <td>75.9</td>
+              <td>245.0</td>
+              <td>3.5e-64</td>
+          </tr>
+    
+          <tr>
+              <td>AAP25874.1</td>
+              <td>petrobactin_biosynthesis_protein_AsbB</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000942/1">BGC0000942</a></td>
+              <td>Other</td>
+              <td>24.0</td>
+              <td>77.0</td>
+              <td>204.0</td>
+              <td>6.9e-52</td>
+          </tr>
+    
+          <tr>
+              <td>BAX07669.1</td>
+              <td>acetyltransferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001531/1">BGC0001531</a></td>
+              <td>Other</td>
+              <td>48.0</td>
+              <td>22.5</td>
+              <td>182.0</td>
+              <td>2.2e-45</td>
+          </tr>
+    
+          <tr>
+              <td>ABD29263.1</td>
+              <td>conserved_hypothetical_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000943/1">BGC0000943</a></td>
+              <td>Other</td>
+              <td>22.0</td>
+              <td>76.0</td>
+              <td>153.0</td>
+              <td>1.4e-36</td>
+          </tr>
+    
+          <tr>
+              <td>BAG21577.1</td>
+              <td>putative_acetyltransferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000941/1">BGC0000941</a></td>
+              <td>Other</td>
+              <td>42.0</td>
+              <td>21.6</td>
+              <td>129.0</td>
+              <td>2.2e-29</td>
+          </tr>
+    
+          <tr>
+              <td>desaC</td>
+              <td>N-acetyltransferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001453/1">BGC0001453</a></td>
+              <td>Other</td>
+              <td>42.0</td>
+              <td>21.3</td>
+              <td>127.0</td>
+              <td>8.2e-29</td>
+          </tr>
+    
+          <tr>
+              <td>AVV61970.1</td>
+              <td>DesB</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001478/1">BGC0001478</a></td>
+              <td>Other</td>
+              <td>40.0</td>
+              <td>20.9</td>
+              <td>126.0</td>
+              <td>2.4e-28</td>
+          </tr>
+    
+          <tr>
+              <td>CAB87221.1</td>
+              <td>Acyl_CoA_acyl_transferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000940/1">BGC0000940</a></td>
+              <td>Other</td>
+              <td>39.0</td>
+              <td>21.6</td>
+              <td>121.0</td>
+              <td>4.5e-27</td>
+          </tr>
+    
+          <tr>
+              <td>ABD29260.1</td>
+              <td>conserved_hypothetical_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000943/1">BGC0000943</a></td>
+              <td>Other</td>
+              <td>27.0</td>
+              <td>26.1</td>
+              <td>69.0</td>
+              <td>3.5e-11</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

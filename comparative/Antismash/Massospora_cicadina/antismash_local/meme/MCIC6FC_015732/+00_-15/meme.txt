@@ -1,0 +1,244 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 4.11.2 (Release date: Thu May 05 14:58:55 2016 -0700)
+
+For further information on how to interpret these results or to get
+a copy of the MEME software please access http://meme-suite.org .
+
+This file may be used as input to the MAST algorithm for searching
+sequence databases for matches to groups of motifs.  MAST is available
+for interactive use and downloading at http://meme-suite.org .
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to discover
+motifs in biopolymers", Proceedings of the Second International
+Conference on Intelligent Systems for Molecular Biology, pp. 28-36,
+AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+DATAFILE= /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/Entomophthora_muscae_UCB/annotate/Massospora_cicadina_6FC.v_medaka/antismash_local/meme/MCIC6FC_015732/+00_-15/promoters.fasta
+ALPHABET= ACGT
+Sequence name            Weight Length  Sequence name            Weight Length  
+-------------            ------ ------  -------------            ------ ------  
+MCIC6FC_015711+MCIC6FC_0 1.0000    207  MCIC6FC_015713           1.0000    107  
+MCIC6FC_015714           1.0000     79  MCIC6FC_015715           1.0000     72  
+MCIC6FC_015716           1.0000     65  MCIC6FC_015717           1.0000    224  
+MCIC6FC_015718           1.0000     53  MCIC6FC_015719+MCIC6FC_0 1.0000    146  
+MCIC6FC_015721+MCIC6FC_0 1.0000    110  MCIC6FC_015723           1.0000     55  
+MCIC6FC_015724+MCIC6FC_0 1.0000    428  MCIC6FC_015726+MCIC6FC_0 1.0000    393  
+MCIC6FC_015728           1.0000    213  MCIC6FC_015729           1.0000     75  
+MCIC6FC_015730+MCIC6FC_0 1.0000    293  MCIC6FC_015732__ANCHOR   1.0000    414  
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/Entomophthora_muscae_UCB/annotate/Massospora_cicadina_6FC.v_medaka/antismash_local/meme/MCIC6FC_015732/+00_-15/promoters.fasta -oc /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/Entomophthora_muscae_UCB/annotate/Massospora_cicadina_6FC.v_medaka/antismash_local/meme/MCIC6FC_015732/+00_-15 -dna -nostatus -mod anr -nmotifs 1 -minw 6 -maxw 12 -revcomp -evt 1.0e+005 
+
+model:  mod=           anr    nmotifs=         1    evt=        100000
+object function=  E-value of product of p-values
+width:  minw=            6    maxw=           12
+width:  wg=             11    ws=              1    endgaps=       yes
+nsites: minsites=        2    maxsites=       50    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+global: substring=     yes    branching=      no    wbranch=        no
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+data:   n=            2934    N=              16    shuffle=        -1
+strands: + -
+sample: seed=            0    ctfrac=         -1    maxwords=       -1
+Letter frequencies in dataset:
+A 0.208 C 0.292 G 0.292 T 0.208 
+Background letter frequencies (from dataset with add-one prior applied):
+A 0.208 C 0.292 G 0.292 T 0.208 
+********************************************************************************
+
+
+********************************************************************************
+MOTIF  1 MEME	width =  12  sites =  12  llr = 127  E-value = 2.0e+001
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif 1 Description
+--------------------------------------------------------------------------------
+Simplified        A  :::4:311::::
+pos.-specific     C  :49::1:1::8:
+probability       G  :51:76:89:28
+matrix            T  a1:631911a:2
+
+         bits    2.3 *        *  
+                 2.0 *        *  
+                 1.8 *     *  *  
+                 1.6 *     *  *  
+Relative         1.4 * **  * **  
+Entropy          1.1 * *** * ****
+(15.3 bits)      0.9 * *** * ****
+                 0.7 * *** ******
+                 0.5 ************
+                 0.2 ************
+                 0.0 ------------
+
+Multilevel           TGCTGGTGGTCG
+consensus             C ATA      
+sequence                         
+                                 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value                Site  
+-------------            ------  ----- ---------            ------------
+MCIC6FC_015717               +    134  9.89e-08 CGCGATGAGT TGCTGGTGGTCG CCATCTTCGG
+MCIC6FC_015728               +    158  2.80e-06 TAACGCCGGC TTCTGATGGTCG ATGCGCCGGT
+MCIC6FC_015711+MCIC6FC_0     -    126  2.80e-06 CGGGGGCTTG TGCAGGTGGTGG CGAAGTATAC
+MCIC6FC_015717               -    171  3.01e-06 GCCGACCGCG TGCTGGTGTTCG ACGGCGGTCG
+MCIC6FC_015732__ANCHOR       +    365  3.66e-06 CGCCCCAACA TGCTGATGGTGG ACCGAATCAC
+MCIC6FC_015728               -     96  4.60e-06 AGCGGTACGC TCCAGATGGTCT TCGTGGGTAT
+MCIC6FC_015719+MCIC6FC_0     -     73  5.36e-06 CTGTTCATGC TCCTTGTTGTCG ATCTCGCGTC
+MCIC6FC_015732__ANCHOR       +    210  5.81e-06 CAGGCTTTGA TCCTTCTGGTCG GTCGGGAAGA
+MCIC6FC_015730+MCIC6FC_0     +     57  5.81e-06 TCATATCCCA TCCATTTGGTCG AGTTGAAGGC
+MCIC6FC_015716               +     46  8.98e-06 GATGATGTTC TGCATGTCGTCG GGTGATTG  
+MCIC6FC_015728               +     68  2.34e-05 TTACCGAGCG TCGAGGTGGTCT GGTGGAATAC
+MCIC6FC_015726+MCIC6FC_0     +     10  2.40e-05  TGCAGTTGA TGCTGGAAGTCG GCTTTGCTGG
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+MCIC6FC_015717                      3e-06  133_[+1]_25_[-1]_42
+MCIC6FC_015728                    2.3e-05  67_[+1]_16_[-1]_50_[+1]_44
+MCIC6FC_015711+MCIC6FC_0          2.8e-06  125_[-1]_70
+MCIC6FC_015732__ANCHOR            3.7e-06  209_[+1]_143_[+1]_38
+MCIC6FC_015719+MCIC6FC_0          5.4e-06  72_[-1]_62
+MCIC6FC_015730+MCIC6FC_0          5.8e-06  56_[+1]_225
+MCIC6FC_015716                      9e-06  45_[+1]_8
+MCIC6FC_015726+MCIC6FC_0          2.4e-05  9_[+1]_372
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF 1 width=12 seqs=12
+MCIC6FC_015717           (  134) TGCTGGTGGTCG  1 
+MCIC6FC_015728           (  158) TTCTGATGGTCG  1 
+MCIC6FC_015711+MCIC6FC_0 (  126) TGCAGGTGGTGG  1 
+MCIC6FC_015717           (  171) TGCTGGTGTTCG  1 
+MCIC6FC_015732__ANCHOR   (  365) TGCTGATGGTGG  1 
+MCIC6FC_015728           (   96) TCCAGATGGTCT  1 
+MCIC6FC_015719+MCIC6FC_0 (   73) TCCTTGTTGTCG  1 
+MCIC6FC_015732__ANCHOR   (  210) TCCTTCTGGTCG  1 
+MCIC6FC_015730+MCIC6FC_0 (   57) TCCATTTGGTCG  1 
+MCIC6FC_015716           (   46) TGCATGTCGTCG  1 
+MCIC6FC_015728           (   68) TCGAGGTGGTCT  1 
+MCIC6FC_015726+MCIC6FC_0 (   10) TGCTGGAAGTCG  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 12 n= 2758 bayes= 8.28729 E= 2.0e+001 
+ -1023  -1023  -1023    226 
+ -1023     51     78   -132 
+ -1023    165   -181  -1023 
+   100  -1023  -1023    149 
+ -1023  -1023    119     68 
+    27   -181    100   -132 
+  -132  -1023  -1023    214 
+  -132   -181    136   -132 
+ -1023  -1023    165   -132 
+ -1023  -1023  -1023    226 
+ -1023    151    -81  -1023 
+ -1023  -1023    151    -32 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 12 nsites= 12 E= 2.0e+001 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.000000  0.416667  0.500000  0.083333 
+ 0.000000  0.916667  0.083333  0.000000 
+ 0.416667  0.000000  0.000000  0.583333 
+ 0.000000  0.000000  0.666667  0.333333 
+ 0.250000  0.083333  0.583333  0.083333 
+ 0.083333  0.000000  0.000000  0.916667 
+ 0.083333  0.083333  0.750000  0.083333 
+ 0.000000  0.000000  0.916667  0.083333 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.000000  0.833333  0.166667  0.000000 
+ 0.000000  0.000000  0.833333  0.166667 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif 1 regular expression
+--------------------------------------------------------------------------------
+T[GC]C[TA][GT][GA]TGGTCG
+--------------------------------------------------------------------------------
+
+
+
+
+Time  2.37 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+SUMMARY OF MOTIFS
+********************************************************************************
+
+--------------------------------------------------------------------------------
+	Combined block diagrams: non-overlapping sites with p-value < 0.0001
+--------------------------------------------------------------------------------
+SEQUENCE NAME            COMBINED P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+MCIC6FC_015711+MCIC6FC_0         1.10e-03  125_[-1(2.80e-06)]_70
+MCIC6FC_015713                   8.44e-01  107
+MCIC6FC_015714                   5.19e-01  79
+MCIC6FC_015715                   1.15e-01  72
+MCIC6FC_015716                   9.70e-04  45_[+1(8.98e-06)]_8
+MCIC6FC_015717                   4.21e-05  133_[+1(9.89e-08)]_25_\
+    [-1(3.01e-06)]_42
+MCIC6FC_015718                   1.57e-01  53
+MCIC6FC_015719+MCIC6FC_0         1.45e-03  72_[-1(5.36e-06)]_62
+MCIC6FC_015721+MCIC6FC_0         6.10e-01  110
+MCIC6FC_015723                   7.51e-01  55
+MCIC6FC_015724+MCIC6FC_0         5.55e-01  428
+MCIC6FC_015726+MCIC6FC_0         1.82e-02  9_[+1(2.40e-05)]_372
+MCIC6FC_015728                   1.13e-03  67_[+1(2.34e-05)]_16_[-1(4.60e-06)]_\
+    50_[+1(2.80e-06)]_44
+MCIC6FC_015729                   6.25e-02  75
+MCIC6FC_015730+MCIC6FC_0         3.27e-03  56_[+1(5.81e-06)]_225
+MCIC6FC_015732__ANCHOR           2.95e-03  209_[+1(5.81e-06)]_143_\
+    [+1(3.66e-06)]_38
+--------------------------------------------------------------------------------
+
+********************************************************************************
+
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: i28
+
+********************************************************************************

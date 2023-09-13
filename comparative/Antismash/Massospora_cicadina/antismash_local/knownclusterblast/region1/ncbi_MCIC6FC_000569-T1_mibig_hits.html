@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>ACF70484.1</td>
+              <td>oxidosqualene_clavarinone_cyclase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001248/1">BGC0001248</a></td>
+              <td>Terpene</td>
+              <td>37.0</td>
+              <td>136.3</td>
+              <td>366.0</td>
+              <td>8.4e-101</td>
+          </tr>
+    
+          <tr>
+              <td>EAL89318.1</td>
+              <td>squalene-hopene-cyclase,_putative</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000686/1">BGC0000686</a></td>
+              <td>Terpene</td>
+              <td>34.0</td>
+              <td>135.4</td>
+              <td>297.0</td>
+              <td>2.8e-80</td>
+          </tr>
+    
+          <tr>
+              <td>chr3.CM0292.40.r2.m</td>
+              <td></td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001317/1">BGC0001317</a></td>
+              <td>Terpene</td>
+              <td>28.0</td>
+              <td>138.3</td>
+              <td>223.0</td>
+              <td>6.8e-58</td>
+          </tr>
+    
+          <tr>
+              <td>NP_198464.4</td>
+              <td>putative_pentacyclic_triterpene_synthase_3</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001314/1">BGC0001314</a></td>
+              <td>Terpene</td>
+              <td>33.0</td>
+              <td>77.8</td>
+              <td>208.0</td>
+              <td>1.7e-53</td>
+          </tr>
+    
+          <tr>
+              <td>NP_001318680.1</td>
+              <td>putative_pentacyclic_triterpene_synthase_3</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001314/1">BGC0001314</a></td>
+              <td>Terpene</td>
+              <td>33.0</td>
+              <td>77.8</td>
+              <td>208.0</td>
+              <td>1.7e-53</td>
+          </tr>
+    
+          <tr>
+              <td>NP_567462.1</td>
+              <td>pentacyclic_triterpene_synthase_1</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001313/1">BGC0001313</a></td>
+              <td>Terpene</td>
+              <td>26.0</td>
+              <td>140.0</td>
+              <td>207.0</td>
+              <td>6.6e-53</td>
+          </tr>
+    
+          <tr>
+              <td>NP_001078733.1</td>
+              <td>thalianol_synthase_1</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000670/1">BGC0000670</a></td>
+              <td>Terpene</td>
+              <td>33.0</td>
+              <td>78.9</td>
+              <td>206.0</td>
+              <td>8.6e-53</td>
+          </tr>
+    
+          <tr>
+              <td>NP_193272.1</td>
+              <td>baruol_synthase_1</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001313/1">BGC0001313</a></td>
+              <td>Terpene</td>
+              <td>32.0</td>
+              <td>78.5</td>
+              <td>199.0</td>
+              <td>1.4e-50</td>
+          </tr>
+    
+          <tr>
+              <td>NP_001329547.1</td>
+              <td>baruol_synthase_1</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001313/1">BGC0001313</a></td>
+              <td>Terpene</td>
+              <td>32.0</td>
+              <td>78.5</td>
+              <td>199.0</td>
+              <td>1.4e-50</td>
+          </tr>
+    
+          <tr>
+              <td>NP_199612.3</td>
+              <td>thalianol_synthase_1</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000670/1">BGC0000670</a></td>
+              <td>Terpene</td>
+              <td>32.0</td>
+              <td>78.9</td>
+              <td>193.0</td>
+              <td>7.5e-49</td>
+          </tr>
+    
+          <tr>
+              <td>NP_199074.1</td>
+              <td>marneral_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000669/1">BGC0000669</a></td>
+              <td>Terpene</td>
+              <td>25.0</td>
+              <td>139.6</td>
+              <td>183.0</td>
+              <td>5.9e-46</td>
+          </tr>
+    
+          <tr>
+              <td>NP_001328610.1</td>
+              <td>pentacyclic_triterpene_synthase_1</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001313/1">BGC0001313</a></td>
+              <td>Terpene</td>
+              <td>23.0</td>
+              <td>98.0</td>
+              <td>101.0</td>
+              <td>3.9e-21</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

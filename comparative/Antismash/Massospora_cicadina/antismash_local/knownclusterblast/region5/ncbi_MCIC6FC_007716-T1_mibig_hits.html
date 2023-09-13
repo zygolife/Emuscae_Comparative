@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>AFX60310.1</td>
+              <td>flavin-dependent_monooxygenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001031/1">BGC0001031</a></td>
+              <td>NRP + Polyketide</td>
+              <td>39.0</td>
+              <td>82.3</td>
+              <td>240.0</td>
+              <td>6.5e-63</td>
+          </tr>
+    
+          <tr>
+              <td>AFX60333.1</td>
+              <td>flavin-dependent_monooxygenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001032/1">BGC0001032</a></td>
+              <td>NRP + Polyketide</td>
+              <td>38.0</td>
+              <td>82.3</td>
+              <td>238.0</td>
+              <td>1.9e-62</td>
+          </tr>
+    
+          <tr>
+              <td>AAS47561.1</td>
+              <td>putative_FAD-dependent_monooxygenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001108/1">BGC0001108</a></td>
+              <td>Polyketide:Trans-AT type I</td>
+              <td>36.0</td>
+              <td>83.4</td>
+              <td>235.0</td>
+              <td>2.1e-61</td>
+          </tr>
+    
+          <tr>
+              <td>ctg1_orf7</td>
+              <td></td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001109/1">BGC0001109</a></td>
+              <td>NRP + Polyketide</td>
+              <td>36.0</td>
+              <td>83.4</td>
+              <td>235.0</td>
+              <td>2.1e-61</td>
+          </tr>
+    
+          <tr>
+              <td>ABX24479.1</td>
+              <td>putative_flavin-containing_monooxygenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000877/1">BGC0000877</a></td>
+              <td>Other</td>
+              <td>36.0</td>
+              <td>92.8</td>
+              <td>225.0</td>
+              <td>2.2e-58</td>
+          </tr>
+    
+          <tr>
+              <td>ABK32261.1</td>
+              <td>AmbI</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000014/1">BGC0000014</a></td>
+              <td>Polyketide</td>
+              <td>36.0</td>
+              <td>76.7</td>
+              <td>214.0</td>
+              <td>3.8e-55</td>
+          </tr>
+    
+          <tr>
+              <td>WP_003598537.1</td>
+              <td>aminotransferase_class_III-fold_pyridoxal_phosphate-dependent_enzyme</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001991/1">BGC0001991</a></td>
+              <td>Polyketide</td>
+              <td>32.0</td>
+              <td>83.7</td>
+              <td>192.0</td>
+              <td>1.2e-48</td>
+          </tr>
+    
+          <tr>
+              <td>WP_003598536.1</td>
+              <td>SidA/IucD/PvdA_family_monooxygenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001991/1">BGC0001991</a></td>
+              <td>Polyketide</td>
+              <td>32.0</td>
+              <td>85.1</td>
+              <td>190.0</td>
+              <td>5.9e-48</td>
+          </tr>
+    
+          <tr>
+              <td>ABK32294.1</td>
+              <td>JerO</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000080/1">BGC0000080</a></td>
+              <td>Polyketide</td>
+              <td>31.0</td>
+              <td>82.8</td>
+              <td>148.0</td>
+              <td>2e-35</td>
+          </tr>
+    
+          <tr>
+              <td>AQX77682.1</td>
+              <td>NocE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001704/1">BGC0001704</a></td>
+              <td>Other</td>
+              <td>29.0</td>
+              <td>82.8</td>
+              <td>145.0</td>
+              <td>1.7e-34</td>
+          </tr>
+    
+          <tr>
+              <td>AKL71638.1</td>
+              <td>NocE</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001703/1">BGC0001703</a></td>
+              <td>Other</td>
+              <td>27.0</td>
+              <td>84.1</td>
+              <td>145.0</td>
+              <td>2.2e-34</td>
+          </tr>
+    
+          <tr>
+              <td>ABK32266.1</td>
+              <td>AmbO</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000014/1">BGC0000014</a></td>
+              <td>Polyketide</td>
+              <td>30.0</td>
+              <td>90.0</td>
+              <td>143.0</td>
+              <td>6.4e-34</td>
+          </tr>
+    
+          <tr>
+              <td>ADH01489.1</td>
+              <td>type_I_polyketide_synthase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001096/1">BGC0001096</a></td>
+              <td>NRP + Polyketide</td>
+              <td>31.0</td>
+              <td>76.0</td>
+              <td>123.0</td>
+              <td>1.2e-27</td>
+          </tr>
+    
+          <tr>
+              <td>AIC32694.1</td>
+              <td>FR9GH</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001113/1">BGC0001113</a></td>
+              <td>NRP + Polyketide</td>
+              <td>31.0</td>
+              <td>76.0</td>
+              <td>123.0</td>
+              <td>1.2e-27</td>
+          </tr>
+    
+          <tr>
+              <td>AGN11882.1</td>
+              <td>tstGH</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001114/1">BGC0001114</a></td>
+              <td>NRP + Polyketide</td>
+              <td>29.0</td>
+              <td>86.9</td>
+              <td>114.0</td>
+              <td>4.1e-25</td>
+          </tr>
+    
+          <tr>
+              <td>AAX31534.1</td>
+              <td>putative_oxidoreductase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000336/1">BGC0000336</a></td>
+              <td>NRP</td>
+              <td>25.0</td>
+              <td>73.9</td>
+              <td>64.0</td>
+              <td>3.8e-10</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>AFV52183.1</td>
+              <td>aldolase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000081/1">BGC0000081</a></td>
+              <td>Polyketide:Iterative type I + Polyketide:Enediyne type I</td>
+              <td>60.0</td>
+              <td>40.3</td>
+              <td>280.0</td>
+              <td>5.9e-75</td>
+          </tr>
+    
+          <tr>
+              <td>CEG06582.1</td>
+              <td>Ribulose_5-phosphate_4_epimerase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001928/1">BGC0001928</a></td>
+              <td>Other</td>
+              <td>53.0</td>
+              <td>40.8</td>
+              <td>248.0</td>
+              <td>3.2e-65</td>
+          </tr>
+    
+          <tr>
+              <td>AAN65240.1</td>
+              <td>alpha-ketoacid-dependent_oxygenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000832/1">BGC0000832</a></td>
+              <td>Saccharide:Hybrid/tailoring + Other:Aminocoumarin</td>
+              <td>46.0</td>
+              <td>44.8</td>
+              <td>220.0</td>
+              <td>5.5e-57</td>
+          </tr>
+    
+          <tr>
+              <td>AAF67511.1</td>
+              <td>alpha-ketoacid-dependent_oxygenase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000834/1">BGC0000834</a></td>
+              <td>Saccharide:Hybrid/tailoring + Other:Aminocoumarin</td>
+              <td>48.0</td>
+              <td>41.3</td>
+              <td>220.0</td>
+              <td>7.2e-57</td>
+          </tr>
+    
+          <tr>
+              <td>RWQ92176.1</td>
+              <td>ribulose-5-phosphate_4-epimerase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0002030/1">BGC0002030</a></td>
+              <td>Polyketide</td>
+              <td>49.0</td>
+              <td>39.6</td>
+              <td>218.0</td>
+              <td>2.1e-56</td>
+          </tr>
+    
+          <tr>
+              <td>EWG54271.1</td>
+              <td>hypothetical_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001190/1">BGC0001190</a></td>
+              <td>Polyketide</td>
+              <td>46.0</td>
+              <td>43.6</td>
+              <td>203.0</td>
+              <td>7e-52</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

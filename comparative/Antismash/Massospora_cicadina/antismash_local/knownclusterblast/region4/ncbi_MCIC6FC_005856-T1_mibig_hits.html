@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>ACD75087.1</td>
+              <td>putative_chemotaxis_signal_trancription_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000913/1">BGC0000913</a></td>
+              <td>Other</td>
+              <td>36.0</td>
+              <td>55.5</td>
+              <td>188.0</td>
+              <td>2.9e-47</td>
+          </tr>
+    
+          <tr>
+              <td>CBJ79929.1</td>
+              <td>putative_2Fe-2S_protein_with_ferredoxin-like_NADP-linked_domain_and_2Fe-2S_ferredoxin-like_domain</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001133/1">BGC0001133</a></td>
+              <td>NRP</td>
+              <td>36.0</td>
+              <td>47.0</td>
+              <td>150.0</td>
+              <td>6.8e-36</td>
+          </tr>
+    
+          <tr>
+              <td>BBA31823.1</td>
+              <td>MOSC_domain_containing_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001797/1">BGC0001797</a></td>
+              <td>RiPP</td>
+              <td>29.0</td>
+              <td>42.7</td>
+              <td>74.0</td>
+              <td>4.8e-13</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

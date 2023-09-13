@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>AAY93357.2</td>
+              <td>siderophore-interacting_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000413/1">BGC0000413</a></td>
+              <td>NRP</td>
+              <td>95.0</td>
+              <td>100.0</td>
+              <td>629.0</td>
+              <td>2.9e-180</td>
+          </tr>
+    
+          <tr>
+              <td>CDL83407.1</td>
+              <td>FAD-binding_9_siderophore-interacting_domain-containing_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001498/1">BGC0001498</a></td>
+              <td>Other</td>
+              <td>42.0</td>
+              <td>95.3</td>
+              <td>229.0</td>
+              <td>8.6e-60</td>
+          </tr>
+    
+          <tr>
+              <td>ADG27348.1</td>
+              <td>siderophore-interacting_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000296/1">BGC0000296</a></td>
+              <td>NRP</td>
+              <td>36.0</td>
+              <td>87.0</td>
+              <td>160.0</td>
+              <td>3.8e-39</td>
+          </tr>
+    
+          <tr>
+              <td>ADG27367.1</td>
+              <td>siderophore-interacting_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000296/1">BGC0000296</a></td>
+              <td>NRP</td>
+              <td>35.0</td>
+              <td>88.5</td>
+              <td>157.0</td>
+              <td>3.2e-38</td>
+          </tr>
+    
+          <tr>
+              <td>CAB87218.1</td>
+              <td>Ferric-siderophore_hydrolase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000940/1">BGC0000940</a></td>
+              <td>Other</td>
+              <td>35.0</td>
+              <td>89.8</td>
+              <td>155.0</td>
+              <td>1.2e-37</td>
+          </tr>
+    
+          <tr>
+              <td>BAG21580.1</td>
+              <td>putative_siderophore-interacting_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000941/1">BGC0000941</a></td>
+              <td>Other</td>
+              <td>33.0</td>
+              <td>92.2</td>
+              <td>138.0</td>
+              <td>2.6e-32</td>
+          </tr>
+    
+          <tr>
+              <td>AGC45616.1</td>
+              <td>iron-chelator_utilization_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001394/1">BGC0001394</a></td>
+              <td>NRP + Polyketide</td>
+              <td>31.0</td>
+              <td>89.4</td>
+              <td>125.0</td>
+              <td>1.8e-28</td>
+          </tr>
+    
+          <tr>
+              <td>AAG31125.1</td>
+              <td>MxcB</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001345/1">BGC0001345</a></td>
+              <td>NRP</td>
+              <td>30.0</td>
+              <td>85.7</td>
+              <td>114.0</td>
+              <td>2.4e-25</td>
+          </tr>
+    
+          <tr>
+              <td>desaF</td>
+              <td>siderophore-interacting_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001453/1">BGC0001453</a></td>
+              <td>Other</td>
+              <td>39.0</td>
+              <td>67.1</td>
+              <td>113.0</td>
+              <td>6.9e-25</td>
+          </tr>
+    
+          <tr>
+              <td>ctg1_orf1269</td>
+              <td></td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001752/1">BGC0001752</a></td>
+              <td>NRP</td>
+              <td>31.0</td>
+              <td>91.9</td>
+              <td>105.0</td>
+              <td>1.4e-22</td>
+          </tr>
+    
+          <tr>
+              <td>ACU36659.1</td>
+              <td>Siderophore-interacting_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000392/1">BGC0000392</a></td>
+              <td>NRP</td>
+              <td>29.0</td>
+              <td>89.8</td>
+              <td>102.0</td>
+              <td>1.6e-21</td>
+          </tr>
+    
+          <tr>
+              <td>CAG15039.1</td>
+              <td>hypothetical_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000441/1">BGC0000441</a></td>
+              <td>NRP</td>
+              <td>30.0</td>
+              <td>91.3</td>
+              <td>97.0</td>
+              <td>5.1e-20</td>
+          </tr>
+    
+          <tr>
+              <td>AGS77332.1</td>
+              <td>Hypothetical_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001178/1">BGC0001178</a></td>
+              <td>NRP:Glycopeptide</td>
+              <td>30.0</td>
+              <td>90.7</td>
+              <td>95.0</td>
+              <td>1.9e-19</td>
+          </tr>
+    
+          <tr>
+              <td>AAO07760.1</td>
+              <td>Vulnibactin_utilization_protein_VuuB</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000460/1">BGC0000460</a></td>
+              <td>NRP</td>
+              <td>29.0</td>
+              <td>87.0</td>
+              <td>88.0</td>
+              <td>1.8e-17</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>

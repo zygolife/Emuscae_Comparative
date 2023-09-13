@@ -1,0 +1,668 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:cis="http://zlab.bu.edu/schema/cisml" xmlns:fimo="http://noble.gs.washington.edu/schema/cisml" xmlns:mem="http://noble.gs.washington.edu/meme">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>FIMO Results</title>
+<style type="text/css">
+td.left {text-align: left;}
+td.right {text-align: right; padding-right: 1cm;}
+</style>
+</head>
+<body bgcolor="#D5F0FF">
+<a name="top_buttons"></a>
+<hr>
+<table summary="buttons" align="left" cellspacing="0">
+<tr>
+<td bgcolor="#00FFFF"><a href="#database_and_motifs"><b>Database and Motifs</b></a></td>
+<td bgcolor="#DDFFDD"><a href="#sec_i"><b>High-scoring Motif Occurences</b></a></td>
+<td bgcolor="#DDDDFF"><a href="#debugging_information"><b>Debugging Information</b></a></td>
+</tr>
+</table>
+<br/>
+<br/>
+<hr/>
+<center><big><b>FIMO - Motif search tool</b></big></center>
+<hr>
+<p>
+FIMO version 4.11.2, (Release date: Thu May 05 14:58:55 2016 -0700)
+</p>
+<p>
+For further information on how to interpret these results
+or to get a copy of the FIMO software please access
+<a href="http://meme.nbcr.net">http://meme.nbcr.net</a></p>
+<p>If you use FIMO in your research, please cite the following paper:<br>
+Charles E. Grant, Timothy L. Bailey, and William Stafford Noble,
+"FIMO: Scanning for occurrences of a given motif",
+<i>Bioinformatics</i>, <b>27</b>(7):1017-1018, 2011.
+<a href="http://bioinformatics.oxfordjournals.org/content/27/7/1017">[full text]</a></p>
+<hr>
+<center><big><b><a name="database_and_motifs">DATABASE AND MOTIFS</a></b></big></center>
+<hr>
+<div style="padding-left: 0.75in; line-height: 1em; font-family: monospace;">
+<p>
+  DATABASE /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/Entomophthora_muscae_UCB/annotate/Massospora_cicadina_6FC.v_medaka/antismash_local/contig_24670_promoter_sequences.fasta
+  <br />
+  Database contains 316 sequences, 85727 residues
+</p>
+<p>
+  MOTIFS /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/Entomophthora_muscae_UCB/annotate/Massospora_cicadina_6FC.v_medaka/antismash_local/meme/MCIC6FC_006874/+12_-14/meme.html (DNA)
+  <table>
+    <thead>
+      <tr>
+        <th style="border-bottom: 1px dashed;">MOTIF</th>
+        <th style="border-bottom: 1px dashed; padding-left: 1em;">WIDTH</th>
+        <th style="border-bottom: 1px dashed; padding-left: 1em;text-align:left;" >
+         BEST POSSIBLE MATCH
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:right;">1</td>
+        <td style="text-align:right;padding-left: 1em;">12</td>
+        <td style="text-align:left;padding-left: 1em;">TTCAGGGTTTTT</td>
+       </tr>
+    </tbody>
+  </table>
+</p>
+<p>
+Random model letter frequencies (from non-redundant database):
+<br/>
+
+A 0.275 C 0.225 G 0.225 T 0.275 </p>
+</div>
+<hr>
+<center><big><b><a name="sec_i">SECTION I: HIGH-SCORING MOTIF OCCURENCES</a></b></big></center>
+<hr>
+<ul>
+<li>
+There were 49 motif occurences with a p-value less than 6e-05.
+
+The full set of motif occurences can be seen in the
+tab-delimited plain text output file
+<a href="fimo.txt">fimo.txt</a>, 
+the GFF file 
+<a href="fimo.gff">fimo.gff</a> 
+which may be suitable for uploading to the 
+<a href="http://genome.ucsc.edu/cgi-bin/hgTables">UCSC Genome Table Browser</a>
+(assuming the FASTA input sequences included genomic coordinates in UCSC or Galaxy format),
+or the XML file 
+<a href="fimo.xml">fimo.xml</a>.
+</li>
+<li>
+The p-value of a motif occurrence is defined as the
+probability of a random sequence of the same length as the motif
+matching that position of the sequence with as good or better a score.
+</li>
+<li>
+The score for the match of a position in a sequence to a motif
+is computed by summing the appropriate entries from each column of
+the position-dependent scoring matrix that represents the motif.
+</li>
+<li>
+The q-value of a motif occurrence is defined as the
+false discovery rate if the occurrence is accepted as significant.
+</li>
+<li>The table is sorted by increasing p-value.</li>
+</ul>
+<table border="1">
+<thead>
+<tr>
+<th>Motif</th>
+<th>Sequence Name</th>
+<th>Strand</th>
+<th>Start</th>
+<th>End</th>
+<th>p-value</th>
+<th>q-value</th>
+<th>Matched Sequence</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006883</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">325</td>
+      <td style="text-align:left;">336</td>
+      <td style="text-align:left;">8.34e-08</td>
+      <td style="text-align:left;">0.0137</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCAGGGTTTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007009+MCIC6FC_007010</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">259</td>
+      <td style="text-align:left;">270</td>
+      <td style="text-align:left;">2.35e-07</td>
+      <td style="text-align:left;">0.0193</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCAGGCTTTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007015+MCIC6FC_007016</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">65</td>
+      <td style="text-align:left;">76</td>
+      <td style="text-align:left;">4.56e-07</td>
+      <td style="text-align:left;">0.0249</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCAGCGTTTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006873+MCIC6FC_006874</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">133</td>
+      <td style="text-align:left;">144</td>
+      <td style="text-align:left;">7.17e-07</td>
+      <td style="text-align:left;">0.0294</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCAGGCTTTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006867+MCIC6FC_006868</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">84</td>
+      <td style="text-align:left;">95</td>
+      <td style="text-align:left;">1.52e-06</td>
+      <td style="text-align:left;">0.0465</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCAGGCGTTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007112</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">60</td>
+      <td style="text-align:left;">71</td>
+      <td style="text-align:left;">2e-06</td>
+      <td style="text-align:left;">0.0465</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCATGGTGTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007111</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">88</td>
+      <td style="text-align:left;">99</td>
+      <td style="text-align:left;">2.32e-06</td>
+      <td style="text-align:left;">0.0465</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCATGGTTTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006864+MCIC6FC_006865</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">18</td>
+      <td style="text-align:left;">29</td>
+      <td style="text-align:left;">2.62e-06</td>
+      <td style="text-align:left;">0.0465</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCAGCCTGTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006866</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">152</td>
+      <td style="text-align:left;">163</td>
+      <td style="text-align:left;">2.79e-06</td>
+      <td style="text-align:left;">0.0465</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTTAGGGTTTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006978</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">256</td>
+      <td style="text-align:left;">267</td>
+      <td style="text-align:left;">3.16e-06</td>
+      <td style="text-align:left;">0.0465</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCAGCCTTTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007068</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">74</td>
+      <td style="text-align:left;">85</td>
+      <td style="text-align:left;">3.4e-06</td>
+      <td style="text-align:left;">0.0465</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCAGGCGGTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006708</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">285</td>
+      <td style="text-align:left;">296</td>
+      <td style="text-align:left;">3.4e-06</td>
+      <td style="text-align:left;">0.0465</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCAGGCGGTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006876</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">879</td>
+      <td style="text-align:left;">890</td>
+      <td style="text-align:left;">8.03e-06</td>
+      <td style="text-align:left;">0.0955</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCAGGGTGTGT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006853+MCIC6FC_006854</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">19</td>
+      <td style="text-align:left;">30</td>
+      <td style="text-align:left;">9.69e-06</td>
+      <td style="text-align:left;">0.0955</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TCCAGCGTGTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007060+MCIC6FC_007061</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">292</td>
+      <td style="text-align:left;">303</td>
+      <td style="text-align:left;">9.69e-06</td>
+      <td style="text-align:left;">0.0955</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TCCAGCCTTTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006814</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">123</td>
+      <td style="text-align:left;">134</td>
+      <td style="text-align:left;">9.81e-06</td>
+      <td style="text-align:left;">0.0955</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCATTGTTTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007009+MCIC6FC_007010</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">81</td>
+      <td style="text-align:left;">92</td>
+      <td style="text-align:left;">9.94e-06</td>
+      <td style="text-align:left;">0.0955</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">ATCAGGCTTTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006888+MCIC6FC_006889</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">121</td>
+      <td style="text-align:left;">132</td>
+      <td style="text-align:left;">1.05e-05</td>
+      <td style="text-align:left;">0.0955</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCATGATTTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006876</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">36</td>
+      <td style="text-align:left;">47</td>
+      <td style="text-align:left;">1.3e-05</td>
+      <td style="text-align:left;">0.107</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCAGCGTTGTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006761+MCIC6FC_006762</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">178</td>
+      <td style="text-align:left;">189</td>
+      <td style="text-align:left;">1.41e-05</td>
+      <td style="text-align:left;">0.107</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCATCCTTTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006855+MCIC6FC_006856</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">146</td>
+      <td style="text-align:left;">157</td>
+      <td style="text-align:left;">1.43e-05</td>
+      <td style="text-align:left;">0.107</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCAGGATATTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006867+MCIC6FC_006868</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">149</td>
+      <td style="text-align:left;">160</td>
+      <td style="text-align:left;">1.43e-05</td>
+      <td style="text-align:left;">0.107</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">ACCAGGGTTTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006857+MCIC6FC_006858</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">142</td>
+      <td style="text-align:left;">153</td>
+      <td style="text-align:left;">1.54e-05</td>
+      <td style="text-align:left;">0.11</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCAGTGGTTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007067</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">19</td>
+      <td style="text-align:left;">30</td>
+      <td style="text-align:left;">1.66e-05</td>
+      <td style="text-align:left;">0.113</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCATGCGTTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006876</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">448</td>
+      <td style="text-align:left;">459</td>
+      <td style="text-align:left;">1.86e-05</td>
+      <td style="text-align:left;">0.122</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TCCATGGCTTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007122</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">193</td>
+      <td style="text-align:left;">204</td>
+      <td style="text-align:left;">2e-05</td>
+      <td style="text-align:left;">0.126</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCTGGATTTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006880</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">112</td>
+      <td style="text-align:left;">123</td>
+      <td style="text-align:left;">2.14e-05</td>
+      <td style="text-align:left;">0.13</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCTTGGTTTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006963</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">998</td>
+      <td style="text-align:left;">1009</td>
+      <td style="text-align:left;">2.4e-05</td>
+      <td style="text-align:left;">0.141</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCATGGCGTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007082+MCIC6FC_007083</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">58</td>
+      <td style="text-align:left;">69</td>
+      <td style="text-align:left;">2.55e-05</td>
+      <td style="text-align:left;">0.144</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TCCTGGCTTTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006686</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">186</td>
+      <td style="text-align:left;">197</td>
+      <td style="text-align:left;">2.77e-05</td>
+      <td style="text-align:left;">0.152</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCATGCGGTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007080</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">80</td>
+      <td style="text-align:left;">91</td>
+      <td style="text-align:left;">3.02e-05</td>
+      <td style="text-align:left;">0.16</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCATGGTGGTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006963</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">773</td>
+      <td style="text-align:left;">784</td>
+      <td style="text-align:left;">3.51e-05</td>
+      <td style="text-align:left;">0.171</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTTAGTGTGTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006963</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">69</td>
+      <td style="text-align:left;">80</td>
+      <td style="text-align:left;">3.69e-05</td>
+      <td style="text-align:left;">0.171</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">ATCTGGGTTTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007104+MCIC6FC_007105</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">234</td>
+      <td style="text-align:left;">245</td>
+      <td style="text-align:left;">3.74e-05</td>
+      <td style="text-align:left;">0.171</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCAGCAGGTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006811+MCIC6FC_006812</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">175</td>
+      <td style="text-align:left;">186</td>
+      <td style="text-align:left;">3.85e-05</td>
+      <td style="text-align:left;">0.171</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TCCAGGGTGTGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007100</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">38</td>
+      <td style="text-align:left;">49</td>
+      <td style="text-align:left;">3.86e-05</td>
+      <td style="text-align:left;">0.171</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TCCATGGGGTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006707</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">668</td>
+      <td style="text-align:left;">679</td>
+      <td style="text-align:left;">4.11e-05</td>
+      <td style="text-align:left;">0.171</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TCTAGCGTTTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007108</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">382</td>
+      <td style="text-align:left;">393</td>
+      <td style="text-align:left;">4.13e-05</td>
+      <td style="text-align:left;">0.171</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">ATCAGCCTGTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006807</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">57</td>
+      <td style="text-align:left;">68</td>
+      <td style="text-align:left;">4.15e-05</td>
+      <td style="text-align:left;">0.171</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">ATCAGCGGTTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006713</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">135</td>
+      <td style="text-align:left;">146</td>
+      <td style="text-align:left;">4.18e-05</td>
+      <td style="text-align:left;">0.171</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TCCATGGTTTGT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007067</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">111</td>
+      <td style="text-align:left;">122</td>
+      <td style="text-align:left;">4.47e-05</td>
+      <td style="text-align:left;">0.177</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCAGGCGTTGG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006959</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">84</td>
+      <td style="text-align:left;">95</td>
+      <td style="text-align:left;">4.52e-05</td>
+      <td style="text-align:left;">0.177</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCTGCCTTTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006850</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">11</td>
+      <td style="text-align:left;">22</td>
+      <td style="text-align:left;">5e-05</td>
+      <td style="text-align:left;">0.185</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCATTATGTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007111</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">285</td>
+      <td style="text-align:left;">296</td>
+      <td style="text-align:left;">5.04e-05</td>
+      <td style="text-align:left;">0.185</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCAGCGCTGTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006864+MCIC6FC_006865</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">192</td>
+      <td style="text-align:left;">203</td>
+      <td style="text-align:left;">5.09e-05</td>
+      <td style="text-align:left;">0.185</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">ACCAGGCCTTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006706</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">359</td>
+      <td style="text-align:left;">370</td>
+      <td style="text-align:left;">5.21e-05</td>
+      <td style="text-align:left;">0.185</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCTGGGGGTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006811+MCIC6FC_006812</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">25</td>
+      <td style="text-align:left;">36</td>
+      <td style="text-align:left;">5.33e-05</td>
+      <td style="text-align:left;">0.185</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCTGTCTTTTT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_007097+MCIC6FC_007098</td>
+      <td style="text-align:center;">-</td>
+      <td style="text-align:left;">156</td>
+      <td style="text-align:left;">167</td>
+      <td style="text-align:left;">5.41e-05</td>
+      <td style="text-align:left;">0.185</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCATCCCTTTG</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">MCIC6FC_006706</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">715</td>
+      <td style="text-align:left;">726</td>
+      <td style="text-align:left;">5.96e-05</td>
+      <td style="text-align:left;">0.2</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">TTCTTGGTGTTG</td>
+   </tr>
+</tbody>
+</table>
+
+<hr>
+<center><big><b><a name="debugging_information">DEBUGGING INFORMATION</a></b></big></center>
+<hr>
+<p>
+Command line:
+</p>
+<pre>
+/opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/antismash6_0/bin/fimo -verbosity 1 -motif 1 -thresh 0.00006 -oc /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/Entomophthora_muscae_UCB/annotate/Massospora_cicadina_6FC.v_medaka/antismash_local/fimo/MCIC6FC_006874/+12_-14 /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/Entomophthora_muscae_UCB/annotate/Massospora_cicadina_6FC.v_medaka/antismash_local/meme/MCIC6FC_006874/+12_-14/meme.html /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/Entomophthora_muscae_UCB/annotate/Massospora_cicadina_6FC.v_medaka/antismash_local/contig_24670_promoter_sequences.fasta
+</pre>
+<p>
+Settings:
+</p>
+<pre>
+<table>
+  <tr>
+    <td style="padding-right: 2em">output_directory = /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/Entomophthora_muscae_UCB/annotate/Massospora_cicadina_6FC.v_medaka/antismash_local/fimo/MCIC6FC_006874/+12_-14</td>
+    <td style="padding-left: 5em; padding-right: 2em">MEME file name = /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/Entomophthora_muscae_UCB/annotate/Massospora_cicadina_6FC.v_medaka/antismash_local/meme/MCIC6FC_006874/+12_-14/meme.html</td>
+    <td style="padding-left: 5em; padding-right: 2em">sequence file name = /bigdata/stajichlab/shared/projects/ZyGoLife/Entomophthora/E_muscae/Entomophthora_muscae_UCB/annotate/Massospora_cicadina_6FC.v_medaka/antismash_local/contig_24670_promoter_sequences.fasta</td>
+  </tr>  <tr>
+    <td style="padding-right: 2em">background file name = non-redundant database</td>
+    <td style="padding-left: 5em; padding-right: 2em">alphabet = DNA</td>
+    <td style="padding-left: 5em; padding-right: 2em">max stored scores = 100000</td>
+  </tr>  <tr>
+    <td style="padding-right: 2em">allow clobber = true</td>
+    <td style="padding-left: 5em; padding-right: 2em">compute q-values = true</td>
+    <td style="padding-left: 5em; padding-right: 2em">parse genomic coord. = false</td>
+  </tr>
+  <tr>
+    <td style="padding-right: 2em">text only = false</td>
+    <td style="padding-left: 5em; padding-right: 2em">scan both strands = true</td>
+    <td style="padding-left: 5em; padding-right: 2em">max strand = false</td>
+  </tr>
+  <tr>
+    <td style="padding-right: 2em">threshold type = p-value</td>
+    <td style="padding-left: 5em; padding-right: 2em">output theshold = 6e-05</td>
+    <td style="padding-left: 5em; padding-right: 2em">pseudocount = 0.1</td>
+  </tr>
+  <tr>
+    <td style="padding-right: 2em">alpha = 1</td>
+    <td style="padding-left: 5em; padding-right: 2em">verbosity = 1</td>
+    <td style="padding-left: 5em; padding-right: 2em"></td>
+  </tr>
+
+</table>
+</pre>
+<p>
+This information can be useful in the event you wish to report a
+problem with the FIMO software.
+</p>
+<hr>
+<span style="background-color: #DDDDFF"><a href="#top_buttons"><b>Go to top</b></a></span>
+</body>
+</html>

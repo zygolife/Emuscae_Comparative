@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript" src="../../js/jquery.tablesorter.min.js"></script>
+
+<script type="text/javascript" >
+var counter = 1;
+function addInput(divName){
+     var newdiv = document.createElement('div');
+     newdiv.innerHTML = "<b>Locus " + (counter + 1) + "</b><br> GenBank accession: <input type='text' required name='myInputs[]'> Start nt: <input type='number' name='myStartCoords[]' placeholder='N/A'> End nt: <input type='number' name='myEndCoords[]' placeholder='N/A'> <br><br>";
+     document.getElementById(divName).appendChild(newdiv);
+     counter++;
+}
+</script>
+
+<script>
+$(document).ready(function()
+    {
+        $("#myTable").tablesorter();
+    }
+);
+
+</script>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+</style>
+</head>
+<body>
+    <table id="myTable" class="tablesorter" border=1>
+    <thead>
+    <tr>
+        <th>MIBiG Protein</th>
+        <th>Description</th>
+        <th>MIBiG Cluster</th>
+        <th>MiBiG Product</th>
+        <th>% ID</th>
+        <th>% Coverage</th>
+        <th>BLAST Score</th>
+        <th>E-value</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+          <tr>
+              <td>WP_067426788.1</td>
+              <td>transketolase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001567/1">BGC0001567</a></td>
+              <td>NRP</td>
+              <td>36.0</td>
+              <td>39.0</td>
+              <td>401.0</td>
+              <td>6e-111</td>
+          </tr>
+    
+          <tr>
+              <td>BAX89995.1</td>
+              <td>pyruvate_dehydrogenase_complex,_E1_beta_and_E2_units</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001628/1">BGC0001628</a></td>
+              <td>NRP</td>
+              <td>41.0</td>
+              <td>22.1</td>
+              <td>300.0</td>
+              <td>1.4e-80</td>
+          </tr>
+    
+          <tr>
+              <td>BAD38881.1</td>
+              <td>putative_acyl_transferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000111/1">BGC0000111</a></td>
+              <td>Polyketide</td>
+              <td>35.0</td>
+              <td>21.8</td>
+              <td>187.0</td>
+              <td>2.3e-46</td>
+          </tr>
+    
+          <tr>
+              <td>AVE17172.1</td>
+              <td>BkdC1</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001535/1">BGC0001535</a></td>
+              <td>Other</td>
+              <td>38.0</td>
+              <td>23.5</td>
+              <td>164.0</td>
+              <td>1.6e-39</td>
+          </tr>
+    
+          <tr>
+              <td>AQW44895.1</td>
+              <td>phenylpyruvate_dehydrogenase_complex,_E2_component_and_acyl_carrier_protein</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001737/1">BGC0001737</a></td>
+              <td>NRP + Polyketide</td>
+              <td>29.0</td>
+              <td>21.1</td>
+              <td>160.0</td>
+              <td>3e-38</td>
+          </tr>
+    
+          <tr>
+              <td>AGN74889.1</td>
+              <td>branched-chain_alpha-keto_acid_dehydrogenase_E2</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000459/1">BGC0000459</a></td>
+              <td>NRP:Cyclic depsipeptide + Polyketide:Trans-AT type I</td>
+              <td>32.0</td>
+              <td>23.3</td>
+              <td>145.0</td>
+              <td>7.7e-34</td>
+          </tr>
+    
+          <tr>
+              <td>AQW44876.1</td>
+              <td>phenylpyruvate_dehydrogenase_complex,_E2_component_and_acyl_carrier_protein_domain</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001761/1">BGC0001761</a></td>
+              <td>Polyketide</td>
+              <td>28.0</td>
+              <td>21.3</td>
+              <td>145.0</td>
+              <td>7.7e-34</td>
+          </tr>
+    
+          <tr>
+              <td>BAO84858.1</td>
+              <td>putative_dehydrogenase_beta_subunit</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0000414/1">BGC0000414</a></td>
+              <td>NRP</td>
+              <td>23.0</td>
+              <td>39.6</td>
+              <td>141.0</td>
+              <td>1.5e-32</td>
+          </tr>
+    
+          <tr>
+              <td>AGC45625.1</td>
+              <td>alpha_keto_acid_dehydrogenase_complex,_E2_component,_dihydrolipoamide_acetyltransferase</td>
+              <td><a href="https://mibig.secondarymetabolites.org/go/BGC0001394/1">BGC0001394</a></td>
+              <td>NRP + Polyketide</td>
+              <td>34.0</td>
+              <td>20.9</td>
+              <td>135.0</td>
+              <td>1e-30</td>
+          </tr>
+    
+    </tbody>
+  </table>
+</body>
